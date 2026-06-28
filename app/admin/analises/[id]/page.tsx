@@ -2,6 +2,10 @@ import StatusActions from "@/components/admin/StatusActions";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { supabaseAdmin } from "@/lib/supabase/admin";
+import {
+  formatAnalysisStatus,
+  formatPaymentStatus,
+} from "@/lib/format-status";
 
 type Submission = {
   id: string;
@@ -44,6 +48,8 @@ export default async function AdminAnalysisPage({ params }: PageProps) {
   }
 
   const submission = data as Submission;
+
+  const currentStatus = submission.analysis_status ?? "received";
 
   const items = [
     {
@@ -99,28 +105,36 @@ export default async function AdminAnalysisPage({ params }: PageProps) {
             <p className="mt-6 text-lg text-zinc-400">{submission.email}</p>
           </div>
 
-        <div className="flex flex-col gap-3 text-sm text-zinc-500 md:text-right">
-  <span>
-    Enviada em{" "}
-    {new Date(submission.created_at).toLocaleDateString("pt-BR")}
-  </span>
+          <div className="flex flex-col gap-3 text-sm text-zinc-500 md:text-right">
+            <span>
+              Enviada em{" "}
+              {new Date(submission.created_at).toLocaleDateString("pt-BR")}
+            </span>
 
-  <span className="rounded-full border border-[#88B39A]/30 bg-[#88B39A]/10 px-4 py-2 text-center text-xs text-[#88B39A]">
-    {submission.analysis_status ?? "received"}
-  </span>
+            <span className="rounded-full border border-[#88B39A]/30 bg-[#88B39A]/10 px-4 py-2 text-center text-xs text-[#88B39A]">
+              {formatAnalysisStatus(currentStatus)}
+            </span>
 
-  <StatusActions
-    id={submission.id}
-    currentStatus={submission.analysis_status ?? "received"}
-  />
-</div>
+            <StatusActions id={submission.id} currentStatus={currentStatus} />
+          </div>
         </div>
 
         <section className="mb-12 rounded-[2rem] border border-white/10 bg-white/[0.03] p-8">
           <div className="grid gap-8 md:grid-cols-3">
-            <InfoCard label="Momento relacional" value={submission.relationship_status} />
-            <InfoCard label="Pagamento" value={submission.payment_status ?? "not_verified"} />
-            <InfoCard label="Consentimento" value={submission.consent ? "Confirmado" : "Não confirmado"} />
+            <InfoCard
+              label="Momento relacional"
+              value={submission.relationship_status}
+            />
+
+            <InfoCard
+              label="Pagamento"
+              value={formatPaymentStatus(submission.payment_status)}
+            />
+
+            <InfoCard
+              label="Consentimento"
+              value={submission.consent ? "Confirmado" : "Não confirmado"}
+            />
           </div>
         </section>
 

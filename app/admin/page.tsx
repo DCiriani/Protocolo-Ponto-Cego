@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { supabaseAdmin } from "@/lib/supabase/admin";
+import { formatAnalysisStatus } from "@/lib/format-status";
 
 type Submission = {
   id: string;
@@ -77,6 +78,7 @@ export default async function AdminPage() {
                     <p className="font-semibold text-[#F5F5F3]">
                       {submission.name}
                     </p>
+
                     <p className="mt-1 text-zinc-600">
                       {submission.relationship_status}
                     </p>
@@ -86,7 +88,7 @@ export default async function AdminPage() {
 
                   <div>
                     <span className="rounded-full border border-[#88B39A]/30 bg-[#88B39A]/10 px-3 py-1 text-xs text-[#88B39A]">
-                      {submission.analysis_status ?? "received"}
+                      {formatAnalysisStatus(submission.analysis_status)}
                     </span>
                   </div>
 
