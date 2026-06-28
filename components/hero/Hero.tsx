@@ -46,9 +46,9 @@ export default function Hero() {
             </p>
 
             <div id="comecar" className="mt-8">
-              <Button className="w-full sm:w-auto">
-                Quero enxergar meus padrões
-              </Button>
+              <Button href="/api/checkout" className="w-full sm:w-auto">
+  Quero enxergar meus padrões
+</Button>
             </div>
 
             <div className="mt-6 flex flex-col gap-2 text-sm text-zinc-500 md:flex-row md:gap-5">
