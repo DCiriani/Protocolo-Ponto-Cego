@@ -270,40 +270,71 @@ export default function JornadaForm() {
     setCurrentIndex((current) => Math.min(current + 1, steps.length));
   }
 
-  function goBack() {
-    setTouched(false);
-    setCurrentIndex((current) => Math.max(current - 1, 0));
+ function goBack() {
+  setTouched(false);
+  setCurrentIndex((current) => Math.max(current - 1, 0));
+}
+
+async function handleSubmit() {
+  const invalidIndex = steps.findIndex((step) => !isStepValid(step));
+
+  if (invalidIndex !== -1) {
+    setCurrentIndex(invalidIndex);
+    setTouched(true);
+    return;
   }
 
-  function handleSubmit() {
-    const invalidIndex = steps.findIndex((step) => !isStepValid(step));
+  setIsSubmitting(true);
 
-    if (invalidIndex !== -1) {
-      setCurrentIndex(invalidIndex);
-      setTouched(true);
+  const payload = {
+    ...answers,
+    submittedAt: new Date().toISOString(),
+  };
+
+  try {
+    const response = await fetch("/api/jornada", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(payload),
+    });
+
+    const result = await response.json().catch(() => null);
+
+    if (!response.ok) {
+      console.error("Jornada submit error:", result);
+
+      alert(
+        "Não foi possível enviar suas respostas agora. Por favor, tente novamente."
+      );
+
+      setIsSubmitting(false);
       return;
     }
 
-    setIsSubmitting(true);
-
-    const payload = {
-      ...answers,
-      submittedAt: new Date().toISOString(),
-    };
-
     window.localStorage.setItem(
       "ponto-cego-jornada-v1-submission",
-      JSON.stringify(payload)
+      JSON.stringify({
+        ...payload,
+        submissionId: result?.id,
+      })
     );
 
     window.localStorage.removeItem(storageKey);
 
-    setTimeout(() => {
-      router.push("/jornada/concluida");
-    }, 450);
-  }
+    router.push(`/jornada/concluida?id=${result?.id ?? ""}`);
+  } catch (error) {
+    console.error("Jornada submit error:", error);
 
-  return (
+    alert(
+      "Não foi possível enviar suas respostas agora. Verifique sua conexão e tente novamente."
+    );
+
+    setIsSubmitting(false);
+  }
+}
+return (
     <main className="relative min-h-screen overflow-hidden bg-[#0A0A0A] text-[#F5F5F3]">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(136,179,154,0.1),transparent_34%)]" />
 
