@@ -16,7 +16,7 @@ export default function Story() {
       {phrases.map((phrase, index) => (
         <div
           key={phrase}
-          className="relative flex min-h-screen items-center overflow-hidden border-t border-white/[0.04]"
+          className="relative flex min-h-[84svh] items-center overflow-hidden border-t border-white/[0.04] md:min-h-screen"
         >
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(136,179,154,0.08),transparent_38%)]" />
 
@@ -31,11 +31,11 @@ export default function Story() {
               }}
               className="max-w-5xl"
             >
-              <span className="mb-8 block text-sm uppercase tracking-[0.35em] text-zinc-600">
+              <span className="mb-8 block text-xs uppercase tracking-[0.35em] text-zinc-600 md:text-sm">
                 0{index + 1}
               </span>
 
-              <h2 className="text-[clamp(4rem,8vw,9rem)] font-semibold leading-[0.92] tracking-[-0.07em] text-[#F5F5F3]">
+              <h2 className="text-[3.1rem] font-semibold leading-[0.95] tracking-[-0.07em] text-[#F5F5F3] sm:text-[3.8rem] md:text-[clamp(4rem,8vw,9rem)]">
                 {phrase}
               </h2>
             </motion.div>
