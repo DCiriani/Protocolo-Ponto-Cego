@@ -1,3 +1,4 @@
+import AnalysisNotesForm from "@/components/admin/AnalysisNotesForm";
 import StatusActions from "@/components/admin/StatusActions";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -23,6 +24,8 @@ type Submission = {
   payment_status: string | null;
   analysis_status: string | null;
   created_at: string;
+  analysis_notes: string | null;
+analysis_notes_updated_at: string | null;
 };
 
 type PageProps = {
@@ -118,7 +121,10 @@ export default async function AdminAnalysisPage({ params }: PageProps) {
             <StatusActions id={submission.id} currentStatus={currentStatus} />
           </div>
         </div>
-
+<AnalysisNotesForm
+  id={submission.id}
+  initialNotes={submission.analysis_notes ?? ""}
+/>
         <section className="mb-12 rounded-[2rem] border border-white/10 bg-white/[0.03] p-8">
           <div className="grid gap-8 md:grid-cols-3">
             <InfoCard
