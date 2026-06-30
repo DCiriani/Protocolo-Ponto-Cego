@@ -5,10 +5,12 @@ import { useRouter } from "next/navigation";
 
 export default function DeliveryLinkBox({
   id,
+  name,
   initialToken,
   deliveryEnabled,
 }: {
   id: string;
+  name: string;
   initialToken: string | null;
   deliveryEnabled: boolean;
 }) {
@@ -56,6 +58,24 @@ export default function DeliveryLinkBox({
     alert("Link copiado.");
   }
 
+  async function copyDeliveryMessage() {
+    if (!deliveryUrl) return;
+
+    const message = `Olá, ${name}.
+
+Sua Leitura Ponto Cego está pronta.
+
+Você pode acessá-la pelo link abaixo:
+${deliveryUrl}
+
+Recomendo que leia com calma, em um momento reservado.
+
+Diego Ciriani`;
+
+    await navigator.clipboard.writeText(message);
+    alert("Mensagem de entrega copiada.");
+  }
+
   return (
     <section className="mb-12 rounded-[2rem] border border-white/10 bg-white/[0.03] p-8 md:p-10">
       <span className="mb-4 block text-xs uppercase tracking-[0.3em] text-zinc-600">
@@ -84,10 +104,18 @@ export default function DeliveryLinkBox({
           <div className="mt-6 flex flex-wrap gap-3">
             <button
               type="button"
-              onClick={copyLink}
+              onClick={copyDeliveryMessage}
               className="rounded-full bg-[#88B39A] px-5 py-3 text-sm font-semibold text-[#0A0A0A] transition hover:bg-[#9fcaad]"
             >
-              Copiar link
+              Copiar mensagem de entrega
+            </button>
+
+            <button
+              type="button"
+              onClick={copyLink}
+              className="rounded-full border border-[#88B39A]/30 px-5 py-3 text-sm font-medium text-[#88B39A] transition hover:bg-[#88B39A]/10"
+            >
+              Copiar só o link
             </button>
 
             <a

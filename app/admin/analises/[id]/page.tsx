@@ -134,6 +134,7 @@ export default async function AdminAnalysisPage({ params }: PageProps) {
 
 <DeliveryLinkBox
   id={submission.id}
+  name={submission.name}
   initialToken={submission.delivery_token}
   deliveryEnabled={submission.delivery_enabled}
 />
