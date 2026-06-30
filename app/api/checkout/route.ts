@@ -14,29 +14,42 @@ export async function GET(request: Request) {
   }
 
   const preference = {
-    items: [
-      {
-        id: "analise-ponto-cego",
-        title: "Análise Ponto Cego",
-        description:
-          "Leitura clínica personalizada para identificar padrões nos relacionamentos.",
-        quantity: 1,
-        currency_id: "BRL",
-        unit_price: price,
-      },
-    ],
-    back_urls: {
-      success: `${siteUrl}/jornada/inicio`,
-      failure: `${siteUrl}/checkout/erro`,
-      pending: `${siteUrl}/checkout/pendente`,
+  items: [
+    {
+      id: "analise-ponto-cego",
+      title: "Análise Ponto Cego",
+      description:
+        "Leitura clínica personalizada para identificar padrões nos relacionamentos.",
+      quantity: 1,
+      currency_id: "BRL",
+      unit_price: price,
     },
-    auto_return: "approved",
-    statement_descriptor: "PONTO CEGO",
-    external_reference: `pontocego_${Date.now()}`,
-    metadata: {
-      product: "analise_ponto_cego",
-    },
-  };
+  ],
+
+  back_urls: {
+    success: `${siteUrl}/jornada/inicio`,
+    failure: `${siteUrl}/checkout/erro`,
+    pending: `${siteUrl}/checkout/pendente`,
+  },
+
+  auto_return: "approved",
+
+  notification_url: `${siteUrl}/api/mercado-pago/webhook`,
+
+  payment_methods: {
+    excluded_payment_methods: [],
+    excluded_payment_types: [],
+    installments: 12,
+  },
+
+  statement_descriptor: "PONTO CEGO",
+
+  external_reference: `pontocego_${Date.now()}`,
+
+  metadata: {
+    product: "analise_ponto_cego",
+  },
+};
 
   try {
     const response = await fetch(
