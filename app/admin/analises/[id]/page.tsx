@@ -1,3 +1,4 @@
+import DeliveryLinkBox from "@/components/admin/DeliveryLinkBox";
 import AnalysisNotesForm from "@/components/admin/AnalysisNotesForm";
 import StatusActions from "@/components/admin/StatusActions";
 import Link from "next/link";
@@ -26,6 +27,10 @@ type Submission = {
   created_at: string;
   analysis_notes: string | null;
 analysis_notes_updated_at: string | null;
+delivery_token: string | null;
+delivery_enabled: boolean;
+delivery_created_at: string | null;
+delivery_viewed_at: string | null;
 };
 
 type PageProps = {
@@ -125,6 +130,13 @@ export default async function AdminAnalysisPage({ params }: PageProps) {
   id={submission.id}
   initialNotes={submission.analysis_notes ?? ""}
 />
+
+<DeliveryLinkBox
+  id={submission.id}
+  initialToken={submission.delivery_token}
+  deliveryEnabled={submission.delivery_enabled}
+/>
+
         <section className="mb-12 rounded-[2rem] border border-white/10 bg-white/[0.03] p-8">
           <div className="grid gap-8 md:grid-cols-3">
             <InfoCard
