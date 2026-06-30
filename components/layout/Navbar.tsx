@@ -16,7 +16,7 @@ export default function Navbar() {
         </a>
 
         <a
-          href="/api/checkout"
+          href="/checkout"
           className="hidden items-center gap-2 text-sm font-medium text-[#F5F5F3] transition hover:text-[#88B39A] md:inline-flex"
         >
           Começar análise

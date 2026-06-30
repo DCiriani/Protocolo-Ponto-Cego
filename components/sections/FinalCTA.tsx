@@ -37,7 +37,7 @@ export default function FinalCTA() {
           </p>
 
           <div className="mt-12">
-            <Button href="/api/checkout">Quero enxergar meus padrões</Button>
+            <Button href="/checkout">Quero enxergar meus padrões</Button>
           </div>
 
           <p className="mx-auto mt-12 max-w-xl text-sm leading-7 text-zinc-600">

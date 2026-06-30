@@ -18,6 +18,7 @@ type MercadoPagoPayment = {
   status_detail?: string;
   transaction_amount?: number;
   currency_id?: string;
+  external_reference?: string;
   payer?: {
     email?: string;
     first_name?: string;
@@ -121,6 +122,7 @@ export async function POST(request: Request) {
       .trim();
 
     const mappedStatus = mapPaymentStatus(payment.status);
+    const checkoutOrderId = payment.external_reference ?? null;
 
     const { error: paymentUpsertError } = await supabaseAdmin
       .from("mercado_pago_payments")
@@ -155,7 +157,35 @@ export async function POST(request: Request) {
         { status: 500 }
       );
     }
+if (checkoutOrderId) {
+  const { error: orderUpdateError } = await supabaseAdmin
+    .from("checkout_orders")
+    .update({
+      payment_status: mappedStatus,
+      mercado_pago_payment_id: String(payment.id),
+      updated_at: new Date().toISOString(),
+    })
+    .eq("id", checkoutOrderId);
 
+  if (orderUpdateError) {
+    console.error("Checkout order payment update error:", orderUpdateError);
+  }
+
+  const { error: submissionOrderUpdateError } = await supabaseAdmin
+    .from("jornada_submissions")
+    .update({
+      payment_status: mappedStatus,
+      updated_at: new Date().toISOString(),
+    })
+    .eq("checkout_order_id", checkoutOrderId);
+
+  if (submissionOrderUpdateError) {
+    console.error(
+      "Jornada submission payment update by order error:",
+      submissionOrderUpdateError
+    );
+  }
+}
     if (payerEmail) {
       const { error: submissionUpdateError } = await supabaseAdmin
         .from("jornada_submissions")
