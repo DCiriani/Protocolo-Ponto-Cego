@@ -56,7 +56,7 @@ export async function POST(request: Request) {
         { status: 400 }
       );
     }
-const normalizedEmail = payload.email.trim().toLowerCase();
+const normalizedEmail = String(payload.email).trim().toLowerCase();
 
 const { data: approvedPayment } = await supabaseAdmin
   .from("mercado_pago_payments")
