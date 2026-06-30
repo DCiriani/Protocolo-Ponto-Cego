@@ -1,3 +1,4 @@
+import DeleteAnalysisButton from "@/components/admin/DeleteAnalysisButton";
 import DeliveryLinkBox from "@/components/admin/DeliveryLinkBox";
 import AnalysisNotesForm from "@/components/admin/AnalysisNotesForm";
 import StatusActions from "@/components/admin/StatusActions";
@@ -169,6 +170,7 @@ export default async function AdminAnalysisPage({ params }: PageProps) {
             </div>
           ))}
         </section>
+        <DeleteAnalysisButton id={submission.id} name={submission.name} />
       </div>
     </main>
   );
