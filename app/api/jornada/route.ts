@@ -56,12 +56,21 @@ export async function POST(request: Request) {
         { status: 400 }
       );
     }
+const normalizedEmail = payload.email.trim().toLowerCase();
 
+const { data: approvedPayment } = await supabaseAdmin
+  .from("mercado_pago_payments")
+  .select("id, status")
+  .ilike("payer_email", normalizedEmail)
+  .eq("status", "approved")
+  .maybeSingle();
+
+const paymentStatus = approvedPayment ? "approved" : "not_verified";
     const { data, error } = await supabaseAdmin
       .from("jornada_submissions")
       .insert({
         name: payload.name,
-        email: payload.email,
+        email: normalizedEmail,
         relationship_status: payload.relationshipStatus,
         main_question: payload.mainQuestion,
 
@@ -74,7 +83,7 @@ export async function POST(request: Request) {
         expected_clarity: payload.expectedClarity,
         consent: payload.consent,
 
-        payment_status: "not_verified",
+        payment_status: paymentStatus,
         analysis_status: "received",
 
         raw_payload: payload,
