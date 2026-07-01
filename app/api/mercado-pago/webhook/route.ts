@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { supabaseAdmin } from "@/lib/supabase/admin";
+import { sendJornadaAccessEmail } from "@/lib/email/send-jornada-email";
 
 type MercadoPagoWebhookBody = {
   id?: string | number;
@@ -158,6 +159,12 @@ export async function POST(request: Request) {
       );
     }
 if (checkoutOrderId) {
+  const { data: checkoutOrderBeforeEmail } = await supabaseAdmin
+    .from("checkout_orders")
+    .select("id, name, email, jornada_email_sent_at")
+    .eq("id", checkoutOrderId)
+    .maybeSingle();
+
   const { error: orderUpdateError } = await supabaseAdmin
     .from("checkout_orders")
     .update({
@@ -184,6 +191,42 @@ if (checkoutOrderId) {
       "Jornada submission payment update by order error:",
       submissionOrderUpdateError
     );
+  }
+
+  if (
+    mappedStatus === "approved" &&
+    checkoutOrderBeforeEmail &&
+    !checkoutOrderBeforeEmail.jornada_email_sent_at
+  ) {
+    try {
+      await sendJornadaAccessEmail({
+        to: checkoutOrderBeforeEmail.email,
+        name: checkoutOrderBeforeEmail.name,
+        orderId: checkoutOrderBeforeEmail.id,
+      });
+
+      await supabaseAdmin
+        .from("checkout_orders")
+        .update({
+          jornada_email_sent_at: new Date().toISOString(),
+          jornada_email_error: null,
+          updated_at: new Date().toISOString(),
+        })
+        .eq("id", checkoutOrderId);
+    } catch (emailError) {
+      console.error("Send jornada access email error:", emailError);
+
+      await supabaseAdmin
+        .from("checkout_orders")
+        .update({
+          jornada_email_error:
+            emailError instanceof Error
+              ? emailError.message
+              : "Erro desconhecido ao enviar e-mail.",
+          updated_at: new Date().toISOString(),
+        })
+        .eq("id", checkoutOrderId);
+    }
   }
 }
     if (payerEmail) {
