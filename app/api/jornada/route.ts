@@ -14,6 +14,7 @@ type JornadaPayload = {
   expectedClarity?: string;
   consent?: boolean;
   submittedAt?: string;
+  checkoutOrderId?: string | null;
 };
 
 const requiredStringFields: Array<keyof JornadaPayload> = [
@@ -58,14 +59,37 @@ export async function POST(request: Request) {
     }
 const normalizedEmail = String(payload.email).trim().toLowerCase();
 
-const { data: approvedPayment } = await supabaseAdmin
-  .from("mercado_pago_payments")
-  .select("id, status")
-  .ilike("payer_email", normalizedEmail)
-  .eq("status", "approved")
-  .maybeSingle();
+let paymentStatus = "not_verified";
+let checkoutOrderId: string | null = null;
 
-const paymentStatus = approvedPayment ? "approved" : "not_verified";
+if (payload.checkoutOrderId) {
+  const { data: checkoutOrder } = await supabaseAdmin
+    .from("checkout_orders")
+    .select("id, email, payment_status")
+    .eq("id", payload.checkoutOrderId)
+    .maybeSingle();
+
+  if (checkoutOrder) {
+    checkoutOrderId = checkoutOrder.id;
+
+    if (checkoutOrder.payment_status === "approved") {
+      paymentStatus = "approved";
+    }
+  }
+}
+
+if (paymentStatus !== "approved") {
+  const { data: approvedPayment } = await supabaseAdmin
+    .from("mercado_pago_payments")
+    .select("id, status")
+    .ilike("payer_email", normalizedEmail)
+    .eq("status", "approved")
+    .maybeSingle();
+
+  if (approvedPayment) {
+    paymentStatus = "approved";
+  }
+}
     const { data, error } = await supabaseAdmin
       .from("jornada_submissions")
       .insert({
@@ -83,6 +107,7 @@ const paymentStatus = approvedPayment ? "approved" : "not_verified";
         expected_clarity: payload.expectedClarity,
         consent: payload.consent,
 
+        checkout_order_id: checkoutOrderId,
         payment_status: paymentStatus,
         analysis_status: "received",
 

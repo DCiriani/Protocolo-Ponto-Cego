@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 
 type Answers = {
   name: string;
@@ -165,6 +165,8 @@ const steps: Step[] = [
 
 export default function JornadaForm() {
   const router = useRouter();
+  const searchParams = useSearchParams();
+const checkoutOrderId = searchParams.get("order");
 
   const [answers, setAnswers] = useState<Answers>(initialAnswers);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -286,10 +288,11 @@ async function handleSubmit() {
 
   setIsSubmitting(true);
 
-  const payload = {
-    ...answers,
-    submittedAt: new Date().toISOString(),
-  };
+ const payload = {
+  ...answers,
+  checkoutOrderId,
+  submittedAt: new Date().toISOString(),
+};
 
   try {
     const response = await fetch("/api/jornada", {
