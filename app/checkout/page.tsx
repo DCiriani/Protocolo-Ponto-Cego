@@ -23,7 +23,7 @@ export default function CheckoutPage() {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch("/api/checkout/orders", {
+      const response = await fetch("checkout/orders", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -106,9 +106,21 @@ export default function CheckoutPage() {
             {isSubmitting ? "Iniciando pagamento..." : "Ir para pagamento"}
           </button>
 
-          <p className="mt-6 text-xs leading-6 text-zinc-600">
-            Seu pagamento será processado pelo Mercado Pago.
-          </p>
+         <p className="mt-6 text-xs leading-6 text-zinc-600">
+  Seu pagamento será processado pelo Mercado Pago. Ao continuar, você declara
+  estar ciente dos{" "}
+  <a href="/termos" className="text-[#88B39A] hover:text-[#9fcaad]">
+    Termos de Uso
+  </a>{" "}
+  e da{" "}
+  <a
+    href="/politica-de-privacidade"
+    className="text-[#88B39A] hover:text-[#9fcaad]"
+  >
+    Política de Privacidade
+  </a>
+  .
+</p>
         </form>
       </div>
     </main>
