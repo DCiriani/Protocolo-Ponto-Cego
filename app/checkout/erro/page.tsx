@@ -18,7 +18,7 @@ export default function CheckoutErrorPage() {
         </p>
 
         <div className="mt-10">
-          <Button href="/api/checkout">Tentar novamente</Button>
+          <Button href="checkout">Tentar novamente</Button>
         </div>
       </div>
     </main>

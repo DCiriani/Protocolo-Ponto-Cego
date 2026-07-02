@@ -11,6 +11,7 @@ type Answers = {
   sceneConflict: string;
   sceneSilence: string;
   sceneLimit: string;
+  sceneShrunkLife: string;
   sceneRepetition: string;
   sceneChoice: string;
   expectedClarity: string;
@@ -30,7 +31,7 @@ type Step = {
   helper?: string;
 };
 
-const storageKey = "ponto-cego-jornada-v1";
+const storageKey = "ponto-cego-jornada-v2";
 
 const initialAnswers: Answers = {
   name: "",
@@ -40,6 +41,7 @@ const initialAnswers: Answers = {
   sceneConflict: "",
   sceneSilence: "",
   sceneLimit: "",
+  sceneShrunkLife: "",
   sceneRepetition: "",
   sceneChoice: "",
   expectedClarity: "",
@@ -84,62 +86,72 @@ const steps: Step[] = [
   {
     key: "mainQuestion",
     eyebrow: "Pergunta central",
-    title: "O que fez você buscar a Análise Ponto Cego agora?",
+    title: "O que te fez procurar a Análise Ponto Cego agora?",
     description:
-      "Conte, com suas palavras, o que você sente que precisa compreender melhor nos seus relacionamentos.",
+      "O que doeu, o que travou, o que te trouxe até aqui. Escreve do seu jeito.",
     type: "textarea",
     placeholder:
       "Exemplo: sinto que sempre acabo me envolvendo com pessoas emocionalmente indisponíveis...",
   },
   {
     key: "sceneConflict",
-    eyebrow: "Cena 01",
-    title: "Descreva uma cena recente de conflito.",
+    eyebrow: "Cena 01 — O conflito",
+    title: "Uma conversa que começou normal e foi esquentando.",
     description:
-      "Pode ser uma discussão, um afastamento, uma cobrança, uma reação sua ou algo que ficou mal resolvido.",
+      "Imagina a cena. A outra pessoa fala algo que te atinge. Você sente o corpo reagir antes da cabeça: o peito aperta, a voz muda, as palavras começam a sair diferentes do que você planejou.\n\nIsso já aconteceu com você. Conta uma dessas vezes. O que foi dito, o que você fez na hora e o que você fez depois que a poeira baixou.\n\nSe não lembrar de uma briga grande, vale uma pequena. O tamanho não importa, o jeito importa.",
     type: "textarea",
     placeholder:
-      "O que aconteceu? Como você interpretou? O que você sentiu? Como reagiu?",
+      "Escreve com calma, do jeito que veio à cabeça...",
   },
   {
     key: "sceneSilence",
-    eyebrow: "Cena 02",
-    title: "Descreva uma cena em que o silêncio ou a distância te afetou.",
+    eyebrow: "Cena 02 — O silêncio",
+    title: "A mensagem visualizada e sem resposta.",
     description:
-      "Pode ser uma demora para responder, uma mudança no tom, uma ausência ou uma sensação de rejeição.",
+      "Você manda uma mensagem que importa. A pessoa visualiza. Não responde. Passa uma hora. Passam três. Você relê o que escreveu procurando o erro. Pensa em mandar outra. Apaga. Escreve de novo.\n\nConta uma vez que foi assim pra você. Pode ser mensagem, pode ser uma distância que foi crescendo sem explicação. O que você sentiu e o que você fez enquanto esperava?\n\nSe nunca viveu exatamente isso, conta a situação mais parecida: um afastamento, uma frieza, um sumiço.",
     type: "textarea",
     placeholder:
-      "O que o silêncio ou a distância significou para você naquele momento?",
+      "Sem filtro. O que passou pela sua cabeça também conta...",
   },
   {
     key: "sceneLimit",
-    eyebrow: "Cena 03",
-    title: "Descreva uma situação em que você ultrapassou ou silenciou um limite seu.",
+    eyebrow: "Cena 03 — O limite",
+    title: "Aquilo que passa do seu limite e você fica entre falar e engolir.",
     description:
-      "Pense em momentos em que você aceitou algo, cedeu demais ou deixou de dizer o que realmente sentia.",
+      "Tem coisa que te incomoda faz tempo. Você já tentou falar, ou nunca falou porque sabia como ia terminar. Aí acontece de novo. Aquilo que passa do seu limite. E você fica entre falar e engolir, medindo se vale a briga.\n\nConta uma situação em que um limite seu foi atropelado. O que era, o que você fez e o que aconteceu quando você falou. Ou o que te fez não falar.",
     type: "textarea",
     placeholder:
-      "O que você deixou passar? O que temeu que acontecesse se colocasse um limite?",
+      "Se não falou, também conta o porquê...",
+  },
+  {
+    key: "sceneShrunkLife",
+    eyebrow: "Cena 04 — A vida que encolheu",
+    title: "O que foi sumindo sem você perceber.",
+    description:
+      "Pensa na sua vida antes dessa relação. Ou antes da última que marcou. As amizades que você tinha, o que você fazia no tempo livre, os planos que eram só seus.\n\nAgora olha pra hoje. O que ainda existe e o que foi sumindo?\n\nConta o que você deixou de lado. E tenta lembrar como foi: alguém pediu, ou você foi abrindo mão sozinho, aos poucos, sem perceber?",
+    type: "textarea",
+    placeholder:
+      "Vale coisa pequena. Amizade que espaçou, hobby que parou...",
   },
   {
     key: "sceneRepetition",
-    eyebrow: "Cena 04",
-    title: "Que padrão parece se repetir nos seus relacionamentos?",
+    eyebrow: "Cena 05 — O padrão",
+    title: "O que se repete nas suas relações.",
     description:
-      "Pode ser uma escolha, uma reação, uma insegurança, uma dinâmica ou um tipo de pessoa que aparece com frequência.",
+      "Agora sem cena pronta. Olhando pras suas relações até aqui, existe algo que se repete? Tipo de pessoa que você escolhe, jeito que começa, jeito que termina, papel que você acaba ocupando.\n\nEscreve o que você já percebeu. Mesmo que seja só uma suspeita.",
     type: "textarea",
     placeholder:
-      "Exemplo: eu me aproximo, depois sinto medo, começo a cobrar e a pessoa se afasta...",
+      "Uma frase basta se for a frase certa...",
   },
   {
     key: "sceneChoice",
-    eyebrow: "Cena 05",
-    title: "Descreva uma escolha afetiva que hoje você enxerga de outra forma.",
+    eyebrow: "Cena 06 — A escolha revista",
+    title: "Aquilo que na época parecia amor e hoje tem outro nome.",
     description:
-      "Pode ser alguém que você escolheu, algo que tolerou, uma insistência, uma ruptura ou um retorno.",
+      "Pensa numa escolha afetiva que hoje você enxerga diferente. Alguém que você idealizou, uma relação onde ficou mais tempo do que devia, algo que na época parecia amor e hoje tem outro nome.\n\nConta o que era e o que você vê agora.\n\nE uma pergunta a mais, respira antes de responder: naquela época, o que te segurava ali? Era a pessoa, ou era o medo do que vinha depois dela?",
     type: "textarea",
     placeholder:
-      "O que você escolheu naquele momento? O que percebe hoje olhando para trás?",
+      "A última pergunta é a mais importante. Responde ela.",
   },
   {
     key: "expectedClarity",
@@ -166,7 +178,7 @@ const steps: Step[] = [
 export default function JornadaForm() {
   const router = useRouter();
   const searchParams = useSearchParams();
-const checkoutOrderId = searchParams.get("order");
+  const checkoutOrderId = searchParams.get("order");
 
   const [answers, setAnswers] = useState<Answers>(initialAnswers);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -272,72 +284,73 @@ const checkoutOrderId = searchParams.get("order");
     setCurrentIndex((current) => Math.min(current + 1, steps.length));
   }
 
- function goBack() {
-  setTouched(false);
-  setCurrentIndex((current) => Math.max(current - 1, 0));
-}
-
-async function handleSubmit() {
-  const invalidIndex = steps.findIndex((step) => !isStepValid(step));
-
-  if (invalidIndex !== -1) {
-    setCurrentIndex(invalidIndex);
-    setTouched(true);
-    return;
+  function goBack() {
+    setTouched(false);
+    setCurrentIndex((current) => Math.max(current - 1, 0));
   }
 
-  setIsSubmitting(true);
+  async function handleSubmit() {
+    const invalidIndex = steps.findIndex((step) => !isStepValid(step));
 
- const payload = {
-  ...answers,
-  checkoutOrderId,
-  submittedAt: new Date().toISOString(),
-};
-
-  try {
-    const response = await fetch("/api/jornada", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(payload),
-    });
-
-    const result = await response.json().catch(() => null);
-
-    if (!response.ok) {
-      console.error("Jornada submit error:", result);
-
-      alert(
-        "Não foi possível enviar suas respostas agora. Por favor, tente novamente."
-      );
-
-      setIsSubmitting(false);
+    if (invalidIndex !== -1) {
+      setCurrentIndex(invalidIndex);
+      setTouched(true);
       return;
     }
 
-    window.localStorage.setItem(
-      "ponto-cego-jornada-v1-submission",
-      JSON.stringify({
-        ...payload,
-        submissionId: result?.id,
-      })
-    );
+    setIsSubmitting(true);
 
-    window.localStorage.removeItem(storageKey);
+    const payload = {
+      ...answers,
+      checkoutOrderId,
+      submittedAt: new Date().toISOString(),
+    };
 
-    router.push(`/jornada/concluida?id=${result?.id ?? ""}`);
-  } catch (error) {
-    console.error("Jornada submit error:", error);
+    try {
+      const response = await fetch("/api/jornada", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
 
-    alert(
-      "Não foi possível enviar suas respostas agora. Verifique sua conexão e tente novamente."
-    );
+      const result = await response.json().catch(() => null);
 
-    setIsSubmitting(false);
+      if (!response.ok) {
+        console.error("Jornada submit error:", result);
+
+        alert(
+          "Não foi possível enviar suas respostas agora. Por favor, tente novamente."
+        );
+
+        setIsSubmitting(false);
+        return;
+      }
+
+      window.localStorage.setItem(
+        "ponto-cego-jornada-v2-submission",
+        JSON.stringify({
+          ...payload,
+          submissionId: result?.id,
+        })
+      );
+
+      window.localStorage.removeItem(storageKey);
+
+      router.push(`/jornada/concluida?id=${result?.id ?? ""}`);
+    } catch (error) {
+      console.error("Jornada submit error:", error);
+
+      alert(
+        "Não foi possível enviar suas respostas agora. Verifique sua conexão e tente novamente."
+      );
+
+      setIsSubmitting(false);
+    }
   }
-}
-return (
+
+  return (
     <main className="relative min-h-screen overflow-hidden bg-[#0A0A0A] text-[#F5F5F3]">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(136,179,154,0.1),transparent_34%)]" />
 
@@ -376,7 +389,7 @@ return (
                   {currentStep.title}
                 </h1>
 
-                <p className="mt-8 max-w-xl text-[18px] leading-8 text-zinc-400 md:text-[20px] md:leading-10">
+                <p className="mt-8 max-w-xl whitespace-pre-wrap text-[18px] leading-8 text-zinc-400 md:text-[20px] md:leading-10">
                   {currentStep.description}
                 </p>
               </div>
