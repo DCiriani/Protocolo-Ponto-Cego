@@ -32,6 +32,9 @@ delivery_token: string | null;
 delivery_enabled: boolean;
 delivery_created_at: string | null;
 delivery_viewed_at: string | null;
+delivery_email_sent_at: string | null;
+delivery_email_error: string | null;
+delivery_email_message_id: string | null;
 };
 
 type PageProps = {
@@ -137,6 +140,8 @@ export default async function AdminAnalysisPage({ params }: PageProps) {
   name={submission.name}
   initialToken={submission.delivery_token}
   deliveryEnabled={submission.delivery_enabled}
+  deliveryEmailSentAt={submission.delivery_email_sent_at}
+  deliveryEmailError={submission.delivery_email_error}
 />
 
         <section className="mb-12 rounded-[2rem] border border-white/10 bg-white/[0.03] p-8">

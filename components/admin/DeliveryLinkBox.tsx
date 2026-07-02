@@ -8,15 +8,22 @@ export default function DeliveryLinkBox({
   name,
   initialToken,
   deliveryEnabled,
+  deliveryEmailSentAt,
+  deliveryEmailError,
 }: {
   id: string;
   name: string;
   initialToken: string | null;
   deliveryEnabled: boolean;
+  deliveryEmailSentAt: string | null;
+  deliveryEmailError: string | null;
 }) {
   const router = useRouter();
 
   const [token, setToken] = useState(initialToken);
+  const [emailSentAt, setEmailSentAt] = useState(deliveryEmailSentAt);
+  const [emailError, setEmailError] = useState(deliveryEmailError);
+
   const [isCreating, setIsCreating] = useState(false);
   const [isSendingEmail, setIsSendingEmail] = useState(false);
 
@@ -24,6 +31,13 @@ export default function DeliveryLinkBox({
     token && typeof window !== "undefined"
       ? `${window.location.origin}/leitura/${token}`
       : "";
+
+  function formatDateTime(value: string) {
+    return new Intl.DateTimeFormat("pt-BR", {
+      dateStyle: "short",
+      timeStyle: "short",
+    }).format(new Date(value));
+  }
 
   async function createDeliveryLink() {
     setIsCreating(true);
@@ -42,17 +56,21 @@ export default function DeliveryLinkBox({
       }
 
       setToken(result.token);
-      router.refresh();
 
       if (result?.emailSent) {
+        setEmailSentAt(new Date().toISOString());
+        setEmailError(null);
         alert("Link gerado e e-mail enviado com sucesso.");
       } else if (result?.emailError) {
+        setEmailError(result.emailError);
         alert(
           `Link gerado, mas o e-mail não foi enviado. Erro: ${result.emailError}`
         );
       } else {
         alert("Link de entrega gerado com sucesso.");
       }
+
+      router.refresh();
     } catch {
       alert("Erro ao gerar link de entrega.");
     } finally {
@@ -86,14 +104,18 @@ export default function DeliveryLinkBox({
         setToken(result.token);
       }
 
-      router.refresh();
-
       if (result?.emailSent) {
+        setEmailSentAt(new Date().toISOString());
+        setEmailError(null);
         alert("E-mail da leitura enviado com sucesso.");
       } else {
+        setEmailError(result?.emailError ?? "Não foi possível enviar o e-mail.");
         alert(result?.emailError ?? "Não foi possível enviar o e-mail.");
       }
+
+      router.refresh();
     } catch {
+      setEmailError("Erro ao enviar e-mail da leitura.");
       alert("Erro ao enviar e-mail da leitura.");
     } finally {
       setIsSendingEmail(false);
@@ -139,6 +161,38 @@ Diego Ciriani`;
         Gere um link privado para a pessoa acessar a Leitura Ponto Cego. Ao
         gerar o link, o sistema envia automaticamente o e-mail para o cliente.
       </p>
+
+      <div className="mt-8 rounded-3xl border border-white/10 bg-black/20 p-5">
+        <span className="mb-2 block text-xs uppercase tracking-[0.25em] text-zinc-600">
+          E-mail da leitura
+        </span>
+
+        {emailSentAt ? (
+          <div>
+            <p className="text-sm font-medium text-[#88B39A]">
+              E-mail enviado
+            </p>
+
+            <p className="mt-1 text-sm text-zinc-500">
+              Enviado em {formatDateTime(emailSentAt)}
+            </p>
+          </div>
+        ) : emailError ? (
+          <div>
+            <p className="text-sm font-medium text-red-300">
+              Erro no envio do e-mail
+            </p>
+
+            <p className="mt-1 text-sm leading-6 text-zinc-500">
+              {emailError}
+            </p>
+          </div>
+        ) : (
+          <p className="text-sm text-zinc-500">
+            Ainda não enviado.
+          </p>
+        )}
+      </div>
 
       {token && deliveryEnabled ? (
         <div className="mt-8 rounded-3xl border border-[#88B39A]/20 bg-[#88B39A]/[0.04] p-5">
