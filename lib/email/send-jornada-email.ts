@@ -1,4 +1,4 @@
-import { Resend } from "resend";
+import nodemailer from "nodemailer";
 
 type SendJornadaEmailParams = {
   to: string;
@@ -11,12 +11,23 @@ export async function sendJornadaAccessEmail({
   name,
   orderId,
 }: SendJornadaEmailParams) {
-  const resendApiKey = process.env.RESEND_API_KEY;
+  const smtpHost = process.env.SMTP_HOST;
+  const smtpPort = Number(process.env.SMTP_PORT ?? "465");
+  const smtpUser = process.env.SMTP_USER;
+  const smtpPassword = process.env.SMTP_PASSWORD;
   const emailFrom = process.env.EMAIL_FROM;
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
 
-  if (!resendApiKey) {
-    throw new Error("RESEND_API_KEY não configurada.");
+  if (!smtpHost) {
+    throw new Error("SMTP_HOST não configurado.");
+  }
+
+  if (!smtpUser) {
+    throw new Error("SMTP_USER não configurado.");
+  }
+
+  if (!smtpPassword) {
+    throw new Error("SMTP_PASSWORD não configurado.");
   }
 
   if (!emailFrom) {
@@ -26,8 +37,6 @@ export async function sendJornadaAccessEmail({
   if (!siteUrl) {
     throw new Error("NEXT_PUBLIC_SITE_URL não configurada.");
   }
-
-  const resend = new Resend(resendApiKey);
 
   const jornadaUrl = `${siteUrl}/jornada?order=${orderId}`;
 
@@ -90,11 +99,25 @@ Ponto Cego`;
     </div>
   `;
 
-  return resend.emails.send({
+  const transporter = nodemailer.createTransport({
+    host: smtpHost,
+    port: smtpPort,
+    secure: smtpPort === 465,
+    auth: {
+      user: smtpUser,
+      pass: smtpPassword,
+    },
+  });
+
+  const info = await transporter.sendMail({
     from: emailFrom,
     to,
     subject,
     text,
     html,
   });
+
+  return {
+    id: info.messageId,
+  };
 }
