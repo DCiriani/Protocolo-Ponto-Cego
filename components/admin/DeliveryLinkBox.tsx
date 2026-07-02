@@ -18,6 +18,7 @@ export default function DeliveryLinkBox({
 
   const [token, setToken] = useState(initialToken);
   const [isCreating, setIsCreating] = useState(false);
+  const [isSendingEmail, setIsSendingEmail] = useState(false);
 
   const deliveryUrl =
     token && typeof window !== "undefined"
@@ -43,11 +44,59 @@ export default function DeliveryLinkBox({
       setToken(result.token);
       router.refresh();
 
-      alert("Link de entrega gerado com sucesso.");
+      if (result?.emailSent) {
+        alert("Link gerado e e-mail enviado com sucesso.");
+      } else if (result?.emailError) {
+        alert(
+          `Link gerado, mas o e-mail não foi enviado. Erro: ${result.emailError}`
+        );
+      } else {
+        alert("Link de entrega gerado com sucesso.");
+      }
     } catch {
       alert("Erro ao gerar link de entrega.");
     } finally {
       setIsCreating(false);
+    }
+  }
+
+  async function sendDeliveryEmail() {
+    setIsSendingEmail(true);
+
+    try {
+      const response = await fetch(`/api/admin/analises/${id}/delivery`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          forceEmail: true,
+        }),
+      });
+
+      const result = await response.json().catch(() => null);
+
+      if (!response.ok) {
+        alert(result?.message ?? "Não foi possível enviar o e-mail.");
+        setIsSendingEmail(false);
+        return;
+      }
+
+      if (result?.token) {
+        setToken(result.token);
+      }
+
+      router.refresh();
+
+      if (result?.emailSent) {
+        alert("E-mail da leitura enviado com sucesso.");
+      } else {
+        alert(result?.emailError ?? "Não foi possível enviar o e-mail.");
+      }
+    } catch {
+      alert("Erro ao enviar e-mail da leitura.");
+    } finally {
+      setIsSendingEmail(false);
     }
   }
 
@@ -87,8 +136,8 @@ Diego Ciriani`;
       </h2>
 
       <p className="mt-4 max-w-2xl text-sm leading-7 text-zinc-500">
-        Gere um link privado para a pessoa acessar a Leitura Ponto Cego. O link
-        só funciona se a entrega estiver ativada.
+        Gere um link privado para a pessoa acessar a Leitura Ponto Cego. Ao
+        gerar o link, o sistema envia automaticamente o e-mail para o cliente.
       </p>
 
       {token && deliveryEnabled ? (
@@ -104,10 +153,19 @@ Diego Ciriani`;
           <div className="mt-6 flex flex-wrap gap-3">
             <button
               type="button"
-              onClick={copyDeliveryMessage}
-              className="rounded-full bg-[#88B39A] px-5 py-3 text-sm font-semibold text-[#0A0A0A] transition hover:bg-[#9fcaad]"
+              onClick={sendDeliveryEmail}
+              disabled={isSendingEmail}
+              className="rounded-full bg-[#88B39A] px-5 py-3 text-sm font-semibold text-[#0A0A0A] transition hover:bg-[#9fcaad] disabled:cursor-not-allowed disabled:opacity-60"
             >
-              Copiar mensagem de entrega
+              {isSendingEmail ? "Enviando..." : "Enviar por e-mail"}
+            </button>
+
+            <button
+              type="button"
+              onClick={copyDeliveryMessage}
+              className="rounded-full border border-[#88B39A]/30 px-5 py-3 text-sm font-medium text-[#88B39A] transition hover:bg-[#88B39A]/10"
+            >
+              Copiar mensagem
             </button>
 
             <button
