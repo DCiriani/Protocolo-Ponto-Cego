@@ -77,14 +77,13 @@ export default function Hero() {
       className="font-satoshi relative min-h-[100svh] overflow-hidden bg-[#050705] text-[#F5F5F3]"
     >
       <Image
-        src="/images/hero-mirror.png"
-        alt="Homem olhando para o espelho"
-        fill
-        priority
-        sizes="100vw"
-        className="object-cover object-[63%_center] opacity-90"
-      />
-
+  src="/images/hero-mirror.png"
+  alt="Homem olhando para o espelho"
+  fill
+  priority
+  sizes="100vw"
+  className="object-cover object-[78%_center] opacity-90 md:object-[63%_center]"
+/>
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(5,7,5,0.98)_0%,rgba(5,7,5,0.88)_35%,rgba(5,7,5,0.38)_62%,rgba(5,7,5,0.86)_100%)]" />
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,rgba(5,7,5,0.18),rgba(5,7,5,0.16)_55%,rgba(5,7,5,0.95)_100%)]" />
 
@@ -100,15 +99,16 @@ export default function Hero() {
             <span>Leitura clínica feita por um psicólogo.</span>
           </div>
 
-          <h1 className="font-satoshi text-[clamp(3.25rem,13vw,5.8rem)] font-black leading-[0.98] tracking-[-0.035em] text-[#F5F5F3] md:text-[clamp(5.5rem,8vw,7.6rem)]">
-            <span className="block">Todo mundo tem</span>
-            <span className="block">
-              um{" "}
-              <span className="text-[#88B39A]">
-                ponto cego
-              </span>
-            </span>
-          </h1>
+          <h1 className="font-satoshi text-[clamp(2.65rem,11.2vw,3.25rem)] font-black leading-[1.02] tracking-[-0.035em] text-[#F5F5F3] md:text-[clamp(5.5rem,8vw,7.6rem)] md:leading-[0.98]">
+  <span className="block whitespace-nowrap">Todo mundo tem</span>
+
+  <span className="block whitespace-nowrap">
+    um{" "}
+    <span className="text-[#88B39A]">
+      ponto cego
+    </span>
+  </span>
+</h1>
 
           <p className="mt-10 max-w-[560px] text-[clamp(2rem,8vw,3.2rem)] font-medium leading-[1.08] tracking-[-0.035em] text-[#F5F5F3] md:text-[clamp(3rem,4vw,4rem)]">
             O padrão mais difícil
