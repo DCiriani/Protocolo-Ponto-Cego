@@ -63,7 +63,7 @@ export default function About() {
               Quem conduz
             </span>
 
-         <h2 className="max-w-2xl text-[clamp(3.4rem,5vw,5.8rem)] font-semibold leading-[0.95] tracking-[-0.06em] text-[#F5F5F3]">
+         <h2 className="max-w-2xl text-[clamp(3.4rem,5vw,5.8rem)] font-semibold leading-[0.95] tracking-[-0.045em] text-[#F5F5F3]">
   Diego Ciriani
 </h2>
 
@@ -109,3 +109,4 @@ export default function About() {
     </section>
   );
 }
+

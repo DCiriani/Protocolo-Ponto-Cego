@@ -22,7 +22,7 @@ export default function FinalCTA() {
             Ponto Cego
           </span>
 
-          <h2 className="text-[clamp(3.8rem,6.8vw,7.4rem)] font-semibold leading-[0.9] tracking-[-0.08em] text-[#F5F5F3]">
+          <h2 className="text-[clamp(3.8rem,6.8vw,7.4rem)] font-semibold leading-[1.02] tracking-[-0.055em] text-[#F5F5F3]">
             Os padrões mais difíceis
             <br />
             de enxergar costumam ser

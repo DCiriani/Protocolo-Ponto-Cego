@@ -93,7 +93,7 @@ export default function Receive() {
                     Leitura
                   </p>
 
-                  <h3 className="mt-5 text-5xl font-semibold leading-none tracking-[-0.06em] text-[#F5F5F3] md:text-7xl">
+                  <h3 className="mt-5 text-5xl font-semibold leading-[1.04] tracking-[-0.045em] text-[#F5F5F3] md:text-7xl">
                     Ponto
                     <br />
                     Cego
@@ -140,3 +140,4 @@ function PreviewLine({ title }: { title: string }) {
     </div>
   );
 }
+

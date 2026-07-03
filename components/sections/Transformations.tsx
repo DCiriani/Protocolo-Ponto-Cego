@@ -43,7 +43,7 @@ export default function Transformations() {
             Clareza
           </span>
 
-          <h2 className="max-w-5xl text-[clamp(3.4rem,7vw,6.8rem)] font-semibold leading-[1.08] tracking-[-0.065em] text-[#F5F5F3]">
+          <h2 className="max-w-5xl text-[clamp(3.4rem,7vw,6.8rem)] font-semibold leading-[1.08] tracking-[-0.045em] text-[#F5F5F3]">
   <span className="block">O que começa a mudar</span>
 
   <span className="block">
@@ -87,3 +87,4 @@ export default function Transformations() {
     </section>
   );
 }
+

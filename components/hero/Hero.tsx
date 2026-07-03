@@ -26,7 +26,7 @@ export default function Hero() {
             <span>Leitura clínica feita por um psicólogo.</span>
           </div>
 
-          <h1 className="text-[2.85rem] font-semibold leading-[0.96] tracking-[-0.06em] text-[#F5F5F3] sm:text-[3.4rem] md:text-[4.6rem] lg:text-[clamp(3.6rem,5.1vw,5.25rem)]">
+          <h1 className="text-[2.85rem] font-semibold leading-[1.02] tracking-[-0.045em] text-[#F5F5F3] sm:text-[3.4rem] md:text-[4.6rem] lg:text-[clamp(3.6rem,5.1vw,5.25rem)]">
             <span className="block">Todo mundo tem</span>
             <span className="block">um ponto cego.</span>
           </h1>
@@ -40,7 +40,7 @@ export default function Hero() {
     de enxergar
   </span>
 
-  <span className="mt-1 block font-heading text-[2.4rem] leading-[0.9] text-[#88B39A] sm:text-[3rem] md:text-[4rem] lg:text-[clamp(3rem,4vw,4.4rem)]">
+  <span className="mt-1 block font-heading text-[2.4rem] leading-[1.02] text-[#88B39A] sm:text-[3rem] md:text-[4rem] lg:text-[clamp(3rem,4vw,4.4rem)]">
     é o seu.
   </span>
 </p>
