@@ -16,9 +16,9 @@ export default function Story() {
       {phrases.map((phrase, index) => (
         <div
           key={phrase}
-          className="relative flex min-h-[84svh] items-center overflow-hidden border-t border-white/[0.04] md:min-h-screen"
+          className="relative flex min-h-[34svh] items-center overflow-hidden border-t border-white/[0.04] md:min-h-[38svh]"
         >
-          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(136,179,154,0.08),transparent_38%)]" />
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(136,179,154,0.04),transparent_55%)]" />
 
           <Container className="relative z-10">
             <motion.div

@@ -40,7 +40,7 @@ export default function FAQ() {
   return (
     <section
       id="perguntas"
-      className="relative overflow-hidden bg-[#0A0A0A] py-32 md:py-44"
+      className="relative overflow-hidden bg-[#0A0A0A] py-20 md:py-28 lg:py-32"
     >
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_25%_40%,rgba(136,179,154,0.07),transparent_34%)]" />
 

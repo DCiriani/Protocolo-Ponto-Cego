@@ -7,28 +7,29 @@ export default function Why() {
   return (
     <section
       id="porque"
-      className="relative overflow-hidden bg-[#0A0A0A] py-32 md:py-44"
+      className="relative overflow-hidden bg-[#0A0A0A] pt-16 pb-20 md:pt-20 md:pb-28 lg:pt-24 lg:pb-32"
     >
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(136,179,154,0.08),transparent_32%)]" />
 
       <Container className="relative z-10">
-        <div className="grid gap-20 lg:grid-cols-[0.9fr_1.1fr] lg:gap-28">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.4 }}
-            transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-          >
+  <div className="relative">
+    <motion.div
+      initial={{ opacity: 0, y: 32 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-80px" }}
+      transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+    >
             <span className="mb-8 block text-sm uppercase tracking-[0.35em] text-zinc-600">
               A origem
             </span>
 
-            <h2 className="max-w-xl text-[clamp(3.5rem,6vw,7rem)] font-semibold leading-[0.92] tracking-[-0.07em] text-[#F5F5F3]">
-              Por que criei a{" "}
-              <span className="font-heading text-[#88B39A]">
-                Análise Ponto Cego?
-              </span>
-            </h2>
+           <h2 className="max-w-4xl text-[3.25rem] font-semibold leading-[1] tracking-[-0.06em] text-[#F5F5F3] md:text-7xl lg:text-[5.2rem]">
+  <span className="block">Por que criei a</span>
+
+  <span className="mt-4 block font-heading text-[0.76em] leading-[1.22] text-[#88B39A] md:text-[0.8em]">
+    Análise Ponto Cego?
+  </span>
+</h2>
           </motion.div>
 
           <motion.div
@@ -40,7 +41,7 @@ export default function Why() {
               delay: 0.12,
               ease: [0.22, 1, 0.36, 1],
             }}
-            className="max-w-2xl"
+            className="mt-12 max-w-2xl md:mt-14"
           >
             <div className="space-y-8 text-[18px] leading-9 text-zinc-400 md:text-[20px] md:leading-10">
               <p>

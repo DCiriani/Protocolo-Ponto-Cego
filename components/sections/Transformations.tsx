@@ -28,7 +28,7 @@ const items = [
 
 export default function Transformations() {
   return (
-    <section className="relative overflow-hidden bg-[#0A0A0A] py-32 md:py-44">
+    <section className="relative overflow-hidden bg-[#0A0A0A] py-20 md:py-28 lg:py-32">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_20%,rgba(136,179,154,0.07),transparent_35%)]" />
 
       <Container className="relative z-10">
@@ -43,10 +43,16 @@ export default function Transformations() {
             Clareza
           </span>
 
-          <h2 className="text-[clamp(3.8rem,7vw,8rem)] font-semibold leading-[0.92] tracking-[-0.07em] text-[#F5F5F3]">
-            O que começa a mudar quando você{" "}
-            <span className="font-heading text-[#88B39A]">enxerga.</span>
-          </h2>
+          <h2 className="max-w-5xl text-[clamp(3.4rem,7vw,6.8rem)] font-semibold leading-[1.08] tracking-[-0.065em] text-[#F5F5F3]">
+  <span className="block">O que começa a mudar</span>
+
+  <span className="block">
+    quando você{" "}
+    <span className="font-heading text-[1.18em] leading-none text-[#88B39A]">
+      enxerga.
+    </span>
+  </span>
+</h2>
         </motion.div>
 
         <div className="mt-24 grid border-t border-white/10 lg:grid-cols-2">

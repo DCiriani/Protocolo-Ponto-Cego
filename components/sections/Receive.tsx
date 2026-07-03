@@ -13,7 +13,7 @@ const items = [
 
 export default function Receive() {
   return (
-    <section className="relative overflow-hidden bg-[#0A0A0A] py-32 md:py-44">
+    <section className="relative overflow-hidden bg-[#0A0A0A] py-20 md:py-28 lg:py-32">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_70%_45%,rgba(136,179,154,0.09),transparent_36%)]" />
 
       <Container className="relative z-10">

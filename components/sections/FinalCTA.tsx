@@ -6,7 +6,7 @@ import Button from "@/components/ui/Button";
 
 export default function FinalCTA() {
   return (
-    <section className="relative flex min-h-screen items-center overflow-hidden bg-[#0A0A0A] py-32">
+    <section className="relative flex min-h-[72svh] items-center overflow-hidden bg-[#0A0A0A] py-20 md:py-28 lg:py-32">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(136,179,154,0.1),transparent_38%)]" />
 
       <Container className="relative z-10">
