@@ -57,47 +57,59 @@ export default function Hero() {
             </Button>
           </div>
 
-          <div className="mt-8 grid max-w-[620px] gap-3 sm:grid-cols-3">
-  <div className="rounded-[1.25rem] border border-white/10 bg-white/[0.035] px-4 py-4">
-    <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-[#88B39A]/12 text-lg text-[#A8C9B3]">
-      ✓
+         <div className="mt-6 grid max-w-[620px] grid-cols-1 gap-3 sm:grid-cols-3">
+  <div className="rounded-[1.35rem] border border-white/10 bg-[#0F0F0F] px-4 py-4">
+    <div className="flex items-center gap-3 sm:flex-col sm:items-start">
+      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#88B39A]/10 text-[#88B39A]">
+        ✓
+      </div>
+
+      <div>
+        <p className="text-[0.92rem] font-semibold leading-tight text-[#F5F5F3]">
+          Feita pessoalmente
+        </p>
+
+        <p className="mt-1 text-xs leading-5 text-zinc-500 sm:text-sm">
+          Lida por mim
+        </p>
+      </div>
     </div>
-
-    <p className="text-[0.95rem] font-semibold leading-tight text-[#F5F5F3]">
-      Feita pessoalmente
-    </p>
-
-    <p className="mt-1 text-sm leading-5 text-zinc-500">
-      Lida por mim
-    </p>
   </div>
 
-  <div className="rounded-[1.25rem] border border-white/10 bg-white/[0.035] px-4 py-4">
-    <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-[#88B39A]/12 text-lg text-[#A8C9B3]">
-      ↯
+  <div className="rounded-[1.35rem] border border-white/10 bg-[#0F0F0F] px-4 py-4">
+    <div className="flex items-center gap-3 sm:flex-col sm:items-start">
+      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#88B39A]/10 text-[#88B39A]">
+        ↯
+      </div>
+
+      <div>
+        <p className="text-[0.92rem] font-semibold leading-tight text-[#F5F5F3]">
+          Até 48h
+        </p>
+
+        <p className="mt-1 text-xs leading-5 text-zinc-500 sm:text-sm">
+          Prazo de entrega
+        </p>
+      </div>
     </div>
-
-    <p className="text-[0.95rem] font-semibold leading-tight text-[#F5F5F3]">
-      Até 48h
-    </p>
-
-    <p className="mt-1 text-sm leading-5 text-zinc-500">
-      Prazo de entrega
-    </p>
   </div>
 
-  <div className="rounded-[1.25rem] border border-white/10 bg-white/[0.035] px-4 py-4">
-    <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-[#88B39A]/12 text-lg text-[#A8C9B3]">
-      ∅
+  <div className="rounded-[1.35rem] border border-white/10 bg-[#0F0F0F] px-4 py-4">
+    <div className="flex items-center gap-3 sm:flex-col sm:items-start">
+      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#88B39A]/10 text-[#88B39A]">
+        ∅
+      </div>
+
+      <div>
+        <p className="text-[0.92rem] font-semibold leading-tight text-[#F5F5F3]">
+          Sem IA
+        </p>
+
+        <p className="mt-1 text-xs leading-5 text-zinc-500 sm:text-sm">
+          Leitura humana
+        </p>
+      </div>
     </div>
-
-    <p className="text-[0.95rem] font-semibold leading-tight text-[#F5F5F3]">
-      Sem IA
-    </p>
-
-    <p className="mt-1 text-sm leading-5 text-zinc-500">
-      Leitura humana
-    </p>
   </div>
 </div>
         </motion.div>
