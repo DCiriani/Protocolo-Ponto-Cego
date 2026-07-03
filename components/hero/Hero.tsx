@@ -5,141 +5,196 @@ import { motion } from "framer-motion";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 
+function ShieldIcon() {
+  return (
+    <svg viewBox="0 0 24 24" className="h-8 w-8" fill="none">
+      <path
+        d="M12 3 5 6v6c0 4.4 2.9 7.6 7 9 4.1-1.4 7-4.6 7-9V6l-7-3Z"
+        stroke="currentColor"
+        strokeWidth="1.6"
+      />
+      <path
+        d="M9.5 12.2h5"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+      />
+      <path
+        d="M10 12.2V10a2 2 0 1 1 4 0v2.2"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
+function ClockIcon() {
+  return (
+    <svg viewBox="0 0 24 24" className="h-8 w-8" fill="none">
+      <circle cx="12" cy="12" r="8" stroke="currentColor" strokeWidth="1.6" />
+      <path
+        d="M12 7.5V12l3.2 2.1"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
+function TargetIcon() {
+  return (
+    <svg viewBox="0 0 24 24" className="h-8 w-8" fill="none">
+      <circle cx="12" cy="12" r="7" stroke="currentColor" strokeWidth="1.6" />
+      <circle cx="12" cy="12" r="2" fill="currentColor" />
+      <path d="M12 2v4" stroke="currentColor" strokeWidth="1.6" />
+      <path d="M12 18v4" stroke="currentColor" strokeWidth="1.6" />
+      <path d="M2 12h4" stroke="currentColor" strokeWidth="1.6" />
+      <path d="M18 12h4" stroke="currentColor" strokeWidth="1.6" />
+    </svg>
+  );
+}
+
+function PersonIcon() {
+  return (
+    <svg viewBox="0 0 24 24" className="h-8 w-8" fill="none">
+      <circle cx="12" cy="8" r="3" stroke="currentColor" strokeWidth="1.6" />
+      <path
+        d="M5.5 20c.8-3.5 3.1-5.2 6.5-5.2s5.7 1.7 6.5 5.2"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
 export default function Hero() {
   return (
     <section
       id="inicio"
-      className="relative min-h-[92svh] overflow-hidden bg-[#0A0A0A]"
+      className="font-satoshi relative min-h-[100svh] overflow-hidden bg-[#050705] text-[#F5F5F3]"
     >
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_82%_58%,rgba(136,179,154,0.12),transparent_34%)]" />
-      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,rgba(10,10,10,0.08),#0A0A0A_96%)]" />
+      <Image
+        src="/images/hero-mirror.png"
+        alt="Homem olhando para o espelho"
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover object-[63%_center] opacity-90"
+      />
 
-      <Container className="relative z-10 grid min-h-[92svh] items-center gap-12 pb-16 pt-28 md:pt-24 lg:grid-cols-[minmax(0,0.95fr)_minmax(360px,0.75fr)]">
+      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(5,7,5,0.98)_0%,rgba(5,7,5,0.88)_35%,rgba(5,7,5,0.38)_62%,rgba(5,7,5,0.86)_100%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,rgba(5,7,5,0.18),rgba(5,7,5,0.16)_55%,rgba(5,7,5,0.95)_100%)]" />
+
+      <Container className="relative z-10 flex min-h-[100svh] flex-col justify-center pb-12 pt-36">
         <motion.div
           initial={{ opacity: 0, y: 26 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-          className="relative z-20 max-w-[660px]"
+          className="max-w-[640px]"
         >
-          <div className="mb-7 inline-flex items-center gap-3 text-xs text-zinc-400 sm:text-sm">
-            <span className="h-2 w-2 rounded-full bg-[#88B39A]" />
+          <div className="mb-10 inline-flex items-center gap-3 text-base text-zinc-300">
+            <span className="h-2.5 w-2.5 rounded-full bg-[#88B39A]" />
             <span>Leitura clínica feita por um psicólogo.</span>
           </div>
 
-          <h1 className="text-[2.85rem] font-semibold leading-[1.02] tracking-[-0.045em] text-[#F5F5F3] sm:text-[3.4rem] md:text-[4.6rem] lg:text-[clamp(3.6rem,5.1vw,5.25rem)]">
+          <h1 className="font-satoshi text-[clamp(3.25rem,13vw,5.8rem)] font-black leading-[0.98] tracking-[-0.035em] text-[#F5F5F3] md:text-[clamp(5.5rem,8vw,7.6rem)]">
             <span className="block">Todo mundo tem</span>
-            <span className="block">um ponto cego.</span>
+            <span className="block">
+              um{" "}
+              <span className="text-[#88B39A]">
+                ponto cego
+              </span>
+            </span>
           </h1>
 
-          <p className="mt-7 max-w-xl font-medium tracking-[-0.04em] text-[#F5F5F3]">
-  <span className="block text-[1.55rem] leading-[1.04] sm:text-[1.9rem] md:text-[2.55rem] lg:text-[clamp(1.9rem,2.6vw,2.7rem)]">
-    O padrão mais difícil
-  </span>
+          <p className="mt-10 max-w-[560px] text-[clamp(2rem,8vw,3.2rem)] font-medium leading-[1.08] tracking-[-0.035em] text-[#F5F5F3] md:text-[clamp(3rem,4vw,4rem)]">
+            O padrão mais difícil
+            <br />
+            de enxergar{" "}
+            <span className="text-[#88B39A]">
+              é o seu.
+            </span>
+          </p>
 
-  <span className="block text-[1.45rem] leading-[1.04] sm:text-[1.75rem] md:text-[2.25rem] lg:text-[clamp(1.7rem,2.25vw,2.35rem)]">
-    de enxergar
-  </span>
-
-  <span className="mt-1 block font-heading text-[2.4rem] leading-[1.02] text-[#88B39A] sm:text-[3rem] md:text-[4rem] lg:text-[clamp(3rem,4vw,4.4rem)]">
-    é o seu.
-  </span>
-</p>
-
-          <p className="mt-6 max-w-[500px] text-base leading-7 text-zinc-400 md:text-lg md:leading-8">
+          <p className="mt-8 max-w-[520px] text-[1.08rem] leading-8 text-zinc-300 md:text-xl md:leading-9">
             Talvez exista um padrão que continua influenciando suas escolhas,
             seus relacionamentos e seus conflitos sem que você perceba. A
             Análise Ponto Cego foi criada para tornar esse padrão visível.
           </p>
 
-          <div id="comecar" className="mt-8">
-            <Button href="/checkout" className="w-full sm:w-auto">
+          <div id="comecar" className="mt-9">
+            <Button href="/checkout" className="w-full max-w-[470px] sm:w-auto">
               Quero enxergar meus padrões
             </Button>
           </div>
 
-         <div className="mt-6 grid max-w-[620px] grid-cols-1 gap-3 sm:grid-cols-3">
-  <div className="rounded-[1.35rem] border border-white/10 bg-[#0F0F0F] px-4 py-4">
-    <div className="flex items-center gap-3 sm:flex-col sm:items-start">
-      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#88B39A]/10 text-[#88B39A]">
-        ✓
-      </div>
+          <div className="mt-10 max-w-[520px] rounded-[1.7rem] border border-white/10 bg-black/35 p-6 backdrop-blur-sm">
+            <div className="flex items-center gap-5">
+              <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-[#88B39A]/12 text-[#88B39A]">
+                <PersonIcon />
+              </div>
 
-      <div>
-        <p className="text-[0.92rem] font-semibold leading-tight text-[#F5F5F3]">
-          Feita pessoalmente
-        </p>
-
-        <p className="mt-1 text-xs leading-5 text-zinc-500 sm:text-sm">
-          Lida por mim
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <div className="rounded-[1.35rem] border border-white/10 bg-[#0F0F0F] px-4 py-4">
-    <div className="flex items-center gap-3 sm:flex-col sm:items-start">
-      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#88B39A]/10 text-[#88B39A]">
-        ↯
-      </div>
-
-      <div>
-        <p className="text-[0.92rem] font-semibold leading-tight text-[#F5F5F3]">
-          Até 48h
-        </p>
-
-        <p className="mt-1 text-xs leading-5 text-zinc-500 sm:text-sm">
-          Prazo de entrega
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <div className="rounded-[1.35rem] border border-white/10 bg-[#0F0F0F] px-4 py-4">
-    <div className="flex items-center gap-3 sm:flex-col sm:items-start">
-      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#88B39A]/10 text-[#88B39A]">
-        ∅
-      </div>
-
-      <div>
-        <p className="text-[0.92rem] font-semibold leading-tight text-[#F5F5F3]">
-          Sem IA
-        </p>
-
-        <p className="mt-1 text-xs leading-5 text-zinc-500 sm:text-sm">
-          Leitura humana
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
+              <div>
+                <p className="text-xl font-bold leading-tight text-[#F5F5F3]">
+                  Feita pessoalmente
+                </p>
+                <p className="mt-1 text-base leading-7 text-zinc-300">
+                  Cada análise é feita por mim, psicólogo especialista em relacionamento.
+                </p>
+              </div>
+            </div>
+          </div>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, x: 40, scale: 0.98 }}
-          animate={{ opacity: 1, x: 0, scale: 1 }}
-          transition={{
-            duration: 1,
-            delay: 0.15,
-            ease: [0.22, 1, 0.36, 1],
-          }}
-          className="relative z-10 hidden lg:block"
-        >
-          <div className="pointer-events-none absolute inset-0 rounded-full bg-[#88B39A]/10 blur-[130px]" />
+        <div className="mt-16 grid gap-6 border-t border-white/10 pt-8 md:grid-cols-3">
+          <div className="flex items-center gap-5">
+            <div className="flex h-16 w-16 shrink-0 items-center justify-center text-[#88B39A]">
+              <ShieldIcon />
+            </div>
 
-        <div className="relative ml-auto h-[500px] max-w-[430px] overflow-hidden rounded-[2rem] border border-white/10 bg-[#0F0F0F]/80 xl:h-[560px] xl:max-w-[470px] xl:rounded-[2.5rem]">
-  <Image
-    src="/images/diego-ciriani.png"
-    alt="Diego Ciriani"
-    fill
-    priority
-    sizes="36vw"
-    className="object-cover object-[center_28%] opacity-95"
-  />
+            <div>
+              <p className="text-lg font-semibold text-[#F5F5F3]">
+                Sigilo absoluto
+              </p>
+              <p className="mt-1 text-base leading-7 text-zinc-300">
+                Sua privacidade é prioridade.
+              </p>
+            </div>
+          </div>
 
-  <div className="absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-[#0A0A0A] via-[#0A0A0A]/40 to-transparent" />
-  <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/60 to-transparent" />
-</div>
-        </motion.div>
+          <div className="flex items-center gap-5 border-white/10 md:border-l md:pl-10">
+            <div className="flex h-16 w-16 shrink-0 items-center justify-center text-[#88B39A]">
+              <ClockIcon />
+            </div>
+
+            <div>
+              <p className="text-lg font-semibold text-[#F5F5F3]">
+                Leitura profunda
+              </p>
+              <p className="mt-1 text-base leading-7 text-zinc-300">
+                Mais que respostas, clareza real.
+              </p>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-5 border-white/10 md:border-l md:pl-10">
+            <div className="flex h-16 w-16 shrink-0 items-center justify-center text-[#88B39A]">
+              <TargetIcon />
+            </div>
+
+            <div>
+              <p className="text-lg font-semibold text-[#F5F5F3]">
+                Foco no que importa
+              </p>
+              <p className="mt-1 text-base leading-7 text-zinc-300">
+                Seus padrões, suas escolhas, sua vida.
+              </p>
+            </div>
+          </div>
+        </div>
       </Container>
     </section>
   );

@@ -141,3 +141,6 @@ body{
 .font-heading{
   font-family:var(--font-cormorant);
 }
+.font-satoshi {
+  font-family: "Satoshi", var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+}
