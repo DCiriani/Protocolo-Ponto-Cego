@@ -70,6 +70,20 @@ function PersonIcon() {
   );
 }
 
+function NoAIIcon() {
+  return (
+    <svg viewBox="0 0 24 24" className="h-8 w-8" fill="none">
+      <circle cx="12" cy="12" r="8" stroke="currentColor" strokeWidth="1.6" />
+      <path
+        d="M7 17 17 7"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
 export default function Hero() {
   return (
     <section
@@ -131,22 +145,61 @@ export default function Hero() {
             </Button>
           </div>
 
-          <div className="mt-10 max-w-[520px] rounded-[1.7rem] border border-white/10 bg-black/35 p-6 backdrop-blur-sm">
-            <div className="flex items-center gap-5">
-              <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-[#88B39A]/12 text-[#88B39A]">
-                <PersonIcon />
-              </div>
+          <div className="mt-10 grid max-w-[560px] gap-4">
+  <div className="rounded-[2rem] border border-white/10 bg-black/35 px-6 py-6 backdrop-blur-sm transition hover:border-[#88B39A]/30 hover:bg-black/45">
+    <div className="flex items-center gap-5">
+      <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-[#88B39A]/12 text-[#88B39A]">
+        <PersonIcon />
+      </div>
 
-              <div>
-                <p className="text-xl font-bold leading-tight text-[#F5F5F3]">
-                  Feita pessoalmente
-                </p>
-                <p className="mt-1 text-base leading-7 text-zinc-300">
-                  Cada análise é feita por mim, psicólogo especialista em relacionamento.
-                </p>
-              </div>
-            </div>
-          </div>
+      <div>
+        <p className="text-xl font-bold leading-tight tracking-[-0.02em] text-[#F5F5F3]">
+          Feita pessoalmente
+        </p>
+
+        <p className="mt-1 text-base leading-7 text-zinc-400">
+          Lida por mim, uma a uma.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div className="rounded-[2rem] border border-white/10 bg-black/35 px-6 py-6 backdrop-blur-sm transition hover:border-[#88B39A]/30 hover:bg-black/45">
+    <div className="flex items-center gap-5">
+      <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-[#88B39A]/12 text-[#88B39A]">
+        <ClockIcon />
+      </div>
+
+      <div>
+        <p className="text-xl font-bold leading-tight tracking-[-0.02em] text-[#F5F5F3]">
+          Até 48h
+        </p>
+
+        <p className="mt-1 text-base leading-7 text-zinc-400">
+          Prazo claro de entrega.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div className="rounded-[2rem] border border-white/10 bg-black/35 px-6 py-6 backdrop-blur-sm transition hover:border-[#88B39A]/30 hover:bg-black/45">
+    <div className="flex items-center gap-5">
+      <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-[#88B39A]/12 text-[#88B39A]">
+        <NoAIIcon />
+      </div>
+
+      <div>
+        <p className="text-xl font-bold leading-tight tracking-[-0.02em] text-[#F5F5F3]">
+          Sem IA
+        </p>
+
+        <p className="mt-1 text-base leading-7 text-zinc-400">
+          Nenhuma leitura automática.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
         </motion.div>
 
         <div className="mt-16 grid gap-6 border-t border-white/10 pt-8 md:grid-cols-3">
