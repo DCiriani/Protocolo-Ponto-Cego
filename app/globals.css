@@ -149,6 +149,8 @@ h2,
 h3,
 h4 {
   font-family: "Satoshi", var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  letter-spacing: -0.018em !important;
+  word-spacing: 0.08em;
 }
 
 /* Garante que palavras destacadas dentro de títulos também usem Satoshi */
