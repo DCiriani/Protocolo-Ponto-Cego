@@ -145,56 +145,56 @@ export default function Hero() {
             </Button>
           </div>
 
-          <div className="mt-10 grid max-w-[560px] gap-4">
-  <div className="rounded-[2rem] border border-white/10 bg-black/35 px-6 py-6 backdrop-blur-sm transition hover:border-[#88B39A]/30 hover:bg-black/45">
-    <div className="flex items-center gap-5">
-      <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-[#88B39A]/12 text-[#88B39A]">
+          <div className="mt-8 grid max-w-[520px] gap-3">
+  <div className="rounded-[1.6rem] border border-white/10 bg-black/30 px-5 py-4 backdrop-blur-sm">
+    <div className="flex items-center gap-4">
+      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#88B39A]/10 text-[#88B39A]">
         <PersonIcon />
       </div>
 
       <div>
-        <p className="text-xl font-bold leading-tight tracking-[-0.02em] text-[#F5F5F3]">
+        <p className="text-base font-semibold leading-tight tracking-[-0.02em] text-[#F5F5F3]">
           Feita pessoalmente
         </p>
 
-        <p className="mt-1 text-base leading-7 text-zinc-400">
-          Lida por mim, uma a uma.
+        <p className="mt-1 text-sm leading-5 text-zinc-500">
+          Lida por mim
         </p>
       </div>
     </div>
   </div>
 
-  <div className="rounded-[2rem] border border-white/10 bg-black/35 px-6 py-6 backdrop-blur-sm transition hover:border-[#88B39A]/30 hover:bg-black/45">
-    <div className="flex items-center gap-5">
-      <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-[#88B39A]/12 text-[#88B39A]">
+  <div className="rounded-[1.6rem] border border-white/10 bg-black/30 px-5 py-4 backdrop-blur-sm">
+    <div className="flex items-center gap-4">
+      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#88B39A]/10 text-[#88B39A]">
         <ClockIcon />
       </div>
 
       <div>
-        <p className="text-xl font-bold leading-tight tracking-[-0.02em] text-[#F5F5F3]">
+        <p className="text-base font-semibold leading-tight tracking-[-0.02em] text-[#F5F5F3]">
           Até 48h
         </p>
 
-        <p className="mt-1 text-base leading-7 text-zinc-400">
-          Prazo claro de entrega.
+        <p className="mt-1 text-sm leading-5 text-zinc-500">
+          Prazo de entrega
         </p>
       </div>
     </div>
   </div>
 
-  <div className="rounded-[2rem] border border-white/10 bg-black/35 px-6 py-6 backdrop-blur-sm transition hover:border-[#88B39A]/30 hover:bg-black/45">
-    <div className="flex items-center gap-5">
-      <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-[#88B39A]/12 text-[#88B39A]">
+  <div className="rounded-[1.6rem] border border-white/10 bg-black/30 px-5 py-4 backdrop-blur-sm">
+    <div className="flex items-center gap-4">
+      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#88B39A]/10 text-[#88B39A]">
         <NoAIIcon />
       </div>
 
       <div>
-        <p className="text-xl font-bold leading-tight tracking-[-0.02em] text-[#F5F5F3]">
+        <p className="text-base font-semibold leading-tight tracking-[-0.02em] text-[#F5F5F3]">
           Sem IA
         </p>
 
-        <p className="mt-1 text-base leading-7 text-zinc-400">
-          Nenhuma leitura automática.
+        <p className="mt-1 text-sm leading-5 text-zinc-500">
+          Leitura humana
         </p>
       </div>
     </div>
