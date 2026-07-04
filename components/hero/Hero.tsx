@@ -76,14 +76,13 @@ export default function Hero() {
             <span>Leitura clínica feita por um psicólogo.</span>
           </div>
 
-          <h1 className="font-satoshi text-[clamp(2.65rem,11.2vw,3.25rem)] font-black leading-[1.02] tracking-[-0.035em] text-[#F5F5F3] md:text-[clamp(5.5rem,8vw,7.6rem)] md:leading-[0.98]">
-            <span className="block whitespace-nowrap">Todo mundo tem</span>
+          <h1 className="mx-auto max-w-[21rem] text-center font-satoshi text-[clamp(2.25rem,9.7vw,2.85rem)] font-black leading-[1.06] tracking-[-0.028em] text-[#F5F5F3] md:mx-0 md:max-w-none md:text-left md:text-[clamp(5.5rem,8vw,7.6rem)] md:leading-[0.98]">
+  <span className="block whitespace-nowrap">Todo mundo tem</span>
 
-            <span className="block whitespace-nowrap">
-              um <span className="text-[#88B39A]">ponto cego</span>
-            </span>
-          </h1>
-
+  <span className="block whitespace-nowrap">
+    um <span className="text-[#88B39A]">ponto cego</span>
+  </span>
+</h1>
           <p className="mt-10 max-w-[560px] text-[clamp(2rem,8vw,3.2rem)] font-medium leading-[1.08] tracking-[-0.035em] text-[#F5F5F3] md:text-[clamp(3rem,4vw,4rem)]">
             O padrão mais difícil
             <br />
