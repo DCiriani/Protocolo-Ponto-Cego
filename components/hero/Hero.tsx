@@ -141,7 +141,7 @@ export default function Hero() {
           </div>
         </motion.div>
 
-        <div className="mt-8 grid max-w-[520px] gap-3 border-t border-white/10 pt-6 md:mt-10 md:max-w-none md:grid-cols-2 md:gap-4">
+        <div className="mt-3 grid max-w-[520px] gap-3 md:mt-4 md:max-w-none md:grid-cols-2 md:gap-4">
           <div className="rounded-[1.6rem] border border-white/10 bg-black/30 px-5 py-4 backdrop-blur-sm">
             <div className="flex items-center gap-4">
               <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#88B39A]/10 text-[#88B39A]">
