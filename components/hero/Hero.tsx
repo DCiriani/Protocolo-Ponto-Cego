@@ -202,52 +202,61 @@ export default function Hero() {
 </div>
         </motion.div>
 
-        <div className="mt-16 grid gap-6 border-t border-white/10 pt-8 md:grid-cols-3">
-          <div className="flex items-center gap-5">
-            <div className="flex h-16 w-16 shrink-0 items-center justify-center text-[#88B39A]">
-              <ShieldIcon />
-            </div>
+        <div className="mt-12 grid max-w-[560px] gap-4 border-t border-white/10 pt-8 md:mt-16 md:max-w-none md:grid-cols-3">
+  <div className="rounded-[2rem] border border-white/10 bg-black/35 px-6 py-6 backdrop-blur-sm transition hover:border-[#88B39A]/30 hover:bg-black/45">
+    <div className="flex items-center gap-5">
+      <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-[#88B39A]/12 text-[#88B39A]">
+        <ShieldIcon />
+      </div>
 
-            <div>
-              <p className="text-lg font-semibold text-[#F5F5F3]">
-                Sigilo absoluto
-              </p>
-              <p className="mt-1 text-base leading-7 text-zinc-300">
-                Sua privacidade é prioridade.
-              </p>
-            </div>
-          </div>
+      <div>
+        <p className="text-xl font-bold leading-tight tracking-[-0.02em] text-[#F5F5F3]">
+          Sigilo absoluto
+        </p>
 
-          <div className="flex items-center gap-5 border-white/10 md:border-l md:pl-10">
-            <div className="flex h-16 w-16 shrink-0 items-center justify-center text-[#88B39A]">
-              <ClockIcon />
-            </div>
+        <p className="mt-1 text-base leading-7 text-zinc-400">
+          Sua privacidade é prioridade.
+        </p>
+      </div>
+    </div>
+  </div>
 
-            <div>
-              <p className="text-lg font-semibold text-[#F5F5F3]">
-                Leitura profunda
-              </p>
-              <p className="mt-1 text-base leading-7 text-zinc-300">
-                Mais que respostas, clareza real.
-              </p>
-            </div>
-          </div>
+  <div className="rounded-[2rem] border border-white/10 bg-black/35 px-6 py-6 backdrop-blur-sm transition hover:border-[#88B39A]/30 hover:bg-black/45">
+    <div className="flex items-center gap-5">
+      <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-[#88B39A]/12 text-[#88B39A]">
+        <ClockIcon />
+      </div>
 
-          <div className="flex items-center gap-5 border-white/10 md:border-l md:pl-10">
-            <div className="flex h-16 w-16 shrink-0 items-center justify-center text-[#88B39A]">
-              <TargetIcon />
-            </div>
+      <div>
+        <p className="text-xl font-bold leading-tight tracking-[-0.02em] text-[#F5F5F3]">
+          Leitura profunda
+        </p>
 
-            <div>
-              <p className="text-lg font-semibold text-[#F5F5F3]">
-                Foco no que importa
-              </p>
-              <p className="mt-1 text-base leading-7 text-zinc-300">
-                Seus padrões, suas escolhas, sua vida.
-              </p>
-            </div>
-          </div>
-        </div>
+        <p className="mt-1 text-base leading-7 text-zinc-400">
+          Mais que respostas, clareza real.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div className="rounded-[2rem] border border-white/10 bg-black/35 px-6 py-6 backdrop-blur-sm transition hover:border-[#88B39A]/30 hover:bg-black/45">
+    <div className="flex items-center gap-5">
+      <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-[#88B39A]/12 text-[#88B39A]">
+        <TargetIcon />
+      </div>
+
+      <div>
+        <p className="text-xl font-bold leading-tight tracking-[-0.02em] text-[#F5F5F3]">
+          Foco no que importa
+        </p>
+
+        <p className="mt-1 text-base leading-7 text-zinc-400">
+          Seus padrões, suas escolhas, sua vida.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
       </Container>
     </section>
   );
