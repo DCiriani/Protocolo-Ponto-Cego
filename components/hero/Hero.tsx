@@ -202,55 +202,52 @@ export default function Hero() {
 </div>
         </motion.div>
 
-        <div className="mt-12 grid max-w-[560px] gap-4 border-t border-white/10 pt-8 md:mt-16 md:max-w-none md:grid-cols-3">
-  <div className="rounded-[2rem] border border-white/10 bg-black/35 px-6 py-6 backdrop-blur-sm transition hover:border-[#88B39A]/30 hover:bg-black/45">
-    <div className="flex items-center gap-5">
-      <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-[#88B39A]/12 text-[#88B39A]">
+        <div className="mt-8 grid gap-3 border-t border-white/10 pt-6 md:mt-10 md:grid-cols-3 md:gap-4">
+  <div className="rounded-[1.5rem] border border-white/10 bg-black/35 px-4 py-4 backdrop-blur-sm">
+    <div className="flex items-center gap-4">
+      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#88B39A]/10 text-[#88B39A]">
         <ShieldIcon />
       </div>
 
-      <div>
-        <p className="text-xl font-bold leading-tight tracking-[-0.02em] text-[#F5F5F3]">
+      <div className="min-w-0">
+        <p className="text-base font-semibold leading-tight text-[#F5F5F3]">
           Sigilo absoluto
         </p>
-
-        <p className="mt-1 text-base leading-7 text-zinc-400">
+        <p className="mt-1 text-sm leading-5 text-zinc-400">
           Sua privacidade é prioridade.
         </p>
       </div>
     </div>
   </div>
 
-  <div className="rounded-[2rem] border border-white/10 bg-black/35 px-6 py-6 backdrop-blur-sm transition hover:border-[#88B39A]/30 hover:bg-black/45">
-    <div className="flex items-center gap-5">
-      <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-[#88B39A]/12 text-[#88B39A]">
+  <div className="rounded-[1.5rem] border border-white/10 bg-black/35 px-4 py-4 backdrop-blur-sm">
+    <div className="flex items-center gap-4">
+      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#88B39A]/10 text-[#88B39A]">
         <ClockIcon />
       </div>
 
-      <div>
-        <p className="text-xl font-bold leading-tight tracking-[-0.02em] text-[#F5F5F3]">
+      <div className="min-w-0">
+        <p className="text-base font-semibold leading-tight text-[#F5F5F3]">
           Leitura profunda
         </p>
-
-        <p className="mt-1 text-base leading-7 text-zinc-400">
+        <p className="mt-1 text-sm leading-5 text-zinc-400">
           Mais que respostas, clareza real.
         </p>
       </div>
     </div>
   </div>
 
-  <div className="rounded-[2rem] border border-white/10 bg-black/35 px-6 py-6 backdrop-blur-sm transition hover:border-[#88B39A]/30 hover:bg-black/45">
-    <div className="flex items-center gap-5">
-      <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-[#88B39A]/12 text-[#88B39A]">
+  <div className="rounded-[1.5rem] border border-white/10 bg-black/35 px-4 py-4 backdrop-blur-sm">
+    <div className="flex items-center gap-4">
+      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#88B39A]/10 text-[#88B39A]">
         <TargetIcon />
       </div>
 
-      <div>
-        <p className="text-xl font-bold leading-tight tracking-[-0.02em] text-[#F5F5F3]">
+      <div className="min-w-0">
+        <p className="text-base font-semibold leading-tight text-[#F5F5F3]">
           Foco no que importa
         </p>
-
-        <p className="mt-1 text-base leading-7 text-zinc-400">
+        <p className="mt-1 text-sm leading-5 text-zinc-400">
           Seus padrões, suas escolhas, sua vida.
         </p>
       </div>
