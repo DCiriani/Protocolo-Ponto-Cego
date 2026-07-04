@@ -4,10 +4,10 @@ import { motion } from "framer-motion";
 import Container from "@/components/ui/Container";
 
 const phrases = [
-  "Existem histórias que se repetem.",
-  "Mudam os rostos.",
-  "Muda o cenário.",
-  "O roteiro permanece.",
+  "Existem histórias que se repetem",
+  "Mudam os rostos",
+  "Muda o cenário",
+  "Mas algo continua acontecendo do mesmo jeito",
 ];
 
 export default function Story() {
@@ -35,7 +35,7 @@ export default function Story() {
                 0{index + 1}
               </span>
 
-              <h2 className="text-[3.1rem] font-semibold leading-[0.95] tracking-[-0.07em] text-[#F5F5F3] sm:text-[3.8rem] md:text-[clamp(4rem,8vw,9rem)]">
+              <h2 className="font-satoshi text-[2.65rem] font-semibold leading-[1.04] tracking-[-0.018em] text-[#F5F5F3] sm:text-[3.2rem] md:text-[clamp(3.4rem,6.5vw,6.8rem)]">
                 {phrase}
               </h2>
             </motion.div>
