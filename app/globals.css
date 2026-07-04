@@ -144,3 +144,17 @@ body{
 .font-satoshi {
   font-family: "Satoshi", var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
 }
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Satoshi", var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Garante que palavras destacadas dentro de títulos também usem Satoshi */
+h1 .font-heading,
+h2 .font-heading,
+h3 .font-heading,
+h4 .font-heading {
+  font-family: "Satoshi", var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+}
