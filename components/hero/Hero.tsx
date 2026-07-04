@@ -154,7 +154,7 @@ export default function Hero() {
                 </p>
 
                 <p className="mt-1 text-sm leading-5 text-zinc-400">
-                  Mais que respostas, clareza real.
+                  Mais que respostas, direcionamento real.
                 </p>
               </div>
             </div>
