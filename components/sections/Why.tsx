@@ -32,16 +32,15 @@ export default function Why() {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 28 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.25 }}
-          transition={{
-            duration: 0.9,
-            delay: 0.08,
-            ease: [0.22, 1, 0.36, 1],
-          }}
-          className="mt-8 max-w-2xl md:mt-14"
-        >
+  initial={{ opacity: 0, y: 12 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true, amount: 0.01 }}
+  transition={{
+    duration: 0.55,
+    ease: [0.22, 1, 0.36, 1],
+  }}
+  className="mt-8 max-w-2xl md:mt-12"
+>
           <div className="space-y-7 text-[18px] leading-9 text-zinc-400 md:space-y-8 md:text-[20px] md:leading-10">
             <p>
               Durante mais de uma década atendendo pessoas em psicoterapia,
