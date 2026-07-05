@@ -76,7 +76,6 @@ export default function Why() {
           <div className="mt-12 border-l border-[#88B39A] pl-6 md:mt-14 md:pl-7">
             <p className="font-heading text-3xl leading-[1.15] text-[#F5F5F3] md:text-5xl">
               A mudança nem sempre começa quando a vida muda.
-              <br />
               <span className="text-[#88B39A]">
                 Ela começa quando você finalmente consegue enxergá-la de outra
                 forma.
