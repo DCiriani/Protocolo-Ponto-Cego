@@ -25,7 +25,7 @@ export default function Why() {
           <h2 className="max-w-[22rem] font-satoshi text-[clamp(2.25rem,9.4vw,2.85rem)] font-black uppercase leading-[1.04] tracking-[-0.02em] text-[#F5F5F3] md:max-w-4xl md:text-[clamp(4.6rem,7vw,5.9rem)] md:leading-[0.98]">
   <span className="block">Por que criei a</span>
 
-  <span className="mt-3 block whitespace-nowrap text-[0.72em] leading-[1.08] text-[#88B39A] md:mt-4 md:text-[0.72em]">
+  <span className="mt-3 block text-[#88B39A] md:mt-4">
     Análise Ponto Cego?
   </span>
 </h2>
@@ -75,12 +75,11 @@ export default function Why() {
 
           <div className="mt-12 border-l border-[#88B39A] pl-6 md:mt-14 md:pl-7">
             <p className="font-heading text-3xl leading-[1.15] text-[#F5F5F3] md:text-5xl">
-              A mudança nem sempre começa quando a vida muda.
-              <span className="text-[#88B39A]">
-                Ela começa quando você finalmente consegue enxergá-la de outra
-                forma.
-              </span>
-            </p>
+  A mudança nem sempre começa quando a vida muda.{" "}
+  <span className="text-[#88B39A]">
+    Ela começa quando você finalmente consegue enxergá-la de outra forma.
+  </span>
+</p>
           </div>
         </motion.div>
       </Container>
