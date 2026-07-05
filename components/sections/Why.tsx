@@ -22,13 +22,13 @@ export default function Why() {
             A origem
           </span>
 
-          <h2 className="max-w-4xl text-[3.2rem] font-semibold leading-[1.02] tracking-[-0.045em] text-[#F5F5F3] md:text-7xl lg:text-[5.2rem]">
-            <span className="block">Por que criei a</span>
+          <h2 className="max-w-[22rem] font-satoshi text-[clamp(2.25rem,9.4vw,2.85rem)] font-black uppercase leading-[1.04] tracking-[-0.02em] text-[#F5F5F3] md:max-w-4xl md:text-[clamp(4.6rem,7vw,5.9rem)] md:leading-[0.98]">
+  <span className="block">Por que criei a</span>
 
-            <span className="mt-3 block font-heading text-[0.72em] leading-[1.18] text-[#88B39A] md:mt-4 md:text-[0.8em]">
-              Análise Ponto Cego?
-            </span>
-          </h2>
+  <span className="mt-3 block text-[#88B39A] md:mt-4">
+    Análise Ponto Cego?
+  </span>
+</h2>
         </motion.div>
 
         <motion.div
