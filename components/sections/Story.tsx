@@ -13,10 +13,10 @@ const phrases = [
 export default function Story() {
   return (
     <section className="relative bg-[#0A0A0A]">
-      {phrases.map((phrase) => (
+      {phrases.map((phrase, index) => (
         <div
           key={phrase}
-          className="relative flex min-h-[18svh] items-center overflow-hidden border-t border-white/[0.04] md:min-h-[20svh]"
+          className="relative flex min-h-[22svh] items-center overflow-hidden border-t border-white/[0.04] md:min-h-[24svh]"
         >
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(136,179,154,0.04),transparent_55%)]" />
 
@@ -31,7 +31,13 @@ export default function Story() {
               }}
               className="max-w-5xl"
             >
-              <h2 className="font-satoshi text-[2.65rem] font-semibold leading-[1.04] tracking-[-0.018em] text-[#F5F5F3] sm:text-[3.2rem] md:text-[clamp(3.4rem,6.5vw,6.8rem)]">
+              <h2
+                className={
+                  index === phrases.length - 1
+                    ? "font-satoshi text-[2.05rem] font-semibold leading-[1.08] tracking-[-0.018em] text-[#88B39A] sm:text-[2.55rem] md:text-[clamp(3.2rem,5.8vw,6rem)]"
+                    : "font-satoshi text-[2.65rem] font-semibold leading-[1.04] tracking-[-0.018em] text-[#F5F5F3] sm:text-[3.2rem] md:text-[clamp(3.4rem,6.5vw,6.8rem)]"
+                }
+              >
                 {phrase}
               </h2>
             </motion.div>
@@ -41,4 +47,3 @@ export default function Story() {
     </section>
   );
 }
-
