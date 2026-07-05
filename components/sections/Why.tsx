@@ -25,7 +25,7 @@ export default function Why() {
           <h2 className="max-w-[22rem] font-satoshi text-[clamp(2.25rem,9.4vw,2.85rem)] font-black uppercase leading-[1.04] tracking-[-0.02em] text-[#F5F5F3] md:max-w-none md:text-[clamp(4.6rem,7vw,5.9rem)] md:leading-[0.98]">
   <span className="block">Por que criei a</span>
 
-<span className="mt-3 block whitespace-nowrap text-[0.70em] leading-[1.08] text-[#88B39A] md:mt-4 md:text-[0.72em]">
+<span className="mt-3 block whitespace-nowrap text-[0.71em] leading-[1.08] text-[#88B39A] md:mt-4 md:text-[0.72em]">
   Análise Ponto Cego?
 </span>
 </h2>
