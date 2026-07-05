@@ -41,11 +41,11 @@ export default function Process() {
               O processo
             </span>
 
-           <h2 className="max-w-[22rem] font-satoshi text-[clamp(2.65rem,11vw,3.35rem)] font-black uppercase leading-[1.02] tracking-[-0.03em] text-[#F5F5F3] md:max-w-xl md:text-[clamp(4.2rem,6vw,6.4rem)] md:leading-[0.94]">
+           <h2 className="max-w-[22rem] font-satoshi text-[clamp(2.65rem,10.4vw,3.25rem)] font-black uppercase leading-[1.02] tracking-[-0.025em] text-[#F5F5F3] md:max-w-xl md:text-[clamp(4.2rem,6vw,6.4rem)] md:leading-[0.94]">
   <span className="block">Como sua</span>
 
-  <span className="mt-2 block whitespace-nowrap text-[#88B39A] md:mt-3">
-    leitura acontece.
+  <span className="mt-2 block whitespace-nowrap text-[0.56em] leading-[1.08] text-[#88B39A] md:mt-3 md:text-[0.68em]">
+    leitura acontece
   </span>
 </h2>
 
