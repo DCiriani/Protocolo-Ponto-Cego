@@ -41,13 +41,13 @@ export default function Process() {
               O processo
             </span>
 
-            <h2 className="max-w-xl text-[clamp(3.5rem,6vw,7rem)] font-semibold leading-[0.92] tracking-[-0.07em] text-[#F5F5F3]">
-              Como sua{" "}
-              <span className="font-heading text-[#88B39A]">
-                leitura
-              </span>{" "}
-              acontece.
-            </h2>
+           <h2 className="max-w-[22rem] font-satoshi text-[clamp(2.65rem,11vw,3.35rem)] font-black uppercase leading-[1.02] tracking-[-0.03em] text-[#F5F5F3] md:max-w-xl md:text-[clamp(4.2rem,6vw,6.4rem)] md:leading-[0.94]">
+  <span className="block">Como sua</span>
+
+  <span className="mt-2 block whitespace-nowrap text-[#88B39A] md:mt-3">
+    leitura acontece.
+  </span>
+</h2>
 
             <p className="mt-10 max-w-lg text-lg leading-9 text-zinc-400">
               A Análise Ponto Cego não procura descobrir quem está certo.
