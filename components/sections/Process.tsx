@@ -25,7 +25,7 @@ export default function Process() {
   return (
     <section
       id="como"
-      className="relative overflow-hidden bg-[#0A0A0A] py-20 md:py-28 lg:py-32"
+      className="relative overflow-hidden bg-[#0A0A0A] pt-6 pb-16 md:pt-12 md:pb-24 lg:pt-14 lg:pb-28"
     >
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_80%_30%,rgba(136,179,154,0.08),transparent_34%)]" />
 
