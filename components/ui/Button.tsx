@@ -20,7 +20,7 @@ const baseClasses = `
   text-center
   text-[15px]
   font-semibold
-  text-[#0A0A0A]
+  text-white
   transition-all
   duration-300
   hover:scale-[1.01]
