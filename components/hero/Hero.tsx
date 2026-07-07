@@ -136,9 +136,8 @@ export default function Hero() {
   </span>
 </h1>
 
-            <p className="mt-7 max-w-[24rem] font-serif text-[1.25rem] leading-[1.32] tracking-[-0.02em] text-[#F5F5F3] sm:max-w-none sm:text-[1.45rem] md:mt-10 md:text-[2rem]">
-  <span className="block">O padrão mais difícil</span>
-  <span className="block">de enxergar é o seu.</span>
+            <p className="mt-7 max-w-none whitespace-nowrap font-serif text-[0.98rem] leading-tight tracking-[-0.01em] text-[#F5F5F3] min-[390px]:text-[1.05rem] sm:text-[1.35rem] md:mt-10 md:text-[2rem]">
+  O padrão mais difícil de enxergar é o seu.
 </p>
 
             <p className="mt-6 max-w-[21rem] text-[0.95rem] leading-7 text-zinc-300 sm:max-w-[540px] sm:text-[1rem] md:text-lg md:leading-8">
