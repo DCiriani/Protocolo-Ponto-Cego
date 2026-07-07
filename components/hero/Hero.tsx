@@ -114,7 +114,7 @@ export default function Hero() {
   </div>
 
   {/* IPAD / TABLET */}
-  <div className="absolute inset-0 hidden origin-top-right translate-x-[130px] -translate-y-[270px] scale-[1.42] md:block xl:hidden">
+  <div className="absolute inset-0 hidden origin-top-right translate-x-[130px] -translate-y-[270px] scale-[1.30] md:block xl:hidden">
     <Image
       src="/images/hero-mirror-ipad.png"
       alt="Homem diante de um espelho escuro"
