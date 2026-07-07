@@ -14,7 +14,7 @@ const baseClasses = `
   justify-center
   gap-4
   rounded-[0.65rem]
-  bg-[#88B39A]
+  bg-[#5F7A4F]
   px-8
   py-5
   text-center
@@ -24,7 +24,7 @@ const baseClasses = `
   transition-all
   duration-300
   hover:scale-[1.01]
-  hover:bg-[#9FC2AD]
+  hover:bg-[#6D895B]
   active:scale-[0.98]
 `;
 
