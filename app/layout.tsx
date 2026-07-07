@@ -25,11 +25,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="pt-BR"
-      className={`${manrope.variable} ${cormorant.variable}`}
-    >
-      <body>{children}</body>
+    <html lang="pt-BR">
+      <head>
+        <link
+          rel="stylesheet"
+          href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap"
+        />
+      </head>
+
+      <body className={`${manrope.variable} ${cormorant.variable}`}>
+        {children}
+      </body>
     </html>
   );
 }
