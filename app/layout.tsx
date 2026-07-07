@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Manrope, Cormorant_Garamond } from "next/font/google";
+import { Manrope, Bodoni_Moda } from "next/font/google";
 import "./globals.css";
 
 const manrope = Manrope({
@@ -7,9 +7,9 @@ const manrope = Manrope({
   variable: "--font-manrope",
 });
 
-const cormorant = Cormorant_Garamond({
+const bodoni = Bodoni_Moda({
   subsets: ["latin"],
-  variable: "--font-cormorant",
+  variable: "--font-bodoni",
   weight: ["400", "500", "600", "700"],
 });
 
@@ -33,7 +33,7 @@ export default function RootLayout({
         />
       </head>
 
-      <body className={`${manrope.variable} ${cormorant.variable}`}>
+      <body className={`${manrope.variable} ${bodoni.variable}`}>
         {children}
       </body>
     </html>
