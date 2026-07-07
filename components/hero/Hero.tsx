@@ -101,7 +101,7 @@ export default function Hero() {
       className="relative overflow-hidden bg-[#050705] text-[#F5F5F3]"
     >
      <div className="absolute inset-0 overflow-hidden">
-  <div className="absolute inset-0 translate-x-[70px] -translate-y-[110px] scale-[1.28] origin-top-right md:translate-x-[140px] md:-translate-y-[220px] md:scale-[1.42] lg:translate-x-[180px] lg:-translate-y-[250px] lg:scale-[1.48] xl:translate-x-[120px] xl:-translate-y-[120px] xl:scale-[1.22]">
+  <div className="absolute inset-0 translate-x-[70px] -translate-y-[110px] scale-[1.28] origin-top-right md:translate-x-[180px] md:-translate-y-[250px] md:scale-[1.42] lg:translate-x-[200px] lg:-translate-y-[280px] lg:scale-[1.48] xl:translate-x-[120px] xl:-translate-y-[120px] xl:scale-[1.22]">
     <Image
       src="/images/hero-mirror.png"
       alt="Homem diante de um espelho escuro"
