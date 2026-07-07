@@ -147,14 +147,14 @@ export default function Hero() {
               partir das suas respostas, criada para tornar esse padrão visível.
             </p>
 
-            <div id="comecar" className="mt-8">
-              <Button
-  href="/checkout"
-  className="w-full max-w-[360px] px-4 py-3.5 text-[0.8rem] tracking-[0.02em] whitespace-nowrap sm:w-auto"
->
-  Quero enxergar meus padrões
-</Button>
-            </div>
+<div id="comecar" className="mt-8">
+  <Button
+    href="/checkout"
+    className="!w-fit !max-w-none !rounded-[0.5rem] !px-5 !py-3 !text-[0.78rem] !tracking-[0.02em] whitespace-nowrap"
+  >
+    Quero enxergar meus padrões
+  </Button>
+</div>
 
             <div className="mt-7 flex flex-wrap items-center gap-x-4 gap-y-2 text-[0.82rem] leading-5 text-zinc-400 sm:text-sm md:text-base">
               <span>Entrega em até 48h</span>
