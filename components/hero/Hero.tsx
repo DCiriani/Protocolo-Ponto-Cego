@@ -130,7 +130,8 @@ export default function Hero() {
             </div>
 
             <h1 className="max-w-none font-[family-name:var(--font-bodoni)] text-[2.08rem] font-normal uppercase leading-[1.08] tracking-[0.02em] text-[#F5F5F3] min-[390px]:text-[2.25rem] sm:text-[3.6rem] md:text-[clamp(5.6rem,8vw,8rem)] md:leading-[0.96]">
-<span className="block whitespace-nowrap text-[#7FA66F]">
+  <span className="block whitespace-nowrap">Todo mundo tem</span>
+  <span className="block whitespace-nowrap text-[#88B39A]">
   um Ponto cego
 </span>
 </h1>
