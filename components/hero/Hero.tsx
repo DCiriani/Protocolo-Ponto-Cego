@@ -140,7 +140,7 @@ export default function Hero() {
   O padrão mais difícil de enxergar é o seu.
 </p>
 
-            <p className="mt-6 max-w-[18.5rem] text-[0.84rem] leading-7 text-zinc-300 sm:max-w-[540px] sm:text-[1rem] md:text-lg md:leading-8">
+            <p className="mt-6 max-w-[18.5rem] text-[0.84rem] leading-8 text-zinc-300 sm:max-w-[540px] sm:text-[1rem] md:text-lg md:leading-8">
               Existe um padrão influenciando suas escolhas, seus relacionamentos
               e seus conflitos sem que você perceba. A Análise Ponto Cego é uma
               leitura clínica escrita, feita pessoalmente por um psicólogo a
