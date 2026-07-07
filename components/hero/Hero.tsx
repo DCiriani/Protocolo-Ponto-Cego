@@ -101,7 +101,32 @@ export default function Hero() {
       className="relative overflow-hidden bg-[#050705] text-[#F5F5F3]"
     >
      <div className="absolute inset-0 overflow-hidden">
-  <div className="absolute inset-0 translate-x-[70px] -translate-y-[110px] scale-[1.28] origin-top-right md:translate-x-[180px] md:-translate-y-[270px] md:scale-[1.42] lg:translate-x-[200px] lg:-translate-y-[300px] lg:scale-[1.48] xl:translate-x-[120px] xl:-translate-y-[120px] xl:scale-[1.22]">
+  {/* CELULAR */}
+  <div className="absolute inset-0 block translate-x-[70px] -translate-y-[110px] scale-[1.28] origin-top-right md:hidden">
+    <Image
+      src="/images/hero-mirror.png"
+      alt="Homem diante de um espelho escuro"
+      fill
+      priority
+      sizes="100vw"
+      className="object-cover object-[88%_top] opacity-95"
+    />
+  </div>
+
+  {/* IPAD / TABLET */}
+  <div className="absolute inset-0 hidden origin-top-right translate-x-[180px] -translate-y-[270px] scale-[1.42] md:block xl:hidden">
+    <Image
+      src="/images/hero-mirror-ipad.png"
+      alt="Homem diante de um espelho escuro"
+      fill
+      priority
+      sizes="100vw"
+      className="object-cover object-[88%_top] opacity-95"
+    />
+  </div>
+
+  {/* COMPUTADOR */}
+  <div className="absolute inset-0 hidden origin-top-right translate-x-[120px] -translate-y-[120px] scale-[1.22] xl:block">
     <Image
       src="/images/hero-mirror.png"
       alt="Homem diante de um espelho escuro"
