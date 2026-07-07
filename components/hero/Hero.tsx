@@ -192,29 +192,29 @@ export default function Hero() {
           </div>
 
           <div className="mt-10 grid grid-cols-2 gap-3 md:mt-16 md:max-w-[900px] md:gap-5">
-            {benefits.map((item) => {
-              const Icon = item.icon;
+  {benefits.map((item) => {
+    const Icon = item.icon;
 
-              return (
-                <div
-                  key={item.title}
-                  className="min-h-[235px] rounded-[1.15rem] border border-white/10 bg-[linear-gradient(145deg,rgba(18,22,20,0.92),rgba(7,9,8,0.9))] p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.05),0_18px_45px_rgba(0,0,0,0.28)] backdrop-blur-md md:min-h-[210px] md:p-7"
-                >
-                  <div className="mb-10 flex h-10 w-10 items-center justify-center text-[#88B39A] md:mb-5">
-                    <Icon />
-                  </div>
+    return (
+      <div
+        key={item.title}
+        className="aspect-[0.92/1] rounded-[1.25rem] border border-white/10 bg-[linear-gradient(145deg,rgba(18,22,20,0.94),rgba(7,9,8,0.92))] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.05),0_18px_45px_rgba(0,0,0,0.28)] backdrop-blur-md md:aspect-auto md:min-h-[210px] md:p-7"
+      >
+        <div className="mb-8 flex h-8 w-8 items-center justify-center text-[#88B39A] md:mb-5 md:h-10 md:w-10">
+          <Icon />
+        </div>
 
-                  <h3 className="font-satoshi text-[1.15rem] font-medium leading-tight tracking-[-0.02em] text-[#F5F5F3] md:font-serif md:text-[1.6rem]">
-                    {item.title}
-                  </h3>
+        <h3 className="font-satoshi text-[0.98rem] font-medium leading-[1.18] tracking-[-0.02em] text-[#F5F5F3] md:font-serif md:text-[1.6rem]">
+          {item.title}
+        </h3>
 
-                  <p className="mt-4 text-[0.78rem] leading-5 text-zinc-400 md:text-base md:leading-7">
-                    {item.text}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
+        <p className="mt-4 text-[0.68rem] leading-[1.55] text-zinc-400 md:text-base md:leading-7">
+          {item.text}
+        </p>
+      </div>
+    );
+  })}
+</div>
         </motion.div>
       </Container>
     </section>
