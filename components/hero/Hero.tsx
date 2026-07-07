@@ -100,20 +100,19 @@ export default function Hero() {
       id="inicio"
       className="relative overflow-hidden bg-[#050705] text-[#F5F5F3]"
     >
-      <div className="absolute inset-0">
-        <Image
-          src="/images/hero-mirror.png"
-          alt="Homem diante de um espelho escuro"
-          fill
-          priority
-          sizes="100vw"
-className="object-cover object-[82%_top] opacity-95 -translate-y-16 scale-[1.12] origin-top-right md:object-[78%_top] md:-translate-y-12 md:scale-[1.1] lg:object-[82%_top] lg:-translate-y-10 lg:scale-[1.08] xl:translate-y-0 xl:scale-100"
-        />
+      <div className="absolute inset-0 overflow-hidden">
+  <Image
+    src="/images/hero-mirror.png"
+    alt="Homem diante de um espelho escuro"
+    fill
+    priority
+    sizes="100vw"
+    className="object-cover object-[88%_top] opacity-95 translate-x-10 -translate-y-20 scale-[1.28] origin-top-right md:object-[88%_top] md:translate-x-16 md:-translate-y-24 md:scale-[1.32] lg:object-[90%_top] lg:translate-x-20 lg:-translate-y-24 lg:scale-[1.28] xl:object-[88%_top] xl:translate-x-16 xl:-translate-y-16 xl:scale-[1.16]"
+  />
 
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(5,7,5,0.98)_0%,rgba(5,7,5,0.92)_38%,rgba(5,7,5,0.55)_67%,rgba(5,7,5,0.82)_100%)]" />
-        <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(5,7,5,0.1)_0%,rgba(5,7,5,0.2)_45%,rgba(5,7,5,0.88)_74%,#050705_100%)]" />
-      </div>
-
+  <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(5,7,5,0.98)_0%,rgba(5,7,5,0.92)_38%,rgba(5,7,5,0.55)_67%,rgba(5,7,5,0.82)_100%)]" />
+  <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(5,7,5,0.1)_0%,rgba(5,7,5,0.2)_45%,rgba(5,7,5,0.88)_74%,#050705_100%)]" />
+</div>
       <Container className="relative z-10 pb-14 pt-32 md:pb-24 md:pt-40">
         <motion.div
           initial={{ opacity: 0, y: 26 }}
