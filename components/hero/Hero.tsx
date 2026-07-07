@@ -198,17 +198,17 @@ export default function Hero() {
               return (
                 <div
                   key={item.title}
-                  className="min-h-[170px] rounded-[1.15rem] border border-white/10 bg-[linear-gradient(145deg,rgba(18,22,20,0.92),rgba(7,9,8,0.9))] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.05),0_18px_45px_rgba(0,0,0,0.28)] backdrop-blur-md sm:min-h-[185px] sm:p-5 md:min-h-[210px] md:p-7"
+                  className="min-h-[235px] rounded-[1.15rem] border border-white/10 bg-[linear-gradient(145deg,rgba(18,22,20,0.92),rgba(7,9,8,0.9))] p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.05),0_18px_45px_rgba(0,0,0,0.28)] backdrop-blur-md md:min-h-[210px] md:p-7"
                 >
-                  <div className="mb-5 flex h-10 w-10 items-center justify-center text-[#88B39A]">
+                  <div className="mb-10 flex h-10 w-10 items-center justify-center text-[#88B39A] md:mb-5">
                     <Icon />
                   </div>
 
-                  <h3 className="font-serif text-[1.08rem] leading-tight tracking-[-0.02em] text-[#F5F5F3] sm:text-[1.18rem] md:text-[1.6rem]">
+                  <h3 className="font-satoshi text-[1.15rem] font-medium leading-tight tracking-[-0.02em] text-[#F5F5F3] md:font-serif md:text-[1.6rem]">
                     {item.title}
                   </h3>
 
-                  <p className="mt-3 text-[0.8rem] leading-5 text-zinc-400 sm:text-[0.86rem] sm:leading-6 md:text-base md:leading-7">
+                  <p className="mt-4 text-[0.78rem] leading-5 text-zinc-400 md:text-base md:leading-7">
                     {item.text}
                   </p>
                 </div>
