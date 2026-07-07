@@ -198,7 +198,7 @@ export default function Hero() {
               return (
                 <div
                   key={item.title}
-                  className="min-h-[170px] rounded-[1.15rem] border border-white/10 bg-black/40 p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] backdrop-blur-sm sm:min-h-[185px] sm:p-5 md:min-h-[210px] md:p-7"
+                  className="min-h-[170px] rounded-[1.15rem] border border-white/10 bg-[linear-gradient(145deg,rgba(18,22,20,0.92),rgba(7,9,8,0.9))] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.05),0_18px_45px_rgba(0,0,0,0.28)] backdrop-blur-md sm:min-h-[185px] sm:p-5 md:min-h-[210px] md:p-7"
                 >
                   <div className="mb-5 flex h-10 w-10 items-center justify-center text-[#88B39A]">
                     <Icon />
