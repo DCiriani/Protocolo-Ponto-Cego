@@ -131,7 +131,9 @@ export default function Hero() {
             </div>
 
             <h1 className="max-w-[95vw] font-[family-name:var(--font-bodoni)] text-[2.08rem] font-medium uppercase leading-[1.08] tracking-[0.02em] text-[#F5F5F3] min-[390px]:text-[2.25rem] sm:text-[3.2rem] md:text-[4.35rem] lg:text-[4.9rem] xl:text-[6.2rem] 2xl:text-[7rem] md:leading-[0.98]">
-  <span className="block whitespace-nowrap">Todo mundo tem</span>
+  <span className="block whitespace-nowrap md:text-[3.8rem] lg:text-[4.3rem] xl:text-[6.2rem] 2xl:text-[7rem]">
+  Todo mundo tem
+</span>
   <span className="block whitespace-nowrap text-[#6F8F5E]">
     um Ponto cego
   </span>
