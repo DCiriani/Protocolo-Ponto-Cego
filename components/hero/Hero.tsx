@@ -46,144 +46,159 @@ function PersonIcon() {
   );
 }
 
+function DocumentIcon() {
+  return (
+    <svg viewBox="0 0 24 24" className="h-7 w-7" fill="none">
+      <path
+        d="M6.5 3.5h7.2L18 7.8v12.7H6.5V3.5Z"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M13.5 3.8v4.3h4.3"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M9 12h6M9 15h6"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
+const benefits = [
+  {
+    icon: PersonIcon,
+    title: "Feita pessoalmente",
+    text: "Pelo psicólogo Diego Ciriani. Sem IA, sem resposta pronta.",
+  },
+  {
+    icon: ClockIcon,
+    title: "Até 48h",
+    text: "Da sua resposta até a leitura no seu e-mail.",
+  },
+  {
+    icon: DocumentIcon,
+    title: "Leitura profunda",
+    text: "Mais que respostas, direcionamento real.",
+  },
+  {
+    icon: TargetIcon,
+    title: "100% individual",
+    text: "Nenhum modelo genérico. Construída a partir da sua história.",
+  },
+];
+
 export default function Hero() {
   return (
     <section
       id="inicio"
-      className="font-satoshi relative min-h-[100svh] overflow-hidden bg-[#050705] text-[#F5F5F3]"
+      className="font-satoshi relative overflow-hidden bg-[#050705] text-[#F5F5F3]"
     >
-      <Image
-        src="/images/hero-mirror.png"
-        alt="Homem olhando para o espelho"
-        fill
-        priority
-        sizes="100vw"
-        className="object-cover object-[78%_center] opacity-90 md:object-[63%_center]"
-      />
+      <div className="absolute inset-0">
+        <Image
+          src="/images/hero-mirror.png"
+          alt="Homem diante de um espelho escuro"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-[73%_top] opacity-90 md:object-[68%_center]"
+        />
 
-      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(5,7,5,0.98)_0%,rgba(5,7,5,0.88)_35%,rgba(5,7,5,0.38)_62%,rgba(5,7,5,0.86)_100%)]" />
-      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,rgba(5,7,5,0.18),rgba(5,7,5,0.16)_55%,rgba(5,7,5,0.95)_100%)]" />
-
-      <Container className="relative z-10 flex min-h-[100svh] flex-col justify-center pb-12 pt-36">
-  <motion.div
-    initial={{ opacity: 0, y: 26 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-    className="w-full"
-  >
-    <div className="max-w-[640px]">
-      <div className="mb-10 inline-flex items-center gap-3 text-base text-zinc-300">
-        <span className="h-2.5 w-2.5 rounded-full bg-[#88B39A]" />
-        <span>Leitura clínica feita por um psicólogo.</span>
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(5,7,5,0.98)_0%,rgba(5,7,5,0.9)_34%,rgba(5,7,5,0.45)_62%,rgba(5,7,5,0.86)_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(5,7,5,0.05)_0%,rgba(5,7,5,0.1)_48%,rgba(5,7,5,0.94)_82%,#050705_100%)]" />
       </div>
 
-      <h1 className="mx-auto max-w-[21rem] text-center font-satoshi text-[clamp(2.12rem,9.2vw,2.68rem)] font-black uppercase leading-[1.06] tracking-[-0.018em] text-[#F5F5F3] md:mx-0 md:max-w-none md:text-left md:text-[clamp(5.5rem,8vw,7.6rem)] md:leading-[0.98]">
-        <span className="block whitespace-nowrap">Todo mundo tem</span>
-
-        <span className="block whitespace-nowrap text-[1.07em] md:text-[1em]">
-          um <span className="text-[#88B39A]">ponto cego</span>
-        </span>
-      </h1>
-
-      <p className="mt-10 max-w-[560px] text-[clamp(2rem,8vw,3.2rem)] font-medium leading-[1.08] tracking-[-0.035em] text-[#F5F5F3] md:text-[clamp(3rem,4vw,4rem)]">
-        O padrão mais difícil
-        <br />
-        de enxergar{" "}
-        <span className="text-[#88B39A]">é o seu.</span>
-      </p>
-
-      <p className="mt-8 max-w-[520px] text-[1.08rem] leading-8 text-zinc-300 md:text-xl md:leading-9">
-        Talvez exista um padrão que continua influenciando suas escolhas,
-        seus relacionamentos e seus conflitos sem que você perceba. A
-        Análise Ponto Cego foi criada para tornar esse padrão visível.
-      </p>
-
-      <div id="comecar" className="mt-9">
-        <Button href="/checkout" className="w-full max-w-[470px] sm:w-auto">
-          Quero enxergar meus padrões
-        </Button>
-      </div>
-    </div>
-
-    <div className="mt-8 grid max-w-[520px] gap-3 md:max-w-none md:grid-cols-2 md:gap-4">
-      <div className="grid gap-3 md:gap-4">
-        <div className="rounded-[1.6rem] border border-white/10 bg-black/30 px-5 py-4 backdrop-blur-sm">
-          <div className="flex items-center gap-4">
-            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#88B39A]/10 text-[#88B39A]">
-              <PersonIcon />
+      <Container className="relative z-10 pb-14 pt-36 md:pb-24 md:pt-44">
+        <motion.div
+          initial={{ opacity: 0, y: 26 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+        >
+          <div className="max-w-[690px]">
+            <div className="mb-10 flex max-w-[360px] items-start gap-3 text-[0.95rem] leading-7 text-zinc-300 md:max-w-none md:text-base">
+              <span className="mt-2 h-2.5 w-2.5 shrink-0 rounded-full bg-[#88B39A] shadow-[0_0_18px_rgba(136,179,154,0.55)]" />
+              <span>
+                Leitura clínica escrita pelo psicólogo Diego Ciriani. CRP
+                04/44668
+              </span>
             </div>
 
-            <div>
-              <p className="text-base font-semibold leading-tight tracking-[-0.02em] text-[#F5F5F3]">
-                Feita pessoalmente
-              </p>
+            <h1 className="font-serif text-[clamp(2.7rem,10.8vw,4.7rem)] font-normal uppercase leading-[1.04] tracking-[-0.035em] text-[#F5F5F3] md:text-[clamp(5.8rem,8vw,8rem)] md:leading-[0.98]">
+              <span className="block whitespace-nowrap">
+                Todo mundo tem um
+              </span>
+              <span className="block whitespace-nowrap text-[#88B39A]">
+                Ponto cego
+              </span>
+            </h1>
 
-              <p className="mt-1 text-sm leading-5 text-zinc-500">
-                Pelo psicólogo Diego Ciriani
-              </p>
+            <p className="mt-8 font-serif text-[1.45rem] leading-[1.25] tracking-[-0.025em] text-[#F5F5F3] md:mt-10 md:text-[2rem]">
+              O padrão mais difícil de enxergar é o seu.
+            </p>
+
+            <p className="mt-7 max-w-[540px] text-[1rem] leading-7 text-zinc-300 md:text-lg md:leading-8">
+              Existe um padrão influenciando suas escolhas, seus relacionamentos
+              e seus conflitos sem que você perceba. A Análise Ponto Cego é uma
+              leitura clínica escrita, feita pessoalmente por um psicólogo a
+              partir das suas respostas, criada para tornar esse padrão visível.
+            </p>
+
+            <div className="mt-9">
+              <Button
+                href="/checkout"
+                className="w-full max-w-[470px] rounded-[0.65rem] py-5 text-[1rem] tracking-[0.08em] md:w-auto"
+              >
+                Quero enxergar meus padrões
+              </Button>
             </div>
-          </div>
-        </div>
 
-        <div className="rounded-[1.6rem] border border-white/10 bg-black/30 px-5 py-4 backdrop-blur-sm">
-          <div className="flex items-center gap-4">
-            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#88B39A]/10 text-[#88B39A]">
-              <ClockIcon />
-            </div>
+            <div className="mt-7 flex flex-wrap items-center gap-x-5 gap-y-3 text-sm text-zinc-400 md:text-base">
+              <div className="flex items-center gap-2">
+                <span className="text-zinc-500">▢</span>
+                <span>Entrega em até 48h</span>
+              </div>
 
-            <div>
-              <p className="text-base font-semibold leading-tight tracking-[-0.02em] text-[#F5F5F3]">
-                Até 48h
-              </p>
+              <span className="text-[#88B39A]">•</span>
 
-              <p className="mt-1 text-sm leading-5 text-zinc-500">
-                Prazo de entrega
-              </p>
+              <div className="flex items-center gap-2">
+                <span className="text-zinc-500">▭</span>
+                <span>Pagamento único de R$97</span>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
 
-      <div className="grid gap-3 md:gap-4">
-        <div className="rounded-[1.6rem] border border-white/10 bg-black/30 px-5 py-4 backdrop-blur-sm">
-          <div className="flex items-center gap-4">
-            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#88B39A]/10 text-[#88B39A]">
-              <ClockIcon />
-            </div>
+          <div className="mt-11 grid grid-cols-2 gap-3 md:mt-16 md:max-w-[900px] md:gap-5">
+            {benefits.map((item) => {
+              const Icon = item.icon;
 
-            <div className="min-w-0">
-              <p className="text-base font-semibold leading-tight text-[#F5F5F3]">
-                Leitura profunda
-              </p>
+              return (
+                <div
+                  key={item.title}
+                  className="min-h-[185px] rounded-[1.35rem] border border-white/10 bg-black/35 p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] backdrop-blur-sm md:min-h-[210px] md:p-7"
+                >
+                  <div className="mb-6 flex h-11 w-11 items-center justify-center text-[#88B39A] md:h-12 md:w-12">
+                    <Icon />
+                  </div>
 
-              <p className="mt-1 text-sm leading-5 text-zinc-400">
-                Mais que respostas, direcionamento real.
-              </p>
-            </div>
+                  <h3 className="font-serif text-[1.2rem] leading-tight tracking-[-0.02em] text-[#F5F5F3] md:text-[1.6rem]">
+                    {item.title}
+                  </h3>
+
+                  <p className="mt-3 text-[0.9rem] leading-6 text-zinc-400 md:text-base md:leading-7">
+                    {item.text}
+                  </p>
+                </div>
+              );
+            })}
           </div>
-        </div>
-
-        <div className="rounded-[1.6rem] border border-white/10 bg-black/30 px-5 py-4 backdrop-blur-sm">
-          <div className="flex items-center gap-4">
-            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#88B39A]/10 text-[#88B39A]">
-              <TargetIcon />
-            </div>
-
-            <div className="min-w-0">
-              <p className="text-base font-semibold leading-tight text-[#F5F5F3]">
-                Foco no que importa
-              </p>
-
-              <p className="mt-1 text-sm leading-5 text-zinc-400">
-                Seus padrões, suas escolhas, sua vida.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </motion.div>
-</Container>
+        </motion.div>
+      </Container>
     </section>
   );
 }
