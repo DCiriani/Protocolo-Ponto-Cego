@@ -107,7 +107,7 @@ export default function Hero() {
           fill
           priority
           sizes="100vw"
-          className="object-cover object-[70%_top] opacity-95 -translate-y-09 scale-[1.05] md:translate-y-0 md:scale-100"
+          className="object-cover object-[70%_top] opacity-95 -translate-y-12 scale-[1.05] md:translate-y-0 md:scale-100"
         />
 
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(5,7,5,0.98)_0%,rgba(5,7,5,0.92)_38%,rgba(5,7,5,0.55)_67%,rgba(5,7,5,0.82)_100%)]" />
@@ -129,7 +129,7 @@ export default function Hero() {
 </span>
             </div>
 
-            <h1 className="max-w-none font-[family-name:var(--font-bodoni)] text-[2.08rem] font-semibold uppercase leading-[1.08] tracking-[0.02em] text-[#F5F5F3] min-[390px]:text-[2.25rem] sm:text-[3.6rem] md:text-[clamp(5.6rem,8vw,8rem)] md:leading-[0.96]">
+            <h1 className="max-w-none font-[family-name:var(--font-bodoni)] text-[2.08rem] font-normal uppercase leading-[1.08] tracking-[0.02em] text-[#F5F5F3] min-[390px]:text-[2.25rem] sm:text-[3.6rem] md:text-[clamp(5.6rem,8vw,8rem)] md:leading-[0.96]">
   <span className="block whitespace-nowrap">Todo mundo tem</span>
   <span className="block whitespace-nowrap text-[#88B39A]">
     um Ponto cego
