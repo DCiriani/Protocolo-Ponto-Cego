@@ -136,11 +136,11 @@ export default function Hero() {
   </span>
 </h1>
 
-            <p className="mt-7 w-fit max-w-[17.5rem] whitespace-nowrap font-serif text-[0.80rem] leading-tight tracking-[-0.01em] text-[#F5F5F3] min-[390px]:text-[0.98rem] sm:max-w-none sm:text-[1.35rem] md:mt-10 md:text-[2rem]">
+            <p className="mt-7 w-fit max-w-[17.5rem] whitespace-nowrap font-serif text-[0.85rem] leading-tight tracking-[-0.01em] text-[#F5F5F3] min-[390px]:text-[0.98rem] sm:max-w-none sm:text-[1.35rem] md:mt-10 md:text-[2rem]">
   O padrão mais difícil de enxergar é o seu.
 </p>
 
-            <p className="mt-6 max-w-[18.5rem] text-[0.84rem] leading-8 text-zinc-300 sm:max-w-[540px] sm:text-[1rem] md:text-lg md:leading-8">
+            <p className="mt-6 max-w-[18.5rem] text-[0.84rem] leading-7 text-zinc-300 [word-spacing:0.06em] sm:max-w-[540px] sm:text-[1rem] md:text-lg md:leading-8">
               Existe um padrão influenciando suas escolhas, seus relacionamentos
               e seus conflitos sem que você perceba. A Análise Ponto Cego é uma
               leitura clínica escrita, feita pessoalmente por um psicólogo a
