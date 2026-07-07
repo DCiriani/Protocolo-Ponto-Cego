@@ -129,11 +129,11 @@ export default function Hero() {
 </span>
             </div>
 
-            <h1 className="max-w-none font-[family-name:var(--font-bodoni)] text-[2.08rem] font-normal uppercase leading-[1.08] tracking-[0.02em] text-[#F5F5F3] min-[390px]:text-[2.25rem] sm:text-[3.6rem] md:text-[clamp(5.6rem,8vw,8rem)] md:leading-[0.96]">
+            <h1 className="max-w-[95vw] font-[family-name:var(--font-bodoni)] text-[2.08rem] font-medium uppercase leading-[1.08] tracking-[0.02em] text-[#F5F5F3] min-[390px]:text-[2.25rem] sm:text-[3.2rem] md:text-[4.35rem] lg:text-[4.9rem] xl:text-[6.2rem] 2xl:text-[7rem] md:leading-[0.98]">
   <span className="block whitespace-nowrap">Todo mundo tem</span>
   <span className="block whitespace-nowrap text-[#6F8F5E]">
-  um Ponto cego
-</span>
+    um Ponto cego
+  </span>
 </h1>
 
             <p className="mt-7 w-fit max-w-[17.5rem] whitespace-nowrap font-serif text-[0.85rem] leading-tight tracking-[-0.01em] text-[#F5F5F3] min-[390px]:text-[0.98rem] sm:max-w-none sm:text-[1.35rem] md:mt-10 md:text-[2rem]">
