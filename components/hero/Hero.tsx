@@ -129,10 +129,12 @@ export default function Hero() {
               </span>
             </div>
 
-            <h1 className="max-w-[21.5rem] font-serif text-[clamp(2.05rem,8.8vw,3.2rem)] font-normal uppercase leading-[1.08] tracking-[-0.035em] text-[#F5F5F3] sm:max-w-[34rem] sm:text-[clamp(2.7rem,10vw,4.9rem)] md:max-w-none md:text-[clamp(5.6rem,8vw,8rem)] md:leading-[0.96]">
-              <span className="block">Todo mundo tem um</span>
-              <span className="block text-[#88B39A]">Ponto cego</span>
-            </h1>
+            <h1 className="max-w-none font-serif text-[2.18rem] font-normal uppercase leading-[1.08] tracking-[-0.035em] text-[#F5F5F3] min-[390px]:text-[2.35rem] sm:text-[3.6rem] md:text-[clamp(5.6rem,8vw,8rem)] md:leading-[0.96]">
+  <span className="block whitespace-nowrap">Todo mundo tem um</span>
+  <span className="block whitespace-nowrap text-[#88B39A]">
+    Ponto cego
+  </span>
+</h1>
 
             <p className="mt-7 max-w-[19rem] font-serif text-[1.15rem] leading-[1.35] tracking-[-0.02em] text-[#F5F5F3] sm:max-w-none sm:text-[1.45rem] md:mt-10 md:text-[2rem]">
               O padrão mais difícil de enxergar é o seu.
@@ -147,11 +149,11 @@ export default function Hero() {
 
             <div id="comecar" className="mt-8">
               <Button
-                href="/checkout"
-                className="w-full max-w-[470px] rounded-[0.65rem] px-6 py-5 text-[0.9rem] tracking-[0.04em] sm:w-auto sm:text-[0.95rem]"
-              >
-                Quero enxergar meus padrões
-              </Button>
+  href="/checkout"
+  className="w-full max-w-[470px] py-5 text-[0.95rem] tracking-[0.08em] sm:w-auto"
+>
+  Quero enxergar meus padrões
+</Button>
             </div>
 
             <div className="mt-7 flex flex-wrap items-center gap-x-4 gap-y-2 text-[0.82rem] leading-5 text-zinc-400 sm:text-sm md:text-base">

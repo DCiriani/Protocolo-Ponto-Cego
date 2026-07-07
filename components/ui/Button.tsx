@@ -13,20 +13,19 @@ const baseClasses = `
   items-center
   justify-center
   gap-4
-  rounded-full
+  rounded-[0.65rem]
   bg-[#88B39A]
-  px-9
+  px-8
   py-5
+  text-center
   text-[15px]
   font-semibold
   text-[#0A0A0A]
   transition-all
   duration-300
-  hover:scale-[1.02]
+  hover:scale-[1.01]
   hover:bg-[#9FC2AD]
   active:scale-[0.98]
-  whitespace-normal
-  text-center
 `;
 
 export default function Button({
@@ -37,7 +36,7 @@ export default function Button({
 }: ButtonProps) {
   const content = (
     <>
-      {children}
+      <span>{children}</span>
       <span className="transition-transform duration-300 group-hover:translate-x-1">
         →
       </span>
