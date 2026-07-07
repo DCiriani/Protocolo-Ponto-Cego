@@ -124,21 +124,22 @@ export default function Hero() {
             <div className="mb-9 flex max-w-[360px] items-start gap-3 text-[0.82rem] leading-6 text-zinc-300 sm:text-[0.95rem] sm:leading-7 md:max-w-none md:text-base">
               <span className="mt-2 h-2.5 w-2.5 shrink-0 rounded-full bg-[#88B39A] shadow-[0_0_18px_rgba(136,179,154,0.55)]" />
               <span>
-                Leitura clínica escrita pelo psicólogo Diego Ciriani. CRP
-                04/44668
-              </span>
+  <span className="block">Leitura clínica escrita pelo psicólogo</span>
+  <span className="block">Diego Ciriani. CRP 04/44668</span>
+</span>
             </div>
 
-            <h1 className="max-w-none font-serif text-[2.18rem] font-normal uppercase leading-[1.08] tracking-[-0.035em] text-[#F5F5F3] min-[390px]:text-[2.35rem] sm:text-[3.6rem] md:text-[clamp(5.6rem,8vw,8rem)] md:leading-[0.96]">
-  <span className="block whitespace-nowrap">Todo mundo tem um</span>
+            <h1 className="max-w-none font-serif text-[2.25rem] font-normal uppercase leading-[1.08] tracking-[-0.035em] text-[#F5F5F3] min-[390px]:text-[2.45rem] sm:text-[3.6rem] md:text-[clamp(5.6rem,8vw,8rem)] md:leading-[0.96]">
+  <span className="block whitespace-nowrap">Todo mundo tem</span>
   <span className="block whitespace-nowrap text-[#88B39A]">
-    Ponto cego
+    um Ponto cego
   </span>
 </h1>
 
-            <p className="mt-7 max-w-[19rem] font-serif text-[1.15rem] leading-[1.35] tracking-[-0.02em] text-[#F5F5F3] sm:max-w-none sm:text-[1.45rem] md:mt-10 md:text-[2rem]">
-              O padrão mais difícil de enxergar é o seu.
-            </p>
+            <p className="mt-7 max-w-[24rem] font-serif text-[1.25rem] leading-[1.32] tracking-[-0.02em] text-[#F5F5F3] sm:max-w-none sm:text-[1.45rem] md:mt-10 md:text-[2rem]">
+  <span className="block">O padrão mais difícil</span>
+  <span className="block">de enxergar é o seu.</span>
+</p>
 
             <p className="mt-6 max-w-[21rem] text-[0.95rem] leading-7 text-zinc-300 sm:max-w-[540px] sm:text-[1rem] md:text-lg md:leading-8">
               Existe um padrão influenciando suas escolhas, seus relacionamentos
