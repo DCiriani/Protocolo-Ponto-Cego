@@ -25,6 +25,8 @@ const baseClasses = `
   hover:scale-[1.02]
   hover:bg-[#9FC2AD]
   active:scale-[0.98]
+  whitespace-normal
+  text-center
 `;
 
 export default function Button({

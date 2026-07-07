@@ -98,7 +98,7 @@ export default function Hero() {
   return (
     <section
       id="inicio"
-      className="font-satoshi relative overflow-hidden bg-[#050705] text-[#F5F5F3]"
+      className="relative overflow-hidden bg-[#050705] text-[#F5F5F3]"
     >
       <div className="absolute inset-0">
         <Image
@@ -107,21 +107,21 @@ export default function Hero() {
           fill
           priority
           sizes="100vw"
-          className="object-cover object-[73%_top] opacity-90 md:object-[68%_center]"
+          className="object-cover object-[70%_top] opacity-95"
         />
 
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(5,7,5,0.98)_0%,rgba(5,7,5,0.9)_34%,rgba(5,7,5,0.45)_62%,rgba(5,7,5,0.86)_100%)]" />
-        <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(5,7,5,0.05)_0%,rgba(5,7,5,0.1)_48%,rgba(5,7,5,0.94)_82%,#050705_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(5,7,5,0.98)_0%,rgba(5,7,5,0.92)_38%,rgba(5,7,5,0.55)_67%,rgba(5,7,5,0.82)_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(5,7,5,0.1)_0%,rgba(5,7,5,0.2)_45%,rgba(5,7,5,0.88)_74%,#050705_100%)]" />
       </div>
 
-      <Container className="relative z-10 pb-14 pt-36 md:pb-24 md:pt-44">
+      <Container className="relative z-10 pb-14 pt-32 md:pb-24 md:pt-40">
         <motion.div
           initial={{ opacity: 0, y: 26 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
         >
-          <div className="max-w-[690px]">
-            <div className="mb-10 flex max-w-[360px] items-start gap-3 text-[0.95rem] leading-7 text-zinc-300 md:max-w-none md:text-base">
+          <div className="max-w-[720px]">
+            <div className="mb-9 flex max-w-[360px] items-start gap-3 text-[0.82rem] leading-6 text-zinc-300 sm:text-[0.95rem] sm:leading-7 md:max-w-none md:text-base">
               <span className="mt-2 h-2.5 w-2.5 shrink-0 rounded-full bg-[#88B39A] shadow-[0_0_18px_rgba(136,179,154,0.55)]" />
               <span>
                 Leitura clínica escrita pelo psicólogo Diego Ciriani. CRP
@@ -129,68 +129,56 @@ export default function Hero() {
               </span>
             </div>
 
-            <h1 className="font-serif text-[clamp(2.7rem,10.8vw,4.7rem)] font-normal uppercase leading-[1.04] tracking-[-0.035em] text-[#F5F5F3] md:text-[clamp(5.8rem,8vw,8rem)] md:leading-[0.98]">
-              <span className="block whitespace-nowrap">
-                Todo mundo tem um
-              </span>
-              <span className="block whitespace-nowrap text-[#88B39A]">
-                Ponto cego
-              </span>
+            <h1 className="max-w-[21.5rem] font-serif text-[clamp(2.05rem,8.8vw,3.2rem)] font-normal uppercase leading-[1.08] tracking-[-0.035em] text-[#F5F5F3] sm:max-w-[34rem] sm:text-[clamp(2.7rem,10vw,4.9rem)] md:max-w-none md:text-[clamp(5.6rem,8vw,8rem)] md:leading-[0.96]">
+              <span className="block">Todo mundo tem um</span>
+              <span className="block text-[#88B39A]">Ponto cego</span>
             </h1>
 
-            <p className="mt-8 font-serif text-[1.45rem] leading-[1.25] tracking-[-0.025em] text-[#F5F5F3] md:mt-10 md:text-[2rem]">
+            <p className="mt-7 max-w-[19rem] font-serif text-[1.15rem] leading-[1.35] tracking-[-0.02em] text-[#F5F5F3] sm:max-w-none sm:text-[1.45rem] md:mt-10 md:text-[2rem]">
               O padrão mais difícil de enxergar é o seu.
             </p>
 
-            <p className="mt-7 max-w-[540px] text-[1rem] leading-7 text-zinc-300 md:text-lg md:leading-8">
+            <p className="mt-6 max-w-[21rem] text-[0.95rem] leading-7 text-zinc-300 sm:max-w-[540px] sm:text-[1rem] md:text-lg md:leading-8">
               Existe um padrão influenciando suas escolhas, seus relacionamentos
               e seus conflitos sem que você perceba. A Análise Ponto Cego é uma
               leitura clínica escrita, feita pessoalmente por um psicólogo a
               partir das suas respostas, criada para tornar esse padrão visível.
             </p>
 
-            <div className="mt-9">
+            <div id="comecar" className="mt-8">
               <Button
                 href="/checkout"
-                className="w-full max-w-[470px] rounded-[0.65rem] py-5 text-[1rem] tracking-[0.08em] md:w-auto"
+                className="w-full max-w-[470px] rounded-[0.65rem] px-6 py-5 text-[0.9rem] tracking-[0.04em] sm:w-auto sm:text-[0.95rem]"
               >
                 Quero enxergar meus padrões
               </Button>
             </div>
 
-            <div className="mt-7 flex flex-wrap items-center gap-x-5 gap-y-3 text-sm text-zinc-400 md:text-base">
-              <div className="flex items-center gap-2">
-                <span className="text-zinc-500">▢</span>
-                <span>Entrega em até 48h</span>
-              </div>
-
+            <div className="mt-7 flex flex-wrap items-center gap-x-4 gap-y-2 text-[0.82rem] leading-5 text-zinc-400 sm:text-sm md:text-base">
+              <span>Entrega em até 48h</span>
               <span className="text-[#88B39A]">•</span>
-
-              <div className="flex items-center gap-2">
-                <span className="text-zinc-500">▭</span>
-                <span>Pagamento único de R$97</span>
-              </div>
+              <span>Pagamento único de R$97</span>
             </div>
           </div>
 
-          <div className="mt-11 grid grid-cols-2 gap-3 md:mt-16 md:max-w-[900px] md:gap-5">
+          <div className="mt-10 grid grid-cols-2 gap-3 md:mt-16 md:max-w-[900px] md:gap-5">
             {benefits.map((item) => {
               const Icon = item.icon;
 
               return (
                 <div
                   key={item.title}
-                  className="min-h-[185px] rounded-[1.35rem] border border-white/10 bg-black/35 p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] backdrop-blur-sm md:min-h-[210px] md:p-7"
+                  className="min-h-[170px] rounded-[1.15rem] border border-white/10 bg-black/40 p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] backdrop-blur-sm sm:min-h-[185px] sm:p-5 md:min-h-[210px] md:p-7"
                 >
-                  <div className="mb-6 flex h-11 w-11 items-center justify-center text-[#88B39A] md:h-12 md:w-12">
+                  <div className="mb-5 flex h-10 w-10 items-center justify-center text-[#88B39A]">
                     <Icon />
                   </div>
 
-                  <h3 className="font-serif text-[1.2rem] leading-tight tracking-[-0.02em] text-[#F5F5F3] md:text-[1.6rem]">
+                  <h3 className="font-serif text-[1.08rem] leading-tight tracking-[-0.02em] text-[#F5F5F3] sm:text-[1.18rem] md:text-[1.6rem]">
                     {item.title}
                   </h3>
 
-                  <p className="mt-3 text-[0.9rem] leading-6 text-zinc-400 md:text-base md:leading-7">
+                  <p className="mt-3 text-[0.8rem] leading-5 text-zinc-400 sm:text-[0.86rem] sm:leading-6 md:text-base md:leading-7">
                     {item.text}
                   </p>
                 </div>
