@@ -150,7 +150,7 @@ export default function Hero() {
             <div id="comecar" className="mt-8">
               <Button
   href="/checkout"
-  className="w-full max-w-[470px] py-5 text-[0.95rem] tracking-[0.08em] sm:w-auto"
+  className="w-full max-w-[390px] py-4 text-[0.86rem] tracking-[0.06em] sm:w-auto"
 >
   Quero enxergar meus padrões
 </Button>

@@ -12,13 +12,13 @@ const baseClasses = `
   inline-flex
   items-center
   justify-center
-  gap-4
-  rounded-[0.65rem]
+  gap-3
+  rounded-[0.55rem]
   bg-[#4F6842]
-  px-8
-  py-5
+  px-6
+  py-4
   text-center
-  text-[15px]
+  text-[14px]
   font-semibold
   text-white
   transition-all
