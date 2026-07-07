@@ -107,7 +107,7 @@ export default function Hero() {
           fill
           priority
           sizes="100vw"
-          className="object-cover object-[82%_top] opacity-95 -translate-y-16 scale-[2.12] origin-top-right md:object-[78%_top] md:-translate-y-12 md:scale-[1.1] lg:object-[82%_top] lg:-translate-y-10 lg:scale-[1.08] xl:translate-y-0 xl:scale-100"
+          className="object-cover object-[82%_top] opacity-95 -translate-y-19 scale-[4.12] origin-top-right md:object-[78%_top] md:-translate-y-12 md:scale-[1.1] lg:object-[82%_top] lg:-translate-y-10 lg:scale-[1.08] xl:translate-y-0 xl:scale-100"
         />
 
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(5,7,5,0.98)_0%,rgba(5,7,5,0.92)_38%,rgba(5,7,5,0.55)_67%,rgba(5,7,5,0.82)_100%)]" />
