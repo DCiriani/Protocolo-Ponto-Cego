@@ -68,7 +68,7 @@ export default function Story() {
       style={{
         backgroundColor: BG,
         backgroundImage:
-          "radial-gradient(circle at 6% 0%, rgba(122,101,67,0.18), rgba(58,47,32,0.06) 25%, transparent 42%)",
+  "radial-gradient(circle at 6% 0%, rgba(122,101,67,0.09), rgba(58,47,32,0.035) 25%, transparent 42%)",
       }}
     >
       {/* Grão cobrindo a seção inteira (sem emenda com o conteúdo) */}
