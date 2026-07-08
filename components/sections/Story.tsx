@@ -18,81 +18,89 @@ export default function Story() {
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,
-    offset: ["start 70%", "end 20%"],
+    offset: ["start 75%", "end 45%"],
   });
 
-  // Blocos de texto: fade + sobe
+  // Blocos de texto: fade + sobe (tudo termina em ~0.88 do progresso)
   const b1 = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
-  const b2 = useTransform(scrollYProgress, [0.2, 0.3], [0, 1]);
-  const b3 = useTransform(scrollYProgress, [0.42, 0.52], [0, 1]);
-  const b4 = useTransform(scrollYProgress, [0.74, 0.86], [0, 1]);
+  const b2 = useTransform(scrollYProgress, [0.18, 0.28], [0, 1]);
+  const b3 = useTransform(scrollYProgress, [0.4, 0.5], [0, 1]);
+  const b4 = useTransform(scrollYProgress, [0.66, 0.78], [0, 1]);
 
   const y1 = useTransform(scrollYProgress, [0, 0.1], [24, 0]);
-  const y2 = useTransform(scrollYProgress, [0.2, 0.3], [24, 0]);
-  const y3 = useTransform(scrollYProgress, [0.42, 0.52], [24, 0]);
-  const y4 = useTransform(scrollYProgress, [0.74, 0.86], [24, 0]);
+  const y2 = useTransform(scrollYProgress, [0.18, 0.28], [24, 0]);
+  const y3 = useTransform(scrollYProgress, [0.4, 0.5], [24, 0]);
+  const y4 = useTransform(scrollYProgress, [0.66, 0.78], [24, 0]);
 
   const circle = useTransform(scrollYProgress, [0, 0.1], [0, 0.6]);
 
-  // Setas (shapes vetorizados da arte): revelação direcional via clip-path
-  // seta1 aponta pra direita -> revela da esquerda pra direita
+  // Setas: revelação direcional via clip-path
   const clip1 = useTransform(
     scrollYProgress,
-    [0.11, 0.2],
+    [0.1, 0.18],
     ["inset(0% 100% 0% 0%)", "inset(0% 0% 0% 0%)"]
   );
-  // seta2 desce e vira pra esquerda -> revela da direita pra esquerda
   const clip2 = useTransform(
     scrollYProgress,
-    [0.31, 0.42],
+    [0.28, 0.4],
     ["inset(0% 0% 0% 100%)", "inset(0% 0% 0% 0%)"]
   );
-  // sublinhado "cenário" -> esquerda pra direita
   const clipU3 = useTransform(
     scrollYProgress,
-    [0.53, 0.6],
+    [0.5, 0.56],
     ["inset(0% 100% 0% 0%)", "inset(0% 0% 0% 0%)"]
   );
-  // seta3 desce -> revela de cima pra baixo
   const clip3 = useTransform(
     scrollYProgress,
-    [0.6, 0.73],
+    [0.56, 0.66],
     ["inset(0% 0% 100% 0%)", "inset(0% 0% 0% 0%)"]
   );
-  // sublinhado final -> esquerda pra direita
   const clipU4 = useTransform(
     scrollYProgress,
-    [0.87, 1],
+    [0.78, 0.88],
     ["inset(0% 100% 0% 0%)", "inset(0% 0% 0% 0%)"]
   );
 
   return (
     <section
       ref={sectionRef}
-      className={`relative overflow-hidden py-20 md:py-28 ${cormorant.className}`}
-      style={{ backgroundColor: BG }}
+      className={`relative overflow-hidden pt-10 pb-16 md:pt-14 md:pb-20 ${cormorant.className}`}
+      style={{
+        backgroundColor: BG,
+        backgroundImage:
+          "radial-gradient(circle at 6% 0%, rgba(122,101,67,0.4), rgba(58,47,32,0.12) 30%, transparent 55%)",
+      }}
     >
-      <div className="relative mx-auto w-full max-w-[430px] px-4 md:max-w-[560px]">
+      {/* Grão cobrindo a seção inteira (sem emenda com o conteúdo) */}
+      <svg
+        className="pointer-events-none absolute inset-0 h-full w-full"
+        preserveAspectRatio="none"
+        aria-hidden="true"
+      >
+        <filter id="story-grain">
+          <feTurbulence
+            type="fractalNoise"
+            baseFrequency="0.65"
+            numOctaves="4"
+            stitchTiles="stitch"
+            result="n"
+          />
+          <feColorMatrix
+            in="n"
+            type="matrix"
+            values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.12 0"
+          />
+        </filter>
+        <rect width="100%" height="100%" filter="url(#story-grain)" />
+      </svg>
+
+      <div className="relative mx-auto w-full max-w-[430px] px-4 md:max-w-[540px]">
         <svg
-          viewBox="0 0 380 676"
+          viewBox="0 70 380 520"
           className="w-full"
           aria-label="Existem histórias que se repetem. Mudam os rostos. Muda o cenário. Mas algo continua acontecendo do mesmo jeito."
         >
           <defs>
-            <filter id="story-grain" x="0" y="0" width="100%" height="100%">
-              <feTurbulence
-                type="fractalNoise"
-                baseFrequency="0.65"
-                numOctaves="4"
-                stitchTiles="stitch"
-                result="n"
-              />
-              <feColorMatrix
-                in="n"
-                type="matrix"
-                values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.12 0"
-              />
-            </filter>
             <filter id="story-rough">
               <feTurbulence
                 type="fractalNoise"
@@ -103,17 +111,7 @@ export default function Story() {
               />
               <feDisplacementMap in="SourceGraphic" in2="n" scale="1.5" />
             </filter>
-            <radialGradient id="story-glow" cx="8%" cy="4%" r="40%">
-              <stop offset="0%" stopColor="#7a6543" stopOpacity="0.55" />
-              <stop offset="45%" stopColor="#3a2f20" stopOpacity="0.18" />
-              <stop offset="100%" stopColor={BG} stopOpacity="0" />
-            </radialGradient>
           </defs>
-
-          {/* Fundo: carvão + glow dourado + grão */}
-          <rect width="380" height="676" fill={BG} />
-          <rect width="380" height="676" fill="url(#story-glow)" />
-          <rect width="380" height="676" filter="url(#story-grain)" />
 
           {/* Círculo rascunhado */}
           <motion.g
@@ -123,12 +121,12 @@ export default function Story() {
             filter="url(#story-rough)"
             strokeLinecap="round"
           >
-            <ellipse cx="116" cy="182" rx="90" ry="84" strokeWidth="1.4" />
+            <ellipse cx="116" cy="182" rx="92" ry="86" strokeWidth="1.4" />
             <ellipse
               cx="115"
               cy="184"
-              rx="87"
-              ry="80"
+              rx="89"
+              ry="82"
               strokeWidth="1.1"
               opacity="0.7"
               transform="rotate(-3 115 184)"
@@ -136,27 +134,27 @@ export default function Story() {
             <ellipse
               cx="118"
               cy="181"
-              rx="92"
-              ry="82"
+              rx="94"
+              ry="84"
               strokeWidth="0.9"
               opacity="0.5"
               transform="rotate(2 118 181)"
             />
           </motion.g>
 
-          {/* Bloco 1 */}
+          {/* Bloco 1 (menor, todo dentro do círculo) */}
           <motion.g style={{ opacity: b1, y: y1 }}>
-            <text x="56" y="168" fontSize="40" fontWeight="600" fill={CREAM}>
+            <text x="60" y="165" fontSize="33" fontWeight="600" fill={CREAM}>
               Existem
             </text>
-            <text x="56" y="205" fontSize="40" fontWeight="600" fill={CREAM}>
+            <text x="57" y="197" fontSize="33" fontWeight="600" fill={CREAM}>
               histórias
             </text>
             <text
-              x="58"
-              y="230"
-              fontSize="13.5"
-              letterSpacing="2.6"
+              x="60"
+              y="222"
+              fontSize="12"
+              letterSpacing="2"
               fontWeight="600"
               fill={GOLD}
             >
@@ -173,10 +171,10 @@ export default function Story() {
 
           {/* Bloco 2 */}
           <motion.g style={{ opacity: b2, y: y2 }}>
-            <text x="262" y="185" fontSize="34" fontWeight="600" fill={CREAM}>
+            <text x="256" y="183" fontSize="30" fontWeight="600" fill={CREAM}>
               Mudam
             </text>
-            <text x="262" y="218" fontSize="34" fontWeight="600" fill={CREAM}>
+            <text x="256" y="213" fontSize="30" fontWeight="600" fill={CREAM}>
               os rostos
             </text>
           </motion.g>
@@ -190,10 +188,10 @@ export default function Story() {
 
           {/* Bloco 3 */}
           <motion.g style={{ opacity: b3, y: y3 }}>
-            <text x="72" y="355" fontSize="34" fontWeight="600" fill={CREAM}>
+            <text x="72" y="352" fontSize="32" fontWeight="600" fill={CREAM}>
               Muda o
             </text>
-            <text x="72" y="388" fontSize="34" fontWeight="600" fill={CREAM}>
+            <text x="72" y="384" fontSize="32" fontWeight="600" fill={CREAM}>
               cenário
             </text>
           </motion.g>
@@ -215,7 +213,7 @@ export default function Story() {
           <motion.g style={{ opacity: b4, y: y4 }}>
             <text
               x="68"
-              y="502"
+              y="500"
               fontSize="19"
               letterSpacing="0.3"
               fill={GOLD}
@@ -223,9 +221,9 @@ export default function Story() {
               Mas algo continua acontecendo
             </text>
             <text
-              x="36"
-              y="546"
-              fontSize="41"
+              x="38"
+              y="544"
+              fontSize="40"
               fontWeight="700"
               letterSpacing="1"
               fill={CREAM}
