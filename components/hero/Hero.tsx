@@ -102,7 +102,7 @@ export default function Hero() {
     >
      <div className="absolute inset-0 overflow-hidden">
   {/* CELULAR */}
-  <div className="absolute inset-0 block translate-x-[70px] -translate-y-[110px] scale-[1.28] origin-top-right md:hidden">
+  <div className="absolute inset-0 block translate-x-[95px] -translate-y-[150px] scale-[1.28] origin-top-right md:hidden">
     <Image
       src="/images/hero-mirror.png"
       alt="Homem diante de um espelho escuro"
