@@ -64,11 +64,11 @@ export default function Story() {
   return (
     <section
       ref={sectionRef}
-      className={`relative overflow-hidden pt-10 pb-16 md:pt-14 md:pb-20 ${cormorant.className}`}
+      className={`relative overflow-hidden pt-4 pb-6 md:pt-6 md:pb-8 ${cormorant.className}`}
       style={{
         backgroundColor: BG,
         backgroundImage:
-          "radial-gradient(circle at 6% 0%, rgba(122,101,67,0.4), rgba(58,47,32,0.12) 30%, transparent 55%)",
+          "radial-gradient(circle at 6% 0%, rgba(122,101,67,0.18), rgba(58,47,32,0.06) 25%, transparent 42%)",
       }}
     >
       {/* Grão cobrindo a seção inteira (sem emenda com o conteúdo) */}
@@ -232,11 +232,10 @@ export default function Story() {
             </text>
           </motion.g>
 
-          {/* Sublinhado final (vetorizado da arte) */}
+          {/* Sublinhado final: traço único contínuo (estilo do de "cenário") */}
           <motion.g style={{ clipPath: clipU4 }} fill={GOLD}>
-            <path d="M43.1 579.9 L41.6 579.7 L49.8 576.1 L60.8 572.7 L78.1 568.9 L104.3 565.1 L133.4 562.2 L155.4 560.9 L178.6 560.9 L187.7 562.0 L176.9 561.8 L176.1 562.6 L141.9 563.9 L112.7 566.8 L70.9 573.2 L43.1 579.9 Z" />
-            <path d="M92.0 579.5 L89.7 579.3 L100.9 575.7 L121.6 571.1 L150.7 567.3 L201.0 566.4 L203.5 567.7 L228.4 568.5 L243.0 570.0 L218.3 568.9 L179.0 568.9 L156.2 570.6 L154.1 570.2 L119.5 574.4 L101.3 577.8 L98.0 577.8 L92.0 579.5 Z" />
-            <path d="M188 562 Q265 558.5 340 564 L339.5 566.5 Q265 561.5 190 565 Z" />
+            <path d="M40 567 Q118 559 196 561.5 Q272 563 344 566 L343.6 568.8 Q272 565.8 196 564.3 Q118 561.8 41 569.8 Z" />
+            <path d="M52 573.5 Q150 566.5 250 569 L249.7 570.8 Q150 568.3 53 575.2 Z" />
           </motion.g>
         </svg>
       </div>
