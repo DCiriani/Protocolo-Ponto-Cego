@@ -64,7 +64,7 @@ export default function Story() {
   return (
     <section
       ref={sectionRef}
-      className={`relative overflow-hidden pt-4 pb-6 md:pt-6 md:pb-8 ${cormorant.className}`}
+      className={`relative overflow-hidden py-14 md:py-20 ${cormorant.className}`}
       style={{
         backgroundColor: BG,
         backgroundImage:
