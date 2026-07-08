@@ -151,7 +151,7 @@ export default function Story() {
     histórias
   </text>
   <text
-    x="40"
+    x="38"
     y="230"
     fontSize="14"
     letterSpacing="2.2"
