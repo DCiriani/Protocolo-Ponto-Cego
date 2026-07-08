@@ -121,12 +121,12 @@ export default function Story() {
   filter="url(#story-rough)"
   strokeLinecap="round"
 >
-  <ellipse cx="102" cy="184" rx="108" ry="98" strokeWidth="1.4" />
+  <ellipse cx="102" cy="184" rx="98" ry="88" strokeWidth="1.4" />
   <ellipse
     cx="101"
     cy="186"
-    rx="104"
-    ry="94"
+    rx="94"
+    ry="84"
     strokeWidth="1.1"
     opacity="0.7"
     transform="rotate(-3 101 186)"
@@ -134,8 +134,8 @@ export default function Story() {
   <ellipse
     cx="104"
     cy="183"
-    rx="110"
-    ry="96"
+    rx="100"
+    ry="86"
     strokeWidth="0.9"
     opacity="0.5"
     transform="rotate(2 104 183)"
