@@ -115,52 +115,52 @@ export default function Story() {
 
           {/* Círculo rascunhado */}
           <motion.g
-            style={{ opacity: circle }}
-            stroke="#45402d"
-            fill="none"
-            filter="url(#story-rough)"
-            strokeLinecap="round"
-          >
-            <ellipse cx="116" cy="182" rx="92" ry="86" strokeWidth="1.4" />
-            <ellipse
-              cx="115"
-              cy="184"
-              rx="89"
-              ry="82"
-              strokeWidth="1.1"
-              opacity="0.7"
-              transform="rotate(-3 115 184)"
-            />
-            <ellipse
-              cx="118"
-              cy="181"
-              rx="94"
-              ry="84"
-              strokeWidth="0.9"
-              opacity="0.5"
-              transform="rotate(2 118 181)"
-            />
-          </motion.g>
+  style={{ opacity: circle }}
+  stroke="#45402d"
+  fill="none"
+  filter="url(#story-rough)"
+  strokeLinecap="round"
+>
+  <ellipse cx="102" cy="184" rx="108" ry="98" strokeWidth="1.4" />
+  <ellipse
+    cx="101"
+    cy="186"
+    rx="104"
+    ry="94"
+    strokeWidth="1.1"
+    opacity="0.7"
+    transform="rotate(-3 101 186)"
+  />
+  <ellipse
+    cx="104"
+    cy="183"
+    rx="110"
+    ry="96"
+    strokeWidth="0.9"
+    opacity="0.5"
+    transform="rotate(2 104 183)"
+  />
+</motion.g>
 
           {/* Bloco 1 (menor, todo dentro do círculo) */}
           <motion.g style={{ opacity: b1, y: y1 }}>
-            <text x="60" y="165" fontSize="33" fontWeight="600" fill={CREAM}>
-              Existem
-            </text>
-            <text x="57" y="197" fontSize="33" fontWeight="600" fill={CREAM}>
-              histórias
-            </text>
-            <text
-              x="60"
-              y="222"
-              fontSize="12"
-              letterSpacing="2"
-              fontWeight="600"
-              fill={GOLD}
-            >
-              QUE SE REPETEM
-            </text>
-          </motion.g>
+  <text x="42" y="164" fontSize="39" fontWeight="600" fill={CREAM}>
+    Existem
+  </text>
+  <text x="39" y="201" fontSize="39" fontWeight="600" fill={CREAM}>
+    histórias
+  </text>
+  <text
+    x="44"
+    y="230"
+    fontSize="14"
+    letterSpacing="2.2"
+    fontWeight="600"
+    fill={GOLD}
+  >
+    QUE SE REPETEM
+  </text>
+</motion.g>
 
           {/* Seta 1 (vetorizada da arte) */}
           <motion.path
