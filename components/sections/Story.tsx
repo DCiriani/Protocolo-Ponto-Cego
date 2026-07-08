@@ -1,60 +1,91 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
-
-const storyImages = [
-  {
-    src: "/images/story-01.png",
-    alt: "Existem histórias que se repetem",
-    position: "object-[52%_center]",
-  },
-  {
-    src: "/images/story-02.png",
-    alt: "Mudam os rostos",
-    position: "object-[55%_center]",
-  },
-  {
-    src: "/images/story-03.png",
-    alt: "Muda o cenário",
-    position: "object-[42%_center]",
-  },
-  {
-    src: "/images/story-04.png",
-    alt: "Mas algo continua acontecendo do mesmo jeito",
-    position: "object-[50%_center]",
-  },
-];
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
 export default function Story() {
+  const sectionRef = useRef<HTMLElement | null>(null);
+
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start 70%", "end 20%"],
+  });
+
+  const layer1Opacity = useTransform(scrollYProgress, [0, 0.12], [0, 1]);
+  const layer2Opacity = useTransform(scrollYProgress, [0.18, 0.34], [0, 1]);
+  const layer3Opacity = useTransform(scrollYProgress, [0.4, 0.56], [0, 1]);
+  const layer4Opacity = useTransform(scrollYProgress, [0.62, 0.82], [0, 1]);
+
+  const layer1Y = useTransform(scrollYProgress, [0, 0.12], [28, 0]);
+  const layer2Y = useTransform(scrollYProgress, [0.18, 0.34], [28, 0]);
+  const layer3Y = useTransform(scrollYProgress, [0.4, 0.56], [28, 0]);
+  const layer4Y = useTransform(scrollYProgress, [0.62, 0.82], [28, 0]);
+
   return (
-    <section className="relative overflow-hidden bg-[#050705] text-[#F5F5F3]">
-      {storyImages.map((image, index) => (
+    <section
+      ref={sectionRef}
+      className="relative overflow-hidden bg-[#050705] py-20 text-[#F5F5F3] md:py-28"
+    >
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_8%_0%,rgba(190,170,110,0.18),transparent_34%)]" />
+
+      <div className="relative mx-auto aspect-[9/16] w-full max-w-[430px] overflow-hidden md:max-w-[720px]">
+        <Image
+          src="/images/story-bg.png"
+          alt=""
+          fill
+          priority
+          className="object-cover"
+        />
+
         <motion.div
-          key={image.src}
-          initial={{ opacity: 0, y: 42 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.35 }}
-          transition={{
-            duration: 0.9,
-            ease: [0.22, 1, 0.36, 1],
-            delay: index * 0.05,
-          }}
-          className="relative min-h-[68svh] overflow-hidden md:min-h-[82svh]"
+          style={{ opacity: layer1Opacity, y: layer1Y }}
+          className="absolute inset-0"
         >
           <Image
-            src={image.src}
-            alt={image.alt}
+            src="/images/story-layer-01.png"
+            alt="Existem histórias que se repetem"
             fill
-            sizes="100vw"
-            className={`object-cover ${image.position}`}
-            priority={index === 0}
+            className="object-contain"
           />
-
-          <div className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#050705] to-transparent" />
-          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#050705] to-transparent" />
         </motion.div>
-      ))}
+
+        <motion.div
+          style={{ opacity: layer2Opacity, y: layer2Y }}
+          className="absolute inset-0"
+        >
+          <Image
+            src="/images/story-layer-02.png"
+            alt="Mudam os rostos"
+            fill
+            className="object-contain"
+          />
+        </motion.div>
+
+        <motion.div
+          style={{ opacity: layer3Opacity, y: layer3Y }}
+          className="absolute inset-0"
+        >
+          <Image
+            src="/images/story-layer-03.png"
+            alt="Muda o cenário"
+            fill
+            className="object-contain"
+          />
+        </motion.div>
+
+        <motion.div
+          style={{ opacity: layer4Opacity, y: layer4Y }}
+          className="absolute inset-0"
+        >
+          <Image
+            src="/images/story-layer-04.png"
+            alt="Mas algo continua acontecendo do mesmo jeito"
+            fill
+            className="object-contain"
+          />
+        </motion.div>
+      </div>
     </section>
   );
 }
