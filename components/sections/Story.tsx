@@ -94,10 +94,10 @@ export default function Story() {
         <rect width="100%" height="100%" filter="url(#story-grain)" />
       </svg>
 
-      <div className="relative mx-auto w-full max-w-[430px] px-4 md:max-w-[540px]">
-        <svg
-          viewBox="0 70 380 520"
-          className="w-full"
+      <div className="relative mx-auto w-full max-w-[430px] px-4 md:max-w-[720px] lg:max-w-[820px] xl:max-w-[540px]">
+  <svg
+    viewBox="0 70 380 520"
+    className="w-full"
           aria-label="Existem histórias que se repetem. Mudam os rostos. Muda o cenário. Mas algo continua acontecendo do mesmo jeito."
         >
           <defs>
