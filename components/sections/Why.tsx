@@ -20,11 +20,12 @@ export default function Why() {
 
         <div className="relative">
           <h2 className="relative z-20 max-w-[760px] font-[family-name:var(--font-bodoni)] text-[2.35rem] font-medium uppercase leading-[1.08] tracking-[0.02em] text-[#F5F5F3] min-[390px]:text-[2.65rem] md:text-[4.1rem] lg:text-[4.8rem]">
-            Por que criei a
-            <br />
-            Análise Ponto Cego?
-          </h2>
+  <span className="block">Por que criei a</span>
 
+  <span className="block text-[#6F8F5E]">
+    Análise Ponto Cego?
+  </span>
+</h2>
           <div className="pointer-events-none absolute right-[-70px] top-[120px] z-10 h-[430px] w-[280px] opacity-75 md:right-[-60px] md:top-[160px] md:h-[620px] md:w-[420px] lg:right-[20px] lg:h-[700px] lg:w-[460px]">
             <Image
               src="/images/diego-poltronaaa.png"
