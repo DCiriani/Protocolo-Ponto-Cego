@@ -22,7 +22,7 @@ export default function Why() {
           <h2 className="relative z-20 max-w-[760px] font-[family-name:var(--font-bodoni)] text-[2.35rem] font-medium uppercase leading-[1.08] tracking-[0.02em] text-[#F5F5F3] min-[390px]:text-[2.65rem] md:text-[4.1rem] lg:text-[4.8rem]">
   <span className="block">Por que criei a</span>
 
-  <span className="block text-[#6F8F5E] md:text-[3.05rem] lg:text-[3.55rem] xl:text-[4.8rem]">
+  <span className="block text-[#6F8F5E] md:text-[3.30rem] lg:text-[3.75rem] xl:text-[4.8rem]">
   Análise Ponto Cego?
 </span>
 </h2>
