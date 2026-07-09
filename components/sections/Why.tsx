@@ -93,22 +93,16 @@ export default function Why() {
   transition={{ duration: 0.9, delay: 0.18, ease: [0.22, 1, 0.36, 1] }}
   className="relative z-20 mt-10 rounded-[1.2rem] border border-[#6F8F5E]/35 bg-black/25 px-6 py-7 md:mt-14 md:px-10 md:py-9"
 >
-            <div className="flex gap-5">
-              <span className="font-[family-name:var(--font-bodoni)] text-[4rem] leading-none text-[#6F8F5E]">
-                “
-              </span>
+  <div className="flex gap-5">
+    <span className="font-[family-name:var(--font-bodoni)] text-[4rem] leading-none text-[#6F8F5E]">
+      “
+    </span>
 
-              <p className="font-[family-name:var(--font-bodoni)] text-[1.75rem] font-medium leading-[1.16] tracking-[0.01em] text-[#F5F5F3] md:text-[2.8rem]">
-                A mudança nem sempre começa quando a vida muda.{" "}
-                <span className="text-[#6F8F5E]">
-                  Ela começa quando você finalmente consegue enxergá-la de outra
-                  forma.
-                </span>
-              </p>
-            </div>
-          </div>
-        </motion.div>
-      </Container>
-    </section>
-  );
-}
+    <p className="font-[family-name:var(--font-bodoni)] text-[1.75rem] font-medium leading-[1.16] tracking-[0.01em] text-[#F5F5F3] md:text-[2.8rem]">
+      A mudança nem sempre começa quando a vida muda.{" "}
+      <span className="text-[#6F8F5E]">
+        Ela começa quando você finalmente consegue enxergá-la de outra forma.
+      </span>
+    </p>
+  </div>
+</motion.div>
