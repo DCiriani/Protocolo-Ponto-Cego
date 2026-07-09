@@ -25,7 +25,7 @@ export default function Why() {
             Análise Ponto Cego?
           </h2>
 
-          <div className="pointer-events-none absolute right-[-70px] top-[120px] z-10 h-[430px] w-[280px] opacity-75 md:right-[-30px] md:top-[60px] md:h-[620px] md:w-[420px] lg:right-[20px] lg:h-[700px] lg:w-[460px]">
+          <div className="pointer-events-none absolute right-[-70px] top-[120px] z-10 h-[430px] w-[280px] opacity-75 md:right-[-30px] md:top-[80px] md:h-[620px] md:w-[420px] lg:right-[20px] lg:h-[700px] lg:w-[460px]">
             <Image
               src="/images/diego-poltronaaa.png"
               alt="Diego Ciriani"
