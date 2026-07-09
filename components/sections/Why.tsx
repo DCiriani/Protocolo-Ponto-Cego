@@ -106,3 +106,8 @@ export default function Why() {
     </p>
   </div>
 </motion.div>
+        </div>
+      </Container>
+    </section>
+  );
+}
