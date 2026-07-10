@@ -51,49 +51,82 @@ function DocumentPreview() {
           }}
         />
 
-        {/* craquelado / marcas de dobra */}
-        <svg
-          className="pointer-events-none absolute inset-0 h-full w-full opacity-[0.22]"
-          viewBox="0 0 700 500"
-          preserveAspectRatio="none"
-          aria-hidden="true"
-        >
-          <path
-            d="M58 38 C120 64 160 42 226 72 C288 101 342 78 410 112 C482 147 546 121 652 154"
-            fill="none"
-            stroke="#A99062"
-            strokeWidth="0.7"
-            opacity="0.35"
-          />
-          <path
-            d="M96 438 C160 396 218 421 282 381 C354 335 432 376 520 324 C578 289 622 302 675 258"
-            fill="none"
-            stroke="#A99062"
-            strokeWidth="0.65"
-            opacity="0.24"
-          />
-          <path
-            d="M375 22 C352 78 390 118 360 184 C330 250 374 306 342 365 C320 406 332 448 314 492"
-            fill="none"
-            stroke="#A99062"
-            strokeWidth="0.55"
-            opacity="0.18"
-          />
-          <path
-            d="M52 164 C132 142 205 160 282 137"
-            fill="none"
-            stroke="#D0B980"
-            strokeWidth="0.45"
-            opacity="0.14"
-          />
-          <path
-            d="M456 218 C510 198 566 212 642 184"
-            fill="none"
-            stroke="#D0B980"
-            strokeWidth="0.45"
-            opacity="0.13"
-          />
-        </svg>
+        {/* craquelado / papel amassado mais visível */}
+<svg
+  className="pointer-events-none absolute inset-0 h-full w-full opacity-[0.34]"
+  viewBox="0 0 700 500"
+  preserveAspectRatio="none"
+  aria-hidden="true"
+>
+  <defs>
+    <filter id="paper-crackle-rough">
+      <feTurbulence
+        type="fractalNoise"
+        baseFrequency="0.018"
+        numOctaves="3"
+        seed="14"
+        result="noise"
+      />
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="1.4" />
+    </filter>
+  </defs>
+
+  <g
+    filter="url(#paper-crackle-rough)"
+    fill="none"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path
+      d="M24 44 C78 34 112 58 158 47 C218 32 248 74 308 56 C358 41 401 72 458 58 C512 46 570 58 676 34"
+      stroke="#B89A63"
+      strokeWidth="0.65"
+      opacity="0.28"
+    />
+    <path
+      d="M34 128 C96 112 143 142 208 120 C263 101 316 139 372 116 C438 88 501 124 654 96"
+      stroke="#D3B77B"
+      strokeWidth="0.45"
+      opacity="0.18"
+    />
+    <path
+      d="M46 420 C104 372 168 420 230 374 C296 326 372 388 444 330 C506 281 590 318 680 250"
+      stroke="#B89A63"
+      strokeWidth="0.7"
+      opacity="0.25"
+    />
+    <path
+      d="M382 20 C348 88 398 132 354 202 C315 265 384 322 332 390 C306 424 324 462 292 494"
+      stroke="#B89A63"
+      strokeWidth="0.55"
+      opacity="0.24"
+    />
+    <path
+      d="M598 18 C578 58 600 88 568 128 C538 166 562 218 516 260 C482 292 492 340 448 380"
+      stroke="#8F784F"
+      strokeWidth="0.55"
+      opacity="0.22"
+    />
+    <path
+      d="M82 248 C132 228 184 250 236 224 C292 196 340 230 396 202"
+      stroke="#D3B77B"
+      strokeWidth="0.42"
+      opacity="0.14"
+    />
+    <path
+      d="M438 436 C492 402 546 424 620 384"
+      stroke="#D3B77B"
+      strokeWidth="0.42"
+      opacity="0.16"
+    />
+    <path
+      d="M10 310 C74 292 112 314 168 286 C216 262 258 282 304 248"
+      stroke="#8F784F"
+      strokeWidth="0.5"
+      opacity="0.18"
+    />
+  </g>
+</svg>
 
         {/* vinheta nas bordas */}
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_47%,rgba(0,0,0,0.34)_100%)]" />
@@ -101,13 +134,80 @@ function DocumentPreview() {
         {/* borda interna envelhecida */}
         <div className="pointer-events-none absolute inset-[1px] rounded-[0.85rem] border border-[#C2A46A]/15" />
 
-        {/* canto dobrado */}
-        <div className="pointer-events-none absolute right-0 top-0 z-20 h-[4.25rem] w-[4.25rem] overflow-hidden">
-          <div className="absolute right-0 top-0 h-0 w-0 border-l-[68px] border-t-[68px] border-l-transparent border-t-[#BCA06E]/65" />
-          <div className="absolute right-[3px] top-[3px] h-0 w-0 border-l-[55px] border-t-[55px] border-l-transparent border-t-[#16130F]" />
-          <div className="absolute right-[-8px] top-[50px] h-px w-[92px] origin-right -rotate-45 bg-[#D6BC80]/55" />
-          <div className="absolute right-[6px] top-[8px] h-[50px] w-[50px] bg-[radial-gradient(circle_at_80%_10%,rgba(255,235,180,0.20),transparent_48%)]" />
-        </div>
+        {/* canto dobrado mais realista */}
+<div className="pointer-events-none absolute right-0 top-0 z-30 h-[76px] w-[76px] md:h-[92px] md:w-[92px]">
+  <svg
+    viewBox="0 0 92 92"
+    className="h-full w-full"
+    aria-hidden="true"
+  >
+    <defs>
+      <linearGradient id="foldFront" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stopColor="#D2B983" stopOpacity="0.72" />
+        <stop offset="46%" stopColor="#6E5736" stopOpacity="0.78" />
+        <stop offset="100%" stopColor="#17130E" stopOpacity="0.96" />
+      </linearGradient>
+
+      <linearGradient id="foldBack" x1="1" y1="0" x2="0" y2="1">
+        <stop offset="0%" stopColor="#F0D9A0" stopOpacity="0.55" />
+        <stop offset="55%" stopColor="#8A6D43" stopOpacity="0.45" />
+        <stop offset="100%" stopColor="#0E0C09" stopOpacity="0.15" />
+      </linearGradient>
+
+      <filter id="foldShadow" x="-30%" y="-30%" width="160%" height="160%">
+        <feDropShadow dx="-5" dy="7" stdDeviation="5" floodColor="#000000" floodOpacity="0.55" />
+      </filter>
+    </defs>
+
+    {/* sombra por baixo da dobra */}
+    <path
+      d="M92 0 L92 86 C78 56 54 30 0 0 Z"
+      fill="#000"
+      opacity="0.35"
+      filter="url(#foldShadow)"
+    />
+
+    {/* parte dobrada */}
+    <path
+      d="M92 0 L92 82 C76 50 49 24 0 0 Z"
+      fill="url(#foldFront)"
+    />
+
+    {/* área interna escura da dobra */}
+    <path
+      d="M92 0 L92 54 C78 37 58 18 24 0 Z"
+      fill="url(#foldBack)"
+      opacity="0.88"
+    />
+
+    {/* linha diagonal da dobra */}
+    <path
+      d="M5 1 C36 18 64 43 91 82"
+      fill="none"
+      stroke="#E3C487"
+      strokeWidth="1.15"
+      opacity="0.62"
+    />
+
+    {/* desgaste na ponta */}
+    <path
+      d="M67 8 C76 14 83 20 89 30"
+      fill="none"
+      stroke="#F3DDA6"
+      strokeWidth="0.8"
+      opacity="0.32"
+    />
+
+    {/* sombra final da ponta */}
+    <path
+      d="M78 18 C86 32 90 48 92 66"
+      fill="none"
+      stroke="#050403"
+      strokeWidth="5"
+      opacity="0.25"
+    />
+  </svg>
+</div>
 
         <div className="relative z-10">
           <div className="flex items-start justify-between border-b border-[#6F8F5E]/30 pb-5 pr-14">
