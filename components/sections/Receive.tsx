@@ -232,15 +232,15 @@ function ReadingMockup() {
                       {index + 1}. {item}
                     </p>
 
-                    <div className="mt-3 space-y-2.5 opacity-70">
-                      <div className="h-[5px] w-full rounded-full bg-[#D8CFBF]/15 blur-[1.8px]" />
+                    <div className="mt-3 space-y-2.5 opacity-100 md:opacity-85">
+  <div className="h-[7px] w-full rounded-full bg-[#D8CFBF]/30 blur-[1px] shadow-[0_0_7px_rgba(216,207,191,0.22)] md:h-[6px] md:bg-[#D8CFBF]/22 md:blur-[1.4px]" />
 
-                      <div className="h-[5px] w-[94%] rounded-full bg-[#D8CFBF]/13 blur-[1.8px]" />
+  <div className="h-[7px] w-[94%] rounded-full bg-[#D8CFBF]/26 blur-[1px] shadow-[0_0_7px_rgba(216,207,191,0.18)] md:h-[6px] md:bg-[#D8CFBF]/18 md:blur-[1.4px]" />
 
-                      {index !== 4 && (
-                        <div className="h-[5px] w-[78%] rounded-full bg-[#D8CFBF]/10 blur-[1.8px]" />
-                      )}
-                    </div>
+  {index !== 4 && (
+    <div className="h-[7px] w-[78%] rounded-full bg-[#D8CFBF]/22 blur-[1px] shadow-[0_0_7px_rgba(216,207,191,0.16)] md:h-[6px] md:bg-[#D8CFBF]/15 md:blur-[1.4px]" />
+  )}
+</div>
                   </div>
                 </div>
               ))}
