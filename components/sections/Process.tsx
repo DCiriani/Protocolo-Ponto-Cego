@@ -166,77 +166,40 @@ function DocumentPreview() {
         {/* borda interna envelhecida */}
         <div className="pointer-events-none absolute inset-[1px] rounded-[0.85rem] border border-[#C2A46A]/15" />
 
-        {/* canto dobrado mais realista */}
-<div className="pointer-events-none absolute right-0 top-0 z-30 h-[76px] w-[76px] md:h-[92px] md:w-[92px]">
-  <svg
-    viewBox="0 0 92 92"
-    className="h-full w-full"
-    aria-hidden="true"
-  >
+        {/* canto dobrado */}
+<div className="pointer-events-none absolute right-0 top-0 z-30 h-[70px] w-[70px] md:h-[86px] md:w-[86px]">
+  <svg viewBox="0 0 90 90" className="h-full w-full" aria-hidden="true">
     <defs>
-      <linearGradient id="foldFront" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0%" stopColor="#D2B983" stopOpacity="0.72" />
-        <stop offset="46%" stopColor="#6E5736" stopOpacity="0.78" />
-        <stop offset="100%" stopColor="#17130E" stopOpacity="0.96" />
+      <linearGradient id="foldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stopColor="#EBD9AC" />
+        <stop offset="45%" stopColor="#B9975E" />
+        <stop offset="100%" stopColor="#4A3B24" />
       </linearGradient>
-
-      <linearGradient id="foldBack" x1="1" y1="0" x2="0" y2="1">
-        <stop offset="0%" stopColor="#F0D9A0" stopOpacity="0.55" />
-        <stop offset="55%" stopColor="#8A6D43" stopOpacity="0.45" />
-        <stop offset="100%" stopColor="#0E0C09" stopOpacity="0.15" />
-      </linearGradient>
-
-      <filter id="foldShadow" x="-30%" y="-30%" width="160%" height="160%">
-        <feDropShadow dx="-5" dy="7" stdDeviation="5" floodColor="#000000" floodOpacity="0.55" />
-      </filter>
     </defs>
 
-    {/* sombra por baixo da dobra */}
+    {/* triângulo da dobra, fino e translúcido */}
     <path
-      d="M92 0 L92 86 C78 56 54 30 0 0 Z"
-      fill="#000"
-      opacity="0.35"
-      filter="url(#foldShadow)"
+      d="M90 0 L90 68 C 70 40, 48 18, 0 0 Z"
+      fill="url(#foldGradient)"
+      opacity="0.9"
     />
 
-    {/* parte dobrada */}
+    {/* sombra sutil por baixo, colada no papel */}
     <path
-      d="M92 0 L92 82 C76 50 49 24 0 0 Z"
-      fill="url(#foldFront)"
-    />
-
-    {/* área interna escura da dobra */}
-    <path
-      d="M92 0 L92 54 C78 37 58 18 24 0 Z"
-      fill="url(#foldBack)"
-      opacity="0.88"
-    />
-
-    {/* linha diagonal da dobra */}
-    <path
-      d="M5 1 C36 18 64 43 91 82"
+      d="M90 0 L90 68 C 70 40, 48 18, 0 0 Z"
       fill="none"
-      stroke="#E3C487"
-      strokeWidth="1.15"
-      opacity="0.62"
-    />
-
-    {/* desgaste na ponta */}
-    <path
-      d="M67 8 C76 14 83 20 89 30"
-      fill="none"
-      stroke="#F3DDA6"
-      strokeWidth="0.8"
-      opacity="0.32"
-    />
-
-    {/* sombra final da ponta */}
-    <path
-      d="M78 18 C86 32 90 48 92 66"
-      fill="none"
-      stroke="#050403"
-      strokeWidth="5"
+      stroke="#000"
+      strokeWidth="1"
       opacity="0.25"
+    />
+
+    {/* linha diagonal do vinco */}
+    <path
+      d="M2 2 C 34 20, 60 44, 88 76"
+      fill="none"
+      stroke="#F3E3BC"
+      strokeWidth="0.9"
+      opacity="0.55"
     />
   </svg>
 </div>
