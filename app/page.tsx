@@ -8,6 +8,7 @@ import About from "@/components/sections/About";
 import Receive from "@/components/sections/Receive";
 import FAQ from "@/components/sections/FAQ";
 import FinalCTA from "@/components/sections/FinalCTA";
+import Commitment from "@/components/sections/Commitment";
 
 export default function Home() {
   return (
@@ -19,9 +20,10 @@ export default function Home() {
       <Process />
       <Transformations />
       <About />
-      <Receive />
-      <FAQ />
-      <FinalCTA />
+<Receive />
+<Commitment />
+<FAQ />
+<FinalCTA />
     </main>
   );
 }
