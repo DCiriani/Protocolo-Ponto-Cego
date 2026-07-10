@@ -177,29 +177,38 @@ function DocumentPreview() {
       </linearGradient>
     </defs>
 
-    {/* triângulo da dobra, fino e translúcido */}
+    {/* canto dobrado */}
+<div className="pointer-events-none absolute right-0 top-0 z-30 h-[70px] w-[70px] md:h-[86px] md:w-[86px]">
+  <svg viewBox="0 0 90 90" className="h-full w-full" aria-hidden="true">
+    <defs>
+      <linearGradient id="foldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stopColor="#F0DEB0" />
+        <stop offset="50%" stopColor="#C6A468" />
+        <stop offset="100%" stopColor="#8A6E42" />
+      </linearGradient>
+    </defs>
+
+    {/* sombra projetada do canto dobrado sobre o papel */}
     <path
-      d="M90 0 L90 68 C 70 40, 48 18, 0 0 Z"
+      d="M90 0 L90 68 C 68 42, 46 20, 0 0 Z"
+      fill="#000"
+      opacity="0.4"
+      transform="translate(-4 5)"
+    />
+
+    {/* triângulo dourado SÓLIDO da dobra */}
+    <path
+      d="M90 0 L90 68 C 68 42, 46 20, 0 0 Z"
       fill="url(#foldGradient)"
-      opacity="0.9"
     />
 
-    {/* sombra sutil por baixo, colada no papel */}
+    {/* linha do vinco */}
     <path
-      d="M90 0 L90 68 C 70 40, 48 18, 0 0 Z"
+      d="M2 1 C 32 18, 58 42, 87 74"
       fill="none"
-      stroke="#000"
+      stroke="#5A4A2C"
       strokeWidth="1"
-      opacity="0.25"
-    />
-
-    {/* linha diagonal do vinco */}
-    <path
-      d="M2 2 C 34 20, 60 44, 88 76"
-      fill="none"
-      stroke="#F3E3BC"
-      strokeWidth="0.9"
-      opacity="0.55"
+      opacity="0.5"
     />
   </svg>
 </div>
