@@ -74,12 +74,26 @@ export default function About() {
   className="mx-auto max-w-[680px] overflow-hidden rounded-[1.55rem] border border-[#6F8F5E]/35 bg-black/25 shadow-[0_24px_70px_rgba(0,0,0,0.38)] md:rounded-[2rem]"
 >
   <div className="relative h-[430px] w-full md:h-[520px] lg:h-[500px]">
+    {/* fundo preenchendo o espaço vazio */}
+    <Image
+      src="/images/diegociriani.png"
+      alt=""
+      fill
+      aria-hidden="true"
+      sizes="(max-width: 768px) 100vw, 680px"
+      className="scale-110 object-cover object-center opacity-45 blur-xl"
+    />
+
+    {/* camada escura para manter o estilo da seção */}
+    <div className="absolute inset-0 bg-black/35" />
+
+    {/* foto principal */}
     <Image
       src="/images/diegociriani.png"
       alt="Diego Ciriani, psicólogo clínico"
       fill
       sizes="(max-width: 768px) 100vw, 680px"
-      className="object-contain object-center"
+      className="relative z-10 object-contain object-center"
     />
   </div>
 </motion.div>
