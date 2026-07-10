@@ -66,52 +66,44 @@ export default function About() {
           </div>
 
           {/* imagem */}
-          <motion.div
-            initial={{ opacity: 0, y: 34 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.25 }}
-            transition={{
-              duration: 0.9,
-              delay: 0.08,
-              ease: [0.22, 1, 0.36, 1],
-            }}
-            className="mx-auto max-w-[680px] overflow-hidden rounded-[1.55rem] border border-[#6F8F5E]/35 bg-black/25 shadow-[0_24px_70px_rgba(0,0,0,0.38)] md:rounded-[2rem]"
-          >
-            <div className="relative h-[360px] w-full md:h-[460px] lg:h-[460px]">
-              {/* fundo preenchendo o espaço vazio */}
-              <Image
-                src="/images/diegociriani.png"
-                alt=""
-                fill
-                aria-hidden="true"
-                sizes="(max-width: 768px) 100vw, 680px"
-                className="scale-110 object-cover object-center opacity-40 blur-2xl"
-              />
+<motion.div
+  initial={{ opacity: 0, y: 34 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true, amount: 0.25 }}
+  transition={{ duration: 0.9, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
+  className="mx-auto max-w-[680px] overflow-hidden rounded-[1.55rem] border border-[#6F8F5E]/35 bg-black/25 shadow-[0_24px_70px_rgba(0,0,0,0.38)] md:rounded-[2rem]"
+>
+  <div className="relative h-[430px] w-full md:h-[520px] lg:h-[500px]">
+    {/* fundo preenchendo o espaço vazio */}
+    <Image
+      src="/images/diegociriani.png"
+      alt=""
+      fill
+      aria-hidden="true"
+      sizes="(max-width: 768px) 100vw, 680px"
+      className="scale-110 object-cover object-center opacity-45 blur-xl"
+    />
 
-              {/* camada escura */}
-              <div className="absolute inset-0 bg-black/30" />
+    {/* camada escura para manter o estilo da seção */}
+    <div className="absolute inset-0 bg-black/35" />
 
-              {/* foto principal */}
-              <Image
-                src="/images/diegociriani.png"
-                alt="Diego Ciriani, psicólogo clínico"
-                fill
-                sizes="(max-width: 768px) 100vw, 680px"
-                className="relative z-10 object-cover object-[50%_22%]"
-              />
-            </div>
-          </motion.div>
+    {/* foto principal */}
+    <Image
+      src="/images/diegociriani.png"
+      alt="Diego Ciriani, psicólogo clínico"
+      fill
+      sizes="(max-width: 768px) 100vw, 680px"
+      className="relative z-10 object-cover object-[50%_25%]"
+    />
+  </div>
+</motion.div>
 
           {/* texto */}
           <motion.div
             initial={{ opacity: 0, y: 34 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.22 }}
-            transition={{
-              duration: 0.9,
-              delay: 0.12,
-              ease: [0.22, 1, 0.36, 1],
-            }}
+            transition={{ duration: 0.9, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
             className="mt-9 max-w-[760px] space-y-8 px-2 text-[1.1rem] leading-[1.65] text-zinc-300 md:mt-10 md:px-6 md:text-[1.35rem] md:leading-[1.68]"
           >
             <p>
@@ -138,11 +130,7 @@ export default function About() {
             initial={{ opacity: 0, y: 34 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.22 }}
-            transition={{
-              duration: 0.9,
-              delay: 0.16,
-              ease: [0.22, 1, 0.36, 1],
-            }}
+            transition={{ duration: 0.9, delay: 0.16, ease: [0.22, 1, 0.36, 1] }}
             className="mt-10 border-t border-[#6F8F5E]/25 md:mx-4"
           >
             {infos.map((item) => (
