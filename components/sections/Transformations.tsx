@@ -103,9 +103,9 @@ export default function Transformations() {
                   </div>
 
                   <div className="md:pl-7">
-                    <h3 className="max-w-[620px] font-[family-name:var(--font-bodoni)] text-[2rem] font-medium leading-[1.05] text-[#F5F5F3] md:text-[2.65rem]">
-                      {item.title}
-                    </h3>
+                    <h3 className="max-w-[620px] font-[family-name:var(--font-bodoni)] text-[2rem] font-medium leading-[1.05] text-[#F5F5F3] md:text-[2.1rem] lg:text-[2.65rem]">
+  {item.title}
+</h3>
 
                     <p className="mt-4 max-w-[640px] text-[1rem] leading-8 text-zinc-300 md:text-[1.12rem] md:leading-9">
                       {item.text}
