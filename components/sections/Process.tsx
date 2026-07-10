@@ -23,73 +23,108 @@ const steps = [
 
 function DocumentPreview() {
   return (
-    <div className="mt-8 rounded-[0.9rem] border border-[#6F8F5E]/35 bg-[#11110d]/90 p-5 shadow-[0_20px_60px_rgba(0,0,0,0.35)] md:ml-0 md:max-w-[620px]">
-      <div className="flex items-start justify-between border-b border-[#6F8F5E]/25 pb-4">
-        <div>
-          <p className="font-[family-name:var(--font-bodoni)] text-[1.65rem] uppercase leading-none tracking-[0.03em] text-[#F5F5F3] md:text-[2rem]">
-            Ponto Cego · 48h
-          </p>
-          <p className="mt-2 font-satoshi text-[0.62rem] font-semibold uppercase tracking-[0.32em] text-[#6F8F5E] md:text-[0.72rem]">
-            Sua leitura personalizada
-          </p>
-        </div>
+    <div className="relative mt-8 overflow-hidden rounded-[0.9rem] border border-[#8A7754]/35 bg-[linear-gradient(180deg,rgba(24,21,17,0.97)_0%,rgba(16,14,11,0.98)_100%)] p-5 shadow-[inset_0_1px_0_rgba(255,244,220,0.05),inset_0_0_45px_rgba(140,112,70,0.08),0_20px_60px_rgba(0,0,0,0.35)] md:ml-0 md:max-w-[620px]">
+      
+      {/* textura / papel envelhecido */}
+      <div
+        className="pointer-events-none absolute inset-0 opacity-[0.16]"
+        style={{
+          backgroundImage: `
+            radial-gradient(circle at 12% 10%, rgba(170,135,82,0.14), transparent 26%),
+            radial-gradient(circle at 84% 18%, rgba(120,96,58,0.10), transparent 24%),
+            radial-gradient(circle at 22% 82%, rgba(152,122,74,0.08), transparent 20%),
+            repeating-linear-gradient(
+              0deg,
+              rgba(255,245,220,0.018) 0px,
+              rgba(255,245,220,0.018) 1px,
+              transparent 1px,
+              transparent 4px
+            ),
+            repeating-linear-gradient(
+              90deg,
+              rgba(255,245,220,0.012) 0px,
+              rgba(255,245,220,0.012) 1px,
+              transparent 1px,
+              transparent 5px
+            )
+          `,
+        }}
+      />
 
-        <div className="hidden h-12 w-12 items-center justify-center rounded-full border border-[#6F8F5E]/35 text-[#6F8F5E] md:flex">
-          ◉
-        </div>
-      </div>
+      {/* vinheta / bordas mais escuras */}
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_52%,rgba(0,0,0,0.22)_100%)]" />
 
-      <div className="mt-6 grid gap-6 md:grid-cols-2">
-        <div>
-          <p className="font-satoshi text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[#F5F5F3]">
-            1. Resumo da sua leitura
-          </p>
-          <p className="mt-3 text-[0.72rem] leading-5 text-zinc-300">
-            Esta seção apresenta uma visão geral dos padrões identificados na sua
-            leitura, de forma integrada e compreensível.
-          </p>
+      {/* borda interna suave */}
+      <div className="pointer-events-none absolute inset-[1px] rounded-[0.82rem] border border-[#C2A46A]/10" />
 
-          <div className="mt-6">
-            <p className="font-satoshi text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[#6F8F5E]">
-              2. Padrões identificados
+      <div className="relative z-10">
+        <div className="flex items-start justify-between border-b border-[#6F8F5E]/20 pb-4">
+          <div>
+            <p className="font-[family-name:var(--font-bodoni)] text-[1.65rem] uppercase leading-none tracking-[0.03em] text-[#F4EBDD] md:text-[2rem]">
+              PONTO CEGO · 48h
             </p>
-            <ul className="mt-3 space-y-2 text-[0.72rem] leading-4 text-zinc-300">
-              <li>• Padrão de escuta emocional</li>
-              <li>• Necessidade de validação externa</li>
-              <li>• Ciclos de idealização e decepção</li>
-              <li>• Dificuldade em comunicar necessidades</li>
-            </ul>
+            <p className="mt-2 font-satoshi text-[0.62rem] font-semibold uppercase tracking-[0.32em] text-[#8D8A63] md:text-[0.72rem]">
+              SUA LEITURA PERSONALIZADA
+            </p>
+          </div>
+
+          <div className="hidden h-12 w-12 items-center justify-center rounded-full border border-[#8A7754]/25 text-[#8D8A63] md:flex">
+            ◉
           </div>
         </div>
 
-        <div className="border-t border-[#6F8F5E]/20 pt-6 md:border-l md:border-t-0 md:pl-6 md:pt-0">
-          <p className="font-satoshi text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[#F5F5F3]">
-            3. Pontos cegos
-          </p>
-          <p className="mt-3 text-[0.72rem] leading-5 text-zinc-300">
-            Aspectos que podem estar fora do seu campo de percepção e impactando
-            suas escolhas, conexões e reações.
-          </p>
+        <div className="mt-6 grid gap-6 md:grid-cols-2">
+          <div>
+            <p className="font-satoshi text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[#F4EBDD]">
+              1. RESUMO DA SUA LEITURA
+            </p>
+            <p className="mt-3 text-[0.72rem] leading-5 text-[#D3CAB8]">
+              Esta seção apresenta uma visão geral dos padrões identificados na sua
+              leitura, de forma integrada e compreensível.
+            </p>
 
-          <div className="mt-4 space-y-2">
-            <div className="h-2 rounded-full bg-[#6F8F5E]/20" />
-            <div className="h-2 rounded-full bg-[#6F8F5E]/15" />
-            <div className="h-2 w-4/5 rounded-full bg-[#6F8F5E]/10" />
+            <div className="mt-6">
+              <p className="font-satoshi text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[#8D8A63]">
+                2. PADRÕES IDENTIFICADOS
+              </p>
+              <ul className="mt-3 space-y-2 text-[0.72rem] leading-4 text-[#D3CAB8]">
+                <li>• Padrão de escuta emocional</li>
+                <li>• Necessidade de validação externa</li>
+                <li>• Ciclos de idealização e decepção</li>
+                <li>• Dificuldade em comunicar necessidades</li>
+              </ul>
+            </div>
           </div>
 
-          <div className="mt-7">
-            <p className="font-satoshi text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[#F5F5F3]">
-              4. Direcionamentos práticos
+          <div className="border-t border-[#8A7754]/18 pt-6 md:border-l md:border-t-0 md:pl-6 md:pt-0">
+            <p className="font-satoshi text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[#F4EBDD]">
+              3. PONTOS CEGOS
             </p>
-            <p className="mt-3 text-[0.72rem] leading-5 text-zinc-300">
-              Sugestões objetivas para você considerar e aplicar no seu ritmo, de
-              forma realista e possível.
+            <p className="mt-3 text-[0.72rem] leading-5 text-[#D3CAB8]">
+              Aspectos que podem estar fora do seu campo de percepção e impactando
+              suas escolhas, conexões e reações.
             </p>
 
             <div className="mt-4 space-y-2">
-              <div className="h-2 rounded-full bg-[#6F8F5E]/20" />
-              <div className="h-2 rounded-full bg-[#6F8F5E]/15" />
-              <div className="h-2 w-3/4 rounded-full bg-[#6F8F5E]/10" />
+              <div className="h-2 rounded-full bg-[#8A7754]/18" />
+              <div className="h-2 rounded-full bg-[#8A7754]/14" />
+              <div className="h-2 w-4/5 rounded-full bg-[#8A7754]/10" />
+            </div>
+
+            <div className="mt-7">
+              <p className="font-satoshi text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[#F4EBDD]">
+                4. DIRECIONAMENTOS PRÁTICOS
+              </p>
+              <p className="mt-3 text-[0.72rem] leading-5 text-[#D3CAB8]">
+                Sugestões objetivas para você considerar e aplicar no seu ritmo, de
+                forma realista e possível.
+              </p>
+
+              <div className="mt-4 space-y-2">
+                <div className="h-2 rounded-full bg-[#8A7754]/18" />
+                <div className="h-2 rounded-full bg-[#8A7754]/14" />
+                <div className="h-2 w-3/4 rounded-full bg-[#8A7754]/10" />
+              </div>
             </div>
           </div>
         </div>
