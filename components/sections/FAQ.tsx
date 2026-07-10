@@ -252,9 +252,8 @@ export default function FAQ() {
   </span>
 </h2>
 
-            <p className="mx-auto mt-6 max-w-[620px] text-[1rem] leading-7 text-[#879A58] md:text-[1.2rem] md:leading-8">
-              Reuni aqui as dúvidas mais comuns para que você comece com
-              confiança e clareza.
+            <p className="mx-auto mt-6 max-w-[620px] text-[1rem] leading-7 text-[#879A58] md:text-[1.0rem] md:leading-8">
+              Reuni aqui as dúvidas mais comuns para que você comece com confiança e clareza.
             </p>
           </div>
 
