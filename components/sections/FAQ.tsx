@@ -45,6 +45,7 @@ function ChevronIcon({ open }: { open: boolean }) {
       fill="none"
       aria-hidden="true"
     >
+
       <path
         d="M5.5 8.5L12 15L18.5 8.5"
         stroke="currentColor"
@@ -284,7 +285,7 @@ export default function FAQ() {
                   >
                     {/* círculo */}
                     <span
-                      className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-full border transition-all duration-150 md:h-14 md:w-14 ${
+                      className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-full border transition-all duration-100 md:h-14 md:w-14 ${
                         isOpen
                           ? "border-[#95AE55] bg-[#95AE55] text-[#080A07] shadow-[0_0_20px_rgba(149,174,85,0.16)]"
                           : "border-[#6F8F5E]/70 bg-transparent text-[#879A58]"
