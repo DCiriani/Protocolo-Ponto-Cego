@@ -310,12 +310,12 @@ export default function FAQ() {
 
                   {/* resposta */}
                   <div
-                    className={`grid transition-[grid-template-rows,opacity] duration-500 ease-out ${
-                      isOpen
-                        ? "grid-rows-[1fr] opacity-100"
-                        : "grid-rows-[0fr] opacity-0"
-                    }`}
-                  >
+  className={`grid transition-[grid-template-rows,opacity] duration-200 ease-out ${
+    isOpen
+      ? "grid-rows-[1fr] opacity-100"
+      : "grid-rows-[0fr] opacity-0"
+  }`}
+>
                     <div className="overflow-hidden">
                       <div className="px-5 pb-7 pl-[5rem] pr-5 text-[0.98rem] leading-7 text-zinc-300 md:px-7 md:pb-8 md:pl-[7.25rem] md:pr-10 md:text-[1.08rem] md:leading-8">
                         {item.answer}
