@@ -297,9 +297,15 @@ export default function Receive() {
 
             <div className="mt-4 h-px w-20 bg-[#6F8F5E]" />
 
-            <h2 className="mt-7 font-[family-name:var(--font-bodoni)] text-[3.4rem] font-medium leading-[0.95] tracking-[-0.03em] text-[#F5F5F3] min-[390px]:text-[3.85rem] md:text-[5.7rem] lg:text-[6.4rem]">
-              Sua Leitura Ponto Cego
-            </h2>
+            <h2 className="mt-7 font-[family-name:var(--font-bodoni)] text-[3.4rem] font-medium leading-[0.95] tracking-[-0.03em] min-[390px]:text-[3.85rem] md:text-[5.7rem] lg:text-[6.4rem]">
+  <span className="block whitespace-nowrap text-[#F5F5F3]">
+    Sua leitura
+  </span>
+
+  <span className="block text-[#6F8F5E]">
+    Ponto cego
+  </span>
+</h2>
 
             <div className="mt-9 max-w-[650px] space-y-7 text-[1.08rem] leading-[1.65] text-zinc-300 md:text-[1.28rem] md:leading-[1.7]">
               <p>
