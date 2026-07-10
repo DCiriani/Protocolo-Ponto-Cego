@@ -174,33 +174,19 @@ function DocumentPreview() {
         <stop offset="0%" stopColor="#000000" stopOpacity="0" />
         <stop offset="100%" stopColor="#000000" stopOpacity="0.25" />
       </linearGradient>
-      <linearGradient id="foldEdge" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stopColor="#F0DEB0" />
-        <stop offset="50%" stopColor="#C6A468" />
-        <stop offset="100%" stopColor="#8A6E42" />
-      </linearGradient>
     </defs>
 
-    {/* miolo transparente (só um leve escurecido pra dar profundidade) */}
+    {/* miolo transparente com leve escurecido pra dar profundidade */}
     <path d="M90 0 L90 68 C 68 42, 46 20, 0 0 Z" fill="url(#foldFill)" />
 
-    {/* vinco dourado diagonal */}
+    {/* vinco discreto */}
     <path
       d="M2 1 C 32 18, 58 42, 88 74"
       fill="none"
-      stroke="url(#foldEdge)"
-      strokeWidth="1.6"
+      stroke="#6F8F5E"
+      strokeWidth="1"
       strokeLinecap="round"
-    />
-
-    {/* brilho fino acompanhando o vinco */}
-    <path
-      d="M4 3 C 33 19, 58 42, 86 72"
-      fill="none"
-      stroke="#F3E3BC"
-      strokeWidth="0.6"
-      strokeLinecap="round"
-      opacity="0.5"
+      opacity="0.35"
     />
   </svg>
 </div>
