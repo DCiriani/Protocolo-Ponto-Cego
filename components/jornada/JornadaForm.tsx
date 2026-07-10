@@ -501,9 +501,9 @@ export default function JornadaForm() {
                   {currentStep.eyebrow}
                 </span>
 
-                <h1 className="max-w-3xl text-[clamp(3rem,6vw,6.8rem)] font-semibold leading-[0.92] tracking-[-0.07em]">
-                  {currentStep.title}
-                </h1>
+                <h1 className="max-w-3xl font-[family-name:var(--font-bodoni)] text-[clamp(3rem,6vw,6.8rem)] font-medium leading-[0.96] tracking-[-0.03em] text-[#6F8F5E]">
+  {currentStep.title}
+</h1>
 
                 <p className="mt-8 max-w-xl whitespace-pre-wrap text-[18px] leading-8 text-zinc-400 md:text-[20px] md:leading-10">
                   {currentStep.description}
@@ -682,9 +682,9 @@ function renderField(step: Step, answers: Answers, setField: SetField) {
         </div>
 
         <div>
-          <h2 className="mb-4 text-2xl font-semibold tracking-[-0.04em]">
-            {step.secondaryTitle}
-          </h2>
+          <h2 className="mb-4 font-[family-name:var(--font-bodoni)] text-[2rem] font-medium leading-tight tracking-[-0.02em] text-[#6F8F5E] md:text-[2.4rem]">
+  {step.secondaryTitle}
+</h2>
 
           <textarea
             value={answers.reactionPurpose}
@@ -720,9 +720,9 @@ function renderField(step: Step, answers: Answers, setField: SetField) {
         </div>
 
         <div>
-          <h2 className="mb-4 text-2xl font-semibold tracking-[-0.04em]">
-            {step.secondaryTitle}
-          </h2>
+          <h2 className="mb-4 font-[family-name:var(--font-bodoni)] text-[2rem] font-medium leading-tight tracking-[-0.02em] text-[#6F8F5E] md:text-[2.4rem]">
+  {step.secondaryTitle}
+</h2>
 
           <textarea
             value={answers.mirrorTruth}
@@ -839,9 +839,9 @@ function ReviewStep({
         Envio
       </span>
 
-      <h1 className="max-w-4xl text-[clamp(3rem,6vw,6.8rem)] font-semibold leading-[0.92] tracking-[-0.07em]">
-        Suas respostas estão prontas.
-      </h1>
+      <h1 className="max-w-4xl font-[family-name:var(--font-bodoni)] text-[clamp(3rem,6vw,6.8rem)] font-medium leading-[0.96] tracking-[-0.03em] text-[#6F8F5E]">
+  Suas respostas estão prontas.
+</h1>
 
       <p className="mt-8 max-w-3xl text-[18px] leading-8 text-zinc-400 md:text-[20px] md:leading-10">
         Antes de enviar, confere uma coisa só: se o que você escreveu representa
