@@ -21,6 +21,38 @@ const steps = [
   },
 ];
 
+function EyeIcon() {
+  const rays = Array.from({ length: 16 }).map((_, i) => {
+    const angle = (i * 360) / 16;
+    const rad = (angle * Math.PI) / 180;
+    const innerR = 30;
+    const outerR = 44;
+    const x1 = 60 + innerR * Math.cos(rad);
+    const y1 = 60 + innerR * Math.sin(rad);
+    const x2 = 60 + outerR * Math.cos(rad);
+    const y2 = 60 + outerR * Math.sin(rad);
+    return { x1, y1, x2, y2, key: i };
+  });
+
+  return (
+    <svg
+      viewBox="0 0 120 120"
+      className="h-16 w-16 md:h-[4.5rem] md:w-[4.5rem]"
+      style={{ filter: "drop-shadow(0 0 6px rgba(111,143,94,0.35))" }}
+      aria-hidden="true"
+    >
+      <g stroke="#6F8F5E" strokeWidth="1.4" strokeLinecap="round" fill="none">
+        {rays.map((r) => (
+          <line key={r.key} x1={r.x1} y1={r.y1} x2={r.x2} y2={r.y2} />
+        ))}
+        <path d="M18 60 C 40 28, 80 28, 102 60 C 80 92, 40 92, 18 60 Z" strokeWidth="1.6" />
+        <circle cx="60" cy="60" r="13" strokeWidth="1.4" />
+        <circle cx="60" cy="60" r="3.5" fill="#6F8F5E" stroke="none" />
+      </g>
+    </svg>
+  );
+}
+
 function DocumentPreview() {
   return (
     <div className="mt-8 md:ml-0 md:max-w-[620px]">
@@ -221,9 +253,9 @@ function DocumentPreview() {
               </p>
             </div>
 
-            <div className="hidden h-12 w-12 items-center justify-center rounded-full border border-[#6F8F5E]/35 text-[#6F8F5E] md:flex">
-              ◉
-            </div>
+            <div className="hidden md:block">
+  <EyeIcon />
+</div>
           </div>
 
           <div className="mt-7 grid gap-7 md:grid-cols-2">
