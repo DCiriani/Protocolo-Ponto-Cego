@@ -260,7 +260,7 @@ export default function Process() {
   return (
     <section
       id="processo"
-      className="relative overflow-hidden bg-[#050705] pt-6 pb-20 text-[#F5F5F3] md:pt-14 md:pb-28"
+      className="relative overflow-hidden bg-[#050705] pt-6 pb-20 text-[#F5F5F3] md:pt-10 md:pb-28"
     >
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_88%_0%,rgba(146,110,66,0.16),transparent_34%)]" />
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,#050705_0%,#080a08_48%,#050705_100%)]" />
