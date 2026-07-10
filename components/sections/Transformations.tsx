@@ -6,22 +6,22 @@ import Container from "@/components/ui/Container";
 const items = [
   {
     number: "01",
-    title: "Você reconhece repetições.",
+    title: "Você reconhece repetições",
     text: "Aquilo que parecia acontecer por acaso começa a ganhar forma. Situações, escolhas e reações passam a ser vistas como parte de um padrão.",
   },
   {
     number: "02",
-    title: "Você percebe onde se abandona.",
+    title: "Você percebe onde se abandona",
     text: "Alguns conflitos permanecem porque você aprende a silenciar necessidades, ultrapassar limites ou aceitar menos do que realmente sente.",
   },
   {
     number: "03",
-    title: "Você entende melhor suas interpretações.",
+    title: "Você entende melhor suas interpretações",
     text: "Nem sempre o sofrimento nasce do que aconteceu. Às vezes, nasce da forma como você interpreta o silêncio, a distância ou o comportamento do outro.",
   },
   {
     number: "04",
-    title: "Você ganha um ponto de partida.",
+    title: "Você ganha um ponto de partida",
     text: "Clareza sobre onde começar a olhar com mais honestidade. Um mapa do que estava invisível até agora.",
   },
 ];
@@ -103,7 +103,7 @@ export default function Transformations() {
                   </div>
 
                   <div className="md:pl-7">
-                    <h3 className="max-w-[620px] font-[family-name:var(--font-bodoni)] text-[2rem] font-medium leading-[1.05] text-[#F5F5F3] md:text-[2.1rem] lg:text-[2.65rem]">
+                    <h3 className="max-w-[620px] font-[family-name:var(--font-bodoni)] text-[2rem] font-medium leading-[1.05] text-[#F5F5F3] md:text-[2.rem] lg:text-[2.65rem]">
   {item.title}
 </h3>
 
