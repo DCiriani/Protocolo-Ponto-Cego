@@ -84,81 +84,81 @@ function DocumentPreview() {
         />
 
         {/* craquelado / papel amassado mais visível */}
-<svg
-  className="pointer-events-none absolute inset-0 h-full w-full opacity-[0.34]"
-  viewBox="0 0 700 500"
-  preserveAspectRatio="none"
-  aria-hidden="true"
->
-  <defs>
-    <filter id="paper-crackle-rough">
-      <feTurbulence
-        type="fractalNoise"
-        baseFrequency="0.018"
-        numOctaves="3"
-        seed="14"
-        result="noise"
-      />
-      <feDisplacementMap in="SourceGraphic" in2="noise" scale="1.4" />
-    </filter>
-  </defs>
+        <svg
+          className="pointer-events-none absolute inset-0 h-full w-full opacity-[0.34]"
+          viewBox="0 0 700 500"
+          preserveAspectRatio="none"
+          aria-hidden="true"
+        >
+          <defs>
+            <filter id="paper-crackle-rough">
+              <feTurbulence
+                type="fractalNoise"
+                baseFrequency="0.018"
+                numOctaves="3"
+                seed="14"
+                result="noise"
+              />
+              <feDisplacementMap in="SourceGraphic" in2="noise" scale="1.4" />
+            </filter>
+          </defs>
 
-  <g
-    filter="url(#paper-crackle-rough)"
-    fill="none"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    <path
-      d="M24 44 C78 34 112 58 158 47 C218 32 248 74 308 56 C358 41 401 72 458 58 C512 46 570 58 676 34"
-      stroke="#B89A63"
-      strokeWidth="0.65"
-      opacity="0.28"
-    />
-    <path
-      d="M34 128 C96 112 143 142 208 120 C263 101 316 139 372 116 C438 88 501 124 654 96"
-      stroke="#D3B77B"
-      strokeWidth="0.45"
-      opacity="0.18"
-    />
-    <path
-      d="M46 420 C104 372 168 420 230 374 C296 326 372 388 444 330 C506 281 590 318 680 250"
-      stroke="#B89A63"
-      strokeWidth="0.7"
-      opacity="0.25"
-    />
-    <path
-      d="M382 20 C348 88 398 132 354 202 C315 265 384 322 332 390 C306 424 324 462 292 494"
-      stroke="#B89A63"
-      strokeWidth="0.55"
-      opacity="0.24"
-    />
-    <path
-      d="M598 18 C578 58 600 88 568 128 C538 166 562 218 516 260 C482 292 492 340 448 380"
-      stroke="#8F784F"
-      strokeWidth="0.55"
-      opacity="0.22"
-    />
-    <path
-      d="M82 248 C132 228 184 250 236 224 C292 196 340 230 396 202"
-      stroke="#D3B77B"
-      strokeWidth="0.42"
-      opacity="0.14"
-    />
-    <path
-      d="M438 436 C492 402 546 424 620 384"
-      stroke="#D3B77B"
-      strokeWidth="0.42"
-      opacity="0.16"
-    />
-    <path
-      d="M10 310 C74 292 112 314 168 286 C216 262 258 282 304 248"
-      stroke="#8F784F"
-      strokeWidth="0.5"
-      opacity="0.18"
-    />
-  </g>
-</svg>
+          <g
+            filter="url(#paper-crackle-rough)"
+            fill="none"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path
+              d="M24 44 C78 34 112 58 158 47 C218 32 248 74 308 56 C358 41 401 72 458 58 C512 46 570 58 676 34"
+              stroke="#B89A63"
+              strokeWidth="0.65"
+              opacity="0.28"
+            />
+            <path
+              d="M34 128 C96 112 143 142 208 120 C263 101 316 139 372 116 C438 88 501 124 654 96"
+              stroke="#D3B77B"
+              strokeWidth="0.45"
+              opacity="0.18"
+            />
+            <path
+              d="M46 420 C104 372 168 420 230 374 C296 326 372 388 444 330 C506 281 590 318 680 250"
+              stroke="#B89A63"
+              strokeWidth="0.7"
+              opacity="0.25"
+            />
+            <path
+              d="M382 20 C348 88 398 132 354 202 C315 265 384 322 332 390 C306 424 324 462 292 494"
+              stroke="#B89A63"
+              strokeWidth="0.55"
+              opacity="0.24"
+            />
+            <path
+              d="M598 18 C578 58 600 88 568 128 C538 166 562 218 516 260 C482 292 492 340 448 380"
+              stroke="#8F784F"
+              strokeWidth="0.55"
+              opacity="0.22"
+            />
+            <path
+              d="M82 248 C132 228 184 250 236 224 C292 196 340 230 396 202"
+              stroke="#D3B77B"
+              strokeWidth="0.42"
+              opacity="0.14"
+            />
+            <path
+              d="M438 436 C492 402 546 424 620 384"
+              stroke="#D3B77B"
+              strokeWidth="0.42"
+              opacity="0.16"
+            />
+            <path
+              d="M10 310 C74 292 112 314 168 286 C216 262 258 282 304 248"
+              stroke="#8F784F"
+              strokeWidth="0.5"
+              opacity="0.18"
+            />
+          </g>
+        </svg>
 
         {/* vinheta nas bordas */}
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_47%,rgba(0,0,0,0.34)_100%)]" />
@@ -167,51 +167,37 @@ function DocumentPreview() {
         <div className="pointer-events-none absolute inset-[1px] rounded-[0.85rem] border border-[#C2A46A]/15" />
 
         {/* canto dobrado */}
-<div className="pointer-events-none absolute right-0 top-0 z-30 h-[70px] w-[70px] md:h-[86px] md:w-[86px]">
-  <svg viewBox="0 0 90 90" className="h-full w-full" aria-hidden="true">
-    <defs>
-      <linearGradient id="foldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stopColor="#EBD9AC" />
-        <stop offset="45%" stopColor="#B9975E" />
-        <stop offset="100%" stopColor="#4A3B24" />
-      </linearGradient>
-    </defs>
+        <div className="pointer-events-none absolute right-0 top-0 z-30 h-[70px] w-[70px] md:h-[86px] md:w-[86px]">
+          <svg viewBox="0 0 90 90" className="h-full w-full" aria-hidden="true">
+            <defs>
+              <linearGradient id="foldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#F0DEB0" />
+                <stop offset="50%" stopColor="#C6A468" />
+                <stop offset="100%" stopColor="#8A6E42" />
+              </linearGradient>
+            </defs>
 
-    {/* canto dobrado */}
-<div className="pointer-events-none absolute right-0 top-0 z-30 h-[70px] w-[70px] md:h-[86px] md:w-[86px]">
-  <svg viewBox="0 0 90 90" className="h-full w-full" aria-hidden="true">
-    <defs>
-      <linearGradient id="foldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stopColor="#F0DEB0" />
-        <stop offset="50%" stopColor="#C6A468" />
-        <stop offset="100%" stopColor="#8A6E42" />
-      </linearGradient>
-    </defs>
+            {/* sombra projetada do canto dobrado sobre o papel */}
+            <path
+              d="M90 0 L90 68 C 68 42, 46 20, 0 0 Z"
+              fill="#000"
+              opacity="0.4"
+              transform="translate(-4 5)"
+            />
 
-    {/* sombra projetada do canto dobrado sobre o papel */}
-    <path
-      d="M90 0 L90 68 C 68 42, 46 20, 0 0 Z"
-      fill="#000"
-      opacity="0.4"
-      transform="translate(-4 5)"
-    />
+            {/* triângulo dourado SÓLIDO da dobra */}
+            <path d="M90 0 L90 68 C 68 42, 46 20, 0 0 Z" fill="url(#foldGradient)" />
 
-    {/* triângulo dourado SÓLIDO da dobra */}
-    <path
-      d="M90 0 L90 68 C 68 42, 46 20, 0 0 Z"
-      fill="url(#foldGradient)"
-    />
-
-    {/* linha do vinco */}
-    <path
-      d="M2 1 C 32 18, 58 42, 87 74"
-      fill="none"
-      stroke="#5A4A2C"
-      strokeWidth="1"
-      opacity="0.5"
-    />
-  </svg>
-</div>
+            {/* linha do vinco */}
+            <path
+              d="M2 1 C 32 18, 58 42, 87 74"
+              fill="none"
+              stroke="#5A4A2C"
+              strokeWidth="1"
+              opacity="0.5"
+            />
+          </svg>
+        </div>
 
         <div className="relative z-10">
           <div className="flex items-start justify-between border-b border-[#6F8F5E]/30 pb-5 pr-14">
@@ -226,8 +212,8 @@ function DocumentPreview() {
             </div>
 
             <div className="hidden md:block">
-  <EyeIcon />
-</div>
+              <EyeIcon />
+            </div>
           </div>
 
           <div className="mt-7 grid gap-7 md:grid-cols-2">
