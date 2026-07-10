@@ -36,39 +36,119 @@ function CheckIcon() {
 }
 
 function ReportIcon({ index }: { index: number }) {
-  const icons = ["⌕", "◌", "↻", "⌾", "↗"];
+  const commonProps = {
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: 1.5,
+    strokeLinecap: "round" as const,
+    strokeLinejoin: "round" as const,
+  };
 
   return (
-    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#6F8F5E]/40 text-[1rem] text-[#6F8F5E]">
-      {icons[index]}
+    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[#6F8F5E]/50 text-[#6F8F5E] md:h-11 md:w-11">
+      <svg
+        viewBox="0 0 24 24"
+        className="h-5 w-5 md:h-[1.35rem] md:w-[1.35rem]"
+        aria-hidden="true"
+      >
+        {index === 0 && (
+          <>
+            <circle cx="10.5" cy="10.5" r="5.5" {...commonProps} />
+            <path d="M15 15L20 20" {...commonProps} />
+          </>
+        )}
+
+        {index === 1 && (
+          <>
+            <path
+              d="M3 12C5.4 8.8 8.4 7 12 7C15.6 7 18.6 8.8 21 12C18.6 15.2 15.6 17 12 17C8.4 17 5.4 15.2 3 12Z"
+              {...commonProps}
+            />
+            <circle cx="12" cy="12" r="2.3" {...commonProps} />
+            <path d="M4 4L20 20" {...commonProps} />
+          </>
+        )}
+
+        {index === 2 && (
+          <>
+            <path
+              d="M19 8A8 8 0 0 0 5.5 6.2L3 9"
+              {...commonProps}
+            />
+            <path d="M3 5V9H7" {...commonProps} />
+            <path
+              d="M5 16A8 8 0 0 0 18.5 17.8L21 15"
+              {...commonProps}
+            />
+            <path d="M21 19V15H17" {...commonProps} />
+          </>
+        )}
+
+        {index === 3 && (
+          <>
+            <path
+              d="M12 3L19 6V11.5C19 16 16.2 19.1 12 21C7.8 19.1 5 16 5 11.5V6L12 3Z"
+              {...commonProps}
+            />
+            <path d="M9.5 12L11.2 13.7L14.8 10" {...commonProps} />
+          </>
+        )}
+
+        {index === 4 && (
+          <>
+            <path d="M5 19L19 5" {...commonProps} />
+            <path d="M11 5H19V13" {...commonProps} />
+            <path d="M7.5 13.5L5 19L10.5 16.5" {...commonProps} />
+          </>
+        )}
+      </svg>
     </span>
   );
 }
 
 function ReadingMockup() {
   return (
-    <div className="relative mx-auto mt-10 max-w-[760px] rounded-[1.45rem] border border-[#6F8F5E]/35 bg-black/20 p-4 shadow-[0_30px_90px_rgba(0,0,0,0.45)] md:p-8">
-      {/* luz interna */}
-      <div className="pointer-events-none absolute inset-0 rounded-[1.45rem] bg-[radial-gradient(circle_at_8%_12%,rgba(146,110,66,0.18),transparent_28%)]" />
+    <div className="relative mx-auto mt-10 max-w-[790px] overflow-hidden rounded-[1.45rem] border border-[#8B774F]/45 bg-[radial-gradient(circle_at_8%_8%,rgba(139,101,59,0.22),transparent_34%),linear-gradient(145deg,rgba(20,18,14,0.98),rgba(6,7,6,0.99))] px-4 py-7 shadow-[inset_0_1px_0_rgba(255,241,205,0.05),0_30px_90px_rgba(0,0,0,0.48)] md:px-8 md:py-9">
+      {/* textura da moldura externa */}
+      <div
+        className="pointer-events-none absolute inset-0 opacity-[0.14]"
+        style={{
+          backgroundImage: `
+            radial-gradient(circle at 18% 22%, rgba(181,139,82,0.16), transparent 22%),
+            radial-gradient(circle at 82% 76%, rgba(106,81,48,0.12), transparent 25%),
+            repeating-linear-gradient(
+              0deg,
+              rgba(255,240,210,0.012) 0px,
+              rgba(255,240,210,0.012) 1px,
+              transparent 1px,
+              transparent 5px
+            )
+          `,
+        }}
+      />
 
-      <div className="relative mx-auto max-w-[620px]">
-        {/* folhas atrás */}
-        <div className="absolute -left-4 top-3 h-full w-full rounded-[0.7rem] border border-white/10 bg-[#12110e]" />
-        <div className="absolute -left-2 top-1 h-full w-full rounded-[0.7rem] border border-white/10 bg-[#17150f]" />
+      <div className="relative mx-auto max-w-[660px]">
+        {/* folhas empilhadas atrás */}
+        <div className="absolute -left-3 bottom-2 top-4 w-full -rotate-[0.7deg] rounded-[0.35rem] border border-[#B79A64]/15 bg-[#0D0D0B] shadow-[0_16px_45px_rgba(0,0,0,0.42)] md:-left-5" />
 
-        {/* documento principal */}
-        <div className="relative overflow-hidden rounded-[0.55rem] border border-[#C2A46A]/18 bg-[linear-gradient(180deg,rgba(18,17,14,0.98)_0%,rgba(8,8,7,0.98)_100%)] px-5 py-7 shadow-[0_20px_70px_rgba(0,0,0,0.55)] md:px-9 md:py-9">
-          {/* textura do documento */}
+        <div className="absolute -right-3 bottom-1 top-2 w-full rotate-[0.65deg] rounded-[0.35rem] border border-white/10 bg-[#12120F] shadow-[0_14px_40px_rgba(0,0,0,0.4)] md:-right-5" />
+
+        <div className="absolute -left-1 bottom-0 top-1 w-full rounded-[0.35rem] border border-white/10 bg-[#171611]" />
+
+        {/* folha principal */}
+        <div className="relative overflow-hidden rounded-[0.3rem] border border-[#B49A68]/25 bg-[linear-gradient(180deg,rgba(19,18,15,0.99)_0%,rgba(7,8,7,0.99)_100%)] px-5 pb-7 pt-8 shadow-[0_24px_75px_rgba(0,0,0,0.6)] md:px-9 md:pb-9 md:pt-10">
+          {/* textura do papel */}
           <div
-            className="pointer-events-none absolute inset-0 opacity-[0.16]"
+            className="pointer-events-none absolute inset-0 opacity-[0.19]"
             style={{
               backgroundImage: `
-                radial-gradient(circle at 12% 8%, rgba(185,145,86,0.14), transparent 24%),
-                radial-gradient(circle at 88% 16%, rgba(112,88,55,0.12), transparent 26%),
+                radial-gradient(circle at 8% 12%, rgba(172,131,76,0.14), transparent 25%),
+                radial-gradient(circle at 88% 20%, rgba(105,82,52,0.11), transparent 28%),
+                radial-gradient(circle at 30% 84%, rgba(145,107,65,0.08), transparent 25%),
                 repeating-linear-gradient(
                   0deg,
-                  rgba(255,242,215,0.018) 0px,
-                  rgba(255,242,215,0.018) 1px,
+                  rgba(255,244,220,0.015) 0px,
+                  rgba(255,244,220,0.015) 1px,
                   transparent 1px,
                   transparent 5px
                 )
@@ -76,51 +156,93 @@ function ReadingMockup() {
             }}
           />
 
-          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_48%,rgba(0,0,0,0.28)_100%)]" />
+          {/* grão */}
+          <svg
+            className="pointer-events-none absolute inset-0 h-full w-full opacity-[0.09] mix-blend-soft-light"
+            preserveAspectRatio="none"
+            aria-hidden="true"
+          >
+            <filter id="receive-document-grain">
+              <feTurbulence
+                type="fractalNoise"
+                baseFrequency="0.75"
+                numOctaves="4"
+                stitchTiles="stitch"
+              />
+            </filter>
+
+            <rect
+              width="100%"
+              height="100%"
+              filter="url(#receive-document-grain)"
+            />
+          </svg>
+
+          {/* vinheta */}
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_48%,rgba(0,0,0,0.34)_100%)]" />
 
           <div className="relative z-10">
+            {/* título */}
             <div className="text-center">
-              <h3 className="font-[family-name:var(--font-bodoni)] text-[2rem] font-medium uppercase leading-none tracking-[0.04em] text-[#F5F5F3] md:text-[3rem]">
+              <h3 className="whitespace-nowrap font-[family-name:var(--font-bodoni)] text-[1.7rem] font-medium uppercase leading-none tracking-[0.025em] text-[#F4EBDD] min-[390px]:text-[1.95rem] md:text-[3rem]">
                 Ponto Cego · 48h
               </h3>
 
-              <p className="mt-3 font-satoshi text-[0.62rem] font-semibold uppercase tracking-[0.34em] text-[#6F8F5E] md:text-[0.78rem]">
+              <p className="mt-3 font-satoshi text-[0.55rem] font-semibold uppercase tracking-[0.3em] text-[#6F8F5E] min-[390px]:text-[0.62rem] md:text-[0.78rem] md:tracking-[0.36em]">
                 Sua leitura personalizada
               </p>
             </div>
 
-            <div className="relative mt-8 rounded-[0.65rem] border border-[#6F8F5E]/35 px-5 py-4 text-center">
-              <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#11100d] px-3 text-[#6F8F5E]">
+            {/* frase destacada */}
+            <div className="relative mt-7 rounded-[0.8rem] border border-[#6F8F5E]/40 bg-black/10 px-5 py-5 text-center md:mt-8 md:px-8">
+              <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#11100D] px-3 text-[#6F8F5E]">
                 ✦
               </span>
 
-              <p className="font-[family-name:var(--font-bodoni)] text-[1.15rem] leading-snug text-[#F5F5F3] md:text-[1.35rem]">
-                “Você tende a interpretar distância como rejeição, e isso...”
+              <p className="font-[family-name:var(--font-bodoni)] text-[0.98rem] leading-[1.4] text-[#E8DECD] md:text-[1.25rem]">
+                <span className="mr-2 text-[#6F8F5E]">“</span>
+                Você tende a interpretar distância como rejeição, e isso
+                <span className="ml-1 inline-block select-none blur-[2.2px]">
+                  influencia a forma como você responde aos seus relacionamentos.
+                </span>
               </p>
-
-              <div className="mx-auto mt-3 h-3 w-[72%] rounded-full bg-[#F5F5F3]/10 blur-[2px]" />
             </div>
 
-            <div className="mt-8 space-y-5">
+            {/* conteúdos da leitura */}
+            <div className="mt-7 md:mt-8">
               {reportItems.map((item, index) => (
-                <div key={item} className="flex gap-4 border-b border-[#6F8F5E]/18 pb-4">
+                <div
+                  key={item}
+                  className={`flex gap-4 py-4 md:gap-5 md:py-5 ${
+                    index !== reportItems.length - 1
+                      ? "border-b border-[#6F8F5E]/18"
+                      : ""
+                  }`}
+                >
                   <ReportIcon index={index} />
 
-                  <div className="flex-1">
-                    <p className="font-satoshi text-[0.66rem] font-semibold uppercase tracking-[0.18em] text-[#6F8F5E] md:text-[0.78rem]">
+                  <div className="min-w-0 flex-1">
+                    <p className="font-satoshi text-[0.58rem] font-semibold uppercase leading-4 tracking-[0.13em] text-[#6F8F5E] md:text-[0.72rem] md:tracking-[0.16em]">
                       {index + 1}. {item}
                     </p>
 
-                    <div className="mt-3 space-y-2">
-                      <div className="h-2 rounded-full bg-[#F5F5F3]/12 blur-[1px]" />
-                      <div className="h-2 w-[92%] rounded-full bg-[#F5F5F3]/10 blur-[1px]" />
-                      <div className="h-2 w-[78%] rounded-full bg-[#F5F5F3]/8 blur-[1px]" />
+                    <div className="mt-3 space-y-2.5 opacity-70">
+                      <div className="h-[5px] w-full rounded-full bg-[#D8CFBF]/15 blur-[1.8px]" />
+
+                      <div className="h-[5px] w-[94%] rounded-full bg-[#D8CFBF]/13 blur-[1.8px]" />
+
+                      {index !== 4 && (
+                        <div className="h-[5px] w-[78%] rounded-full bg-[#D8CFBF]/10 blur-[1.8px]" />
+                      )}
                     </div>
                   </div>
                 </div>
               ))}
             </div>
           </div>
+
+          {/* borda interna */}
+          <div className="pointer-events-none absolute inset-[1px] rounded-[0.25rem] border border-[#D0B278]/5" />
         </div>
       </div>
     </div>
