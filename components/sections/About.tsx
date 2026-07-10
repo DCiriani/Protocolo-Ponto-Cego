@@ -71,7 +71,7 @@ export default function About() {
   whileInView={{ opacity: 1, y: 0 }}
   viewport={{ once: true, amount: 0.25 }}
   transition={{ duration: 0.9, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
-  className="mx-auto max-w-[680px] overflow-hidden rounded-[1.55rem] border border-[#6F8F5E]/35 bg-black/25 shadow-[0_24px_70px_rgba(0,0,0,0.38)] md:rounded-[2rem]"
+  className="mx-auto max-w-[480px] overflow-hidden rounded-[1.55rem] border border-[#6F8F5E]/35 bg-black/25 shadow-[0_24px_70px_rgba(0,0,0,0.38)] md:rounded-[2rem]"
 >
   <div className="relative aspect-[4/5] w-full">
     <Image
