@@ -167,37 +167,43 @@ function DocumentPreview() {
         <div className="pointer-events-none absolute inset-[1px] rounded-[0.85rem] border border-[#C2A46A]/15" />
 
         {/* canto dobrado */}
-        <div className="pointer-events-none absolute right-0 top-0 z-30 h-[70px] w-[70px] md:h-[86px] md:w-[86px]">
-          <svg viewBox="0 0 90 90" className="h-full w-full" aria-hidden="true">
-            <defs>
-              <linearGradient id="foldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#F0DEB0" />
-                <stop offset="50%" stopColor="#C6A468" />
-                <stop offset="100%" stopColor="#8A6E42" />
-              </linearGradient>
-            </defs>
+<div className="pointer-events-none absolute right-0 top-0 z-30 h-[70px] w-[70px] md:h-[86px] md:w-[86px]">
+  <svg viewBox="0 0 90 90" className="h-full w-full" aria-hidden="true">
+    <defs>
+      <linearGradient id="foldFill" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stopColor="#000000" stopOpacity="0" />
+        <stop offset="100%" stopColor="#000000" stopOpacity="0.25" />
+      </linearGradient>
+      <linearGradient id="foldEdge" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stopColor="#F0DEB0" />
+        <stop offset="50%" stopColor="#C6A468" />
+        <stop offset="100%" stopColor="#8A6E42" />
+      </linearGradient>
+    </defs>
 
-            {/* sombra projetada do canto dobrado sobre o papel */}
-            <path
-              d="M90 0 L90 68 C 68 42, 46 20, 0 0 Z"
-              fill="#000"
-              opacity="0.4"
-              transform="translate(-4 5)"
-            />
+    {/* miolo transparente (só um leve escurecido pra dar profundidade) */}
+    <path d="M90 0 L90 68 C 68 42, 46 20, 0 0 Z" fill="url(#foldFill)" />
 
-            {/* triângulo dourado SÓLIDO da dobra */}
-            <path d="M90 0 L90 68 C 68 42, 46 20, 0 0 Z" fill="url(#foldGradient)" />
+    {/* vinco dourado diagonal */}
+    <path
+      d="M2 1 C 32 18, 58 42, 88 74"
+      fill="none"
+      stroke="url(#foldEdge)"
+      strokeWidth="1.6"
+      strokeLinecap="round"
+    />
 
-            {/* linha do vinco */}
-            <path
-              d="M2 1 C 32 18, 58 42, 87 74"
-              fill="none"
-              stroke="#5A4A2C"
-              strokeWidth="1"
-              opacity="0.5"
-            />
-          </svg>
-        </div>
+    {/* brilho fino acompanhando o vinco */}
+    <path
+      d="M4 3 C 33 19, 58 42, 86 72"
+      fill="none"
+      stroke="#F3E3BC"
+      strokeWidth="0.6"
+      strokeLinecap="round"
+      opacity="0.5"
+    />
+  </svg>
+</div>
 
         <div className="relative z-10">
           <div className="flex items-start justify-between border-b border-[#6F8F5E]/30 pb-5 pr-14">
