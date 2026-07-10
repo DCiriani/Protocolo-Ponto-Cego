@@ -247,13 +247,13 @@ function Commitment() {
 </p>
 
               {/* título */}
-              <h2 className="mx-auto mt-8 max-w-[760px] text-center font-satoshi text-[2.15rem] font-light uppercase leading-[1.12] tracking-[0.04em] text-[#F4EBDD] min-[390px]:text-[2.45rem] md:text-[3.9rem] lg:text-[4.5rem]">
-  Se algo não fizer
-  <br />
-  sentido, eu reviso
-  <br />
-  com você.
-</h2>
+              <h2 className="mx-auto mt-8 max-w-[760px] text-center font-[family-name:var(--font-bodoni)] text-[2.35rem] font-medium uppercase leading-[1.08] tracking-[0.015em] text-[#F4EBDD] min-[390px]:text-[2.7rem] md:text-[3.5rem] lg:text-[5rem]">
+                Se algo não fizer
+                <br />
+                sentido, eu reviso
+                <br />
+                com você.
+              </h2>
 
               {/* ornamento */}
               <div className="mt-9 flex items-center justify-center gap-3">
