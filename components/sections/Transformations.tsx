@@ -29,9 +29,9 @@ const items = [
 export default function Transformations() {
   return (
     <section
-      id="clareza"
-      className="relative overflow-hidden bg-[#050705] pt-12 pb-20 text-[#F5F5F3] md:pt-16 md:pb-28"
-    >
+  id="clareza"
+  className="relative overflow-hidden bg-[#050705] pt-6 pb-20 text-[#F5F5F3] md:pt-8 md:pb-28"
+>
       {/* luz de fundo */}
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_88%_0%,rgba(146,110,66,0.20),transparent_34%)]" />
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,#050705_0%,#080a08_50%,#050705_100%)]" />
