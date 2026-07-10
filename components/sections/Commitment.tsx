@@ -242,9 +242,9 @@ function Commitment() {
                 <div className="h-px flex-1 bg-[#6F8F5E]/65" />
               </div>
 
-              <p className="mt-4 text-center font-satoshi text-[0.75rem] font-semibold uppercase tracking-[0.52em] text-[#879A58] md:text-[0.95rem]">
-                Compromisso
-              </p>
+             <p className="mt-4 text-center font-satoshi text-[0.9rem] font-normal uppercase tracking-[0.52em] text-[#879A58] md:text-[1.1rem]">
+  Compromisso
+</p>
 
               {/* título */}
               <h2 className="mx-auto mt-8 max-w-[760px] text-center font-[family-name:var(--font-bodoni)] text-[2.35rem] font-medium uppercase leading-[1.08] tracking-[0.015em] text-[#F4EBDD] min-[390px]:text-[2.7rem] md:text-[3.5rem] lg:text-[5rem]">
