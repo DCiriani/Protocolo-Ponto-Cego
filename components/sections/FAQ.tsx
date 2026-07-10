@@ -256,77 +256,78 @@ export default function FAQ() {
           </div>
 
           {/* perguntas */}
-          <div className="mt-10 space-y-4 md:mt-12">
-            {faqItems.map((item, index) => {
-              const isOpen = openIndex === index;
+<div className="mt-10 space-y-4 md:mt-12">
+  {faqItems.map((item, index) => {
+    const isOpen = openIndex === index;
 
-              return (
-                <motion.div
-                  key={item.question}
-                  initial={{ opacity: 0, y: 18 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.1 }}
-                  transition={{
-                    duration: 0.6,
-                    delay: index * 0.035,
-                    ease: [0.22, 1, 0.36, 1],
-                  }}
-                  className={`overflow-hidden rounded-[1.15rem] border transition-colors duration-300 ${
-                    isOpen
-                      ? "border-[#879A58]/75 bg-[linear-gradient(180deg,rgba(10,11,9,0.96),rgba(6,7,6,0.98))]"
-                      : "border-[#6F8F5E]/55 bg-[linear-gradient(180deg,rgba(8,9,8,0.9),rgba(5,6,5,0.96))]"
-                  }`}
-                >
-                  <button
-                    type="button"
-                    aria-expanded={isOpen}
-                    onClick={() => setOpenIndex(isOpen ? null : index)}
-                    className="flex w-full items-center gap-4 px-4 py-4 text-left md:gap-6 md:px-7 md:py-5"
-                  >
-                    {/* círculo */}
-                    <span
-                      className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-full border transition-all duration-100 md:h-14 md:w-14 ${
-                        isOpen
-                          ? "border-[#95AE55] bg-[#95AE55] text-[#080A07] shadow-[0_0_20px_rgba(149,174,85,0.16)]"
-                          : "border-[#6F8F5E]/70 bg-transparent text-[#879A58]"
-                      }`}
-                    >
-                      {isOpen ? <MinusIcon /> : <PlusIcon />}
-                    </span>
+    return (
+      <div
+        key={item.question}
+        className={`overflow-hidden rounded-[1.15rem] border ${
+          isOpen
+            ? "border-[#879A58]/75 bg-[linear-gradient(180deg,rgba(10,11,9,0.96),rgba(6,7,6,0.98))]"
+            : "border-[#6F8F5E]/55 bg-[linear-gradient(180deg,rgba(8,9,8,0.9),rgba(5,6,5,0.96))]"
+        }`}
+      >
+        <button
+          type="button"
+          aria-expanded={isOpen}
+          onClick={() => setOpenIndex(isOpen ? null : index)}
+          className="flex w-full items-center gap-4 px-4 py-4 text-left md:gap-6 md:px-7 md:py-5"
+        >
+          {/* círculo */}
+          <span
+            className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-full border md:h-14 md:w-14 ${
+              isOpen
+                ? "border-[#95AE55] bg-[#95AE55] text-[#080A07] shadow-[0_0_20px_rgba(149,174,85,0.16)]"
+                : "border-[#6F8F5E]/70 bg-transparent text-[#879A58]"
+            }`}
+          >
+            {isOpen ? <MinusIcon /> : <PlusIcon />}
+          </span>
 
-                    {/* pergunta */}
-                    <span
-                      className={`min-w-0 flex-1 font-[family-name:var(--font-bodoni)] text-[1.3rem] font-medium leading-[1.14] transition-colors duration-300 md:text-[1.75rem] ${
-                        isOpen ? "text-[#879A58]" : "text-[#F4EBDD]"
-                      }`}
-                    >
-                      {item.question}
-                    </span>
+          {/* pergunta */}
+          <span
+            className={`min-w-0 flex-1 font-[family-name:var(--font-bodoni)] text-[1.3rem] font-medium leading-[1.14] md:text-[1.75rem] ${
+              isOpen ? "text-[#879A58]" : "text-[#F4EBDD]"
+            }`}
+          >
+            {item.question}
+          </span>
 
-                    {/* seta */}
-                    <span className="shrink-0 text-[#879A58]">
-                      <ChevronIcon open={isOpen} />
-                    </span>
-                  </button>
+          {/* seta */}
+          <span
+            className={`shrink-0 text-[#879A58] ${
+              isOpen ? "rotate-180" : ""
+            }`}
+          >
+            <svg
+              viewBox="0 0 24 24"
+              className="h-5 w-5"
+              fill="none"
+              aria-hidden="true"
+            >
+              <path
+                d="M5.5 8.5L12 15L18.5 8.5"
+                stroke="currentColor"
+                strokeWidth="1.6"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </span>
+        </button>
 
-                  {/* resposta */}
-                  <div
-  className={`grid transition-[grid-template-rows,opacity] duration-200 ease-out ${
-    isOpen
-      ? "grid-rows-[1fr] opacity-100"
-      : "grid-rows-[0fr] opacity-0"
-  }`}
->
-                    <div className="overflow-hidden">
-                      <div className="px-5 pb-7 pl-[5rem] pr-5 text-[0.98rem] leading-7 text-zinc-300 md:px-7 md:pb-8 md:pl-[7.25rem] md:pr-10 md:text-[1.08rem] md:leading-8">
-                        {item.answer}
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
-              );
-            })}
+        {/* resposta instantânea */}
+        {isOpen && (
+          <div className="px-5 pb-7 pl-[5rem] pr-5 text-[0.98rem] leading-7 text-zinc-300 md:px-7 md:pb-8 md:pl-[7.25rem] md:pr-10 md:text-[1.08rem] md:leading-8">
+            {item.answer}
           </div>
+        )}
+      </div>
+    );
+  })}
+</div>
 
           {/* sigilo total */}
           <motion.div
