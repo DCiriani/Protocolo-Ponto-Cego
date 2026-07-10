@@ -22,18 +22,6 @@ const steps = [
 ];
 
 function EyeIcon() {
-  const rays = Array.from({ length: 16 }).map((_, i) => {
-    const angle = (i * 360) / 16;
-    const rad = (angle * Math.PI) / 180;
-    const innerR = 30;
-    const outerR = 44;
-    const x1 = 60 + innerR * Math.cos(rad);
-    const y1 = 60 + innerR * Math.sin(rad);
-    const x2 = 60 + outerR * Math.cos(rad);
-    const y2 = 60 + outerR * Math.sin(rad);
-    return { x1, y1, x2, y2, key: i };
-  });
-
   return (
     <svg
       viewBox="0 0 120 120"
@@ -41,14 +29,9 @@ function EyeIcon() {
       style={{ filter: "drop-shadow(0 0 6px rgba(111,143,94,0.35))" }}
       aria-hidden="true"
     >
-      <g stroke="#6F8F5E" strokeWidth="1.4" strokeLinecap="round" fill="none">
-        {rays.map((r) => (
-          <line key={r.key} x1={r.x1} y1={r.y1} x2={r.x2} y2={r.y2} />
-        ))}
-        <path d="M18 60 C 40 28, 80 28, 102 60 C 80 92, 40 92, 18 60 Z" strokeWidth="1.6" />
-        <circle cx="60" cy="60" r="13" strokeWidth="1.4" />
-        <circle cx="60" cy="60" r="3.5" fill="#6F8F5E" stroke="none" />
-      </g>
+      <circle cx="60" cy="60" r="40" fill="none" stroke="#6F8F5E" strokeWidth="1.4" opacity="0.55" />
+      <circle cx="60" cy="60" r="6" fill="none" stroke="#6F8F5E" strokeWidth="1.4" />
+      <circle cx="60" cy="60" r="2.5" fill="#6F8F5E" stroke="none" />
     </svg>
   );
 }
@@ -352,7 +335,7 @@ export default function Process() {
                           <span className="flex h-7 w-7 items-center justify-center rounded border border-[#6F8F5E]/55 text-[#6F8F5E]">
                             ▤
                           </span>
-                          <span>Sua leitura, em documento escrito.</span>
+                          <span>Mais do que uma análise. Um direcionamento para a vida toda.</span>
                         </div>
                       </>
                     )}
