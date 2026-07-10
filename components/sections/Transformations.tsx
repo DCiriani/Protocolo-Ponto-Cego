@@ -67,7 +67,7 @@ export default function Transformations() {
             <div className="mt-4 h-px w-20 bg-[#6F8F5E]" />
           </div>
 
-          <h2 className="max-w-[760px] font-[family-name:var(--font-bodoni)] text-[3rem] font-medium leading-[0.96] tracking-[0.01em] text-[#F5F5F3] min-[390px]:text-[3.35rem] md:text-[5.2rem] lg:text-[6rem]">
+          <h2 className="max-w-[760px] font-[family-name:var(--font-bodoni)] text-[3rem] font-medium leading-[0.96] tracking-[0.01em] text-[#F5F5F3] min-[390px]:text-[3.35rem] md:text-[4.5rem] lg:text-[6rem]">
             O que muda quando
             <br />
             <span className="text-[#6F8F5E]">Você enxerga</span>
