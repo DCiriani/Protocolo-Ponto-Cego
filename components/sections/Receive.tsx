@@ -193,7 +193,7 @@ function ReadingMockup() {
               </p>
             </div>
 
-            {/* frase destacada */}
+                        {/* frase destacada */}
             <div className="relative mt-7 rounded-[0.8rem] border border-[#6F8F5E]/40 bg-black/10 px-5 py-5 text-center md:mt-8 md:px-8">
               <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#11100D] px-3 text-[#6F8F5E]">
                 ✦
@@ -201,8 +201,14 @@ function ReadingMockup() {
 
               <p className="font-[family-name:var(--font-bodoni)] text-[0.98rem] leading-[1.4] text-[#E8DECD] md:text-[1.25rem]">
                 <span className="mr-2 text-[#6F8F5E]">“</span>
-                Você tende a interpretar distância como rejeição, e isso
-                <span className="ml-1 inline-block select-none blur-[2.2px]">
+                Você tende a interpretar distância como rejeição, e isso...{" "}
+                <span
+                  className="select-none"
+                  style={{
+                    color: "transparent",
+                    textShadow: "0 0 5px rgba(232, 222, 205, 0.72)",
+                  }}
+                >
                   influencia a forma como você responde aos seus relacionamentos.
                 </span>
               </p>
