@@ -66,23 +66,23 @@ export default function About() {
           </div>
 
           {/* imagem */}
-          <motion.div
-            initial={{ opacity: 0, y: 34 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.25 }}
-            transition={{ duration: 0.9, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
-            className="overflow-hidden rounded-[1.55rem] border border-[#6F8F5E]/35 bg-black/25 shadow-[0_24px_70px_rgba(0,0,0,0.38)] md:rounded-[2rem]"
-          >
-            <div className="relative aspect-[1.22/1] w-full md:aspect-[16/10]">
-              <Image
-                src="/images/diegociriani.png"
-                alt="Diego Ciriani, psicólogo clínico"
-                fill
-                sizes="(max-width: 768px) 100vw, 860px"
-                className="object-cover object-center"
-              />
-            </div>
-          </motion.div>
+<motion.div
+  initial={{ opacity: 0, y: 34 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true, amount: 0.25 }}
+  transition={{ duration: 0.9, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
+  className="mx-auto max-w-[680px] overflow-hidden rounded-[1.55rem] border border-[#6F8F5E]/35 bg-black/25 shadow-[0_24px_70px_rgba(0,0,0,0.38)] md:rounded-[2rem]"
+>
+  <div className="relative aspect-[4/5] w-full">
+    <Image
+      src="/images/diegociriani.png"
+      alt="Diego Ciriani, psicólogo clínico"
+      fill
+      sizes="(max-width: 768px) 100vw, 680px"
+      className="object-contain object-center"
+    />
+  </div>
+</motion.div>
 
           {/* texto */}
           <motion.div
