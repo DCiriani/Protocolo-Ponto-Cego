@@ -93,7 +93,7 @@ export default function About() {
       alt="Diego Ciriani, psicólogo clínico"
       fill
       sizes="(max-width: 768px) 100vw, 680px"
-      className="relative z-10 object-cover object-top"
+      className="relative z-10 object-cover object-[50%_25%]"
     />
   </div>
 </motion.div>
