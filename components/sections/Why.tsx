@@ -54,9 +54,9 @@ className="relative z-20 max-w-[760px] font-[family-name:var(--font-bodoni)] tex
           <p>
   Durante mais de uma década
   <br className="md:hidden" />
-  atendendo pessoas em psicoterapia,
+  atendendo pessoas na clínica,
   <br className="md:hidden" />
- ouvi centenas de histórias.
+ ouvi milhares de histórias.
 </p>
 
             <p>
