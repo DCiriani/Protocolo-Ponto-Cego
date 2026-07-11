@@ -351,14 +351,14 @@ transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
 
           {/* frase */}
           <div className="mt-8 rounded-[1rem] border border-[#6F8F5E]/35 bg-black/20 px-6 py-6 text-center md:px-10">
-            <p className="font-[family-name:var(--font-bodoni)] text-[1.65rem] font-medium leading-tight text-[#F5F5F3] md:text-[2.25rem]">
-              <span className="mr-3 text-[2.4rem] leading-none text-[#6F8F5E]">
-  “
-</span>
-Nem todo padrão se apresenta como problema.{" "}
-<span className="text-[#6F8F5E]">
-  Alguns se apresentam como familiaridade.
-</span>
+            <p className="font-[family-name:var(--font-bodoni)] text-[1.3rem] font-medium leading-[1.3] text-[#F5F5F3] md:text-[2.25rem] md:leading-tight">
+  <span className="mr-3 text-[2rem] leading-none text-[#6F8F5E] md:text-[2.4rem]">
+    “
+  </span>
+  Nem todo padrão se apresenta como problema.{" "}
+  <span className="text-[#6F8F5E]">
+    Alguns se apresentam como familiaridade.
+  </span>
 </p>
 </div>
 
