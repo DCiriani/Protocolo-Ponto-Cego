@@ -27,8 +27,7 @@ export default function Why() {
   whileInView={{ opacity: 1, y: 0 }}
   viewport={{ once: true, amount: 0.35 }}
   transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-  className="relative z-20 max-w-[760px] font-[family-name:var(--font-bodoni)] text-[2.35rem] font-medium uppercase leading-[1.08] tracking-[0.02em] text-[#F5F5F3] min-[390px]:text-[2.65rem] md:text-[4.1rem] lg:text-[4.8rem]"
->
+className="relative z-20 max-w-[760px] font-[family-name:var(--font-bodoni)] text-[2.05rem] font-medium uppercase leading-[1.08] tracking-[0.02em] text-[#F5F5F3] min-[390px]:text-[2.25rem] md:text-[4.1rem] lg:text-[4.8rem]">
   <span className="block">Por que criei a</span>
 
   <span className="block text-[#6F8F5E] md:text-[3.55rem] lg:text-[4rem] xl:text-[4.8rem]">
