@@ -39,7 +39,7 @@ function EyeIcon() {
 function DocumentPreview() {
   return (
     <div className="mt-8 md:ml-0 md:max-w-[620px]">
-      <div className="relative overflow-hidden rounded-[0.95rem] border border-[#9C8459]/45 bg-[linear-gradient(180deg,rgba(22,19,14,0.98)_0%,rgba(11,10,8,0.99)_100%)] p-5 shadow-[inset_0_1px_0_rgba(255,240,200,0.08),inset_0_0_70px_rgba(150,118,72,0.10),0_22px_65px_rgba(0,0,0,0.42)] md:p-7">
+      <div className="relative overflow-hidden rounded-[0.85rem] border border-[#9C8459]/45 bg-[linear-gradient(180deg,rgba(22,19,14,0.98)_0%,rgba(11,10,8,0.99)_100%)] p-3.5 shadow-[inset_0_1px_0_rgba(255,240,200,0.08),inset_0_0_70px_rgba(150,118,72,0.10),0_22px_65px_rgba(0,0,0,0.42)] md:rounded-[0.95rem] md:p-7">
         {/* textura de papel antigo */}
         <div
           className="pointer-events-none absolute inset-0 opacity-[0.18]"
@@ -147,41 +147,39 @@ function DocumentPreview() {
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_47%,rgba(0,0,0,0.34)_100%)]" />
 
         {/* borda interna envelhecida */}
-        <div className="pointer-events-none absolute inset-[1px] rounded-[0.85rem] border border-[#C2A46A]/15" />
+        <div className="pointer-events-none absolute inset-[1px] rounded-[0.75rem] border border-[#C2A46A]/15 md:rounded-[0.85rem]" />
 
         {/* canto dobrado */}
-<div className="pointer-events-none absolute right-0 top-0 z-30 h-[70px] w-[70px] md:h-[86px] md:w-[86px]">
-  <svg viewBox="0 0 90 90" className="h-full w-full" aria-hidden="true">
-    <defs>
-      <linearGradient id="foldFill" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stopColor="#000000" stopOpacity="0" />
-        <stop offset="100%" stopColor="#000000" stopOpacity="0.25" />
-      </linearGradient>
-    </defs>
+        <div className="pointer-events-none absolute right-0 top-0 z-30 h-[54px] w-[54px] md:h-[86px] md:w-[86px]">
+          <svg viewBox="0 0 90 90" className="h-full w-full" aria-hidden="true">
+            <defs>
+              <linearGradient id="foldFill" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#000000" stopOpacity="0" />
+                <stop offset="100%" stopColor="#000000" stopOpacity="0.25" />
+              </linearGradient>
+            </defs>
 
-    {/* miolo transparente com leve escurecido pra dar profundidade */}
-    <path d="M90 0 L90 68 C 68 42, 46 20, 0 0 Z" fill="url(#foldFill)" />
+            <path d="M90 0 L90 68 C 68 42, 46 20, 0 0 Z" fill="url(#foldFill)" />
 
-    {/* vinco discreto */}
-    <path
-      d="M2 1 C 32 18, 58 42, 88 74"
-      fill="none"
-      stroke="#6F8F5E"
-      strokeWidth="1"
-      strokeLinecap="round"
-      opacity="0.35"
-    />
-  </svg>
-</div>
+            <path
+              d="M2 1 C 32 18, 58 42, 88 74"
+              fill="none"
+              stroke="#6F8F5E"
+              strokeWidth="1"
+              strokeLinecap="round"
+              opacity="0.35"
+            />
+          </svg>
+        </div>
 
         <div className="relative z-10">
-          <div className="flex items-start justify-between border-b border-[#6F8F5E]/30 pb-5 pr-14">
+          <div className="flex items-start justify-between border-b border-[#6F8F5E]/30 pb-3 pr-10 md:pb-5 md:pr-14">
             <div>
-              <p className="font-[family-name:var(--font-bodoni)] text-[1.75rem] uppercase leading-none tracking-[0.04em] text-[#F4EBDD] md:text-[2.25rem]">
+              <p className="font-[family-name:var(--font-bodoni)] text-[1.05rem] uppercase leading-none tracking-[0.03em] text-[#F4EBDD] md:text-[2.25rem] md:tracking-[0.04em]">
                 Ponto Cego · 48h
               </p>
 
-              <p className="mt-3 font-satoshi text-[0.62rem] font-semibold uppercase tracking-[0.34em] text-[#6F8F5E] md:text-[0.74rem]">
+              <p className="mt-2 font-satoshi text-[0.5rem] font-semibold uppercase tracking-[0.28em] text-[#6F8F5E] md:mt-3 md:text-[0.74rem] md:tracking-[0.34em]">
                 Sua leitura personalizada
               </p>
             </div>
@@ -191,24 +189,24 @@ function DocumentPreview() {
             </div>
           </div>
 
-          <div className="mt-7 grid gap-7 md:grid-cols-2">
+          <div className="mt-4 grid grid-cols-2 gap-3 md:mt-7 md:gap-7">
             <div>
-              <p className="font-satoshi text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[#F4EBDD]">
+              <p className="font-satoshi text-[0.5rem] font-semibold uppercase tracking-[0.1em] text-[#F4EBDD] md:text-[0.68rem] md:tracking-[0.16em]">
                 <span className="text-[#6F8F5E]">1.</span> Resumo da sua leitura
               </p>
 
-              <p className="mt-3 text-[0.72rem] leading-5 text-[#D3CAB8]">
+              <p className="mt-2 text-[0.55rem] leading-[0.9rem] text-[#D3CAB8] md:mt-3 md:text-[0.72rem] md:leading-5">
                 Esta seção apresenta uma visão geral dos padrões identificados na
                 sua leitura, de forma integrada e compreensível.
               </p>
 
-              <div className="my-6 h-px bg-[#6F8F5E]/25" />
+              <div className="my-3 h-px bg-[#6F8F5E]/25 md:my-6" />
 
-              <p className="font-satoshi text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[#F4EBDD]">
+              <p className="font-satoshi text-[0.5rem] font-semibold uppercase tracking-[0.1em] text-[#F4EBDD] md:text-[0.68rem] md:tracking-[0.16em]">
                 <span className="text-[#6F8F5E]">2.</span> Padrões identificados
               </p>
 
-              <ul className="mt-3 space-y-2 text-[0.72rem] leading-4 text-[#D3CAB8]">
+              <ul className="mt-2 space-y-1 text-[0.55rem] leading-[0.85rem] text-[#D3CAB8] md:mt-3 md:space-y-2 md:text-[0.72rem] md:leading-4">
                 <li>• Padrão de escuta emocional</li>
                 <li>• Necessidade de validação externa</li>
                 <li>• Ciclos de idealização e decepção</li>
@@ -216,37 +214,37 @@ function DocumentPreview() {
               </ul>
             </div>
 
-            <div className="border-t border-[#6F8F5E]/25 pt-7 md:border-l md:border-t-0 md:pl-7 md:pt-0">
-              <p className="font-satoshi text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[#F4EBDD]">
+            <div className="border-l border-[#6F8F5E]/25 pl-3 md:pl-7">
+              <p className="font-satoshi text-[0.5rem] font-semibold uppercase tracking-[0.1em] text-[#F4EBDD] md:text-[0.68rem] md:tracking-[0.16em]">
                 <span className="text-[#6F8F5E]">3.</span> Pontos cegos
               </p>
 
-              <p className="mt-3 text-[0.72rem] leading-5 text-[#D3CAB8]">
+              <p className="mt-2 text-[0.55rem] leading-[0.9rem] text-[#D3CAB8] md:mt-3 md:text-[0.72rem] md:leading-5">
                 Aspectos que podem estar fora do seu campo de percepção e
                 impactando suas escolhas, conexões e reações.
               </p>
 
-              <div className="mt-4 space-y-2">
-                <div className="h-2 rounded-full bg-[#8A7754]/22" />
-                <div className="h-2 rounded-full bg-[#8A7754]/16" />
-                <div className="h-2 w-4/5 rounded-full bg-[#8A7754]/11" />
+              <div className="mt-3 space-y-1.5 md:mt-4 md:space-y-2">
+                <div className="h-1.5 rounded-full bg-[#8A7754]/22 md:h-2" />
+                <div className="h-1.5 rounded-full bg-[#8A7754]/16 md:h-2" />
+                <div className="h-1.5 w-4/5 rounded-full bg-[#8A7754]/11 md:h-2" />
               </div>
 
-              <div className="my-6 h-px bg-[#6F8F5E]/25" />
+              <div className="my-3 h-px bg-[#6F8F5E]/25 md:my-6" />
 
-              <p className="font-satoshi text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[#F4EBDD]">
+              <p className="font-satoshi text-[0.5rem] font-semibold uppercase tracking-[0.1em] text-[#F4EBDD] md:text-[0.68rem] md:tracking-[0.16em]">
                 <span className="text-[#6F8F5E]">4.</span> Direcionamentos práticos
               </p>
 
-              <p className="mt-3 text-[0.72rem] leading-5 text-[#D3CAB8]">
+              <p className="mt-2 text-[0.55rem] leading-[0.9rem] text-[#D3CAB8] md:mt-3 md:text-[0.72rem] md:leading-5">
                 Sugestões objetivas para você considerar e aplicar no seu ritmo,
                 de forma realista e possível.
               </p>
 
-              <div className="mt-4 space-y-2">
-                <div className="h-2 rounded-full bg-[#8A7754]/22" />
-                <div className="h-2 rounded-full bg-[#8A7754]/16" />
-                <div className="h-2 w-3/4 rounded-full bg-[#8A7754]/11" />
+              <div className="mt-3 space-y-1.5 md:mt-4 md:space-y-2">
+                <div className="h-1.5 rounded-full bg-[#8A7754]/22 md:h-2" />
+                <div className="h-1.5 rounded-full bg-[#8A7754]/16 md:h-2" />
+                <div className="h-1.5 w-3/4 rounded-full bg-[#8A7754]/11 md:h-2" />
               </div>
             </div>
           </div>
@@ -255,6 +253,7 @@ function DocumentPreview() {
     </div>
   );
 }
+
 
 export default function Process() {
   return (
