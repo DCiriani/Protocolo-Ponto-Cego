@@ -60,13 +60,13 @@ className="relative z-20 max-w-[760px] font-[family-name:var(--font-bodoni)] tex
 </p>
 
             <p>
-              Algumas falavam sobre abandono. Outras sobre conflitos constantes.
+              Algumas falavam sobre abandono. 
               <br className="md:hidden" />
               Outras sobre conflitos constantes.
               <br className="md:hidden" />
-              Outras sobre relações que pareciam saudáveis 
+              Outras sobre relações que pareciam
               <br className="md:hidden" />
-              por fora, mas escondiam um 
+              saudáveis por fora, mas escondiam um 
               <br className="md:hidden" />
               sofrimento silencioso.
             </p>
