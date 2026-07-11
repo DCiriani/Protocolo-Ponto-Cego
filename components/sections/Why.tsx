@@ -30,9 +30,9 @@ export default function Why() {
 className="relative z-20 max-w-[760px] font-[family-name:var(--font-bodoni)] text-[2.05rem] font-medium uppercase leading-[1.08] tracking-[0.02em] text-[#F5F5F3] min-[390px]:text-[2.25rem] md:text-[4.1rem] lg:text-[4.8rem]">
   <span className="block">Por que criei a</span>
 
-  <span className="block text-[#6F8F5E] md:text-[3.55rem] lg:text-[4rem] xl:text-[4.8rem]">
-    Análise Ponto Cego?
-  </span>
+  <span className="block text-[1.6rem] text-[#6F8F5E] md:text-[3.55rem] lg:text-[4rem] xl:text-[4.8rem]">
+  Análise Ponto Cego?
+</span>
 </motion.h2>
           <div className="pointer-events-none absolute right-[-70px] top-[120px] z-10 h-[430px] w-[280px] opacity-75 md:right-[-60px] md:top-[160px] md:h-[620px] md:w-[420px] lg:right-[20px] lg:h-[700px] lg:w-[460px]">
             <Image
