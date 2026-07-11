@@ -651,10 +651,9 @@ function renderField(step: Step, answers: Answers, setField: SetField) {
     return (
       <div className="space-y-9">
         <div>
-          <p className="mb-4 text-xs uppercase tracking-[0.28em] text-zinc-600">
-            Escolha até duas opções
-          </p>
-
+       <p className="mb-4 font-satoshi text-[0.82rem] font-medium uppercase tracking-[0.24em] text-[#6F8F5E] md:text-[0.9rem]">
+  Escolha até duas opções
+</p>
           <div className="grid gap-3 sm:grid-cols-2">
             {reactionOptions.map((option) => {
               const selected = selectedOptions.includes(option);
@@ -682,9 +681,9 @@ function renderField(step: Step, answers: Answers, setField: SetField) {
         </div>
 
         <div>
-          <h2 className="mb-4 font-[family-name:var(--font-bodoni)] text-[2rem] font-medium leading-tight tracking-[-0.02em] text-[#6F8F5E] md:text-[2.4rem]">
+          <p className="mb-4 font-satoshi text-[0.82rem] font-medium uppercase tracking-[0.24em] text-[#6F8F5E] md:text-[0.9rem]">
   {step.secondaryTitle}
-</h2>
+</p>
 
           <textarea
             value={answers.reactionPurpose}
