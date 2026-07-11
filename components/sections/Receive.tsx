@@ -108,7 +108,7 @@ function ReportIcon({ index }: { index: number }) {
 
 function ReadingMockup() {
   return (
-    <div className="relative mx-auto mt-10 max-w-[790px] overflow-hidden rounded-[1.45rem] border border-[#8B774F]/45 bg-[radial-gradient(circle_at_8%_8%,rgba(139,101,59,0.22),transparent_34%),linear-gradient(145deg,rgba(20,18,14,0.98),rgba(6,7,6,0.99))] px-4 py-7 shadow-[inset_0_1px_0_rgba(255,241,205,0.05),0_30px_90px_rgba(0,0,0,0.48)] md:px-8 md:py-9">
+    <div className="relative mx-auto mt-8 max-w-[790px] overflow-hidden rounded-[1.15rem] border border-[#8B774F]/45 bg-[radial-gradient(circle_at_8%_8%,rgba(139,101,59,0.22),transparent_34%),linear-gradient(145deg,rgba(20,18,14,0.98),rgba(6,7,6,0.99))] px-2.5 py-5 shadow-[inset_0_1px_0_rgba(255,241,205,0.05),0_30px_90px_rgba(0,0,0,0.48)] md:mt-10 md:rounded-[1.45rem] md:px-8 md:py-9">
       {/* textura da moldura externa */}
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.14]"
@@ -129,14 +129,14 @@ function ReadingMockup() {
 
       <div className="relative mx-auto max-w-[660px]">
         {/* folhas empilhadas atrás */}
-        <div className="absolute -left-3 bottom-2 top-4 w-full -rotate-[0.7deg] rounded-[0.35rem] border border-[#B79A64]/15 bg-[#0D0D0B] shadow-[0_16px_45px_rgba(0,0,0,0.42)] md:-left-5" />
+        <div className="absolute -left-2 bottom-2 top-4 w-full -rotate-[0.7deg] rounded-[0.35rem] border border-[#B79A64]/15 bg-[#0D0D0B] shadow-[0_16px_45px_rgba(0,0,0,0.42)] md:-left-5" />
 
-        <div className="absolute -right-3 bottom-1 top-2 w-full rotate-[0.65deg] rounded-[0.35rem] border border-white/10 bg-[#12120F] shadow-[0_14px_40px_rgba(0,0,0,0.4)] md:-right-5" />
+        <div className="absolute -right-2 bottom-1 top-2 w-full rotate-[0.65deg] rounded-[0.35rem] border border-white/10 bg-[#12120F] shadow-[0_14px_40px_rgba(0,0,0,0.4)] md:-right-5" />
 
         <div className="absolute -left-1 bottom-0 top-1 w-full rounded-[0.35rem] border border-white/10 bg-[#171611]" />
 
         {/* folha principal */}
-        <div className="relative overflow-hidden rounded-[0.3rem] border border-[#B49A68]/25 bg-[linear-gradient(180deg,rgba(19,18,15,0.99)_0%,rgba(7,8,7,0.99)_100%)] px-5 pb-7 pt-8 shadow-[0_24px_75px_rgba(0,0,0,0.6)] md:px-9 md:pb-9 md:pt-10">
+        <div className="relative overflow-hidden rounded-[0.3rem] border border-[#B49A68]/25 bg-[linear-gradient(180deg,rgba(19,18,15,0.99)_0%,rgba(7,8,7,0.99)_100%)] px-4 pb-5 pt-6 shadow-[0_24px_75px_rgba(0,0,0,0.6)] md:px-9 md:pb-9 md:pt-10">
           {/* textura do papel */}
           <div
             className="pointer-events-none absolute inset-0 opacity-[0.19]"
@@ -184,22 +184,22 @@ function ReadingMockup() {
           <div className="relative z-10">
             {/* título */}
             <div className="text-center">
-              <h3 className="whitespace-nowrap font-[family-name:var(--font-bodoni)] text-[1.7rem] font-medium uppercase leading-none tracking-[0.025em] text-[#F4EBDD] min-[390px]:text-[1.95rem] md:text-[3rem]">
+              <h3 className="whitespace-nowrap font-[family-name:var(--font-bodoni)] text-[1.5rem] font-medium uppercase leading-none tracking-[0.025em] text-[#F4EBDD] min-[390px]:text-[1.7rem] md:text-[3rem]">
                 Ponto Cego · 48h
               </h3>
 
-              <p className="mt-3 font-satoshi text-[0.55rem] font-semibold uppercase tracking-[0.3em] text-[#6F8F5E] min-[390px]:text-[0.62rem] md:text-[0.78rem] md:tracking-[0.36em]">
+              <p className="mt-2 font-satoshi text-[0.52rem] font-semibold uppercase tracking-[0.28em] text-[#6F8F5E] min-[390px]:text-[0.58rem] md:mt-3 md:text-[0.78rem] md:tracking-[0.36em]">
                 Sua leitura personalizada
               </p>
             </div>
 
-                        {/* frase destacada */}
-            <div className="relative mt-7 rounded-[0.8rem] border border-[#6F8F5E]/40 bg-black/10 px-5 py-5 text-center md:mt-8 md:px-8">
+            {/* frase destacada */}
+            <div className="relative mt-5 rounded-[0.7rem] border border-[#6F8F5E]/40 bg-black/10 px-4 py-4 text-center md:mt-8 md:rounded-[0.8rem] md:px-8 md:py-5">
               <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#11100D] px-3 text-[#6F8F5E]">
                 ✦
               </span>
 
-              <p className="font-[family-name:var(--font-bodoni)] text-[0.98rem] leading-[1.4] text-[#E8DECD] md:text-[1.25rem]">
+              <p className="font-[family-name:var(--font-bodoni)] text-[0.88rem] leading-[1.35] text-[#E8DECD] md:text-[1.25rem] md:leading-[1.4]">
                 <span className="mr-2 text-[#6F8F5E]">“</span>
                 Você tende a interpretar distância como rejeição, e isso...{" "}
                 <span
@@ -215,11 +215,11 @@ function ReadingMockup() {
             </div>
 
             {/* conteúdos da leitura */}
-            <div className="mt-7 md:mt-8">
+            <div className="mt-5 md:mt-8">
               {reportItems.map((item, index) => (
                 <div
                   key={item}
-                  className={`flex gap-4 py-4 md:gap-5 md:py-5 ${
+                  className={`flex gap-3 py-2.5 md:gap-5 md:py-5 ${
                     index !== reportItems.length - 1
                       ? "border-b border-[#6F8F5E]/18"
                       : ""
@@ -228,19 +228,19 @@ function ReadingMockup() {
                   <ReportIcon index={index} />
 
                   <div className="min-w-0 flex-1">
-                    <p className="font-satoshi text-[0.58rem] font-semibold uppercase leading-4 tracking-[0.13em] text-[#6F8F5E] md:text-[0.72rem] md:tracking-[0.16em]">
+                    <p className="font-satoshi text-[0.56rem] font-semibold uppercase leading-4 tracking-[0.11em] text-[#6F8F5E] md:text-[0.72rem] md:tracking-[0.16em]">
                       {index + 1}. {item}
                     </p>
 
-                    <div className="mt-3 space-y-2.5 opacity-100 md:opacity-85">
-  <div className="h-[7px] w-full rounded-full bg-[#D8CFBF]/30 blur-[1px] shadow-[0_0_7px_rgba(216,207,191,0.22)] md:h-[6px] md:bg-[#D8CFBF]/22 md:blur-[1.4px]" />
+                    <div className="mt-2 space-y-1.5 opacity-100 md:mt-3 md:space-y-2.5 md:opacity-85">
+                      <div className="h-[6px] w-full rounded-full bg-[#D8CFBF]/30 blur-[1px] shadow-[0_0_7px_rgba(216,207,191,0.22)] md:h-[6px] md:bg-[#D8CFBF]/22 md:blur-[1.4px]" />
 
-  <div className="h-[7px] w-[94%] rounded-full bg-[#D8CFBF]/26 blur-[1px] shadow-[0_0_7px_rgba(216,207,191,0.18)] md:h-[6px] md:bg-[#D8CFBF]/18 md:blur-[1.4px]" />
+                      <div className="h-[6px] w-[94%] rounded-full bg-[#D8CFBF]/26 blur-[1px] shadow-[0_0_7px_rgba(216,207,191,0.18)] md:h-[6px] md:bg-[#D8CFBF]/18 md:blur-[1.4px]" />
 
-  {index !== 4 && (
-    <div className="h-[7px] w-[78%] rounded-full bg-[#D8CFBF]/22 blur-[1px] shadow-[0_0_7px_rgba(216,207,191,0.16)] md:h-[6px] md:bg-[#D8CFBF]/15 md:blur-[1.4px]" />
-  )}
-</div>
+                      {index !== 4 && (
+                        <div className="h-[6px] w-[78%] rounded-full bg-[#D8CFBF]/22 blur-[1px] shadow-[0_0_7px_rgba(216,207,191,0.16)] md:h-[6px] md:bg-[#D8CFBF]/15 md:blur-[1.4px]" />
+                      )}
+                    </div>
                   </div>
                 </div>
               ))}
@@ -254,6 +254,7 @@ function ReadingMockup() {
     </div>
   );
 }
+
 
 export default function Receive() {
   return (
