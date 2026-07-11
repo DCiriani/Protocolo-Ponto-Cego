@@ -789,9 +789,9 @@ function ContextChoiceGroup({
 }) {
   return (
     <div>
-      <p className="mb-4 text-xs font-medium uppercase tracking-[0.24em] text-zinc-600">
-        {label}
-      </p>
+      <p className="mb-4 font-satoshi text-[0.82rem] font-medium uppercase tracking-[0.24em] text-[#6F8F5E] md:text-[0.9rem]">
+  {label}
+</p>
 
       <div
         className={variant === "list" ? "grid gap-3" : "flex flex-wrap gap-3"}
