@@ -180,9 +180,11 @@ const commitments = [
   icon: MedalIcon,
   content: (
     <>
-      Você não está comprando um teste automático. Está recebendo uma leitura
-      clínica e direcionamentos práticos, elaborados por um psicólogo com
-      atenção, critério e compromisso com o que é entregue.
+      Você não está comprando um teste automático. Está recebendo uma{" "}
+      <span className="font-medium text-[#6F8F5E]">
+        leitura clínica e direcionamentos práticos, elaborados por um psicólogo
+      </span>{" "}
+      com atenção, critério e compromisso com o que é entregue.
     </>
   ),
 },
