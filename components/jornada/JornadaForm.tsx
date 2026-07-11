@@ -501,7 +501,7 @@ export default function JornadaForm() {
                   {currentStep.eyebrow}
                 </span>
 
-                <h1 className="max-w-3xl font-[family-name:var(--font-bodoni)] text-[clamp(3rem,6vw,6.8rem)] font-medium leading-[0.96] tracking-[-0.03em] text-[#6F8F5E]">
+                <h1 className="max-w-3xl font-satoshi text-[clamp(2.8rem,5.8vw,6.2rem)] font-medium leading-[1.02] tracking-[-0.045em] text-[#6F8F5E]">
   {currentStep.title}
 </h1>
 
@@ -704,7 +704,7 @@ function renderField(step: Step, answers: Answers, setField: SetField) {
     return (
       <div className="space-y-8">
         <div>
-          <label className="mb-4 block text-[0.88rem] font-medium uppercase tracking-[0.24em] text-[#6F8F5E] md:text-[0.95rem]">
+          <label className="mb-4 block font-satoshi text-[0.88rem] font-medium uppercase tracking-[0.24em] text-[#6F8F5E] md:text-[0.95rem]">
   {step.fieldLabel}
 </label>
           <input
@@ -719,7 +719,7 @@ function renderField(step: Step, answers: Answers, setField: SetField) {
         </div>
 
         <div>
-        <label className="mb-4 block text-[0.88rem] font-medium uppercase tracking-[0.24em] text-[#6F8F5E] md:text-[0.95rem]">
+        <label className="mb-4 block font-satoshi text-[0.88rem] font-medium uppercase tracking-[0.24em] text-[#6F8F5E] md:text-[0.95rem]">
   {step.secondaryTitle}
 </label>
 
@@ -842,7 +842,7 @@ function ReviewStep({
         Envio
       </span>
 
-      <h1 className="max-w-4xl font-[family-name:var(--font-bodoni)] text-[clamp(3rem,6vw,6.8rem)] font-medium leading-[0.96] tracking-[-0.03em] text-[#6F8F5E]">
+      <h1 className="max-w-4xl font-satoshi text-[clamp(2.8rem,5.8vw,6.2rem)] font-medium leading-[1.02] tracking-[-0.045em] text-[#6F8F5E]">
   Suas respostas estão prontas.
 </h1>
 
