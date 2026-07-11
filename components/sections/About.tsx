@@ -56,9 +56,9 @@ export default function About() {
 
             <div className="mt-4 h-px w-20 bg-[#6F8F5E]" />
 
-            <h2 className="mt-7 font-[family-name:var(--font-bodoni)] text-[3.8rem] font-medium leading-[0.92] tracking-[-0.03em] text-[#F5F5F3] min-[390px]:text-[4.25rem] md:text-[6rem] lg:text-[6.7rem]">
-              Diego Ciriani
-            </h2>
+           <h2 className="mt-7 whitespace-nowrap font-[family-name:var(--font-bodoni)] text-[3rem] font-medium leading-[0.92] tracking-[-0.03em] text-[#F5F5F3] min-[390px]:text-[3.35rem] md:text-[6rem] lg:text-[6.7rem]">
+  Diego Ciriani
+</h2>
 
             <p className="mt-3 font-[family-name:var(--font-bodoni)] text-[1.55rem] font-medium leading-tight tracking-[-0.01em] text-[#F5F5F3] md:text-[2.35rem]">
               criador da Análise Ponto Cego.
