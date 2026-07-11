@@ -719,7 +719,7 @@ function renderField(step: Step, answers: Answers, setField: SetField) {
         </div>
 
         <div>
-          <h2 className="mb-4 font-[family-name:var(--font-bodoni)] text-[2rem] font-medium leading-tight tracking-[-0.02em] text-[#6F8F5E] md:text-[2.4rem]">
+         <h2 className="mb-4 text-[0.88rem] font-medium uppercase tracking-[0.24em] text-[#6F8F5E] md:text-[0.95rem]">
   {step.secondaryTitle}
 </h2>
 
