@@ -769,7 +769,7 @@ function renderField(step: Step, answers: Answers, setField: SetField) {
 
 function FieldGuide({ children }: { children: string }) {
   return (
-    <p className="mb-4 text-[0.95rem] font-medium leading-7 text-[#6F8F5E] md:text-[1.3rem]">
+    <p className="mb-4 text-[0.95rem] font-medium leading-7 text-[#6F8F5E] md:text-[1.21rem]">
       {children}
     </p>
   );
