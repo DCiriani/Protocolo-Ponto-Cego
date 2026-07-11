@@ -365,9 +365,9 @@ transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
           {/* botão */}
           <div className="mt-7 flex justify-center">
             <a
-              href="/checkout"
-              className="group inline-flex w-full max-w-[560px] items-center justify-center gap-4 rounded-[0.85rem] border border-[#8EA36B]/50 bg-[#4F6842] px-6 py-4 text-center font-[family-name:var(--font-bodoni)] text-[1.65rem] font-medium leading-none text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.12)] transition hover:bg-[#5B7650] md:text-[2rem]"
-            >
+  href="/checkout"
+  className="group inline-flex w-full max-w-[560px] items-center justify-center gap-2 whitespace-nowrap rounded-[0.85rem] border border-[#8EA36B]/50 bg-[#4F6842] px-3 py-4 text-center font-[family-name:var(--font-bodoni)] text-[1.15rem] font-medium leading-none text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.12)] transition hover:bg-[#5B7650] min-[390px]:text-[1.3rem] md:gap-4 md:px-6 md:text-[2rem]"
+>
               Quero receber minha leitura
               <span className="transition-transform duration-300 group-hover:translate-x-1">
                 →
