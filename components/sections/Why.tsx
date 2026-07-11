@@ -52,11 +52,11 @@ className="relative z-20 max-w-[760px] font-[family-name:var(--font-bodoni)] tex
   className="relative z-20 mt-10 max-w-[540px] space-y-7 text-[1rem] leading-8 text-zinc-300 md:mt-12 md:text-[1.15rem] md:leading-9"
 >
           <p>
-  Durante mais de uma década atendendo pessoas em psicoterapia,
+  Durante mais de uma década
   <br className="md:hidden" />
-  atendendo pessoas em psicoterapia,  ouvi
+  atendendo pessoas em psicoterapia,
   <br className="md:hidden" />
- centenas de histórias.
+ ouvi centenas de histórias.
 </p>
 
             <p>
