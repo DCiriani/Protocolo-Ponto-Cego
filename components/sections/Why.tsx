@@ -61,8 +61,14 @@ className="relative z-20 max-w-[760px] font-[family-name:var(--font-bodoni)] tex
 
             <p>
               Algumas falavam sobre abandono. Outras sobre conflitos constantes.
-              Outras sobre relações que pareciam saudáveis por fora, mas
-              escondiam um sofrimento silencioso.
+              <br className="md:hidden" />
+              Outras sobre conflitos constantes.
+              <br className="md:hidden" />
+              Outras sobre relações que pareciam saudáveis 
+              <br className="md:hidden" />
+              por fora, mas escondiam um 
+              <br className="md:hidden" />
+              sofrimento silencioso.
             </p>
 
             <p>
