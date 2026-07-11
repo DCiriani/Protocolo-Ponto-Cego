@@ -258,9 +258,9 @@ function ReadingMockup() {
 export default function Receive() {
   return (
     <section
-      id="entrega"
-      className="relative overflow-hidden bg-[#050705] pt-8 pb-20 text-[#F5F5F3] md:pt-12 md:pb-28"
-    >
+  id="entrega"
+  className="relative overflow-hidden bg-[#050705] pt-3 pb-20 text-[#F5F5F3] md:pt-6 md:pb-28"
+>
       {/* fundo */}
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_88%_0%,rgba(146,110,66,0.20),transparent_34%)]" />
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,#050705_0%,#080a08_48%,#050705_100%)]" />
