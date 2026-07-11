@@ -68,7 +68,7 @@ export default function Transformations() {
           </div>
 
           <h2 className="max-w-[760px] font-[family-name:var(--font-bodoni)] text-[3rem] font-medium leading-[0.96] tracking-[0.01em] text-[#F5F5F3] min-[390px]:text-[3.35rem] md:text-[5.2rem] lg:text-[6rem]">
-  <span className="block text-[2.45rem] min-[390px]:text-[2.7rem] md:text-[5.0rem] lg:text-[6rem]">
+  <span className="block text-[2.45rem] min-[390px]:text-[2.7rem] md:text-[4.7rem] lg:text-[6rem]">
     O que muda quando
   </span>
 
