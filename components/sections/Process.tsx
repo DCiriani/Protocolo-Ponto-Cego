@@ -282,7 +282,9 @@ export default function Process() {
           <h2 className="font-[family-name:var(--font-bodoni)] text-[3rem] font-medium leading-[0.95] tracking-[0.01em] text-[#F5F5F3] min-[390px]:text-[3.35rem] md:text-[5.2rem] lg:text-[6rem]">
             Como sua
             <br />
-            <span className="text-[#6F8F5E]">Leitura acontece</span>
+            <span className="text-[2.25rem] text-[#6F8F5E] min-[390px]:text-[2.8rem] md:text-[5.2rem] lg:text-[6rem]">
+  Leitura acontece
+</span>
           </h2>
 
           <p className="mt-8 max-w-[640px] text-[1rem] leading-8 text-zinc-300 md:text-[1.18rem] md:leading-9">
