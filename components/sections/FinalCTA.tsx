@@ -176,9 +176,9 @@ export default function FinalCTA() {
 
               {/* botão */}
               <a
-                href="/checkout"
-                className="group mt-7 flex w-full items-center justify-center gap-4 rounded-[0.95rem] border border-[#A0B26D]/65 bg-[linear-gradient(180deg,#647B3E_0%,#526733_100%)] px-5 py-5 text-center font-[family-name:var(--font-bodoni)] text-[1.5rem] font-medium leading-tight text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.18),0_15px_40px_rgba(0,0,0,0.24)] transition duration-300 hover:bg-[linear-gradient(180deg,#718A48_0%,#5C733A_100%)] md:mt-9 md:text-[2.2rem]"
-              >
+  href="/checkout"
+  className="group mt-7 flex w-full items-center justify-center gap-2 whitespace-nowrap rounded-[0.95rem] border border-[#A0B26D]/65 bg-[linear-gradient(180deg,#647B3E_0%,#526733_100%)] px-3 py-5 text-center font-[family-name:var(--font-bodoni)] text-[1.08rem] font-medium leading-none text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.18),0_15px_40px_rgba(0,0,0,0.24)] transition duration-300 hover:bg-[linear-gradient(180deg,#718A48_0%,#5C733A_100%)] min-[390px]:text-[1.2rem] md:mt-9 md:gap-4 md:px-5 md:text-[2.2rem]"
+>
                 Quero garantir minha leitura
 
                 <span className="shrink-0 text-[1.6rem] transition-transform duration-300 group-hover:translate-x-1 md:text-[2rem]">
@@ -187,13 +187,9 @@ export default function FinalCTA() {
               </a>
 
               {/* rodapé da oferta */}
-              <div className="mt-6 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-center text-[0.83rem] leading-6 text-zinc-400 md:text-[1rem]">
-                <span>Pagamento seguro via Mercado Pago</span>
-
-                <span className="text-[#879A58]">•</span>
-
-                <span>Sigilo total</span>
-              </div>
+              <div className="mt-6 text-center text-[0.83rem] leading-6 text-zinc-400 md:text-[1rem]">
+  Pagamento seguro via Mercado Pago
+</div>
             </div>
           </motion.div>
         </motion.div>
