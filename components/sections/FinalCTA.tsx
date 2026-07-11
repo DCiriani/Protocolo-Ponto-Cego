@@ -88,9 +88,9 @@ export default function FinalCTA() {
             </div>
 
             <h2 className="mt-8 font-[family-name:var(--font-bodoni)] text-[3rem] font-medium leading-[0.96] tracking-[-0.025em] min-[390px]:text-[3.35rem] md:text-[5.4rem] lg:text-[6rem]">
-              <span className="block text-[#F4EBDD]">
-                Uma leitura clínica
-              </span>
+             <span className="block text-[2.4rem] text-[#F4EBDD] min-[390px]:text-[2.65rem] md:text-[5.4rem] lg:text-[6rem]">
+  Uma leitura clínica
+</span>
 
               <span className="block text-[#6F8F5E]">
                 da sua história
