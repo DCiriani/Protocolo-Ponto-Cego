@@ -176,16 +176,16 @@ const commitments = [
       </>
     ),
   },
-  {
-    icon: MedalIcon,
-    content: (
-      <>
-        Você não está comprando um teste automático. Está recebendo uma leitura
-        feita por um psicólogo, com atenção, critério e compromisso com o que é
-        entregue.
-      </>
-    ),
-  },
+ {
+  icon: MedalIcon,
+  content: (
+    <>
+      Você não está comprando um teste automático. Está recebendo uma leitura
+      clínica e direcionamentos práticos, elaborados por um psicólogo com
+      atenção, critério e compromisso com o que é entregue.
+    </>
+  ),
+},
 ];
 
 function Commitment() {
