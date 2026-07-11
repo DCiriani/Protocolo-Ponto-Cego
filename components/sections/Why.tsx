@@ -106,7 +106,7 @@ className="relative z-20 max-w-[760px] font-[family-name:var(--font-bodoni)] tex
       “
     </span>
 
-    <p className="font-[family-name:var(--font-bodoni)] text-[1.75rem] font-medium leading-[1.16] tracking-[0.01em] text-[#F5F5F3] md:text-[2.8rem]">
+    <p className="font-[family-name:var(--font-bodoni)] text-[1.45rem] font-medium leading-[1.18] tracking-[0.01em] text-[#F5F5F3] md:text-[2.8rem]">
       A mudança nem sempre começa quando a vida muda.{" "}
       <span className="text-[#6F8F5E]">
         Ela começa quando você finalmente consegue enxergá-la de outra forma.
