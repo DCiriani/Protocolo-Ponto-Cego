@@ -301,27 +301,39 @@ function Commitment() {
           </div>
 
           {/* selo inferior */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{
-              duration: 0.7,
-              delay: 0.12,
-              ease: [0.22, 1, 0.36, 1],
-            }}
-            className="mx-auto mt-7 flex max-w-[760px] items-center justify-center gap-4 rounded-[1rem] border border-[#6F8F5E]/45 bg-black/25 px-4 py-5 text-center"
-          >
-            <ShieldIcon className="h-9 w-9 shrink-0 text-[#7F9650]" />
+<motion.div
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true, amount: 0.2 }}
+  transition={{
+    duration: 0.7,
+    delay: 0.12,
+    ease: [0.22, 1, 0.36, 1],
+  }}
+  className="mx-auto mt-7 flex max-w-[760px] flex-col items-center justify-center gap-3 rounded-[1rem] border border-[#6F8F5E]/45 bg-black/25 px-3 py-5 text-center md:flex-row md:gap-4 md:px-4"
+>
+  <ShieldIcon className="h-8 w-8 shrink-0 text-[#7F9650] md:h-9 md:w-9" />
 
-            <p className="font-satoshi text-[0.58rem] font-semibold uppercase leading-5 tracking-[0.24em] text-[#7F9650] min-[390px]:text-[0.65rem] md:text-[0.82rem] md:tracking-[0.34em]">
-              Confiança
-              <span className="mx-2">•</span>
-              Responsabilidade
-              <span className="mx-2">•</span>
-              Compromisso
-            </p>
-          </motion.div>
+  {/* celular */}
+  <p className="font-satoshi text-[0.56rem] font-semibold uppercase leading-5 tracking-[0.16em] text-[#7F9650] min-[390px]:text-[0.62rem] md:hidden">
+    <span className="block">
+      Confiança <span className="mx-1">•</span> Responsabilidade
+    </span>
+
+    <span className="block">
+      Compromisso
+    </span>
+  </p>
+
+  {/* iPad e computador */}
+  <p className="hidden font-satoshi text-[0.82rem] font-semibold uppercase leading-5 tracking-[0.34em] text-[#7F9650] md:block">
+    Confiança
+    <span className="mx-2">•</span>
+    Responsabilidade
+    <span className="mx-2">•</span>
+    Compromisso
+  </p>
+</motion.div>
         </motion.div>
       </Container>
     </section>
