@@ -704,10 +704,9 @@ function renderField(step: Step, answers: Answers, setField: SetField) {
     return (
       <div className="space-y-8">
         <div>
-          <label className="mb-4 block text-xs uppercase tracking-[0.28em] text-zinc-600">
-            {step.fieldLabel}
-          </label>
-
+          <label className="mb-4 block text-[0.88rem] font-medium uppercase tracking-[0.24em] text-[#6F8F5E] md:text-[0.95rem]">
+  {step.fieldLabel}
+</label>
           <input
             value={answers.mirrorCriticism}
             onChange={(event) =>
@@ -769,7 +768,7 @@ function renderField(step: Step, answers: Answers, setField: SetField) {
 
 function FieldGuide({ children }: { children: string }) {
   return (
-    <p className="mb-4 text-[0.95rem] font-medium leading-7 text-[#6F8F5E] md:text-[1.21rem]">
+    <p className="mb-4 text-[0.95rem] font-medium leading-7 text-[#6F8F5E] md:text-[1.3rem]">
       {children}
     </p>
   );
