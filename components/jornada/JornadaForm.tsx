@@ -768,7 +768,11 @@ function renderField(step: Step, answers: Answers, setField: SetField) {
 }
 
 function FieldGuide({ children }: { children: string }) {
-  return <p className="mb-4 text-sm leading-6 text-zinc-600">{children}</p>;
+  return (
+    <p className="mb-4 text-[0.95rem] font-medium leading-7 text-[#6F8F5E] md:text-[1rem]">
+      {children}
+    </p>
+  );
 }
 
 function ContextChoiceGroup({
