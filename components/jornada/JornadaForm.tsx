@@ -719,9 +719,9 @@ function renderField(step: Step, answers: Answers, setField: SetField) {
         </div>
 
         <div>
-         <h2 className="mb-4 text-[0.88rem] font-medium uppercase tracking-[0.24em] text-[#6F8F5E] md:text-[0.95rem]">
+        <label className="mb-4 block text-[0.88rem] font-medium uppercase tracking-[0.24em] text-[#6F8F5E] md:text-[0.95rem]">
   {step.secondaryTitle}
-</h2>
+</label>
 
           <textarea
             value={answers.mirrorTruth}
