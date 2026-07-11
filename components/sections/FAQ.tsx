@@ -242,7 +242,7 @@ export default function FAQ() {
               <div className="h-px w-20 bg-[#6F8F5E]/70 md:w-24" />
             </div>
 
-            <h2 className="mx-auto mt-8 max-w-[820px] font-[family-name:var(--font-bodoni)] text-[2.15rem] font-medium uppercase leading-[1.06] tracking-[0.01em] text-[#F4EBDD] min-[390px]:text-[2.4rem] md:text-[3.8rem] lg:text-[4.4rem]">
+            <h2 className="mx-auto mt-8 max-w-[820px] font-[family-name:var(--font-bodoni)] text-[1.75rem] font-medium uppercase leading-[1.08] tracking-[0.01em] text-[#F4EBDD] min-[390px]:text-[1.95rem] md:text-[3.8rem] lg:text-[4.4rem]">
   <span className="block whitespace-nowrap">
     Perguntas que você
   </span>
