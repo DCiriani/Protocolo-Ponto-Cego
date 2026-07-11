@@ -310,13 +310,13 @@ function Commitment() {
     delay: 0.12,
     ease: [0.22, 1, 0.36, 1],
   }}
-  className="mx-auto mt-7 flex max-w-[760px] flex-col items-center justify-center gap-3 rounded-[1rem] border border-[#6F8F5E]/45 bg-black/25 px-3 py-5 text-center md:flex-row md:gap-4 md:px-4"
+  className="mx-auto mt-7 flex max-w-[760px] items-center justify-center gap-3 rounded-[1rem] border border-[#6F8F5E]/45 bg-black/25 px-4 py-5 md:gap-4"
 >
-  <ShieldIcon className="h-8 w-8 shrink-0 text-[#7F9650] md:h-9 md:w-9" />
+  <ShieldIcon className="h-9 w-9 shrink-0 text-[#7F9650] md:h-9 md:w-9" />
 
   {/* celular */}
-  <p className="font-satoshi text-[0.56rem] font-semibold uppercase leading-5 tracking-[0.16em] text-[#7F9650] min-[390px]:text-[0.62rem] md:hidden">
-    <span className="block">
+  <p className="font-satoshi text-[0.78rem] font-semibold uppercase leading-[1.65] tracking-[0.13em] text-[#7F9650] min-[390px]:text-[0.84rem] md:hidden">
+    <span className="block whitespace-nowrap">
       Confiança <span className="mx-1">•</span> Responsabilidade
     </span>
 
