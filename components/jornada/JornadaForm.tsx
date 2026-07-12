@@ -501,10 +501,9 @@ export default function JornadaForm() {
                   {currentStep.eyebrow}
                 </span>
 
-                <h1 className="max-w-3xl font-satoshi text-[clamp(2.8rem,5.8vw,6.2rem)] font-medium leading-[1.02] tracking-[-0.045em] text-[#6F8F5E]">
+                <h1 className="max-w-3xl font-satoshi text-[2.15rem] font-medium leading-[1.08] tracking-[-0.045em] text-[#6F8F5E] min-[390px]:text-[2.35rem] md:text-[clamp(2.8rem,5.8vw,6.2rem)] md:leading-[1.02]">
   {currentStep.title}
 </h1>
-
                 <p className="mt-8 max-w-xl whitespace-pre-wrap text-[18px] leading-8 text-zinc-400 md:text-[20px] md:leading-10">
                   {currentStep.description}
                 </p>
@@ -841,7 +840,7 @@ function ReviewStep({
         Envio
       </span>
 
-      <h1 className="max-w-4xl font-satoshi text-[clamp(2.8rem,5.8vw,6.2rem)] font-medium leading-[1.02] tracking-[-0.045em] text-[#6F8F5E]">
+     <h1 className="max-w-4xl font-satoshi text-[2.15rem] font-medium leading-[1.08] tracking-[-0.045em] text-[#6F8F5E] min-[390px]:text-[2.35rem] md:text-[clamp(2.8rem,5.8vw,6.2rem)] md:leading-[1.02]">
   Suas respostas estão prontas.
 </h1>
 
