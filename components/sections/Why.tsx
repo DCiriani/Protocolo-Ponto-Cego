@@ -59,17 +59,12 @@ className="relative z-20 max-w-[760px] font-[family-name:var(--font-bodoni)] tex
  ouvi milhares de histórias.
 </p>
 
-            <p>
-              Algumas falavam sobre abandono. 
-              <br className="md:hidden" />
-              Outras sobre conflitos constantes.
-              <br className="md:hidden" />
-              Outras sobre relações que pareciam
-              <br className="md:hidden" />
-              saudáveis por fora, mas escondiam um 
-              <br className="md:hidden" />
-              sofrimento silencioso.
-            </p>
+            <p className="mt-8 max-w-[690px] text-[1.05rem] leading-8 text-zinc-300 md:text-[1.28rem] md:leading-9">
+  Algumas falavam sobre abandono.{" "}
+  Outras sobre conflitos constantes.{" "}
+  Outras sobre relações que pareciam saudáveis por fora, mas escondiam um
+  sofrimento silencioso.
+</p>
 
             <p>
               As histórias eram diferentes. As pessoas também. Mas havia algo
