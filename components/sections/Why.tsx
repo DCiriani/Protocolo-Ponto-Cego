@@ -271,7 +271,7 @@ export default function Why() {
             {/* -------- LAYOUT EM 2 COLUNAS (md+) / EMPILHADO (mobile) -------- */}
             <div className="relative md:flex md:items-stretch">
               {/* coluna de texto */}
-              <div className="relative z-10 min-h-[555px] px-1 pt-1 md:min-h-[540px] md:flex-1 md:pr-8 md:pt-2 lg:min-h-[560px]">
+              <div className="relative z-10 min-h-[555px] px-1 pt-1 md:min-h-0 md:flex-1 md:pr-8 md:pt-2">
                 <div className="flex items-center gap-3">
                   <p className="font-satoshi text-[0.62rem] font-medium uppercase tracking-[0.45em] text-[#879A58] md:text-[0.85rem]">
                     A origem
@@ -302,29 +302,32 @@ export default function Why() {
                 </div>
               </div>
 
-              {/* coluna da foto (só md+) */}
-              <div className="relative hidden shrink-0 md:block md:w-[320px] lg:w-[420px]">
+              {/* coluna da foto (só md+) — a altura DELA define a altura do bloco */}
+              <div className="relative hidden shrink-0 md:block md:h-[500px] md:w-[360px] lg:h-[560px] lg:w-[450px]">
                 {/* brilho atrás da foto */}
-                <div className="pointer-events-none absolute bottom-[-40px] right-[-60px] z-[1] h-[480px] w-[480px] rounded-full bg-[#315C27]/25 blur-[80px] lg:h-[560px] lg:w-[560px]" />
+                <div className="pointer-events-none absolute bottom-[-120px] right-[-80px] z-[1] h-[440px] w-[440px] rounded-full bg-[#315C27]/22 blur-[85px] lg:h-[520px] lg:w-[520px]" />
 
                 {/* círculos decorativos */}
                 <div className="pointer-events-none absolute right-[-130px] top-6 z-[2] h-[440px] w-[440px] rounded-full border border-[#6F8F5E]/10 lg:right-[-90px] lg:h-[520px] lg:w-[520px]" />
                 <div className="pointer-events-none absolute right-[-70px] top-20 z-[2] h-[340px] w-[340px] rounded-full border border-[#6F8F5E]/10 lg:right-[-30px] lg:h-[420px] lg:w-[420px]" />
 
-                {/* foto ocupa a coluna inteira, colada no rodapé do bloco */}
-                <div className="absolute inset-x-0 bottom-0 z-[3] top-4 lg:top-0">
+                {/* foto colada no rodapé, com leve sangria pra fora da coluna */}
+                <div className="absolute bottom-0 left-[-16px] right-[-36px] top-0 z-[3] lg:right-[-20px]">
                   <Image
                     src="/images/diego-poltronaaa.png"
                     alt="Diego Ciriani"
                     fill
-                    sizes="(max-width: 1023px) 320px, 420px"
+                    sizes="(max-width: 1023px) 400px, 480px"
                     className="object-contain object-bottom"
                     priority
                   />
                 </div>
 
-                {/* degradê suave na base da foto, fundindo com o card de histórias */}
-                <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[4] h-20 bg-gradient-to-t from-[#040604] to-transparent" />
+                {/* fusão com o texto (borda esquerda) */}
+                <div className="pointer-events-none absolute inset-y-0 left-[-16px] z-[4] w-24 bg-gradient-to-r from-[#040604] to-transparent" />
+
+                {/* fusão com o card de histórias (base) */}
+                <div className="pointer-events-none absolute inset-x-[-36px] bottom-0 z-[4] h-32 bg-gradient-to-t from-[#040604] via-[#040604]/70 to-transparent" />
               </div>
             </div>
           </div>
