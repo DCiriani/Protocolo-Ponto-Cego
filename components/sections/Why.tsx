@@ -9,14 +9,12 @@ function PeopleIcon() {
     <svg viewBox="0 0 40 40" className="h-7 w-7" fill="none">
       <circle cx="16" cy="14" r="5" stroke="currentColor" strokeWidth="1.7" />
       <circle cx="27" cy="16" r="4" stroke="currentColor" strokeWidth="1.7" />
-
       <path
         d="M7 31C7 24.9 11 21 16 21C21 21 25 24.9 25 31"
         stroke="currentColor"
         strokeWidth="1.7"
         strokeLinecap="round"
       />
-
       <path
         d="M23 23C28.5 22.5 33 25.6 33 31"
         stroke="currentColor"
@@ -36,7 +34,6 @@ function BrokenHeartIcon() {
         strokeWidth="1.7"
         strokeLinejoin="round"
       />
-
       <path
         d="M21.5 10.5L17.5 17L22 20L18.5 26"
         stroke="currentColor"
@@ -57,7 +54,6 @@ function MessageIcon() {
         strokeWidth="1.7"
         strokeLinejoin="round"
       />
-
       <circle cx="15" cy="18" r="1.2" fill="currentColor" />
       <circle cx="20" cy="18" r="1.2" fill="currentColor" />
       <circle cx="25" cy="18" r="1.2" fill="currentColor" />
@@ -74,7 +70,6 @@ function CycleIcon() {
         strokeWidth="1.7"
         strokeLinecap="round"
       />
-
       <path
         d="M8 11.5L8.5 17.5L14 15"
         stroke="currentColor"
@@ -82,14 +77,12 @@ function CycleIcon() {
         strokeLinecap="round"
         strokeLinejoin="round"
       />
-
       <path
         d="M9.5 25C11.5 30.5 18 33.5 23.7 31.6C27.7 30.2 30.5 27 31.4 23.3"
         stroke="currentColor"
         strokeWidth="1.7"
         strokeLinecap="round"
       />
-
       <path
         d="M32 28.5L31.5 22.5L26 25"
         stroke="currentColor"
@@ -109,10 +102,8 @@ function EyeIcon() {
         stroke="currentColor"
         strokeWidth="1.5"
       />
-
       <circle cx="24" cy="24" r="6" stroke="currentColor" strokeWidth="1.5" />
       <circle cx="24" cy="24" r="2" fill="currentColor" />
-
       <path
         d="M24 4V8M24 40V44M4 24H8M40 24H44"
         stroke="currentColor"
@@ -131,7 +122,6 @@ function ShieldIcon() {
         stroke="currentColor"
         strokeWidth="1.6"
       />
-
       <path
         d="M12 16L15 19L21 12"
         stroke="currentColor"
@@ -151,13 +141,11 @@ function BrainIcon() {
         stroke="currentColor"
         strokeWidth="1.5"
       />
-
       <path
         d="M16 6C18 3 23 4 23 8C27 8 28 13 25 15C28 18 26 23 22 23C22 27 18 28 16 25V6Z"
         stroke="currentColor"
         strokeWidth="1.5"
       />
-
       <path
         d="M11 10C13 10 14 11 14 13M10 18C12 18 14 19 14 22M21 10C19 10 18 11 18 13M22 18C20 18 18 19 18 22"
         stroke="currentColor"
@@ -180,13 +168,11 @@ function LockIcon() {
         stroke="currentColor"
         strokeWidth="1.6"
       />
-
       <path
         d="M11 14V10C11 7.2 13.2 5 16 5C18.8 5 21 7.2 21 10V14"
         stroke="currentColor"
         strokeWidth="1.6"
       />
-
       <circle cx="16" cy="21" r="1.5" fill="currentColor" />
     </svg>
   );
@@ -238,7 +224,6 @@ export default function Why() {
             stitchTiles="stitch"
           />
         </filter>
-
         <rect width="100%" height="100%" filter="url(#why-grain)" />
       </svg>
 
@@ -253,68 +238,97 @@ export default function Why() {
           }}
           className="relative mx-auto max-w-[1180px] overflow-hidden rounded-[1.6rem] border border-[#6F8F5E]/30 bg-black/15 px-5 py-10 shadow-[0_30px_100px_rgba(0,0,0,0.35)] md:px-10 md:py-14 lg:px-14"
         >
-          {/* topo */}
-<div className="relative min-h-[555px] overflow-hidden bg-[#040604] md:min-h-[650px] lg:min-h-[620px]">
-  {/* brilho somente atrás da foto */}
-  <div className="pointer-events-none absolute bottom-0 right-[-90px] z-[1] h-[390px] w-[390px] rounded-full bg-[#315C27]/25 blur-[75px] md:right-[-20px] md:h-[560px] md:w-[560px]" />
+          {/* ============ TOPO ============ */}
+          <div className="relative overflow-hidden bg-[#040604]">
+            {/* -------- FOTO MOBILE (absoluta, atrás do texto) -------- */}
+            <div className="md:hidden">
+              {/* brilho atrás da foto */}
+              <div className="pointer-events-none absolute bottom-0 right-[-90px] z-[1] h-[390px] w-[390px] rounded-full bg-[#315C27]/25 blur-[75px]" />
 
-  {/* círculos decorativos */}
-  <div className="pointer-events-none absolute right-[-170px] top-12 z-[2] h-[390px] w-[390px] rounded-full border border-[#6F8F5E]/10 md:right-[-100px] md:h-[560px] md:w-[560px]" />
+              {/* círculos decorativos */}
+              <div className="pointer-events-none absolute right-[-170px] top-12 z-[2] h-[390px] w-[390px] rounded-full border border-[#6F8F5E]/10" />
+              <div className="pointer-events-none absolute right-[-115px] top-24 z-[2] h-[300px] w-[300px] rounded-full border border-[#6F8F5E]/10" />
 
-  <div className="pointer-events-none absolute right-[-115px] top-24 z-[2] h-[300px] w-[300px] rounded-full border border-[#6F8F5E]/10 md:right-[-20px] md:h-[450px] md:w-[450px]" />
+              {/* foto */}
+              <div className="absolute bottom-[-5px] right-[-62px] z-[3] h-[365px] w-[285px] min-[390px]:right-[-42px] min-[390px]:h-[395px] min-[390px]:w-[310px]">
+                <Image
+                  src="/images/diego-poltronaaa.png"
+                  alt="Diego Ciriani"
+                  fill
+                  sizes="310px"
+                  className="scale-[1.08] object-contain object-bottom"
+                  priority
+                />
+              </div>
 
-  {/* foto */}
-  <div className="absolute bottom-[-5px] right-[-62px] z-[3] h-[365px] w-[285px] min-[390px]:right-[-42px] min-[390px]:h-[395px] min-[390px]:w-[310px] md:right-[-35px] md:h-[590px] md:w-[470px] lg:right-[5px] lg:h-[610px] lg:w-[500px]">
-    <Image
-      src="/images/diego-poltronaaa.png"
-      alt="Diego Ciriani"
-      fill
-      sizes="(max-width: 767px) 310px, (max-width: 1023px) 470px, 500px"
-      className="scale-[1.08] object-contain object-bottom md:scale-100"
-      priority
-    />
-  </div>
+              {/* degradê entre texto e foto */}
+              <div className="pointer-events-none absolute inset-y-0 left-0 z-[4] w-[74%] bg-[linear-gradient(90deg,#040604_0%,rgba(4,6,4,0.97)_57%,rgba(4,6,4,0.64)_78%,transparent_100%)]" />
 
-  {/* degradê entre texto e foto */}
-  <div className="pointer-events-none absolute inset-y-0 left-0 z-[4] w-[74%] bg-[linear-gradient(90deg,#040604_0%,rgba(4,6,4,0.97)_57%,rgba(4,6,4,0.64)_78%,transparent_100%)] md:w-[68%]" />
+              {/* degradê inferior */}
+              <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[5] h-36 bg-gradient-to-t from-[#040604] via-[#040604]/75 to-transparent" />
+            </div>
 
-  {/* degradê inferior */}
-  <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[5] h-36 bg-gradient-to-t from-[#040604] via-[#040604]/75 to-transparent" />
+            {/* -------- LAYOUT EM 2 COLUNAS (md+) / EMPILHADO (mobile) -------- */}
+            <div className="relative md:flex md:items-stretch">
+              {/* coluna de texto */}
+              <div className="relative z-10 min-h-[555px] px-1 pt-1 md:min-h-[540px] md:flex-1 md:pr-8 md:pt-2 lg:min-h-[560px]">
+                <div className="flex items-center gap-3">
+                  <p className="font-satoshi text-[0.62rem] font-medium uppercase tracking-[0.45em] text-[#879A58] md:text-[0.85rem]">
+                    A origem
+                  </p>
+                  <div className="h-px w-12 bg-[#879A58]/55 md:w-16" />
+                </div>
 
-  {/* conteúdo */}
-  <div className="relative z-10 px-1 pt-1 md:max-w-[720px] md:pt-2">
-    <div className="flex items-center gap-3">
-      <p className="font-satoshi text-[0.62rem] font-medium uppercase tracking-[0.45em] text-[#879A58] md:text-[0.85rem]">
-        A origem
-      </p>
+                <h2 className="mt-6 font-satoshi font-black uppercase leading-[0.9] tracking-[-0.055em] md:mt-8">
+                  <span className="block whitespace-nowrap text-[clamp(1.9rem,4.7vw,4.1rem)] text-[#F4EBDD]">
+                    Por que criei a
+                  </span>
+                  <span className="mt-1 block whitespace-nowrap text-[clamp(1.9rem,4.7vw,4.1rem)] text-[#76A45D]">
+                    Análise Ponto Cego?
+                  </span>
+                </h2>
 
-      <div className="h-px w-12 bg-[#879A58]/55 md:w-16" />
-    </div>
+                <p className="mt-7 max-w-[265px] text-[0.72rem] leading-[1.65] text-zinc-300 min-[390px]:max-w-[290px] min-[390px]:text-[0.77rem] md:mt-10 md:max-w-[520px] md:text-[1.12rem] md:leading-8">
+                  Durante mais de uma década atendendo pessoas na clínica, ouvi
+                  milhares de histórias.
+                </p>
 
-    <h2 className="mt-6 font-satoshi font-black uppercase leading-[0.9] tracking-[-0.055em] md:mt-8">
-      <span className="block whitespace-nowrap text-[1.9rem] text-[#F4EBDD] min-[390px]:text-[2.08rem] md:text-[4.35rem] lg:text-[4.9rem]">
-        Por que criei a
-      </span>
+                <div className="mt-5 max-w-[245px] border-l-[2px] border-[#76A45D] pl-3 min-[390px]:max-w-[275px] md:mt-8 md:max-w-[520px] md:border-l-[3px] md:pl-5">
+                  <p className="font-satoshi text-[0.72rem] font-semibold leading-[1.6] text-[#F4EBDD] min-[390px]:text-[0.77rem] md:text-[1.1rem] md:leading-8">
+                    E percebi que existia um padrão invisível,
+                    <br />
+                    que se repetia silenciosamente.
+                  </p>
+                </div>
+              </div>
 
-      <span className="mt-1 block whitespace-nowrap text-[1.9rem] text-[#76A45D] min-[390px]:text-[2.08rem] md:text-[4.35rem] lg:text-[4.9rem]">
-        Análise Ponto Cego?
-      </span>
-    </h2>
+              {/* coluna da foto (só md+) */}
+              <div className="relative hidden shrink-0 md:block md:w-[320px] lg:w-[420px]">
+                {/* brilho atrás da foto */}
+                <div className="pointer-events-none absolute bottom-[-40px] right-[-60px] z-[1] h-[480px] w-[480px] rounded-full bg-[#315C27]/25 blur-[80px] lg:h-[560px] lg:w-[560px]" />
 
-    <p className="mt-7 max-w-[265px] text-[0.72rem] leading-[1.65] text-zinc-300 min-[390px]:max-w-[290px] min-[390px]:text-[0.77rem] md:mt-10 md:max-w-[590px] md:text-[1.18rem] md:leading-8">
-      Durante mais de uma década atendendo pessoas na clínica, ouvi milhares
-      de histórias.
-    </p>
+                {/* círculos decorativos */}
+                <div className="pointer-events-none absolute right-[-130px] top-6 z-[2] h-[440px] w-[440px] rounded-full border border-[#6F8F5E]/10 lg:right-[-90px] lg:h-[520px] lg:w-[520px]" />
+                <div className="pointer-events-none absolute right-[-70px] top-20 z-[2] h-[340px] w-[340px] rounded-full border border-[#6F8F5E]/10 lg:right-[-30px] lg:h-[420px] lg:w-[420px]" />
 
-    <div className="mt-5 max-w-[245px] border-l-[2px] border-[#76A45D] pl-3 min-[390px]:max-w-[275px] md:mt-8 md:max-w-[600px] md:border-l-[3px] md:pl-5">
-      <p className="font-satoshi text-[0.72rem] font-semibold leading-[1.6] text-[#F4EBDD] min-[390px]:text-[0.77rem] md:text-[1.14rem] md:leading-8">
-        E percebi que existia um padrão invisível,
-        <br />
-        que se repetia silenciosamente.
-      </p>
-    </div>
-  </div>
-</div>
+                {/* foto ocupa a coluna inteira, colada no rodapé do bloco */}
+                <div className="absolute inset-x-0 bottom-0 z-[3] top-4 lg:top-0">
+                  <Image
+                    src="/images/diego-poltronaaa.png"
+                    alt="Diego Ciriani"
+                    fill
+                    sizes="(max-width: 1023px) 320px, 420px"
+                    className="object-contain object-bottom"
+                    priority
+                  />
+                </div>
+
+                {/* degradê suave na base da foto, fundindo com o card de histórias */}
+                <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[4] h-20 bg-gradient-to-t from-[#040604] to-transparent" />
+              </div>
+            </div>
+          </div>
+
           {/* histórias */}
           <div className="relative z-20 mt-4 overflow-hidden rounded-[1.45rem] border border-[#6F8F5E]/35 bg-black/25 px-5 md:px-8">
             {stories.map((story, index) => {
@@ -391,7 +405,6 @@ export default function Why() {
               className="group mx-auto mt-8 flex w-full max-w-[720px] items-center justify-center gap-4 whitespace-nowrap rounded-[1.2rem] border border-[#9DBA72]/60 bg-[linear-gradient(90deg,#6E994C_0%,#4E773D_100%)] px-4 py-5 font-satoshi text-[0.95rem] font-bold uppercase tracking-[0.01em] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.16),0_18px_45px_rgba(0,0,0,0.28)] transition hover:brightness-110 min-[390px]:text-[1.05rem] md:py-6 md:text-[1.35rem]"
             >
               Quero descobrir meu ponto cego
-
               <span className="shrink-0 text-[1.65rem] font-light transition-transform duration-300 group-hover:translate-x-1">
                 →
               </span>
@@ -403,7 +416,6 @@ export default function Why() {
                 <span className="text-[#7FA74F]">
                   <ShieldIcon />
                 </span>
-
                 <span>Método exclusivo</span>
               </div>
 
@@ -411,7 +423,6 @@ export default function Why() {
                 <span className="text-[#7FA74F]">
                   <BrainIcon />
                 </span>
-
                 <span>Baseado em psicologia clínica</span>
               </div>
 
@@ -419,7 +430,6 @@ export default function Why() {
                 <span className="text-[#7FA74F]">
                   <LockIcon />
                 </span>
-
                 <span>100% online e sigiloso</span>
               </div>
             </div>
