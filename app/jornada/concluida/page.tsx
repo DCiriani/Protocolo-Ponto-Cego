@@ -10,9 +10,9 @@ export default function JornadaConcluidaPage() {
           Jornada concluída
         </span>
 
-        <h1 className="text-5xl font-semibold leading-none tracking-[-0.06em] md:text-8xl">
-          Suas respostas foram registradas.
-        </h1>
+        <h1 className="max-w-4xl font-satoshi text-[2rem] font-medium leading-[1.08] tracking-[-0.045em] text-[#6F8F5E] min-[390px]:text-[2.2rem] md:text-[clamp(2.8rem,5.8vw,6.2rem)] md:leading-[1.02]">
+  Suas respostas foram registradas.
+</h1>
 
         <p className="mt-8 max-w-2xl text-lg leading-8 text-zinc-400 md:text-xl md:leading-9">
           A partir daqui, suas cenas serão usadas como base para a construção da
