@@ -55,9 +55,9 @@ export default function CheckoutPage() {
           Checkout
         </span>
 
-        <h1 className="text-5xl font-semibold leading-none tracking-[-0.06em] md:text-7xl">
-          Antes de seguir para o pagamento.
-        </h1>
+        <h1 className="font-satoshi text-[2rem] font-medium leading-[1.08] tracking-[-0.04em] text-[#6F8F5E] min-[390px]:text-[2.2rem] md:text-[3.8rem] md:leading-[1.02] lg:text-[4.4rem]">
+  Antes de seguir para o pagamento.
+</h1>
 
         <p className="mt-8 max-w-2xl text-lg leading-8 text-zinc-400">
           Informe seus dados para que possamos vincular seu pagamento à sua
