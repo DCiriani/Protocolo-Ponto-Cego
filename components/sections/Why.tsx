@@ -312,7 +312,7 @@ export default function Why() {
                 <div className="pointer-events-none absolute right-[-70px] top-20 z-[2] h-[340px] w-[340px] rounded-full border border-[#6F8F5E]/10 lg:right-[-30px] lg:h-[420px] lg:w-[420px]" />
 
                 {/* foto colada no rodapé, com leve sangria pra fora da coluna */}
-                <div className="absolute bottom-0 left-[-16px] right-[-36px] top-0 z-[3] md:-translate-x-32 lg:-translate-x-12 lg:right-[-20px]">
+                <div className="absolute bottom-0 left-[-16px] right-[-36px] top-0 z-[3] md:-translate-x-37 lg:-translate-x-12 lg:right-[-20px]">
                   <Image
                     src="/images/diego-poltronaaa.png"
                     alt="Diego Ciriani"
