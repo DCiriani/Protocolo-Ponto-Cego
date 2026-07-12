@@ -133,21 +133,28 @@ export default function FinalCTA() {
               </div>
 
               {/* preço */}
-              <div className="mt-7 text-center md:mt-9">
-                <div className="flex items-end justify-center">
-                  <span className="mb-3 mr-1 font-[family-name:var(--font-bodoni)] text-[2.5rem] leading-none text-[#F4EBDD] md:mb-5 md:text-[3.8rem]">
-                    R$
-                  </span>
+<div className="mt-7 text-center md:mt-9">
+  {/* valor anterior */}
+  <p className="font-satoshi text-[0.95rem] font-medium tracking-[0.08em] text-zinc-600 line-through decoration-zinc-600 md:text-[1.1rem]">
+    R$ 197
+  </p>
 
-                  <span className="font-[family-name:var(--font-bodoni)] text-[7.3rem] font-medium leading-[0.75] tracking-[-0.07em] text-[#F4EBDD] min-[390px]:text-[8.1rem] md:text-[11rem]">
-                    97
-                  </span>
-                </div>
+  {/* valor atual */}
+  <div className="mt-3 flex items-end justify-center">
+    <span className="mb-3 mr-2 font-[family-name:var(--font-bodoni)] text-[2.3rem] leading-none text-[#6F8F5E] md:mb-5 md:text-[3.6rem]">
+      R$
+    </span>
 
-                <p className="mt-6 text-[1.05rem] text-[#879A58] md:text-[1.35rem]">
-                  Pagamento único
-                </p>
-              </div>
+    <span className="font-[family-name:var(--font-bodoni)] text-[7.3rem] font-medium leading-[0.75] tracking-[-0.07em] text-[#6F8F5E] min-[390px]:text-[8.1rem] md:text-[11rem]">
+      147
+    </span>
+  </div>
+
+  {/* condição */}
+  <p className="mt-6 font-satoshi text-[0.68rem] font-medium uppercase tracking-[0.18em] text-zinc-500 md:text-[0.82rem]">
+    Valor do lote atual de leituras
+  </p>
+</div>
 
               {/* ornamento */}
               <div className="mt-7 flex items-center justify-center gap-3 md:mt-9">

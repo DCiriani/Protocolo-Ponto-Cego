@@ -5,7 +5,7 @@ export async function GET(request: Request) {
   const siteUrl =
     process.env.NEXT_PUBLIC_SITE_URL || new URL(request.url).origin;
 
-  const price = Number(process.env.PRODUCT_PRICE || "97");
+  const price = Number(process.env.PRODUCT_PRICE || "147");
 
   if (!accessToken) {
     return NextResponse.redirect(

@@ -10,7 +10,7 @@ export async function POST(request: Request) {
   try {
     const accessToken = process.env.MERCADO_PAGO_ACCESS_TOKEN;
     const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
-    const price = Number(process.env.PRODUCT_PRICE ?? "97");
+    const price = Number(process.env.PRODUCT_PRICE ?? "147");
 
     if (!accessToken) {
       return NextResponse.json(
