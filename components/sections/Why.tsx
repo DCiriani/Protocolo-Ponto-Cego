@@ -280,10 +280,10 @@ export default function Why() {
                 </div>
 
                 <h2 className="mt-6 font-satoshi font-black uppercase leading-[0.9] tracking-[-0.055em] md:mt-8">
-                  <span className="block whitespace-nowrap text-[clamp(1.9rem,4.7vw,4.1rem)] text-[#F4EBDD]">
+                  <span className="block whitespace-nowrap text-[clamp(1.45rem,7.4vw,4.1rem)] text-[#F4EBDD] md:text-[clamp(1.45rem,4.7vw,4.1rem)]">
                     Por que criei a
                   </span>
-                  <span className="mt-1 block whitespace-nowrap text-[clamp(1.9rem,4.7vw,4.1rem)] text-[#76A45D]">
+                  <span className="mt-1 block whitespace-nowrap text-[clamp(1.45rem,7.4vw,4.1rem)] text-[#76A45D] md:text-[clamp(1.45rem,4.7vw,4.1rem)]">
                     Análise Ponto Cego?
                   </span>
                 </h2>
@@ -312,7 +312,7 @@ export default function Why() {
                 <div className="pointer-events-none absolute right-[-70px] top-20 z-[2] h-[340px] w-[340px] rounded-full border border-[#6F8F5E]/10 lg:right-[-30px] lg:h-[420px] lg:w-[420px]" />
 
                 {/* foto colada no rodapé, com leve sangria pra fora da coluna */}
-                <div className="absolute bottom-0 left-[-16px] right-[-36px] top-0 z-[3] md:-translate-x-37 lg:-translate-x-12 lg:right-[-20px]">
+                <div className="absolute bottom-0 left-[-16px] right-[-36px] top-0 z-[3] lg:right-[-20px]">
                   <Image
                     src="/images/diego-poltronaaa.png"
                     alt="Diego Ciriani"
