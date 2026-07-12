@@ -222,7 +222,7 @@ export default function Why() {
       className="relative overflow-hidden bg-[#050705] py-16 text-[#F5F5F3] md:py-24"
     >
       {/* luz de fundo */}
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_73%_18%,rgba(62,100,47,0.26),transparent_30%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_82%_18%,rgba(52,87,39,0.13),transparent_25%)]" />
 
       {/* textura */}
       <svg
@@ -254,60 +254,67 @@ export default function Why() {
           className="relative mx-auto max-w-[1180px] overflow-hidden rounded-[1.6rem] border border-[#6F8F5E]/30 bg-black/15 px-5 py-10 shadow-[0_30px_100px_rgba(0,0,0,0.35)] md:px-10 md:py-14 lg:px-14"
         >
           {/* topo */}
-          <div className="relative min-h-[720px] md:min-h-[660px] lg:min-h-[610px]">
-            <div className="relative z-20 max-w-[720px]">
-              <div className="flex items-center gap-4">
-                <p className="font-satoshi text-[0.7rem] font-medium uppercase tracking-[0.48em] text-[#879A58] md:text-[0.85rem]">
-                  A origem
-                </p>
+<div className="relative min-h-[555px] overflow-hidden bg-[#040604] md:min-h-[650px] lg:min-h-[620px]">
+  {/* brilho somente atrás da foto */}
+  <div className="pointer-events-none absolute bottom-0 right-[-90px] z-[1] h-[390px] w-[390px] rounded-full bg-[#315C27]/25 blur-[75px] md:right-[-20px] md:h-[560px] md:w-[560px]" />
 
-                <div className="h-px w-12 bg-[#879A58]/60 md:w-16" />
-              </div>
+  {/* círculos decorativos */}
+  <div className="pointer-events-none absolute right-[-170px] top-12 z-[2] h-[390px] w-[390px] rounded-full border border-[#6F8F5E]/10 md:right-[-100px] md:h-[560px] md:w-[560px]" />
 
-              <h2 className="mt-8 font-satoshi text-[2.8rem] font-black uppercase leading-[0.95] tracking-[-0.055em] text-[#F4EBDD] min-[390px]:text-[3.15rem] md:text-[4.7rem] lg:text-[5.25rem]">
-                Por que criei a
-                <span className="mt-2 block text-[#76A45D]">
-                  Análise Ponto Cego?
-                </span>
-              </h2>
+  <div className="pointer-events-none absolute right-[-115px] top-24 z-[2] h-[300px] w-[300px] rounded-full border border-[#6F8F5E]/10 md:right-[-20px] md:h-[450px] md:w-[450px]" />
 
-              <p className="mt-9 max-w-[590px] text-[1rem] leading-7 text-zinc-300 md:text-[1.18rem] md:leading-8">
-                Durante mais de uma década atendendo pessoas na clínica, ouvi
-                milhares de histórias.
-              </p>
+  {/* foto */}
+  <div className="absolute bottom-[-5px] right-[-62px] z-[3] h-[365px] w-[285px] min-[390px]:right-[-42px] min-[390px]:h-[395px] min-[390px]:w-[310px] md:right-[-35px] md:h-[590px] md:w-[470px] lg:right-[5px] lg:h-[610px] lg:w-[500px]">
+    <Image
+      src="/images/diego-poltronaaa.png"
+      alt="Diego Ciriani"
+      fill
+      sizes="(max-width: 767px) 310px, (max-width: 1023px) 470px, 500px"
+      className="scale-[1.08] object-contain object-bottom md:scale-100"
+      priority
+    />
+  </div>
 
-              <div className="mt-8 flex max-w-[600px] gap-4 border-l-[3px] border-[#76A45D] pl-5">
-                <p className="font-satoshi text-[1rem] font-semibold leading-7 text-[#F4EBDD] md:text-[1.14rem] md:leading-8">
-                  E percebi que existia um padrão invisível,
-                  <br className="hidden md:block" /> que se repetia
-                  silenciosamente.
-                </p>
-              </div>
-            </div>
+  {/* degradê entre texto e foto */}
+  <div className="pointer-events-none absolute inset-y-0 left-0 z-[4] w-[74%] bg-[linear-gradient(90deg,#040604_0%,rgba(4,6,4,0.97)_57%,rgba(4,6,4,0.64)_78%,transparent_100%)] md:w-[68%]" />
 
-            {/* brilho atrás da foto */}
-            <div className="pointer-events-none absolute bottom-0 right-[-100px] h-[480px] w-[480px] rounded-full bg-[#366228]/30 blur-[85px] md:right-[-40px] md:h-[590px] md:w-[590px]" />
+  {/* degradê inferior */}
+  <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[5] h-36 bg-gradient-to-t from-[#040604] via-[#040604]/75 to-transparent" />
 
-            {/* linhas decorativas */}
-            <div className="pointer-events-none absolute right-[-90px] top-4 h-[480px] w-[480px] rounded-full border border-[#6F8F5E]/10 md:h-[600px] md:w-[600px]" />
+  {/* conteúdo */}
+  <div className="relative z-10 px-1 pt-1 md:max-w-[720px] md:pt-2">
+    <div className="flex items-center gap-3">
+      <p className="font-satoshi text-[0.62rem] font-medium uppercase tracking-[0.45em] text-[#879A58] md:text-[0.85rem]">
+        A origem
+      </p>
 
-            <div className="pointer-events-none absolute right-[-25px] top-16 h-[390px] w-[390px] rounded-full border border-[#6F8F5E]/10 md:h-[500px] md:w-[500px]" />
+      <div className="h-px w-12 bg-[#879A58]/55 md:w-16" />
+    </div>
 
-            {/* foto */}
-            <div className="absolute bottom-0 right-[-95px] z-10 h-[470px] w-[450px] min-[390px]:right-[-70px] md:right-[-60px] md:h-[610px] md:w-[570px] lg:right-[-20px]">
-              <Image
-                src="/images/diego-poltronaaa.png"
-                alt="Diego Ciriani"
-                fill
-                sizes="(max-width: 768px) 450px, 570px"
-                className="object-contain object-bottom"
-              />
-            </div>
+    <h2 className="mt-6 font-satoshi font-black uppercase leading-[0.9] tracking-[-0.055em] md:mt-8">
+      <span className="block whitespace-nowrap text-[1.9rem] text-[#F4EBDD] min-[390px]:text-[2.08rem] md:text-[4.35rem] lg:text-[4.9rem]">
+        Por que criei a
+      </span>
 
-            {/* degradê para integrar foto no fundo */}
-            <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-40 bg-gradient-to-t from-[#070907] via-[#070907]/70 to-transparent" />
-          </div>
+      <span className="mt-1 block whitespace-nowrap text-[1.9rem] text-[#76A45D] min-[390px]:text-[2.08rem] md:text-[4.35rem] lg:text-[4.9rem]">
+        Análise Ponto Cego?
+      </span>
+    </h2>
 
+    <p className="mt-7 max-w-[265px] text-[0.72rem] leading-[1.65] text-zinc-300 min-[390px]:max-w-[290px] min-[390px]:text-[0.77rem] md:mt-10 md:max-w-[590px] md:text-[1.18rem] md:leading-8">
+      Durante mais de uma década atendendo pessoas na clínica, ouvi milhares
+      de histórias.
+    </p>
+
+    <div className="mt-5 max-w-[245px] border-l-[2px] border-[#76A45D] pl-3 min-[390px]:max-w-[275px] md:mt-8 md:max-w-[600px] md:border-l-[3px] md:pl-5">
+      <p className="font-satoshi text-[0.72rem] font-semibold leading-[1.6] text-[#F4EBDD] min-[390px]:text-[0.77rem] md:text-[1.14rem] md:leading-8">
+        E percebi que existia um padrão invisível,
+        <br />
+        que se repetia silenciosamente.
+      </p>
+    </div>
+  </div>
+</div>
           {/* histórias */}
           <div className="relative z-20 mt-4 overflow-hidden rounded-[1.45rem] border border-[#6F8F5E]/35 bg-black/25 px-5 md:px-8">
             {stories.map((story, index) => {
