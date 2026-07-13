@@ -250,7 +250,7 @@ export default function Why() {
               <div className="pointer-events-none absolute right-[-115px] top-24 z-[2] h-[300px] w-[300px] rounded-full border border-[#6F8F5E]/10" />
 
               {/* foto */}
-              <div className="absolute bottom-[-5px] right-[-18px] z-[3] h-[365px] w-[285px] min-[390px]:right-[-8px] min-[390px]:h-[395px] min-[390px]:w-[310px]">
+<div className="absolute bottom-[45px] right-[-18px] z-[3] h-[365px] w-[285px] min-[390px]:bottom-[35px] min-[390px]:right-[-8px] min-[390px]:h-[395px] min-[390px]:w-[310px]">
                 <Image
                   src="/images/diego-poltronaaa.png"
                   alt="Diego Ciriani"
@@ -279,7 +279,7 @@ export default function Why() {
                   <div className="h-px w-12 bg-[#879A58]/55 md:w-16" />
                 </div>
 
-                <h2 className="mt-6 font-satoshi font-black uppercase leading-[0.9] tracking-[-0.055em] md:mt-8">
+                <h2 className="mt-6 font-[family-name:var(--font-bodoni)] font-medium uppercase leading-[0.92] tracking-[-0.025em] md:mt-8">
                   <span className="block whitespace-nowrap text-[1.52rem] text-[#F4EBDD] min-[390px]:text-[1.68rem] md:text-[clamp(2.2rem,4.7vw,4.1rem)]">
   Por que criei a
 </span>
