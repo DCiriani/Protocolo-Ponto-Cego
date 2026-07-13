@@ -250,13 +250,13 @@ export default function Why() {
               <div className="pointer-events-none absolute right-[-115px] top-24 z-[2] h-[300px] w-[300px] rounded-full border border-[#6F8F5E]/10" />
 
               {/* foto */}
-<div className="absolute bottom-[-15px] right-[-65px] z-[3] h-[365px] w-[285px] min-[390px]:bottom-[-5px] min-[390px]:right-[-55px] min-[390px]:h-[395px] min-[390px]:w-[310px]">
+<div className="absolute bottom-[-15px] right-[-80px] z-[3] h-[365px] w-[285px] min-[390px]:bottom-[-5px] min-[390px]:right-[-70px] min-[390px]:h-[395px] min-[390px]:w-[310px]">
                 <Image
                   src="/images/diego-poltronaaa.png"
                   alt="Diego Ciriani"
                   fill
                   sizes="310px"
-                  className="scale-[1] object-contain object-bottom"
+                  className="scale-[0.92] object-contain object-bottom"
                   priority
                 />
               </div>
