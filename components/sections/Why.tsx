@@ -325,14 +325,15 @@ export default function Why() {
 </p>
 
   {/* texto destacado */}
-  <div className="mt-6 max-w-[330px] border-l-[3px] border-[#76A45D] pl-4 md:mt-8 md:max-w-[520px] md:pl-5">
-<p className="font-[family-name:var(--font-bodoni)] text-[1.01rem] font-medium leading-[1.3] text-[#F4EBDD] min-[390px]:text-[1.15rem] md:text-[1.1rem] md:leading-8">    <span className="block">
-      E percebi que existia um padrão
-    </span>
+<div className="mt-6 max-w-[330px] border-l-[3px] border-[#76A45D] pl-4 md:mt-8 md:max-w-[520px] md:pl-5">
+  <p className="font-[family-name:var(--font-bodoni)] text-[1.08rem] font-medium leading-[1.3] text-[#F4EBDD] min-[390px]:text-[1.15rem] md:text-[1.1rem] md:leading-8">
+    E percebi que existia um
+    <br className="md:hidden" />
 
-    <span className="block whitespace-nowrap">
-      invisível, que se repetia silenciosamente.
-    </span>
+    padrão invisível, que se
+    <br className="md:hidden" />
+
+    repetia silenciosamente.
   </p>
 </div>
 </div>
