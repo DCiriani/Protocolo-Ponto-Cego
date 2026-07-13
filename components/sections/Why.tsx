@@ -326,7 +326,7 @@ export default function Why() {
 
  {/* texto destacado */}
 <div className="mt-6 max-w-[330px] border-l-[3px] border-[#6F8F5E] pl-4 md:mt-8 md:max-w-[520px] md:pl-5">
-  <p className="font-[family-name:var(--font-manrope)] text-[1rem] font-normal leading-[1.4] text-zinc-300 min-[390px]:text-[1.05rem] md:text-[1.08rem] md:leading-7">
+  <p className="font-[family-name:var(--font-manrope)] text-[1rem] font-normal leading-[1.4] text-[#6F8F5E] min-[390px]:text-[1.05rem] md:text-[1.08rem] md:leading-7">
     {/* celular */}
     <span className="md:hidden">
       E percebi que existia um padrão
