@@ -282,7 +282,7 @@ export default function Why() {
   </div>
 
   {/* título */}
-  <h2 className="mt-10 font-[family-name:var(--font-bodoni)] font-medium uppercase leading-[0.94] tracking-[-0.025em] md:mt-8">
+  <h2 className="mt-7 font-[family-name:var(--font-bodoni)] font-medium uppercase leading-[0.94] tracking-[-0.025em] md:mt-8">
     {/* celular */}
 <span className="md:hidden">
   <span className="block text-[1.65rem] text-[#F4EBDD] min-[390px]:text-[1.8rem]">
