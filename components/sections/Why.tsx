@@ -271,7 +271,7 @@ export default function Why() {
             {/* -------- LAYOUT EM 2 COLUNAS (md+) / EMPILHADO (mobile) -------- */}
             <div className="relative md:flex md:items-stretch">
               {/* coluna de texto */}
-<div className="relative z-10 min-h-[425px] px-5 pt-7 min-[390px]:min-h-[445px] md:min-h-0 md:flex-1 md:px-0 md:pr-8 md:pt-2">
+<div className="relative z-10 min-h-[425px] px-5 pt-7 min-[390px]:min-h-[445px] md:min-h-0 md:flex-1 md:pl-10 md:pr-8 md:pt-2 lg:pl-0">
   {/* identificação da seção */}
   <div>
     <p className="font-satoshi text-[0.8rem] font-light uppercase tracking-[0.48em] text-[#879A58] md:text-[0.95rem]">
