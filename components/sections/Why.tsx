@@ -185,10 +185,11 @@ const stories = [
     text: "Outras sobre conflitos constantes.",
   },
   {
-    icon: BrokenHeartIcon,
-    title: "Outras sobre relações que pareciam saudáveis por fora,",
-    text: "mas escondiam um sofrimento silencioso.",
-  },
+  {
+  icon: BrokenHeartIcon,
+  title: "Algumas relações pareciam saudáveis por fora.",
+  text: "Mas escondiam um sofrimento silencioso.",
+},
   {
     icon: MessageIcon,
     title: "As histórias eram diferentes.",
