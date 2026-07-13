@@ -282,29 +282,29 @@ export default function Why() {
   </div>
 
   {/* título */}
-  <h2 className="mt-7 font-[family-name:var(--font-bodoni)] font-medium uppercase leading-[0.94] tracking-[-0.025em] md:mt-8">
-    {/* celular */}
-<span className="md:hidden">
-  <span className="block text-[1.65rem] text-[#F4EBDD] min-[390px]:text-[1.8rem]">
-    Por que criei a
-  </span>
-
-  <span className="mt-1 block whitespace-nowrap text-[1.42rem] text-[#6F8F5E] min-[390px]:text-[1.55rem]">
-    Análise Ponto Cego?
-  </span>
-</span>
-
-    {/* iPad e computador */}
-    <span className="hidden md:block">
-      <span className="block whitespace-nowrap text-[clamp(2.2rem,4.7vw,4.1rem)] text-[#F4EBDD]">
-        Por que criei a
-      </span>
-
-      <span className="mt-1 block whitespace-nowrap text-[clamp(2.2rem,4.7vw,4.1rem)] text-[#6F8F5E]">
-        Análise Ponto Cego?
-      </span>
+<h2 className="mt-7 font-[family-name:var(--font-bodoni)] font-medium uppercase leading-[0.95] tracking-[0.01em] md:mt-8">
+  {/* celular */}
+  <span className="md:hidden">
+    <span className="block text-[1.65rem] text-[#F5F5F3] min-[390px]:text-[1.8rem]">
+      Por que criei a
     </span>
-  </h2>
+
+    <span className="mt-1 block whitespace-nowrap text-[1.42rem] text-[#6F8F5E] min-[390px]:text-[1.55rem]">
+      Análise Ponto Cego?
+    </span>
+  </span>
+
+  {/* iPad e computador */}
+  <span className="hidden md:block">
+    <span className="block whitespace-nowrap text-[clamp(2.2rem,4.7vw,4.1rem)] text-[#F5F5F3]">
+      Por que criei a
+    </span>
+
+    <span className="mt-1 block whitespace-nowrap text-[clamp(2.2rem,4.7vw,4.1rem)] text-[#6F8F5E]">
+      Análise Ponto Cego?
+    </span>
+  </span>
+</h2>
 
   {/* texto principal */}
   <p className="mt-8 max-w-[310px] text-[1rem] leading-7 text-zinc-300 md:mt-10 md:max-w-[520px] md:text-[1.12rem] md:leading-8">
