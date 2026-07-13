@@ -296,63 +296,57 @@ export default function Why() {
 
   {/* iPad e computador */}
   <span className="hidden md:block">
-    <span className="block whitespace-nowrap text-[clamp(2.2rem,4.7vw,4.1rem)] text-[#F5F5F3]">
+    <span className="block whitespace-nowrap md:text-[2.65rem] lg:text-[4.1rem] text-[#F5F5F3]">
       Por que criei a
     </span>
 
-    <span className="mt-1 block whitespace-nowrap text-[clamp(2.2rem,4.7vw,4.1rem)] text-[#6F8F5E]">
+    <span className="mt-1 block whitespace-nowrap md:text-[2.65rem] lg:text-[4.1rem] text-[#6F8F5E]">
       Análise Ponto Cego?
     </span>
   </span>
 </h2>
 
   {/* texto principal */}
-  <p className="mt-8 max-w-[310px] text-[1rem] leading-7 text-zinc-300 md:mt-10 md:max-w-[520px] md:text-[1.12rem] md:leading-8">
+<p className="mt-8 max-w-[310px] text-[1rem] leading-7 text-zinc-300 md:mt-10 md:max-w-[520px] md:text-[1.28rem] md:leading-9 lg:text-[1.12rem] lg:leading-8">
   {/* celular */}
   <span className="md:hidden">
     Durante mais de uma década
     <br />
     atendendo pessoas na clínica,
     <br />
-   ouvi milhares de histórias.
+    ouvi milhares de histórias.
   </span>
 
   {/* iPad e computador */}
-  <span className="hidden md:inline">
+    <span className="hidden md:inline">
     Durante mais de uma década atendendo pessoas na clínica, ouvi milhares de
     histórias.
   </span>
 </p>
 
- {/* texto destacado */}
+{/* texto destacado */}
 <div className="mt-6 max-w-[330px] border-l-[3px] border-[#6F8F5E] pl-4 md:mt-8 md:max-w-[520px] md:pl-5">
-  <p className="font-[family-name:var(--font-manrope)] text-[1rem] font-normal leading-[1.4] text-[#6F8F5E] min-[390px]:text-[1.05rem] md:text-[1.08rem] md:leading-7">
+  <p className="font-[family-name:var(--font-manrope)] text-[1rem] font-normal leading-[1.4] text-[#6F8F5E] min-[390px]:text-[1.05rem] md:text-[1.22rem] md:leading-8 lg:text-[1.08rem] lg:leading-7">
     {/* celular */}
     <span className="md:hidden">
       E percebi que existia um padrão
       <br />
-
-      <span className="font-semibold text-[#6F8F5E]">
       invisível, que se repetia
       <br />
-      </span>
       silenciosamente.
     </span>
 
     {/* iPad e computador */}
     <span className="hidden md:inline">
-      E percebi que existia um{" "}
-      <span className="font-normal">
-  invisível, que se repetia
-</span>
-      , que se repetia silenciosamente.
+      E percebi que existia um padrão invisível, que se repetia
+      silenciosamente.
     </span>
   </p>
 </div>
 </div>
 
               {/* coluna da foto (só md+) — a altura DELA define a altura do bloco */}
-              <div className="relative hidden shrink-0 md:block md:h-[500px] md:w-[360px] lg:h-[560px] lg:w-[450px]">
+              <div className="relative hidden shrink-0 md:block md:h-[500px] md:w-[320px] lg:h-[560px] lg:w-[450px]">
                 {/* brilho atrás da foto */}
                 <div className="pointer-events-none absolute bottom-[-120px] right-[-80px] z-[1] h-[440px] w-[440px] rounded-full bg-[#315C27]/22 blur-[85px] lg:h-[520px] lg:w-[520px]" />
 
@@ -361,7 +355,7 @@ export default function Why() {
                 <div className="pointer-events-none absolute right-[-70px] top-20 z-[2] h-[340px] w-[340px] rounded-full border border-[#6F8F5E]/10 lg:right-[-30px] lg:h-[420px] lg:w-[420px]" />
 
                 {/* foto colada no rodapé, com leve sangria pra fora da coluna */}
-                <div className="absolute bottom-0 left-[-16px] right-[-36px] top-0 z-[3] md:-translate-x-37 lg:-translate-x-12 lg:right-[-20px]">
+                <div className="absolute bottom-0 left-[-16px] right-[-36px] top-0 z-[3] md:translate-x-14 lg:-translate-x-12 lg:right-[-20px]">
                   <Image
                     src="/images/diego-poltronaaa.png"
                     alt="Diego Ciriani"
