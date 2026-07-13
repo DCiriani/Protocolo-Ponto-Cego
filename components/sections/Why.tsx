@@ -271,43 +271,46 @@ export default function Why() {
             {/* -------- LAYOUT EM 2 COLUNAS (md+) / EMPILHADO (mobile) -------- */}
             <div className="relative md:flex md:items-stretch">
               {/* coluna de texto */}
-              <div>
-  <p className="font-satoshi text-[0.8rem] font-light uppercase tracking-[0.48em] text-[#879A58] md:text-[0.95rem]">
-    A origem
+<div className="relative z-10 min-h-[555px] px-5 pt-7 md:min-h-0 md:flex-1 md:px-0 md:pr-8 md:pt-2">
+  {/* identificação da seção */}
+  <div>
+    <p className="font-satoshi text-[0.8rem] font-light uppercase tracking-[0.48em] text-[#879A58] md:text-[0.95rem]">
+      A origem
+    </p>
+
+    <div className="mt-5 flex items-center gap-3">
+      <div className="h-px w-20 bg-[#6F8F5E]/70 md:w-24" />
+
+      <span className="h-2.5 w-2.5 rotate-45 border border-[#879A58] bg-[#879A58]/80" />
+
+      <div className="h-px w-20 bg-[#6F8F5E]/70 md:w-24" />
+    </div>
+  </div>
+
+  {/* título */}
+  <h2 className="mt-6 font-[family-name:var(--font-bodoni)] font-medium uppercase leading-[0.92] tracking-[-0.025em] md:mt-8">
+    <span className="block whitespace-nowrap text-[1.52rem] text-[#F4EBDD] min-[390px]:text-[1.68rem] md:text-[clamp(2.2rem,4.7vw,4.1rem)]">
+      Por que criei a
+    </span>
+
+    <span className="mt-1 block whitespace-nowrap text-[1.52rem] text-[#76A45D] min-[390px]:text-[1.68rem] md:text-[clamp(2.2rem,4.7vw,4.1rem)]">
+      Análise Ponto Cego?
+    </span>
+  </h2>
+
+  <p className="mt-7 max-w-[265px] text-[0.72rem] leading-[1.65] text-zinc-300 min-[390px]:max-w-[290px] min-[390px]:text-[0.77rem] md:mt-10 md:max-w-[520px] md:text-[1.12rem] md:leading-8">
+    Durante mais de uma década atendendo pessoas na clínica, ouvi milhares de
+    histórias.
   </p>
 
-  <div className="mt-5 flex items-center gap-3">
-    <div className="h-px w-20 bg-[#6F8F5E]/70 md:w-24" />
-
-    <span className="h-2.5 w-2.5 rotate-45 border border-[#879A58] bg-[#879A58]/80" />
-
-    <div className="h-px w-20 bg-[#6F8F5E]/70 md:w-24" />
+  <div className="mt-5 max-w-[245px] border-l-[2px] border-[#76A45D] pl-3 min-[390px]:max-w-[275px] md:mt-8 md:max-w-[520px] md:border-l-[3px] md:pl-5">
+    <p className="font-satoshi text-[0.72rem] font-semibold leading-[1.6] text-[#F4EBDD] min-[390px]:text-[0.77rem] md:text-[1.1rem] md:leading-8">
+      E percebi que existia um padrão invisível,
+      <br />
+      que se repetia silenciosamente.
+    </p>
   </div>
 </div>
-
-                <h2 className="mt-6 font-[family-name:var(--font-bodoni)] font-medium uppercase leading-[0.92] tracking-[-0.025em] md:mt-8">
-                  <span className="block whitespace-nowrap text-[1.52rem] text-[#F4EBDD] min-[390px]:text-[1.68rem] md:text-[clamp(2.2rem,4.7vw,4.1rem)]">
-  Por que criei a
-</span>
-
-<span className="mt-1 block whitespace-nowrap text-[1.52rem] text-[#76A45D] min-[390px]:text-[1.68rem] md:text-[clamp(2.2rem,4.7vw,4.1rem)]">
-  Análise Ponto Cego?
-</span>
-                </h2>
-
-                <p className="mt-7 max-w-[265px] text-[0.72rem] leading-[1.65] text-zinc-300 min-[390px]:max-w-[290px] min-[390px]:text-[0.77rem] md:mt-10 md:max-w-[520px] md:text-[1.12rem] md:leading-8">
-                  Durante mais de uma década atendendo pessoas na clínica, ouvi
-                  milhares de histórias.
-                </p>
-
-                <div className="mt-5 max-w-[245px] border-l-[2px] border-[#76A45D] pl-3 min-[390px]:max-w-[275px] md:mt-8 md:max-w-[520px] md:border-l-[3px] md:pl-5">
-                  <p className="font-satoshi text-[0.72rem] font-semibold leading-[1.6] text-[#F4EBDD] min-[390px]:text-[0.77rem] md:text-[1.1rem] md:leading-8">
-                    E percebi que existia um padrão invisível,
-                    <br />
-                    que se repetia silenciosamente.
-                  </p>
-                </div>
-              </div>
 
               {/* coluna da foto (só md+) — a altura DELA define a altura do bloco */}
               <div className="relative hidden shrink-0 md:block md:h-[500px] md:w-[360px] lg:h-[560px] lg:w-[450px]">
