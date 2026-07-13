@@ -327,13 +327,13 @@ export default function Why() {
   {/* texto destacado */}
 <div className="mt-6 max-w-[330px] border-l-[3px] border-[#76A45D] pl-4 md:mt-8 md:max-w-[520px] md:pl-5">
   <p className="font-satoshi text-[1rem] font-semibold leading-[1.4] tracking-[-0.015em] text-[#F4EBDD] min-[390px]:text-[1.05rem] md:text-[1.08rem] md:leading-7">
-    E percebi que existia um
+    E percebi que existia um padrão 
     <br className="md:hidden" />
 
-    padrão invisível, que se
+    invisível, que se repetia
     <br className="md:hidden" />
 
-    repetia silenciosamente.
+     silenciosamente.
   </p>
 </div>
 </div>
