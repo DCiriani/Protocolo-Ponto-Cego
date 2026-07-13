@@ -414,80 +414,89 @@ export default function Why() {
 </div>
 
           {/* conclusão */}
-          <div className="relative z-20 mt-8 grid gap-7 rounded-[1.35rem] border border-[#6F8F5E]/20 bg-[linear-gradient(110deg,rgba(36,60,27,0.5),rgba(12,17,11,0.75))] px-6 py-7 md:grid-cols-2 md:gap-12 md:px-9 md:py-8">
-            <div className="flex gap-4">
-              <span className="font-[family-name:var(--font-bodoni)] text-[3.8rem] leading-[0.7] text-[#7FA74F]">
-                “
-              </span>
+<div className="relative z-20 mt-6 grid grid-cols-2 gap-4 rounded-[1.35rem] border border-[#6F8F5E]/20 bg-[linear-gradient(110deg,rgba(36,60,27,0.5),rgba(12,17,11,0.75))] px-4 py-5 md:mt-8 md:gap-12 md:px-9 md:py-8">
+  <div className="flex gap-2 md:gap-4">
+    <span className="font-[family-name:var(--font-bodoni)] text-[2.7rem] leading-[0.7] text-[#7FA74F] md:text-[3.8rem]">
+      “
+    </span>
 
-              <p className="text-[0.98rem] leading-7 text-[#F4EBDD] md:text-[1.05rem]">
-                Foi dessa escuta profunda que nasceu a{" "}
-                <span className="font-semibold text-[#7FAF59]">
-                  Análise Ponto Cego.
-                </span>
-              </p>
-            </div>
+    <p className="text-[0.78rem] leading-[1.55] text-[#F4EBDD] min-[390px]:text-[0.84rem] md:text-[1.05rem] md:leading-7">
+      Foi dessa escuta profunda que nasceu a{" "}
+      <span className="font-semibold text-[#7FAF59]">
+        Análise Ponto Cego.
+      </span>
+    </p>
+  </div>
 
-            <p className="text-[0.98rem] leading-7 text-[#F4EBDD] md:text-[1.05rem]">
-              Um olhar clínico para o que você não vê, mas que dirige suas
-              escolhas todos os dias.
-            </p>
-          </div>
+  <p className="pt-1 text-[0.78rem] leading-[1.55] text-[#F4EBDD] min-[390px]:text-[0.84rem] md:pt-0 md:text-[1.05rem] md:leading-7">
+    Um olhar clínico para o que você não vê, mas que dirige suas escolhas todos
+    os dias.
+  </p>
+</div>
 
-          {/* chamada final */}
-          <div className="relative z-20 mt-10 text-center md:mt-14">
-            <div className="flex items-center justify-center gap-6">
-              <div className="h-px flex-1 bg-[#6F8F5E]/25" />
+{/* chamada final */}
+<div className="relative z-20 mt-8 text-center md:mt-14">
+  {/* ornamento */}
+  <div className="flex items-center justify-center gap-4 md:gap-6">
+    <div className="h-px flex-1 bg-[#6F8F5E]/25" />
 
-              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-[#6F8F5E]/15 bg-[#10170F] text-[#7FA74F] shadow-[0_0_30px_rgba(72,112,45,0.2)]">
-                <EyeIcon />
-              </div>
+    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-[#6F8F5E]/15 bg-[#10170F] text-[#7FA74F] shadow-[0_0_30px_rgba(72,112,45,0.2)] md:h-14 md:w-14">
+      <EyeIcon />
+    </div>
 
-              <div className="h-px flex-1 bg-[#6F8F5E]/25" />
-            </div>
+    <div className="h-px flex-1 bg-[#6F8F5E]/25" />
+  </div>
 
-            <p className="mx-auto mt-8 max-w-[760px] font-satoshi text-[1.35rem] font-medium leading-[1.35] text-[#F4EBDD] md:text-[1.85rem]">
-              Descubra o que está por trás dos seus ciclos
-              <br className="hidden md:block" /> e veja o que sempre esteve fora
-              do seu olhar.
-            </p>
+  {/* texto */}
+  <p className="mx-auto mt-7 max-w-[320px] font-satoshi text-[1.08rem] font-medium leading-[1.4] text-[#F4EBDD] min-[390px]:text-[1.15rem] md:mt-8 md:max-w-[760px] md:text-[1.85rem] md:leading-[1.35]">
+    <span className="md:hidden">
+      Descubra o que está por trás dos seus ciclos e veja o que sempre esteve
+      fora do seu olhar.
+    </span>
 
-            <a
-              href="/checkout"
-              className="group mx-auto mt-8 flex w-full max-w-[720px] items-center justify-center gap-4 whitespace-nowrap rounded-[1.2rem] border border-[#9DBA72]/60 bg-[linear-gradient(90deg,#6E994C_0%,#4E773D_100%)] px-4 py-5 font-satoshi text-[0.95rem] font-bold uppercase tracking-[0.01em] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.16),0_18px_45px_rgba(0,0,0,0.28)] transition hover:brightness-110 min-[390px]:text-[1.05rem] md:py-6 md:text-[1.35rem]"
-            >
-              Quero descobrir meu ponto cego
-              <span className="shrink-0 text-[1.65rem] font-light transition-transform duration-300 group-hover:translate-x-1">
-                →
-              </span>
-            </a>
+    <span className="hidden md:inline">
+      Descubra o que está por trás dos seus ciclos
+      <br />
+      e veja o que sempre esteve fora do seu olhar.
+    </span>
+  </p>
 
-            {/* selos */}
-            <div className="mt-8 grid gap-5 text-left text-[0.76rem] text-zinc-300 md:grid-cols-3 md:text-center">
-              <div className="flex items-center justify-center gap-3">
-                <span className="text-[#7FA74F]">
-                  <ShieldIcon />
-                </span>
-                <span>Método exclusivo</span>
-              </div>
+  {/* botão */}
+  <a
+    href="/checkout"
+    className="group mx-auto mt-6 flex w-full max-w-[720px] items-center justify-center gap-2 whitespace-nowrap rounded-[1.1rem] border border-[#9DBA72]/60 bg-[linear-gradient(90deg,#6E994C_0%,#4E773D_100%)] px-3 py-4 font-satoshi text-[0.76rem] font-bold uppercase tracking-[-0.01em] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.16),0_18px_45px_rgba(0,0,0,0.28)] transition hover:brightness-110 min-[390px]:text-[0.86rem] md:mt-8 md:gap-4 md:rounded-[1.2rem] md:px-4 md:py-6 md:text-[1.35rem]"
+  >
+    Quero descobrir meu ponto cego
 
-              <div className="flex items-center justify-center gap-3">
-                <span className="text-[#7FA74F]">
-                  <BrainIcon />
-                </span>
-                <span>Baseado em psicologia clínica</span>
-              </div>
+    <span className="shrink-0 text-[1.35rem] font-light transition-transform duration-300 group-hover:translate-x-1 md:text-[1.65rem]">
+      →
+    </span>
+  </a>
 
-              <div className="flex items-center justify-center gap-3">
-                <span className="text-[#7FA74F]">
-                  <LockIcon />
-                </span>
-                <span>100% online e sigiloso</span>
-              </div>
-            </div>
-          </div>
-        </motion.div>
-      </Container>
-    </section>
-  );
-}
+  {/* selos */}
+  <div className="mt-6 grid grid-cols-3 gap-2 text-center text-[0.58rem] leading-4 text-zinc-300 min-[390px]:text-[0.63rem] md:mt-8 md:gap-5 md:text-[0.76rem]">
+    <div className="flex flex-col items-center justify-start gap-2 md:flex-row md:justify-center md:gap-3">
+      <span className="text-[#7FA74F]">
+        <ShieldIcon />
+      </span>
+
+      <span>Método exclusivo</span>
+    </div>
+
+    <div className="flex flex-col items-center justify-start gap-2 md:flex-row md:justify-center md:gap-3">
+      <span className="text-[#7FA74F]">
+        <BrainIcon />
+      </span>
+
+      <span>Baseado em psicologia clínica</span>
+    </div>
+
+    <div className="flex flex-col items-center justify-start gap-2 md:flex-row md:justify-center md:gap-3">
+      <span className="text-[#7FA74F]">
+        <LockIcon />
+      </span>
+
+      <span>100% online e sigiloso</span>
+    </div>
+  </div>
+</div>
