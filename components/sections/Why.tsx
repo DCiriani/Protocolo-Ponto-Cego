@@ -369,53 +369,49 @@ export default function Why() {
           </div>
 
           {/* histórias */}
-          <div className="relative z-20 mt-0 overflow-hidden rounded-[1.45rem] border border-[#6F8F5E]/35 bg-black/25 px-5 md:mt-4 md:px-8">
-            {stories.map((story, index) => {
-              const Icon = story.icon;
+<div className="relative z-20 mt-0 overflow-hidden rounded-[1.45rem] border border-[#6F8F5E]/35 bg-black/25 px-5 md:mt-4 md:px-8">
+  {stories.map((story, index) => {
+    const Icon = story.icon;
 
-              return (
-                <div
-                  key={story.title}
-                  className={`flex gap-4 py-6 md:gap-6 md:py-8 ${
-                    index !== stories.length - 1
-                      ? "border-b border-[#6F8F5E]/20"
-                      : ""
-                  }`}
-                >
-                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-[#6F8F5E]/10 bg-[#172116] text-[#78A34E] shadow-[0_0_28px_rgba(71,119,45,0.14)] md:h-16 md:w-16">
-                    <Icon />
-                  </div>
+    return (
+      <div
+        key={story.title}
+        className={`flex gap-4 py-6 md:gap-6 md:py-8 ${
+          index !== stories.length - 1
+            ? "border-b border-[#6F8F5E]/20"
+            : ""
+        }`}
+      >
+        <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-[#6F8F5E]/10 bg-[#172116] text-[#78A34E] shadow-[0_0_28px_rgba(71,119,45,0.14)] md:h-16 md:w-16">
+          <Icon />
+        </div>
 
-                  <div className="pt-1">
-  <p className="leading-7 md:leading-8">
-    <span className="font-satoshi text-[1rem] font-semibold tracking-[-0.015em] text-[#F4EBDD] min-[390px]:text-[1.05rem] md:text-[1.08rem]">
-      <div className="pt-1">
-  {/* celular: texto em sequência */}
-  <p className="leading-7 md:hidden">
-    <span className="font-satoshi text-[1rem] font-semibold tracking-[-0.015em] text-[#F4EBDD] min-[390px]:text-[1.05rem]">
-      {story.title}
-    </span>{" "}
+        <div className="pt-1">
+          {/* celular: título e complemento em sequência */}
+          <p className="leading-7 md:hidden">
+            <span className="font-satoshi text-[1rem] font-semibold tracking-[-0.015em] text-[#F4EBDD] min-[390px]:text-[1.05rem]">
+              {story.title}
+            </span>{" "}
+            <span className="font-[family-name:var(--font-manrope)] text-[0.92rem] font-normal text-zinc-400">
+              {story.text}
+            </span>
+          </p>
 
-    <span className="font-[family-name:var(--font-manrope)] text-[0.92rem] font-normal text-zinc-400">
-      {story.text}
-    </span>
-  </p>
+          {/* iPad e computador: complemento abaixo */}
+          <div className="hidden md:block">
+            <p className="font-satoshi text-[1.08rem] font-semibold leading-7 tracking-[-0.015em] text-[#F4EBDD]">
+              {story.title}
+            </p>
 
-  {/* iPad e computador: complemento embaixo */}
-  <div className="hidden md:block">
-    <p className="font-satoshi text-[1.08rem] font-semibold leading-7 tracking-[-0.015em] text-[#F4EBDD]">
-      {story.title}
-    </p>
-
-    <p className="mt-1 font-[family-name:var(--font-manrope)] text-[1rem] font-normal leading-7 text-zinc-400">
-      {story.text}
-    </p>
-  </div>
-</div>
-                </div>
-              );
-            })}
+            <p className="mt-1 font-[family-name:var(--font-manrope)] text-[1rem] font-normal leading-7 text-zinc-400">
+              {story.text}
+            </p>
           </div>
+        </div>
+      </div>
+    );
+  })}
+</div>
 
           {/* conclusão */}
           <div className="relative z-20 mt-8 grid gap-7 rounded-[1.35rem] border border-[#6F8F5E]/20 bg-[linear-gradient(110deg,rgba(36,60,27,0.5),rgba(12,17,11,0.75))] px-6 py-7 md:grid-cols-2 md:gap-12 md:px-9 md:py-8">
