@@ -239,7 +239,7 @@ export default function Why() {
           className="relative mx-auto max-w-[1180px] overflow-hidden rounded-[1.6rem] border border-[#6F8F5E]/30 bg-black/15 px-5 py-10 shadow-[0_30px_100px_rgba(0,0,0,0.35)] md:px-10 md:py-14 lg:px-14"
         >
           {/* ============ TOPO ============ */}
-          <div className="relative -mx-5 -mt-10 overflow-hidden rounded-t-[1.6rem] bg-[#040604] md:mx-0 md:mt-0 md:rounded-none">
+          <div className="relative -mx-5 -mt-10 overflow-hidden rounded-t-[1.6rem] bg-[#040604] md:-mx-10 md:-mt-14 md:rounded-t-[1.6rem] lg:mx-0 lg:mt-0 lg:rounded-none">
             {/* -------- FOTO MOBILE (absoluta, atrás do texto) -------- */}
             <div className="md:hidden">
               {/* brilho atrás da foto */}
