@@ -334,6 +334,7 @@ export default function Why() {
 
       <span className="font-semibold text-[#6F8F5E]">
       invisível, que se repetia
+      <br />
       </span>
       silenciosamente.
     </span>
