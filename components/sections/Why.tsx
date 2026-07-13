@@ -342,9 +342,9 @@ export default function Why() {
     {/* iPad e computador */}
     <span className="hidden md:inline">
       E percebi que existia um{" "}
-      <span className="font-semibold text-[#6F8F5E]">
-        padrão invisível
-      </span>
+      <span className="font-normal">
+  invisível, que se repetia
+</span>
       , que se repetia silenciosamente.
     </span>
   </p>
