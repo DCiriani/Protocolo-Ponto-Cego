@@ -387,14 +387,14 @@ export default function Why() {
                   </div>
 
                   <div className="pt-1">
-                    <p className="font-satoshi text-[0.98rem] font-semibold leading-7 text-[#F4EBDD] md:text-[1.08rem]">
-                      {story.title}
-                    </p>
+  <p className="font-[family-name:var(--font-bodoni)] text-[0.98rem] font-medium leading-7 text-[#F4EBDD] md:text-[1.08rem]">
+    {story.title}
+  </p>
 
-                    <p className="mt-1 text-[0.92rem] leading-7 text-zinc-400 md:text-[1rem]">
-                      {story.text}
-                    </p>
-                  </div>
+  <p className="mt-1 font-[family-name:var(--font-manrope)] text-[0.92rem] font-normal leading-7 text-zinc-400 md:text-[1rem]">
+    {story.text}
+  </p>
+</div>
                 </div>
               );
             })}
