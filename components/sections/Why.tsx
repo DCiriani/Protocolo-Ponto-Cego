@@ -271,7 +271,7 @@ export default function Why() {
             {/* -------- LAYOUT EM 2 COLUNAS (md+) / EMPILHADO (mobile) -------- */}
             <div className="relative md:flex md:items-stretch">
               {/* coluna de texto */}
-<div className="relative z-10 min-h-[500px] px-5 pt-7 min-[390px]:min-h-[520px] md:min-h-0 md:flex-1 md:px-0 md:pr-8 md:pt-2">
+<div className="relative z-10 min-h-[425px] px-5 pt-7 min-[390px]:min-h-[445px] md:min-h-0 md:flex-1 md:px-0 md:pr-8 md:pt-2">
   {/* identificação da seção */}
   <div>
     <p className="font-satoshi text-[0.8rem] font-light uppercase tracking-[0.48em] text-[#879A58] md:text-[0.95rem]">
@@ -369,7 +369,7 @@ export default function Why() {
           </div>
 
           {/* histórias */}
-          <div className="relative z-20 mt-4 overflow-hidden rounded-[1.45rem] border border-[#6F8F5E]/35 bg-black/25 px-5 md:px-8">
+          <div className="relative z-20 mt-0 overflow-hidden rounded-[1.45rem] border border-[#6F8F5E]/35 bg-black/25 px-5 md:mt-4 md:px-8">
             {stories.map((story, index) => {
               const Icon = story.icon;
 
