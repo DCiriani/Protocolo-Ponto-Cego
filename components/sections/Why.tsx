@@ -256,7 +256,7 @@ export default function Why() {
                   alt="Diego Ciriani"
                   fill
                   sizes="310px"
-                  className="scale-[1.08] object-contain object-bottom"
+                  className="scale-[1] object-contain object-bottom"
                   priority
                 />
               </div>
