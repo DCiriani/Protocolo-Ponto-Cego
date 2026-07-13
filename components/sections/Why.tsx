@@ -250,7 +250,7 @@ export default function Why() {
               <div className="pointer-events-none absolute right-[-115px] top-24 z-[2] h-[300px] w-[300px] rounded-full border border-[#6F8F5E]/10" />
 
               {/* foto */}
-              <div className="absolute bottom-[-5px] right-[-62px] z-[3] h-[365px] w-[285px] min-[390px]:right-[-42px] min-[390px]:h-[395px] min-[390px]:w-[310px]">
+              <div className="absolute bottom-[-5px] right-[-18px] z-[3] h-[365px] w-[285px] min-[390px]:right-[-8px] min-[390px]:h-[395px] min-[390px]:w-[310px]">
                 <Image
                   src="/images/diego-poltronaaa.png"
                   alt="Diego Ciriani"
@@ -280,12 +280,13 @@ export default function Why() {
                 </div>
 
                 <h2 className="mt-6 font-satoshi font-black uppercase leading-[0.9] tracking-[-0.055em] md:mt-8">
-                  <span className="block whitespace-nowrap text-[clamp(1.9rem,4.7vw,4.1rem)] text-[#F4EBDD]">
-                    Por que criei a
-                  </span>
-                  <span className="mt-1 block whitespace-nowrap text-[clamp(1.9rem,4.7vw,4.1rem)] text-[#76A45D]">
-                    Análise Ponto Cego?
-                  </span>
+                  <span className="block whitespace-nowrap text-[1.52rem] text-[#F4EBDD] min-[390px]:text-[1.68rem] md:text-[clamp(2.2rem,4.7vw,4.1rem)]">
+  Por que criei a
+</span>
+
+<span className="mt-1 block whitespace-nowrap text-[1.52rem] text-[#76A45D] min-[390px]:text-[1.68rem] md:text-[clamp(2.2rem,4.7vw,4.1rem)]">
+  Análise Ponto Cego?
+</span>
                 </h2>
 
                 <p className="mt-7 max-w-[265px] text-[0.72rem] leading-[1.65] text-zinc-300 min-[390px]:max-w-[290px] min-[390px]:text-[0.77rem] md:mt-10 md:max-w-[520px] md:text-[1.12rem] md:leading-8">
