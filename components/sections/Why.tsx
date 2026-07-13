@@ -285,16 +285,12 @@ export default function Why() {
   <h2 className="mt-10 font-[family-name:var(--font-bodoni)] font-medium uppercase leading-[0.94] tracking-[-0.025em] md:mt-8">
     {/* celular */}
 <span className="md:hidden">
-  <span className="block text-[2rem] text-[#F4EBDD] min-[390px]:text-[2.15rem]">
+  <span className="block text-[1.65rem] text-[#F4EBDD] min-[390px]:text-[1.8rem]">
     Por que criei a
   </span>
 
-  <span className="mt-1 block text-[2rem] text-[#76A45D] min-[390px]:text-[2.15rem]">
-    Análise Ponto
-  </span>
-
-  <span className="block text-[2rem] text-[#76A45D] min-[390px]:text-[2.15rem]">
-    Cego?
+  <span className="mt-1 block whitespace-nowrap text-[1.42rem] text-[#76A45D] min-[390px]:text-[1.55rem]">
+    Análise Ponto Cego?
   </span>
 </span>
 
