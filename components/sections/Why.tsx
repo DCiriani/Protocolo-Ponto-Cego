@@ -326,8 +326,7 @@ export default function Why() {
 
   {/* texto destacado */}
   <div className="mt-6 max-w-[330px] border-l-[3px] border-[#76A45D] pl-4 md:mt-8 md:max-w-[520px] md:pl-5">
-  <p className="font-satoshi text-[0.9rem] font-semibold leading-7 text-[#F4EBDD] min-[390px]:text-[0.96rem] md:text-[1.1rem] md:leading-8">
-    <span className="block">
+<p className="font-[family-name:var(--font-bodoni)] text-[0.9rem] font-medium leading-7 text-[#F4EBDD] min-[390px]:text-[0.96rem] md:text-[1.1rem] md:leading-8">    <span className="block">
       E percebi que existia um padrão
     </span>
 
