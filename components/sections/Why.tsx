@@ -239,7 +239,7 @@ export default function Why() {
           className="relative mx-auto max-w-[1180px] overflow-hidden rounded-[1.6rem] border border-[#6F8F5E]/30 bg-black/15 px-5 py-10 shadow-[0_30px_100px_rgba(0,0,0,0.35)] md:px-10 md:py-14 lg:px-14"
         >
           {/* ============ TOPO ============ */}
-          <div className="relative overflow-hidden bg-[#040604]">
+          <div className="relative -mx-5 -mt-10 overflow-hidden rounded-t-[1.6rem] bg-[#040604] md:mx-0 md:mt-0 md:rounded-none">
             {/* -------- FOTO MOBILE (absoluta, atrás do texto) -------- */}
             <div className="md:hidden">
               {/* brilho atrás da foto */}
@@ -271,7 +271,7 @@ export default function Why() {
             {/* -------- LAYOUT EM 2 COLUNAS (md+) / EMPILHADO (mobile) -------- */}
             <div className="relative md:flex md:items-stretch">
               {/* coluna de texto */}
-              <div className="relative z-10 min-h-[555px] px-1 pt-1 md:min-h-0 md:flex-1 md:pr-8 md:pt-2">
+              <div className="relative z-10 min-h-[555px] px-5 pt-7 md:min-h-0 md:flex-1 md:px-0 md:pr-8 md:pt-2">
                 <div className="flex items-center gap-3">
                   <p className="font-satoshi text-[0.62rem] font-medium uppercase tracking-[0.45em] text-[#879A58] md:text-[0.85rem]">
                     A origem
