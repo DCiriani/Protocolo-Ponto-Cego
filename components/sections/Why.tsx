@@ -185,7 +185,6 @@ const stories = [
     text: "Outras sobre conflitos constantes.",
   },
   {
-  {
   icon: BrokenHeartIcon,
   title: "Algumas relações pareciam saudáveis por fora.",
   text: "Mas escondiam um sofrimento silencioso.",
