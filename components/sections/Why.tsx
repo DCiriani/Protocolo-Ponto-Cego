@@ -284,19 +284,19 @@ export default function Why() {
   {/* título */}
   <h2 className="mt-10 font-[family-name:var(--font-bodoni)] font-medium uppercase leading-[0.94] tracking-[-0.025em] md:mt-8">
     {/* celular */}
-    <span className="md:hidden">
-      <span className="block text-[1.8rem] text-[#F4EBDD] min-[390px]:text-[1.95rem]">
-        Por que criei a
-      </span>
+<span className="md:hidden">
+  <span className="block text-[2rem] text-[#F4EBDD] min-[390px]:text-[2.15rem]">
+    Por que criei a
+  </span>
 
-      <span className="mt-1 block text-[1.8rem] text-[#76A45D] min-[390px]:text-[1.95rem]">
-        Análise Ponto
-      </span>
+  <span className="mt-1 block text-[2rem] text-[#76A45D] min-[390px]:text-[2.15rem]">
+    Análise Ponto
+  </span>
 
-      <span className="block text-[1.8rem] text-[#76A45D] min-[390px]:text-[1.95rem]">
-        Cego?
-      </span>
-    </span>
+  <span className="block text-[2rem] text-[#76A45D] min-[390px]:text-[2.15rem]">
+    Cego?
+  </span>
+</span>
 
     {/* iPad e computador */}
     <span className="hidden md:block">
