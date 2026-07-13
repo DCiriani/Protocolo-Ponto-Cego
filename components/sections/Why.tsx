@@ -308,9 +308,21 @@ export default function Why() {
 
   {/* texto principal */}
   <p className="mt-8 max-w-[310px] text-[1rem] leading-7 text-zinc-300 md:mt-10 md:max-w-[520px] md:text-[1.12rem] md:leading-8">
+  {/* celular */}
+  <span className="md:hidden">
+    Durante mais de uma década
+    <br />
+    atendendo pessoas na clínica, ouvi
+    <br />
+    milhares de histórias.
+  </span>
+
+  {/* iPad e computador */}
+  <span className="hidden md:inline">
     Durante mais de uma década atendendo pessoas na clínica, ouvi milhares de
     histórias.
-  </p>
+  </span>
+</p>
 
   {/* texto destacado */}
   <div className="mt-6 max-w-[330px] border-l-[3px] border-[#76A45D] pl-4 md:mt-8 md:max-w-[520px] md:pl-5">
