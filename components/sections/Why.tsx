@@ -324,16 +324,28 @@ export default function Why() {
   </span>
 </p>
 
-  {/* texto destacado */}
+ {/* texto destacado */}
 <div className="mt-6 max-w-[330px] border-l-[3px] border-[#6F8F5E] pl-4 md:mt-8 md:max-w-[520px] md:pl-5">
-  <p className="font-satoshi text-[1rem] font-semibold leading-[1.4] tracking-[-0.015em] text-[#F4EBDD] min-[390px]:text-[1.05rem] md:text-[1.08rem] md:leading-7">
-    E percebi que existia um padrão 
-    <br className="md:hidden" />
+  <p className="font-[family-name:var(--font-manrope)] text-[1rem] font-normal leading-[1.4] text-zinc-300 min-[390px]:text-[1.05rem] md:text-[1.08rem] md:leading-7">
+    {/* celular */}
+    <span className="md:hidden">
+      E percebi que existia um padrão
+      <br />
 
-    invisível, que se repetia
-    <br className="md:hidden" />
+      <span className="font-semibold text-[#6F8F5E]">
+      invisível, que se repetia
+      </span>
+      silenciosamente.
+    </span>
 
-     silenciosamente.
+    {/* iPad e computador */}
+    <span className="hidden md:inline">
+      E percebi que existia um{" "}
+      <span className="font-semibold text-[#6F8F5E]">
+        padrão invisível
+      </span>
+      , que se repetia silenciosamente.
+    </span>
   </p>
 </div>
 </div>
