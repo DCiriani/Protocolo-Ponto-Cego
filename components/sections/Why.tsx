@@ -250,7 +250,7 @@ export default function Why() {
               <div className="pointer-events-none absolute right-[-115px] top-24 z-[2] h-[300px] w-[300px] rounded-full border border-[#6F8F5E]/10" />
 
               {/* foto */}
-<div className="absolute bottom-[45px] right-[-18px] z-[3] h-[365px] w-[285px] min-[390px]:bottom-[35px] min-[390px]:right-[-8px] min-[390px]:h-[395px] min-[390px]:w-[310px]">
+<div className="absolute bottom-[110px] right-[-48px] z-[3] h-[365px] w-[285px] min-[390px]:bottom-[95px] min-[390px]:right-[-38px] min-[390px]:h-[395px] min-[390px]:w-[310px]">
                 <Image
                   src="/images/diego-poltronaaa.png"
                   alt="Diego Ciriani"
