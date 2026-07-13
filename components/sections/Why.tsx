@@ -289,7 +289,7 @@ export default function Why() {
     Por que criei a
   </span>
 
-  <span className="mt-1 block whitespace-nowrap text-[1.42rem] text-[#76A45D] min-[390px]:text-[1.55rem]">
+  <span className="mt-1 block whitespace-nowrap text-[1.42rem] text-[#6F8F5E] min-[390px]:text-[1.55rem]">
     Análise Ponto Cego?
   </span>
 </span>
@@ -300,7 +300,7 @@ export default function Why() {
         Por que criei a
       </span>
 
-      <span className="mt-1 block whitespace-nowrap text-[clamp(2.2rem,4.7vw,4.1rem)] text-[#76A45D]">
+      <span className="mt-1 block whitespace-nowrap text-[clamp(2.2rem,4.7vw,4.1rem)] text-[#6F8F5E]">
         Análise Ponto Cego?
       </span>
     </span>
@@ -325,7 +325,7 @@ export default function Why() {
 </p>
 
   {/* texto destacado */}
-<div className="mt-6 max-w-[330px] border-l-[3px] border-[#76A45D] pl-4 md:mt-8 md:max-w-[520px] md:pl-5">
+<div className="mt-6 max-w-[330px] border-l-[3px] border-[#6F8F5E] pl-4 md:mt-8 md:max-w-[520px] md:pl-5">
   <p className="font-satoshi text-[1rem] font-semibold leading-[1.4] tracking-[-0.015em] text-[#F4EBDD] min-[390px]:text-[1.05rem] md:text-[1.08rem] md:leading-7">
     E percebi que existia um padrão 
     <br className="md:hidden" />
@@ -382,7 +382,7 @@ export default function Why() {
             : ""
         }`}
       >
-        <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-[#6F8F5E]/10 bg-[#172116] text-[#78A34E] shadow-[0_0_28px_rgba(71,119,45,0.14)] md:h-16 md:w-16">
+        <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-[#6F8F5E]/10 bg-[#172116] text-[#88B39A] shadow-[0_0_28px_rgba(71,119,45,0.14)] md:h-16 md:w-16">
           <Icon />
         </div>
 
@@ -416,13 +416,13 @@ export default function Why() {
           {/* conclusão */}
 <div className="relative z-20 mt-6 grid grid-cols-2 gap-4 rounded-[1.35rem] border border-[#6F8F5E]/20 bg-[linear-gradient(110deg,rgba(36,60,27,0.5),rgba(12,17,11,0.75))] px-4 py-5 md:mt-8 md:gap-12 md:px-9 md:py-8">
   <div className="flex gap-2 md:gap-4">
-    <span className="font-[family-name:var(--font-bodoni)] text-[2.7rem] leading-[0.7] text-[#7FA74F] md:text-[3.8rem]">
+    <span className="font-[family-name:var(--font-bodoni)] text-[2.7rem] leading-[0.7] text-[#88B39A] md:text-[3.8rem]">
       “
     </span>
 
     <p className="text-[0.78rem] leading-[1.55] text-[#F4EBDD] min-[390px]:text-[0.84rem] md:text-[1.05rem] md:leading-7">
       Foi dessa escuta profunda que nasceu a{" "}
-      <span className="font-semibold text-[#7FAF59]">
+      <span className="font-semibold text-[#6F8F5E]">
         Análise Ponto Cego.
       </span>
     </p>
@@ -440,7 +440,7 @@ export default function Why() {
   <div className="flex items-center justify-center gap-4 md:gap-6">
     <div className="h-px flex-1 bg-[#6F8F5E]/25" />
 
-    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-[#6F8F5E]/15 bg-[#10170F] text-[#7FA74F] shadow-[0_0_30px_rgba(72,112,45,0.2)] md:h-14 md:w-14">
+    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-[#6F8F5E]/15 bg-[#10170F] text-[#88B39A] shadow-[0_0_30px_rgba(72,112,45,0.2)] md:h-14 md:w-14">
       <EyeIcon />
     </div>
 
@@ -464,7 +464,7 @@ export default function Why() {
   {/* botão */}
   <a
     href="/checkout"
-    className="group mx-auto mt-6 flex w-full max-w-[720px] items-center justify-center gap-2 whitespace-nowrap rounded-[1.1rem] border border-[#9DBA72]/60 bg-[linear-gradient(90deg,#6E994C_0%,#4E773D_100%)] px-3 py-4 font-satoshi text-[0.76rem] font-bold uppercase tracking-[-0.01em] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.16),0_18px_45px_rgba(0,0,0,0.28)] transition hover:brightness-110 min-[390px]:text-[0.86rem] md:mt-8 md:gap-4 md:rounded-[1.2rem] md:px-4 md:py-6 md:text-[1.35rem]"
+    className="group mx-auto mt-6 flex w-full max-w-[720px] items-center justify-center gap-2 whitespace-nowrap rounded-[1.1rem] border border-[#8EA36B]/50 bg-[#4F6842] px-3 py-4 font-satoshi text-[0.76rem] font-bold uppercase tracking-[-0.01em] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.16),0_18px_45px_rgba(0,0,0,0.28)] transition hover:bg-[#5B7650] min-[390px]:text-[0.86rem] md:mt-8 md:gap-4 md:rounded-[1.2rem] md:px-4 md:py-6 md:text-[1.35rem]"
   >
     Quero descobrir meu ponto cego
 
@@ -476,7 +476,7 @@ export default function Why() {
   {/* selos */}
   <div className="mt-6 grid grid-cols-3 gap-2 text-center text-[0.58rem] leading-4 text-zinc-300 min-[390px]:text-[0.63rem] md:mt-8 md:gap-5 md:text-[0.76rem]">
     <div className="flex flex-col items-center justify-start gap-2 md:flex-row md:justify-center md:gap-3">
-      <span className="text-[#7FA74F]">
+      <span className="text-[#88B39A]">
         <ShieldIcon />
       </span>
 
@@ -484,7 +484,7 @@ export default function Why() {
     </div>
 
     <div className="flex flex-col items-center justify-start gap-2 md:flex-row md:justify-center md:gap-3">
-      <span className="text-[#7FA74F]">
+      <span className="text-[#88B39A]">
         <BrainIcon />
       </span>
 
@@ -492,7 +492,7 @@ export default function Why() {
     </div>
 
                   <div className="flex flex-col items-center justify-start gap-2 md:flex-row md:justify-center md:gap-3">
-                <span className="text-[#7FA74F]">
+                <span className="text-[#88B39A]">
                   <LockIcon />
                 </span>
 
