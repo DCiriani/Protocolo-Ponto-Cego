@@ -312,9 +312,9 @@ export default function Why() {
   <span className="md:hidden">
     Durante mais de uma década
     <br />
-    atendendo pessoas na clínica, ouvi
+    atendendo pessoas na clínica,
     <br />
-    milhares de histórias.
+   ouvi milhares de histórias.
   </span>
 
   {/* iPad e computador */}
