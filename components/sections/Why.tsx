@@ -491,12 +491,17 @@ export default function Why() {
       <span>Baseado em psicologia clínica</span>
     </div>
 
-    <div className="flex flex-col items-center justify-start gap-2 md:flex-row md:justify-center md:gap-3">
-      <span className="text-[#7FA74F]">
-        <LockIcon />
-      </span>
+                  <div className="flex flex-col items-center justify-start gap-2 md:flex-row md:justify-center md:gap-3">
+                <span className="text-[#7FA74F]">
+                  <LockIcon />
+                </span>
 
-      <span>100% online e sigiloso</span>
-    </div>
-  </div>
-</div>
+                <span>100% online e sigiloso</span>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+      </Container>
+    </section>
+  );
+}
