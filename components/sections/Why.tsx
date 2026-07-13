@@ -271,13 +271,19 @@ export default function Why() {
             {/* -------- LAYOUT EM 2 COLUNAS (md+) / EMPILHADO (mobile) -------- */}
             <div className="relative md:flex md:items-stretch">
               {/* coluna de texto */}
-              <div className="relative z-10 min-h-[555px] px-5 pt-7 md:min-h-0 md:flex-1 md:px-0 md:pr-8 md:pt-2">
-                <div className="flex items-center gap-3">
-                  <p className="font-satoshi text-[0.62rem] font-medium uppercase tracking-[0.45em] text-[#879A58] md:text-[0.85rem]">
-                    A origem
-                  </p>
-                  <div className="h-px w-12 bg-[#879A58]/55 md:w-16" />
-                </div>
+              <div>
+  <p className="font-satoshi text-[0.8rem] font-light uppercase tracking-[0.48em] text-[#879A58] md:text-[0.95rem]">
+    A origem
+  </p>
+
+  <div className="mt-5 flex items-center gap-3">
+    <div className="h-px w-20 bg-[#6F8F5E]/70 md:w-24" />
+
+    <span className="h-2.5 w-2.5 rotate-45 border border-[#879A58] bg-[#879A58]/80" />
+
+    <div className="h-px w-20 bg-[#6F8F5E]/70 md:w-24" />
+  </div>
+</div>
 
                 <h2 className="mt-6 font-[family-name:var(--font-bodoni)] font-medium uppercase leading-[0.92] tracking-[-0.025em] md:mt-8">
                   <span className="block whitespace-nowrap text-[1.52rem] text-[#F4EBDD] min-[390px]:text-[1.68rem] md:text-[clamp(2.2rem,4.7vw,4.1rem)]">
