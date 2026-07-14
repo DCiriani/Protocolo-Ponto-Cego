@@ -67,12 +67,12 @@ export default function Transformations() {
             <div className="mt-4 h-px w-20 bg-[#6F8F5E]" />
           </div>
 
-        <h2 className="max-w-[760px] font-[family-name:var(--font-bodoni)] text-[3rem] font-medium leading-[0.96] tracking-[0.01em] text-[#F5F5F3] md:text-[5.2rem] lg:text-[6rem]">
-  <span className="block text-[2.1rem] min-[390px]:text-[2.25rem] md:text-[5.2rem] lg:text-[6rem]">
+        <h2 className="max-w-[760px] font-[family-name:var(--font-bodoni)] font-medium leading-[0.96] tracking-[0.01em] text-[#F5F5F3] md:max-w-none">
+  <span className="block text-[1.95rem] min-[390px]:text-[2.25rem] md:whitespace-nowrap md:text-[4.6rem] lg:text-[6rem]">
     O que muda quando
   </span>
 
-  <span className="block text-[#6F8F5E]">
+  <span className="block text-[3rem] text-[#6F8F5E] md:whitespace-nowrap md:text-[4.6rem] lg:text-[6rem]">
     Você enxerga
   </span>
 </h2>
