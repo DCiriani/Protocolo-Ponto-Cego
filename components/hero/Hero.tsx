@@ -169,10 +169,11 @@ export default function Hero() {
 </p>
 
             <p className="mt-6 max-w-[18.5rem] text-[0.84rem] leading-6 text-zinc-300 [word-spacing:0.06em] sm:max-w-[540px] sm:text-[1rem] md:text-lg md:leading-8">
-              Existe um padrão influenciando suas escolhas, seus relacionamentos
-              e seus conflitos sem que você perceba. A Análise Ponto Cego é uma
-              leitura clínica escrita, feita pessoalmente por um psicólogo a
-              partir das suas respostas, criada para tornar esse padrão visível.
+              Você já entendeu que alguma coisa se repete. O que você não consegue é
+enxergar de fora. A Análise Ponto Cego é uma leitura escrita por um psicólogo
+a partir das suas respostas: ela nomeia o padrão, mostra onde ele age nas suas
+escolhas e o que ele está te custando, e mostra por onde começa a mudar. Em até
+48 horas, no seu e-mail.
             </p>
 
 <div id="comecar" className="mt-8">
