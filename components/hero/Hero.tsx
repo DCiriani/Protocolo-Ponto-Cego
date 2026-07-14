@@ -191,7 +191,7 @@ export default function Hero() {
             <div className="mt-7 flex flex-wrap items-center gap-x-4 gap-y-2 text-[0.82rem] leading-5 text-zinc-400 sm:text-sm md:text-base">
               <span>Entrega em até 48h</span>
               <span className="text-[#88B39A]">•</span>
-              <span>Pagamento único de R$147</span>
+              <span>Pagamento único</span>
             </div>
           </div>
 
