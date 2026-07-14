@@ -181,11 +181,11 @@ export default function Hero() {
 
 <div id="comecar" className="mt-8">
   <Button
-    href="/checkout"
-    className="!w-fit !max-w-none !rounded-[0.5rem] !px-5 !py-3 !text-[0.78rem] !tracking-[0.02em] whitespace-nowrap"
-  >
-    Quero enxergar meus padrões
-  </Button>
+  href="/checkout"
+  className="!w-fit !px-7 !py-4 !text-[1.15rem] min-[390px]:!px-8 min-[390px]:!text-[1.25rem] md:!px-10 md:!py-5 md:!text-[1.5rem]"
+>
+      Quero enxergar meus padrões →
+</Button>
 </div>
 
             <div className="mt-7 flex flex-wrap items-center gap-x-4 gap-y-2 text-[0.82rem] leading-5 text-zinc-400 sm:text-sm md:text-base">
