@@ -168,13 +168,16 @@ export default function Hero() {
   O padrão mais difícil de enxergar é o seu.
 </p>
 
-            <p className="mt-6 max-w-[18.5rem] text-[0.84rem] leading-6 text-zinc-300 [word-spacing:0.06em] sm:max-w-[540px] sm:text-[1rem] md:text-lg md:leading-8">
-              Você já entendeu que alguma coisa se repete. O que você não consegue é
-enxergar de fora. A Análise Ponto Cego é uma leitura escrita por um psicólogo
-a partir das suas respostas: ela nomeia o padrão, mostra onde ele age nas suas
-escolhas e o que ele está te custando, e mostra por onde começa a mudar. Em até
-48 horas, no seu e-mail.
-            </p>
+            <p className="mt-6 max-w-[640px] text-[1rem] leading-7 text-zinc-300 md:text-[1.2rem] md:leading-9">
+  Você já entendeu que alguma coisa se repete. O que você não consegue é
+  enxergar de fora. A Análise Ponto Cego é uma leitura escrita por um psicólogo,
+  a partir das suas respostas. Ela nomeia o padrão, mostra onde ele atua nas
+  suas escolhas, o que ele está te custando e por onde começar a mudar.{" "}
+
+  <span className="font-medium text-[#6F8F5E]">
+    Em até 48 horas, no seu e-mail.
+  </span>
+</p>
 
 <div id="comecar" className="mt-8">
   <Button
