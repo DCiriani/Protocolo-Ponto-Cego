@@ -337,10 +337,17 @@ export default function Why() {
     </span>
 
     {/* iPad e computador */}
-    <span className="hidden md:inline">
-      E percebi que existia um padrão invisível, que se repetia
-      silenciosamente.
-    </span>
+    {/* somente iPad */}
+<span className="hidden md:inline lg:hidden">
+  E percebi que existia um padrão invisível,
+  <br />
+  que se repetia silenciosamente.
+</span>
+
+{/* somente computador */}
+<span className="hidden lg:inline">
+  E percebi que existia um padrão invisível, que se repetia silenciosamente.
+</span>
   </p>
 </div>
 </div>
