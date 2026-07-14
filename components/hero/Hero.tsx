@@ -183,6 +183,7 @@ export default function Hero() {
   <Button
   href="/checkout"
   className="!w-fit !px-7 !py-4 !text-[1.15rem] min-[390px]:!px-8 min-[390px]:!text-[1.25rem] md:!px-10 md:!py-5 md:!text-[1.5rem]"
+>
   Quero enxergar meus padrões
 </Button>
 </div>
