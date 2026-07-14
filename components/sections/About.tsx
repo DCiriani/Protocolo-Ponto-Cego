@@ -61,7 +61,7 @@ export default function About() {
 </h2>
 
            <p className="mt-3 font-[family-name:var(--font-bodoni)] text-[1.2rem] font-medium leading-tight tracking-[-0.01em] text-[#6F8F5E] md:text-[2.35rem]">
-  criador da Análise Ponto Cego.
+  Criador da Análise Ponto Cego.
 </p>
           </div>
 
