@@ -6,7 +6,6 @@ export const relationshipStatusOptions = [
   "Estou solteiro(a)",
   "Estou em uma relação indefinida",
   "Passei por um término recentemente",
-  "Prefiro não responder",
 ];
 
 export const ageRangeOptions = [
@@ -14,7 +13,6 @@ export const ageRangeOptions = [
   "De 25 a 34 anos",
   "De 35 a 44 anos",
   "45 anos ou mais",
-  "Prefiro não responder",
 ];
 
 export const relationshipDurationOptions = [
@@ -30,14 +28,12 @@ export const discomfortDurationOptions = [
   "Há alguns meses",
   "Há alguns anos",
   "Aparece desde as minhas primeiras relações",
-  "Não sei dizer",
 ];
 
 export const therapyHistoryOptions = [
   "Nunca fiz",
   "Já fiz, mas não faço atualmente",
   "Faço atualmente",
-  "Prefiro não responder",
 ];
 
 export const screeningMoodOptions = [
