@@ -19,6 +19,10 @@ import type { PublicAnswers, Step } from "@/lib/jornada/types";
 
 const storageKey = "ponto-cego-jornada-public-v1";
 
+const MIN_MAIN_QUESTION_LENGTH = 10;
+const LENGTH_HINT_MESSAGE =
+  "Conta um pouco mais. Quanto mais detalhe você trouxer, mais precisa fica a sua leitura.";
+
 const initialAnswers: PublicAnswers = {
   name: "",
   email: "",
@@ -212,9 +216,11 @@ export default function PublicJourneyForm() {
       const result = await response.json().catch(() => null);
 
       if (!response.ok || !result?.ok) {
-        setErrorMessage(
-          result?.message ?? "Não foi possível continuar agora.",
-        );
+        if (!result?.tooShort) {
+          setErrorMessage(
+            result?.message ?? "Não foi possível continuar agora.",
+          );
+        }
         setIsCheckingGate(false);
         return;
       }
@@ -312,7 +318,17 @@ export default function PublicJourneyForm() {
                 {renderField(currentStep, answers, setField)}
 
                 {currentStep.key === "mainQuestion" && (
-                  <ScreeningCard answers={answers} setField={setField} />
+                  <>
+                    {answers.mainQuestion.trim().length > 0 &&
+                      answers.mainQuestion.trim().length <
+                        MIN_MAIN_QUESTION_LENGTH && (
+                        <p className="mt-4 text-sm text-zinc-500">
+                          {LENGTH_HINT_MESSAGE}
+                        </p>
+                      )}
+
+                    <ScreeningCard answers={answers} setField={setField} />
+                  </>
                 )}
 
                 {(getErrorMessage() || errorMessage) && (

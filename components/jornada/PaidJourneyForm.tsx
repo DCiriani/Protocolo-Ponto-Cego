@@ -7,6 +7,24 @@ import type { PrivateAnswers, Step } from "@/lib/jornada/types";
 
 const storageKey = "ponto-cego-jornada-private-v1";
 
+const MIN_SCENE_LENGTH = 250;
+const LENGTH_HINT_MESSAGE =
+  "Conta um pouco mais. Quanto mais detalhe você trouxer, mais precisa fica a sua leitura.";
+
+const sceneFieldsWithMinLength: readonly string[] = [
+  "sceneConflict",
+  "reactionPurpose",
+  "sceneProximity",
+  "mirrorTruth",
+  "intentionImpact",
+  "desireFear",
+];
+
+function isSceneFieldTooShort(value: string) {
+  const length = value.trim().length;
+  return length > 0 && length < MIN_SCENE_LENGTH;
+}
+
 const initialAnswers: PrivateAnswers = {
   sceneConflict: "",
   reactionSelections: [],
@@ -101,14 +119,14 @@ export default function PaidJourneyForm({
       return (
         answers.reactionSelections.length > 0 &&
         answers.reactionSelections.length <= 2 &&
-        answers.reactionPurpose.trim().length > 0
+        answers.reactionPurpose.trim().length >= MIN_SCENE_LENGTH
       );
     }
 
     if (step.type === "mirror") {
       return (
         answers.mirrorCriticism.trim().length > 0 &&
-        answers.mirrorTruth.trim().length > 0
+        answers.mirrorTruth.trim().length >= MIN_SCENE_LENGTH
       );
     }
 
@@ -116,6 +134,13 @@ export default function PaidJourneyForm({
 
     if (step.type === "consent") {
       return value === true;
+    }
+
+    if (
+      typeof value === "string" &&
+      sceneFieldsWithMinLength.includes(step.key)
+    ) {
+      return value.trim().length >= MIN_SCENE_LENGTH;
     }
 
     return typeof value === "string" && value.trim().length > 0;
@@ -129,15 +154,36 @@ export default function PaidJourneyForm({
         return "Escolha uma ou duas reações para continuar.";
       }
 
-      return "Conte também o que você tenta conseguir ou evitar quando reage assim.";
+      if (answers.reactionPurpose.trim().length === 0) {
+        return "Conte também o que você tenta conseguir ou evitar quando reage assim.";
+      }
+
+      return LENGTH_HINT_MESSAGE;
     }
 
     if (currentStep?.type === "mirror") {
-      return "Preencha os dois campos desta etapa antes de continuar.";
+      if (
+        answers.mirrorCriticism.trim().length === 0 ||
+        answers.mirrorTruth.trim().length === 0
+      ) {
+        return "Preencha os dois campos desta etapa antes de continuar.";
+      }
+
+      return LENGTH_HINT_MESSAGE;
     }
 
     if (currentStep?.type === "consent") {
       return "Confirme que você compreende o objetivo da análise.";
+    }
+
+    if (currentStep && sceneFieldsWithMinLength.includes(currentStep.key)) {
+      const value = answers[currentStep.key as keyof PrivateAnswers];
+
+      if (typeof value === "string" && value.trim().length === 0) {
+        return "Responda esta etapa antes de continuar.";
+      }
+
+      return LENGTH_HINT_MESSAGE;
     }
 
     return "Responda esta etapa antes de continuar.";
@@ -321,6 +367,8 @@ function renderField(
           rows={10}
           className="w-full resize-none rounded-[2rem] border border-white/10 bg-white/[0.03] p-7 text-lg leading-8 text-[#F5F5F3] outline-none transition placeholder:text-zinc-700 focus:border-[#88B39A]/60"
         />
+
+        <LengthHint value={String(value ?? "")} />
       </div>
     );
   }
@@ -389,6 +437,8 @@ function renderField(
             rows={5}
             className="w-full resize-none rounded-[2rem] border border-white/10 bg-white/[0.03] p-7 text-lg leading-8 text-[#F5F5F3] outline-none transition placeholder:text-zinc-700 focus:border-[#88B39A]/60"
           />
+
+          <LengthHint value={answers.reactionPurpose} />
         </div>
       </div>
     );
@@ -424,6 +474,8 @@ function renderField(
             rows={6}
             className="w-full resize-none rounded-[2rem] border border-white/10 bg-white/[0.03] p-7 text-lg leading-8 text-[#F5F5F3] outline-none transition placeholder:text-zinc-700 focus:border-[#88B39A]/60"
           />
+
+          <LengthHint value={answers.mirrorTruth} />
         </div>
       </div>
     );
@@ -466,6 +518,12 @@ function FieldGuide({ children }: { children: string }) {
       {children}
     </p>
   );
+}
+
+function LengthHint({ value }: { value: string }) {
+  if (!isSceneFieldTooShort(value)) return null;
+
+  return <p className="mt-3 text-sm text-zinc-500">{LENGTH_HINT_MESSAGE}</p>;
 }
 
 function ReviewStep({

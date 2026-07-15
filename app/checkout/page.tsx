@@ -11,7 +11,6 @@ function CheckoutContent() {
   const [status, setStatus] = useState<"checking" | "ready" | "blocked">(
     "checking",
   );
-  const [price, setPrice] = useState<number | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
 
@@ -36,7 +35,6 @@ function CheckoutContent() {
           return;
         }
 
-        setPrice(result.price ?? null);
         setStatus("ready");
       })
       .catch(() => {
@@ -97,30 +95,30 @@ function CheckoutContent() {
           Checkout
         </span>
 
+        <span className="mb-4 block text-xs font-semibold uppercase tracking-[0.25em] text-[#88B39A]">
+          1º passo concluído ✔
+        </span>
+
         <h1 className="font-satoshi text-[2rem] font-medium leading-[1.08] tracking-[-0.04em] text-[#6F8F5E] min-[390px]:text-[2.2rem] md:text-[3.8rem] md:leading-[1.02] lg:text-[4.4rem]">
-          Antes de seguir para o pagamento.
+          Você deu o primeiro passo. Agora vem o que revela o padrão.
         </h1>
 
         <p className="mt-8 max-w-2xl text-lg leading-8 text-zinc-400">
-          Você vai receber uma leitura escrita, individual, feita por Diego
-          Ciriani a partir das suas respostas. Ela chega no seu e-mail em até
-          48 horas.
+          Você contou o que te trouxe aqui. Agora você desbloqueia o
+          questionário completo: cenas reais das suas relações, que revelam o
+          que os testes comuns não alcançam. Depois que você responder, o
+          psicólogo Diego Ciriani lê tudo pessoalmente e te mostra o padrão
+          que se repete nas suas relações, o papel que você ocupa, o que ele
+          te custa e por onde começa a mudança.
+        </p>
+
+        <p className="mt-4 max-w-2xl text-lg leading-8 text-zinc-400">
+          Não é teste automático. Não é conselho pronto. É uma leitura feita
+          por um psicólogo, sobre você, no seu e-mail em até 48 horas.
         </p>
 
         <div className="mt-12 rounded-[2rem] border border-white/10 bg-white/[0.03] p-8 md:p-10">
-          <div className="flex items-center justify-between border-b border-white/10 pb-6">
-            <span className="text-sm uppercase tracking-[0.25em] text-zinc-500">
-              Análise Ponto Cego
-            </span>
-
-            {price !== null && (
-              <span className="text-2xl font-semibold text-[#F5F5F3]">
-                R$ {price.toFixed(2).replace(".", ",")}
-              </span>
-            )}
-          </div>
-
-          <ul className="mt-6 space-y-3 text-sm leading-6 text-zinc-400">
+          <ul className="space-y-3 text-sm leading-6 text-zinc-400">
             <li>Leitura escrita e individual, feita por um psicólogo</li>
             <li>Entrega em até 48 horas no seu e-mail</li>
             <li>Pagamento único, sem assinatura</li>
@@ -136,8 +134,14 @@ function CheckoutContent() {
             disabled={isSubmitting}
             className="mt-8 rounded-full bg-[#88B39A] px-7 py-4 text-sm font-semibold text-[#0A0A0A] transition hover:bg-[#9fcaad] disabled:cursor-not-allowed disabled:opacity-60"
           >
-            {isSubmitting ? "Iniciando pagamento..." : "Ir para pagamento"}
+            {isSubmitting
+              ? "Iniciando pagamento..."
+              : "Desbloquear meu questionário →"}
           </button>
+
+          <p className="mt-4 text-xs text-zinc-600">
+            Pagamento único e seguro via Mercado Pago
+          </p>
 
           <p className="mt-6 text-xs leading-6 text-zinc-600">
             Seu pagamento será processado pelo Mercado Pago. Ao continuar,

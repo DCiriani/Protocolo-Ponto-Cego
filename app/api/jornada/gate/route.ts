@@ -30,6 +30,10 @@ const requiredPublicFields = [
   "screeningIdeation",
 ] as const;
 
+const MIN_MAIN_QUESTION_LENGTH = 10;
+const MAIN_QUESTION_TOO_SHORT_MESSAGE =
+  "Conta um pouco mais. Quanto mais detalhe você trouxer, mais precisa fica a sua leitura.";
+
 export async function POST(request: Request) {
   try {
     const payload = (await request.json()) as GatePayload;
@@ -94,6 +98,19 @@ export async function POST(request: Request) {
       mainQuestion: publicAnswers.mainQuestion ?? "",
       screening,
     });
+
+    // A trava de mínimo de caracteres só se aplica quando não há sinal de
+    // risco: o classificador sempre roda primeiro, e amarelo/vermelho tem
+    // prioridade sobre o texto curto.
+    if (
+      assessment.level === "verde" &&
+      (publicAnswers.mainQuestion ?? "").trim().length < MIN_MAIN_QUESTION_LENGTH
+    ) {
+      return NextResponse.json(
+        { ok: false, tooShort: true, message: MAIN_QUESTION_TOO_SHORT_MESSAGE },
+        { status: 400 },
+      );
+    }
 
     const submissionUpdate: Record<string, unknown> = {
       risk_level: assessment.level,
