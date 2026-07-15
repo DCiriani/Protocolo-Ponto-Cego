@@ -122,6 +122,31 @@ function normalizeCategory(value: unknown): RiskCategory {
   return null;
 }
 
+function stripMarkdownFences(text: string): string {
+  return text
+    .trim()
+    .replace(/^```(?:json)?\s*/i, "")
+    .replace(/\s*```$/, "")
+    .trim();
+}
+
+function parseJsonResponse(rawText: string): unknown {
+  try {
+    return JSON.parse(stripMarkdownFences(rawText));
+  } catch {
+    // fall through to brace extraction
+  }
+
+  const start = rawText.indexOf("{");
+  const end = rawText.lastIndexOf("}");
+
+  if (start === -1 || end === -1 || end < start) {
+    throw new Error("Nenhum JSON encontrado na resposta.");
+  }
+
+  return JSON.parse(rawText.slice(start, end + 1));
+}
+
 function normalizeExcerpts(value: unknown): RiskExcerpt[] {
   if (!Array.isArray(value)) return [];
 
@@ -178,7 +203,7 @@ export async function classifyText(content: string): Promise<RiskAssessment> {
     let parsed: unknown;
 
     try {
-      parsed = JSON.parse(rawText);
+      parsed = parseJsonResponse(rawText);
     } catch {
       console.error("Anthropic API JSON inválido:", rawText);
       return { ...FALLBACK_ASSESSMENT };
