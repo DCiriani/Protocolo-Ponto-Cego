@@ -355,7 +355,7 @@ export default function Process() {
           className="mt-6"
         >
           <a
-  href="/checkout"
+  href="/jornada"
   className="group flex w-full items-center justify-center gap-3 whitespace-nowrap rounded-[0.7rem] border border-[#8EA36B]/50 bg-[#4F6842] px-4 py-4 text-center font-[family-name:var(--font-bodoni)] text-[1.25rem] font-medium leading-none text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.12)] transition hover:bg-[#5B7650] min-[390px]:text-[1.4rem] md:gap-4 md:px-6 md:text-[2.2rem]"
 >
             Começar minha análise

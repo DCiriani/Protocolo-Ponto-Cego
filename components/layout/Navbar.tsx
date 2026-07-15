@@ -12,7 +12,7 @@ export default function Navbar() {
         </a>
 
         <a
-          href="/checkout"
+          href="/jornada"
           className="hidden rounded-[0.55rem] border border-[#88B39A]/45 px-6 py-3 font-satoshi text-sm font-semibold text-[#F5F5F3] transition hover:bg-[#88B39A]/10 md:inline-flex"
         >
           Quero minha análise

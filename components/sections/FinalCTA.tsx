@@ -183,7 +183,7 @@ export default function FinalCTA() {
 
               {/* botão */}
               <a
-  href="/checkout"
+  href="/jornada"
   className="group mt-7 flex w-full items-center justify-center gap-2 whitespace-nowrap rounded-[0.95rem] border border-[#A0B26D]/65 bg-[linear-gradient(180deg,#647B3E_0%,#526733_100%)] px-3 py-5 text-center font-[family-name:var(--font-bodoni)] text-[1.08rem] font-medium leading-none text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.18),0_15px_40px_rgba(0,0,0,0.24)] transition duration-300 hover:bg-[linear-gradient(180deg,#718A48_0%,#5C733A_100%)] min-[390px]:text-[1.2rem] md:mt-9 md:gap-4 md:px-5 md:text-[2.2rem]"
 >
                 Quero garantir minha leitura

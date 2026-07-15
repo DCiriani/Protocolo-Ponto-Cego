@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import JornadaForm from "@/components/jornada/JornadaForm";
+import PublicJourneyForm from "@/components/jornada/PublicJourneyForm";
 
 export const dynamic = "force-dynamic";
 
@@ -20,7 +20,7 @@ export default function JornadaPage() {
         </main>
       }
     >
-      <JornadaForm />
+      <PublicJourneyForm />
     </Suspense>
   );
 }

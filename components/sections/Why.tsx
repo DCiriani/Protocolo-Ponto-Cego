@@ -477,7 +477,7 @@ export default function Why() {
 
   {/* botão */}
   <a
-    href="/checkout"
+    href="/jornada"
     className="group mx-auto mt-6 flex w-full max-w-[720px] items-center justify-center gap-2 whitespace-nowrap rounded-[1.1rem] border border-[#8EA36B]/50 bg-[#4F6842] px-3 py-4 font-satoshi text-[0.76rem] font-bold uppercase tracking-[-0.01em] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.16),0_18px_45px_rgba(0,0,0,0.28)] transition hover:bg-[#5B7650] min-[390px]:text-[0.86rem] md:mt-8 md:gap-4 md:rounded-[1.2rem] md:px-4 md:py-6 md:text-[1.35rem]"
   >
     Quero descobrir meu ponto cego

@@ -38,7 +38,7 @@ export async function sendJornadaAccessEmail({
     throw new Error("NEXT_PUBLIC_SITE_URL não configurada.");
   }
 
-  const jornadaUrl = `${siteUrl}/jornada?order=${orderId}`;
+  const jornadaUrl = `${siteUrl}/jornada/continuacao?order=${orderId}`;
 
   const subject = "Sua Jornada Ponto Cego está liberada";
 
