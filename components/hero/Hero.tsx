@@ -216,7 +216,7 @@ export default function Hero() {
 
         <h3 className={`font-satoshi font-medium leading-[1.18] tracking-[-0.02em] text-[#F5F5F3] md:font-serif md:text-[1.6rem] ${
   item.title === "Direcionamento real"
-    ? "whitespace-nowrap text-[0.82rem]"
+    ? "whitespace-nowrap text-[0.88rem]"
     : "text-[0.98rem]"
 }`}>
   {item.title}
