@@ -12,7 +12,16 @@ const steps = [
   {
     number: "02",
     title: "Compreender",
-    text: "Eu leio cada resposta individualmente e analiso três camadas: o que você faz, como pode ser percebido e o que acredita sobre si. É na distância entre essas camadas que um possível ponto cego costuma aparecer.",
+    text: (
+      <>
+        Eu leio cada resposta individualmente e analiso três camadas:{" "}
+        <span className="font-medium text-[#88B39A]">
+          o que você faz, como pode ser percebido e o que acredita sobre si.
+        </span>{" "}
+        É na distância entre essas camadas que um possível ponto cego costuma
+        aparecer.
+      </>
+    ),
   },
   {
     number: "03",
@@ -20,7 +29,6 @@ const steps = [
     text: "Você recebe um documento personalizado em duas partes: o que se repete na sua história e por onde começar a mudar. Padrões identificados, possíveis pontos cegos, ciclos e direcionamentos práticos que você consegue aplicar sozinho, a partir do dia em que lê.",
   },
 ];
-
 function EyeIcon() {
   return (
     <svg
@@ -287,10 +295,10 @@ export default function Process() {
           </h2>
 
           <p className="mt-8 max-w-[640px] text-[1rem] leading-8 text-zinc-300 md:text-[1.18rem] md:leading-9">
-            A Análise Ponto Cego não procura descobrir quem está certo. Ela
-            procura compreender padrões que podem estar conduzindo sua forma de se
-            relacionar, e mostra por onde começar a sair deles.
-          </p>
+  A Análise Ponto Cego não procura decidir quem está certo ou errado.
+  Ela analisa o que você vive, o que conclui e como reage para identificar
+  o padrão por trás das situações. E te mostra por onde começar a sair dele.
+</p>
         </motion.div>
 
         <div className="relative mt-10 md:mt-14">
@@ -329,17 +337,22 @@ export default function Process() {
                     </p>
 
                     {step.number === "03" && (
-                      <>
-                        <DocumentPreview />
+  <>
+    <DocumentPreview />
 
-                        <div className="mt-5 flex items-center gap-3 text-zinc-300">
-                          <span className="flex h-7 w-7 items-center justify-center rounded border border-[#6F8F5E]/55 text-[#6F8F5E]">
-                            ▤
-                          </span>
-                          <span>Mais do que uma análise. Um direcionamento para a vida toda.</span>
-                        </div>
-                      </>
-                    )}
+    <p className="mt-5 text-[0.95rem] leading-7 text-zinc-400 md:text-[1.05rem]">
+      Não é um resultado automático. É uma leitura clínica construída a
+      partir da sua história.
+    </p>
+
+    <div className="mt-4 flex items-center gap-3 text-zinc-300">
+      <span className="flex h-7 w-7 items-center justify-center rounded border border-[#6F8F5E]/55 text-[#6F8F5E]">
+        ▤
+      </span>
+      <span>Mais do que uma análise. Um direcionamento para a vida toda.</span>
+    </div>
+  </>
+)}
                   </div>
                 </div>
               </motion.div>
