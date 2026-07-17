@@ -204,9 +204,9 @@ const stories = [
 export default function Why() {
   return (
     <section
-      id="origem"
-      className="relative overflow-hidden bg-[#050705] py-16 text-[#F5F5F3] md:py-24"
-    >
+  id="origem"
+  className="relative overflow-hidden bg-[#050705] pt-6 pb-16 text-[#F5F5F3] md:py-24"
+>
       {/* luz de fundo */}
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_82%_18%,rgba(52,87,39,0.13),transparent_25%)]" />
 
