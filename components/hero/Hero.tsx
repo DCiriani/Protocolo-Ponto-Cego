@@ -169,13 +169,19 @@ export default function Hero() {
 </p>
 
             <p className="mt-6 max-w-[640px] text-[1rem] leading-7 text-zinc-300 md:text-[1.2rem] md:leading-9">
-  Você já entendeu que alguma coisa se repete. O que você não consegue é
-  enxergar de fora. A Análise Ponto Cego é uma leitura escrita por um psicólogo,
-  a partir das suas respostas. Ela nomeia o padrão, mostra onde ele atua nas
-  suas escolhas, o que ele está te custando e por onde começar a mudar.{" "}
+  Você responde a um percurso guiado sobre situações reais da sua vida afetiva.
+</p>
 
+<p className="mt-5 max-w-[640px] text-[1rem] leading-7 text-zinc-300 md:text-[1.2rem] md:leading-9">
+  Eu analiso pessoalmente suas respostas para identificar padrões, possíveis
+  pontos cegos e o que está mantendo você preso ao mesmo ciclo.
+</p>
+
+<p className="mt-5 max-w-[640px] text-[1rem] leading-7 text-zinc-300 md:text-[1.2rem] md:leading-9">
+  Em até 48 horas, você recebe no seu e-mail uma leitura escrita e individual,
+  com direcionamentos práticos:{" "}
   <span className="font-medium text-[#6F8F5E]">
-    Em até 48 horas, no seu e-mail.
+    por onde começar a mudar.
   </span>
 </p>
 
@@ -208,9 +214,13 @@ export default function Hero() {
   <Icon />
 </div>
 
-        <h3 className="font-satoshi text-[0.98rem] font-medium leading-[1.18] tracking-[-0.02em] text-[#F5F5F3] md:font-serif md:text-[1.6rem]">
-          {item.title}
-        </h3>
+        <h3 className={`font-satoshi font-medium leading-[1.18] tracking-[-0.02em] text-[#F5F5F3] md:font-serif md:text-[1.6rem] ${
+  item.title === "Direcionamento real"
+    ? "whitespace-nowrap text-[0.82rem]"
+    : "text-[0.98rem]"
+}`}>
+  {item.title}
+</h3>
 
         <p className="mt-4 text-[0.68rem] leading-[1.55] text-zinc-400 md:text-base md:leading-7">
           {item.text}
