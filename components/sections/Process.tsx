@@ -321,8 +321,9 @@ export default function Process() {
                 <span className="absolute -left-[0.45rem] top-9 hidden h-4 w-4 rounded-full border-2 border-[#6F8F5E] bg-[#050705] md:block" />
 
                 <div className="rounded-[1.1rem] border border-[#6F8F5E]/35 bg-black/20 p-5 backdrop-blur-sm md:ml-5 md:grid md:grid-cols-[120px_1fr] md:p-7">
-  {/* celular: número e título lado a lado */}
-  <div className="mb-4 flex items-center gap-3 md:hidden">
+ {/* celular: número e título lado a lado, com linha divisória abaixo */}
+<div className="mb-4 border-b border-[#6F8F5E]/20 pb-4 md:hidden">
+  <div className="flex items-center gap-3">
     <p className="font-[family-name:var(--font-bodoni)] text-[2.4rem] font-medium leading-none text-[#6F8F5E]">
       {step.number}
     </p>
@@ -331,6 +332,7 @@ export default function Process() {
       {step.title}
     </h3>
   </div>
+</div>
 
   {/* iPad e computador: número em coluna própria, como antes */}
   <div className="hidden md:block md:border-r md:border-[#6F8F5E]/20 md:pb-0 md:pr-6">
