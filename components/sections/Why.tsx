@@ -271,7 +271,7 @@ export default function Why() {
             {/* -------- LAYOUT EM 2 COLUNAS (md+) / EMPILHADO (mobile) -------- */}
             <div className="relative md:flex md:items-stretch">
               {/* coluna de texto */}
-<div className="relative z-10 min-h-[425px] px-5 pt-7 min-[390px]:min-h-[445px] md:min-h-0 md:flex-1 md:pl-10 md:pr-8 md:pt-8 lg:pl-0 lg:pt-2">
+<div className="relative z-10 min-h-[425px] px-5 pt-7 min-[390px]:min-h-[445px] md:min-h-0 md:flex-1 md:pl-10 md:pr-8 md:pt-8 lg:pl-14 lg:pt-2">
   {/* identificação da seção */}
   <div>
     <p className="font-satoshi text-[0.8rem] font-light uppercase tracking-[0.48em] text-[#879A58] md:text-[0.95rem]">
@@ -358,8 +358,8 @@ export default function Why() {
                 <div className="pointer-events-none absolute bottom-[-120px] right-[-80px] z-[1] h-[440px] w-[440px] rounded-full bg-[#315C27]/22 blur-[85px] lg:h-[520px] lg:w-[520px]" />
 
                 {/* círculos decorativos */}
-                <div className="pointer-events-none absolute right-[-130px] top-6 z-[2] h-[440px] w-[440px] rounded-full border border-[#6F8F5E]/10 lg:right-[-90px] lg:h-[520px] lg:w-[520px]" />
-                <div className="pointer-events-none absolute right-[-70px] top-20 z-[2] h-[340px] w-[340px] rounded-full border border-[#6F8F5E]/10 lg:right-[-30px] lg:h-[420px] lg:w-[420px]" />
+                <div className="pointer-events-none absolute right-[-130px] top-6 z-[2] h-[440px] w-[440px] rounded-full border border-[#6F8F5E]/10 lg:right-[-90px] lg:h-[520px] lg:w-[520px] lg:border-[#6F8F5E]/[0.06] lg:blur-[2px]" />
+                <div className="pointer-events-none absolute right-[-70px] top-20 z-[2] h-[340px] w-[340px] rounded-full border border-[#6F8F5E]/10 lg:right-[-30px] lg:h-[420px] lg:w-[420px] lg:border-[#6F8F5E]/[0.06] lg:blur-[2px]" />
 
                 {/* foto colada no rodapé, com leve sangria pra fora da coluna */}
                 <div className="absolute bottom-0 left-[-16px] right-[-36px] top-0 z-[3] md:-translate-x-[70px] lg:-translate-x-12 lg:right-[-20px]">
