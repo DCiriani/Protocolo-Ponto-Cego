@@ -271,14 +271,14 @@ export default function Why() {
             {/* -------- LAYOUT EM 2 COLUNAS (md+) / EMPILHADO (mobile) -------- */}
             <div className="relative md:flex md:items-stretch">
               {/* coluna de texto */}
-<div className="relative z-10 min-h-[425px] px-5 pt-0 min-[390px]:min-h-[445px] md:min-h-0 md:flex-1 md:pl-10 md:pr-8 md:pt-8 lg:pl-14 lg:pt-2">
+<div className="relative z-10 min-h-[425px] px-5 pt-4 min-[390px]:min-h-[445px] md:min-h-0 md:flex-1 md:pl-10 md:pr-8 md:pt-8 lg:pl-14 lg:pt-2">
   {/* identificação da seção */}
 <div>
   <p className="font-satoshi text-[0.8rem] font-bold uppercase tracking-[0.48em] text-[#879A58] md:text-[0.95rem]">
     A origem
   </p>
 
-  <div className="mt-8 h-px w-20 bg-[#6F8F5E]/70 md:mt-5 md:w-24" />
+  <div className="mt-3 h-px w-20 bg-[#6F8F5E]/70 md:mt-5 md:w-24" />
 </div>
 
   {/* título */}
