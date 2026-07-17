@@ -249,7 +249,7 @@ function Commitment() {
 </p>
 
               {/* título */}
-              <h2 className="mx-auto mt-8 max-w-[760px] text-center font-[family-name:var(--font-bodoni)] text-[1.5rem] font-medium uppercase leading-[1.08] tracking-[0.015em] text-[#F4EBDD] min-[390px]:text-[1.95rem] md:text-[3.7rem] lg:text-[5rem]">
+              <h2 className="mx-auto mt-8 max-w-[780px] text-center font-[family-name:var(--font-bodoni)] text-[1.5rem] font-medium uppercase leading-[1.08] tracking-[0.015em] text-[#F4EBDD] min-[390px]:text-[1.95rem] md:text-[3.4rem] lg:text-[4.2rem]">
   Se algo não fizer
   <br />
   sentido, eu reviso
