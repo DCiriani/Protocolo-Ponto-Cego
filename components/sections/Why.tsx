@@ -500,7 +500,7 @@ export default function Why() {
         <ShieldIcon />
       </span>
 
-      <span>Método exclusivo</span>
+      <span>Leitura individual</span>
     </div>
 
     <div className="flex flex-col items-center justify-start gap-2 md:flex-row md:justify-center md:gap-3">
@@ -508,7 +508,7 @@ export default function Why() {
         <BrainIcon />
       </span>
 
-      <span>Baseado em psicologia clínica</span>
+      <span>Conduzida por psicólogo</span>
     </div>
 
                   <div className="flex flex-col items-center justify-start gap-2 md:flex-row md:justify-center md:gap-3">
@@ -516,7 +516,7 @@ export default function Why() {
                   <LockIcon />
                 </span>
 
-                <span>100% online e sigiloso</span>
+                <span>Respostas tratadas com sigilo</span>
               </div>
             </div>
           </div>
