@@ -396,22 +396,23 @@ export default function Why() {
             : ""
         }`}
       >
-        {/* celular: ícone e título na mesma linha, texto ocupando a largura toda abaixo */}
-        <div className="md:hidden">
-          <div className="flex items-center gap-4">
-            <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-[#6F8F5E]/10 bg-[#172116] text-[#88B39A] shadow-[0_0_28px_rgba(71,119,45,0.14)]">
-              <Icon />
-            </div>
+        {/* celular: ícone flutuando à esquerda, texto contornando e depois ocupando a largura toda */}
+<div className="md:hidden">
+  <div className="float-left mr-4 mb-1 flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-[#6F8F5E]/10 bg-[#172116] text-[#88B39A] shadow-[0_0_28px_rgba(71,119,45,0.14)]">
+    <Icon />
+  </div>
 
-            <p className="font-satoshi text-[1rem] font-semibold leading-[1.2] tracking-[-0.015em] text-[#F4EBDD] min-[390px]:text-[1.05rem]">
-              {story.title}
-            </p>
-          </div>
+  <p className="leading-7">
+    <span className="font-satoshi text-[1rem] font-semibold tracking-[-0.015em] text-[#F4EBDD] min-[390px]:text-[1.05rem]">
+      {story.title}
+    </span>{" "}
+    <span className="font-[family-name:var(--font-manrope)] text-[0.92rem] font-normal text-zinc-400">
+      {story.text}
+    </span>
+  </p>
 
-          <p className="mt-3 font-[family-name:var(--font-manrope)] text-[0.92rem] font-normal leading-6 text-zinc-400">
-            {story.text}
-          </p>
-        </div>
+  <div className="clear-both" />
+</div>
 
         {/* iPad e computador: layout original, ícone à esquerda */}
         <div className="hidden md:flex md:gap-6">
