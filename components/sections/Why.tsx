@@ -182,22 +182,22 @@ const stories = [
   {
     icon: PeopleIcon,
     title: "Algumas falavam sobre abandono.",
-    text: "Outras sobre conflitos constantes.",
+    text: "Outras se afastavam antes que alguém pudesse abandoná-las.",
   },
   {
-  icon: BrokenHeartIcon,
-  title: "Algumas relações pareciam saudáveis por fora.",
-  text: "Mas escondiam um sofrimento silencioso.",
-},
+    icon: BrokenHeartIcon,
+    title: "Algumas relações pareciam saudáveis por fora.",
+    text: "Por dentro, havia silêncio, excesso de adaptação e medo de desagradar.",
+  },
   {
     icon: MessageIcon,
     title: "As histórias eram diferentes.",
-    text: "As pessoas também. Mas havia algo que permanecia.",
+    text: "Mas o lugar ocupado dentro delas, nem sempre.",
   },
   {
     icon: CycleIcon,
-    title: "Os mesmos padrões. As mesmas formas de interpretar.",
-    text: "Os mesmos ciclos que insistiam em se repetir, mesmo quando existia um desejo genuíno de fazer diferente.",
+    title: "Não faltava vontade de mudar.",
+    text: "Faltava perceber o que continuava sendo repetido sem consciência.",
   },
 ];
 
@@ -271,7 +271,7 @@ export default function Why() {
             {/* -------- LAYOUT EM 2 COLUNAS (md+) / EMPILHADO (mobile) -------- */}
             <div className="relative md:flex md:items-stretch">
               {/* coluna de texto */}
-<div className="relative z-10 min-h-[425px] px-5 pt-7 min-[390px]:min-h-[445px] md:min-h-0 md:flex-1 md:pl-10 md:pr-8 md:pt-8 lg:pl-14 lg:pt-2">
+<div className="relative z-10 min-h-[425px] px-5 pt-2 min-[390px]:min-h-[445px] md:min-h-0 md:flex-1 md:pl-10 md:pr-8 md:pt-8 lg:pl-14 lg:pt-2">
   {/* identificação da seção */}
   <div>
     <p className="font-satoshi text-[0.8rem] font-light uppercase tracking-[0.48em] text-[#879A58] md:text-[0.95rem]">
@@ -329,24 +329,24 @@ export default function Why() {
   <p className="font-[family-name:var(--font-manrope)] text-[1rem] font-normal leading-[1.4] text-[#6F8F5E] min-[390px]:text-[1.05rem] md:text-[1.22rem] md:leading-8 lg:text-[1.08rem] lg:leading-7">
     {/* celular */}
     <span className="md:hidden">
-      E percebi que existia um padrão
+      A situação mudava. A forma
       <br />
-      invisível, que se repetia
+      de interpretar, se proteger
       <br />
-      silenciosamente.
+      e reagir permanecia.
     </span>
 
     {/* iPad e computador */}
     {/* somente iPad */}
 <span className="hidden md:inline lg:hidden">
-  E percebi que existia um padrão invisível,
+  A situação mudava. A forma de interpretar,
   <br />
-  que se repetia silenciosamente.
+  se proteger e reagir permanecia.
 </span>
 
 {/* somente computador */}
 <span className="hidden lg:inline">
-  E percebi que existia um padrão invisível, que se repetia silenciosamente.
+  A situação mudava. A forma de interpretar, se proteger e reagir permanecia.
 </span>
   </p>
 </div>
@@ -374,7 +374,7 @@ export default function Why() {
                 </div>
 
                 {/* fusão com o texto (borda esquerda) */}
-                <div className="pointer-events-none absolute inset-y-0 left-[-64px] z-[4] hidden w-36 bg-[linear-gradient(90deg,transparent_0%,#040604_45%,#040604_70%,transparent_100%)] lg:block" />
+                <div className="pointer-events-none absolute inset-y-0 left-[-16px] z-[4] hidden w-24 bg-gradient-to-r from-[#040604] to-transparent lg:block" />
 
                 {/* fusão com o card de histórias (base) */}
                 <div className="pointer-events-none absolute inset-x-[-36px] bottom-0 z-[4] h-32 bg-gradient-to-t from-[#040604] via-[#040604]/70 to-transparent" />
@@ -431,11 +431,11 @@ export default function Why() {
 <div className="relative z-20 mt-6 grid grid-cols-2 gap-4 rounded-[1.35rem] border border-[#6F8F5E]/20 bg-[linear-gradient(110deg,rgba(36,60,27,0.5),rgba(12,17,11,0.75))] px-4 py-5 md:mt-8 md:gap-12 md:px-9 md:py-8">
   <div className="flex gap-2 md:gap-4">
     <span className="font-[family-name:var(--font-bodoni)] text-[2.7rem] leading-[0.7] text-[#88B39A] md:text-[3.8rem]">
-      “
+      "
     </span>
 
     <p className="text-[0.78rem] leading-[1.55] text-[#F4EBDD] min-[390px]:text-[0.84rem] md:text-[1.05rem] md:leading-7">
-      Foi dessa escuta profunda que nasceu a{" "}
+      Foi para transformar essa repetição invisível em uma leitura clara que nasceu a{" "}
       <span className="font-semibold text-[#6F8F5E]">
         Análise Ponto Cego.
       </span>
@@ -443,8 +443,8 @@ export default function Why() {
   </div>
 
   <p className="pt-1 text-[0.78rem] leading-[1.55] text-[#F4EBDD] min-[390px]:text-[0.84rem] md:pt-0 md:text-[1.05rem] md:leading-7">
-    Um olhar clínico para o que você não vê, mas que dirige suas escolhas todos
-    os dias.
+    Uma leitura para você entender o que está vivendo, perceber como interpreta
+    e reage, e saber por onde começar a mudar.
   </p>
 </div>
 
@@ -478,7 +478,7 @@ export default function Why() {
   {/* botão */}
   <a
     href="/jornada"
-    className="group mx-auto mt-6 flex w-full max-w-[720px] items-center justify-center gap-2 whitespace-nowrap rounded-[1.1rem] border border-[#8EA36B]/50 bg-[#4F6842] px-3 py-4 font-satoshi text-[0.76rem] font-bold uppercase tracking-[-0.01em] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.16),0_18px_45px_rgba(0,0,0,0.28)] transition hover:bg-[#5B7650] min-[390px]:text-[0.86rem] md:mt-8 md:gap-4 md:rounded-[1.2rem] md:px-4 md:py-6 md:text-[1.35rem]"
+    className="group mx-auto mt-6 flex w-full max-w-[720px] items-center justify-center gap-2 whitespace-nowrap rounded-[1.1rem] border border-[#8EA36B]/50 bg-[#4F6842] px-3 py-4 font-satoshi text-[0.76rem] font-bold uppercase tracking-[-0.01em] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.16),0_18px_45px_rgba(0,0,0,0.28)] transition hover:bg-[#5B7650] min-[390px]:text-[0.86rem] md:mt-8 md:gap-4 md:px-4 md:py-6 md:text-[1.35rem]"
   >
     Quero descobrir meu ponto cego
 
