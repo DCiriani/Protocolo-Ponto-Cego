@@ -363,15 +363,15 @@ export default function Why() {
 
                 {/* foto colada no rodapé, com leve sangria pra fora da coluna */}
                 <div className="absolute bottom-0 left-[-16px] right-[-36px] top-0 z-[3] md:-translate-x-[70px] lg:-translate-x-12 lg:right-[-20px]">
-                  <Image
-                    src="/images/diego-poltronaaa.png"
-                    alt="Diego Ciriani"
-                    fill
-                    sizes="(max-width: 1023px) 400px, 480px"
-                    className="object-contain object-bottom"
-                    priority
-                  />
-                </div>
+  <Image
+    src="/images/diego-poltronaaa.png"
+    alt="Diego Ciriani"
+    fill
+    sizes="(max-width: 1023px) 400px, 480px"
+    className="object-contain object-bottom brightness-90"
+    priority
+  />
+</div>
 
                 {/* fusão com o texto (borda esquerda) */}
                 <div className="pointer-events-none absolute inset-y-0 left-[-16px] z-[4] hidden w-24 bg-gradient-to-r from-[#040604] to-transparent lg:block" />
