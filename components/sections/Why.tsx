@@ -374,7 +374,7 @@ export default function Why() {
                 </div>
 
                 {/* fusão com o texto (borda esquerda) */}
-                <div className="pointer-events-none absolute inset-y-0 left-[-16px] z-[4] hidden w-24 bg-gradient-to-r from-[#040604] to-transparent lg:block" />
+                <div className="pointer-events-none absolute inset-y-0 left-[-64px] z-[4] hidden w-36 bg-[linear-gradient(90deg,transparent_0%,#040604_45%,#040604_70%,transparent_100%)] lg:block" />
 
                 {/* fusão com o card de histórias (base) */}
                 <div className="pointer-events-none absolute inset-x-[-36px] bottom-0 z-[4] h-32 bg-gradient-to-t from-[#040604] via-[#040604]/70 to-transparent" />
