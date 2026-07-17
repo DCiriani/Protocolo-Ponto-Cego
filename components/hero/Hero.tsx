@@ -214,10 +214,10 @@ export default function Hero() {
   <Icon />
 </div>
 
-        <h3 className={`font-satoshi font-medium leading-[1.18] tracking-[-0.02em] text-[#F5F5F3] md:font-serif md:text-[1.6rem] ${
+        <h3 className={`font-satoshi font-medium leading-[1.18] tracking-[-0.02em] md:font-serif md:text-[1.6rem] ${
   item.title === "Direcionamento real"
-    ? "whitespace-nowrap text-[0.88rem]"
-    : "text-[0.98rem]"
+    ? "whitespace-nowrap text-[0.88rem] text-[#88B39A] md:text-[#88B39A]"
+    : "text-[0.98rem] text-[#F5F5F3]"
 }`}>
   {item.title}
 </h3>
