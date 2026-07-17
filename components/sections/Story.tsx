@@ -239,6 +239,17 @@ export default function Story() {
           </motion.g>
         </svg>
       </div>
+
+      <motion.p
+        initial={{ opacity: 0, y: 16 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.4 }}
+        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+        className="relative mx-auto mt-8 max-w-[380px] px-4 text-center font-satoshi text-[0.98rem] italic leading-[1.5] text-[#B8AE96] md:mt-10 md:max-w-[620px] md:text-[1.15rem] md:leading-[1.6]"
+      >
+        Talvez o problema não esteja apenas no que acontece com você, mas no
+        lugar que você continua ocupando quando acontece.
+      </motion.p>
     </section>
   );
 }
