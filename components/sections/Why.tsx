@@ -251,15 +251,15 @@ export default function Why() {
 
               {/* foto */}
 <div className="absolute bottom-[-15px] right-[-80px] z-[3] h-[365px] w-[285px] min-[390px]:bottom-[-5px] min-[390px]:right-[-70px] min-[390px]:h-[395px] min-[390px]:w-[310px]">
-                <Image
-                  src="/images/diego-poltronaaa.png"
-                  alt="Diego Ciriani"
-                  fill
-                  sizes="310px"
-                  className="scale-[0.92] object-contain object-bottom"
-                  priority
-                />
-              </div>
+  <Image
+    src="/images/diego-poltronaaa.png"
+    alt="Diego Ciriani"
+    fill
+    sizes="310px"
+    className="scale-[0.92] object-contain object-bottom brightness-90"
+    priority
+  />
+</div>
 
               {/* degradê entre texto e foto */}
               <div className="pointer-events-none absolute inset-y-0 left-0 z-[4] w-[74%] bg-[linear-gradient(90deg,#040604_0%,rgba(4,6,4,0.97)_57%,rgba(4,6,4,0.64)_78%,transparent_100%)]" />
