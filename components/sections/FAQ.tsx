@@ -116,6 +116,17 @@ const faqItems: FAQItem[] = [
     ),
   },
   {
+    question: "Eu recebo só a análise ou também o que fazer com ela?",
+    answer: (
+      <p>
+        As duas coisas. A leitura mostra o que se repete e fecha com
+        direcionamentos práticos: por onde começar, o que observar e o que
+        mudar primeiro. Você não sai só sabendo o que acontece. Sai sabendo
+        qual é o próximo passo.
+      </p>
+    ),
+  },
+  {
     question: "O que eu preciso responder?",
     answer: (
       <p>
@@ -140,7 +151,8 @@ const faqItems: FAQItem[] = [
       <p>
         Sim. Você não precisa estar em um relacionamento atualmente. A análise
         considera padrões presentes na sua história, nas suas escolhas e na
-        forma como você estabelece vínculos.
+        forma como você estabelece vínculos. Os padrões não desaparecem quando
+        o relacionamento acaba. Eles esperam o próximo.
       </p>
     ),
   },
@@ -187,7 +199,7 @@ const faqItems: FAQItem[] = [
 ];
 
 export default function FAQ() {
-  const [openIndex, setOpenIndex] = useState<number | null>(6);
+  const [openIndex, setOpenIndex] = useState<number | null>(7);
 
   return (
     <section

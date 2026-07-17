@@ -84,8 +84,8 @@ const benefits = [
   },
   {
     icon: DocumentIcon,
-    title: "Leitura profunda",
-    text: "Mais que respostas, direcionamento real.",
+    title: "Direcionamento real",
+    text: "Você não recebe só o que está acontecendo. Recebe por onde começar a mudar.",
   },
   {
     icon: TargetIcon,

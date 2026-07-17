@@ -6,18 +6,18 @@ import Container from "@/components/ui/Container";
 const steps = [
   {
     number: "01",
-    title: "Observar",
-    text: "Você responde a cenários reais de relacionamento. Não existem respostas certas. O objetivo é observar como você percebe, interpreta e reage.",
+    title: "Investigar",
+    text: "Você responde a um percurso guiado com situações e perguntas sobre sua forma de se relacionar. Não existem respostas certas. O que torna a leitura valiosa é a honestidade com que você descreve o que vive, pensa e faz.",
   },
   {
     number: "02",
     title: "Compreender",
-    text: "Cada resposta é lida e analisada individualmente por mim. Sem pontuação automática. Sem inteligência artificial. Cada palavra da sua leitura passa pelos olhos de um psicólogo.",
+    text: "Eu leio cada resposta individualmente e analiso três camadas: o que você faz, como pode ser percebido e o que acredita sobre si. É na distância entre essas camadas que um possível ponto cego costuma aparecer.",
   },
   {
     number: "03",
     title: "Direcionar",
-    text: "Você recebe sua Leitura Ponto Cego com padrões identificados, possíveis pontos cegos e direcionamentos práticos para considerar a partir da análise.",
+    text: "Você recebe um documento personalizado em duas partes: o que se repete na sua história e por onde começar a mudar. Padrões identificados, possíveis pontos cegos, ciclos e direcionamentos práticos que você consegue aplicar sozinho, a partir do dia em que lê.",
   },
 ];
 
@@ -289,7 +289,7 @@ export default function Process() {
           <p className="mt-8 max-w-[640px] text-[1rem] leading-8 text-zinc-300 md:text-[1.18rem] md:leading-9">
             A Análise Ponto Cego não procura descobrir quem está certo. Ela
             procura compreender padrões que podem estar conduzindo sua forma de se
-            relacionar.
+            relacionar, e mostra por onde começar a sair deles.
           </p>
         </motion.div>
 

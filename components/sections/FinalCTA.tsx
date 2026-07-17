@@ -7,7 +7,7 @@ const benefits = [
   "Leitura escrita e individual da sua história",
   "Padrões e possíveis pontos cegos identificados",
   "Ciclos que se repetem e fatores que mantêm o problema",
-  "Direcionamentos práticos",
+  "Direcionamentos práticos: por onde começar a mudar",
   "Documento em PDF, entregue em até 48h",
   "Revisão pontual em até 7 dias, sem custo",
 ];
@@ -98,10 +98,18 @@ export default function FinalCTA() {
             </h2>
 
             <p className="mt-8 max-w-[690px] text-[1.05rem] leading-8 text-zinc-300 md:text-[1.28rem] md:leading-9">
-              Uma sessão de psicoterapia custa, em média, entre R$180 e R$250.
-              A Análise Ponto Cego é uma leitura clínica individual, escrita
-              pessoalmente por um psicólogo com mais de uma década de
-              experiência.
+              Você já pensou muito sobre o problema. Já conversou, tentou
+              mudar, se culpou, culpou o outro e chegou a várias conclusões.
+              Mesmo assim, continua voltando ao mesmo lugar. Isso acontece
+              porque ninguém enxerga com distância aquilo que vive por dentro.
+            </p>
+
+            <p className="mt-5 max-w-[690px] text-[1.05rem] leading-8 text-zinc-300 md:text-[1.28rem] md:leading-9">
+              A Análise Ponto Cego oferece um olhar profissional, externo e
+              organizado sobre as suas respostas. Não é uma sessão de
+              psicoterapia e não substitui um processo terapêutico. É uma
+              entrega pontual, escrita pessoalmente por um psicólogo com
+              mais de uma década de experiência.
             </p>
           </div>
 
@@ -197,6 +205,12 @@ export default function FinalCTA() {
               <div className="mt-6 text-center text-[0.83rem] leading-6 text-zinc-400 md:text-[1rem]">
   Pagamento seguro via Mercado Pago
 </div>
+
+              {/* escassez */}
+              <p className="mx-auto mt-3 max-w-[500px] text-center text-[0.83rem] leading-6 text-zinc-500 md:text-[0.95rem]">
+                Como cada leitura é escrita pessoalmente, o número de análises
+                por lote é limitado. Quando o lote atual fecha, o valor sobe.
+              </p>
             </div>
           </motion.div>
         </motion.div>

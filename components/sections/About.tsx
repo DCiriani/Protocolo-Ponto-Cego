@@ -113,15 +113,19 @@ export default function About() {
 
             <p>
               Ao longo desses anos, percebi que muitos conflitos não nascem
-              apenas do que acontece entre duas pessoas, mas da maneira como cada
-              uma interpreta, sente e responde ao que vive.
+              apenas do que o outro faz. Eles também são influenciados pelo
+              significado que cada pessoa atribui ao que aconteceu, pelo lugar
+              que ocupa na relação e pela forma que aprendeu a se proteger.
             </p>
 
             <p>
-              A Leitura Ponto Cego é conduzida pessoalmente por mim. Cada
-              resposta é lida com atenção, sem pontuação automática, sem
-              respostas prontas e sem inteligência artificial interpretando a sua
-              história.
+              Na Análise Ponto Cego, não existe um algoritmo procurando
+              palavras-chave para encaixar você em um perfil.{" "}
+              <span className="font-semibold text-[#6F8F5E]">
+                Sou eu quem lê, analisa e escreve sua devolutiva.
+              </span>{" "}
+              Cada resposta é considerada dentro da sua história, do seu
+              contexto e das contradições que tornam o seu caso único.
             </p>
           </motion.div>
 

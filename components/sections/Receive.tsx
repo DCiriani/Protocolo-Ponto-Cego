@@ -8,7 +8,7 @@ const benefits = [
   "Possíveis pontos cegos",
   "Ciclos que se repetem",
   "Fatores que podem manter o problema",
-  "Direcionamentos práticos",
+  "Direcionamentos práticos: por onde começar a mudar",
 ];
 
 const reportItems = [
@@ -16,7 +16,7 @@ const reportItems = [
   "Possíveis pontos cegos",
   "Ciclos que se repetem",
   "Fatores que podem manter o problema",
-  "Direcionamentos práticos",
+  "Direcionamentos práticos: por onde começar a mudar",
 ];
 
 function CheckIcon() {
@@ -200,7 +200,7 @@ function ReadingMockup() {
               </span>
 
               <p className="font-[family-name:var(--font-bodoni)] text-[0.88rem] leading-[1.35] text-[#E8DECD] md:text-[1.25rem] md:leading-[1.4]">
-                <span className="mr-2 text-[#6F8F5E]">“</span>
+                <span className="mr-2 text-[#6F8F5E]">"</span>
                 Você tende a interpretar distância como rejeição, e isso...{" "}
                 <span
                   className="select-none"
@@ -246,10 +246,10 @@ function ReadingMockup() {
               ))}
             </div>
           </div>
-
-          {/* borda interna */}
-          <div className="pointer-events-none absolute inset-[1px] rounded-[0.25rem] border border-[#D0B278]/5" />
         </div>
+
+        {/* borda interna */}
+        <div className="pointer-events-none absolute inset-[1px] rounded-[0.25rem] border border-[#D0B278]/5" />
       </div>
     </div>
   );
@@ -315,9 +315,9 @@ transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
               </p>
 
               <p>
-                Ela não procura resumir quem você é. Ela organiza padrões,
-                hipóteses e direcionamentos para que você consiga enxergar com
-                mais clareza a forma como tem se relacionado.
+                Ela vem em duas partes. A primeira é o espelho: o que se
+                repete na sua forma de se relacionar. A segunda é o mapa:
+                por onde começar a mudar.
               </p>
             </div>
           </div>
@@ -339,6 +339,19 @@ transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
 
           <ReadingMockup />
 
+          {/* o que são os direcionamentos práticos */}
+          <div className="mx-auto mt-8 max-w-[650px] rounded-[1rem] border border-[#6F8F5E]/30 bg-black/15 px-6 py-6 md:px-9 md:py-8">
+            <p className="font-satoshi text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-[#879A58] md:text-[0.85rem]">
+              O que são os direcionamentos práticos
+            </p>
+            <p className="mt-3 text-[0.98rem] leading-7 text-zinc-300 md:text-[1.08rem] md:leading-8">
+              Não é conselho genérico de internet. São sugestões objetivas,
+              construídas a partir das suas respostas: o que observar nas
+              próximas semanas, o que treinar, o que parar de alimentar.
+              Primeiros passos que você consegue dar sozinho, no seu ritmo.
+            </p>
+          </div>
+
           {/* metadados */}
           <div className="mx-auto mt-5 max-w-[760px] text-center text-[0.95rem] leading-7 text-zinc-400 md:text-[1.1rem]">
             Documento em PDF <span className="mx-2 text-[#6F8F5E]">•</span>
@@ -353,7 +366,7 @@ transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
           <div className="mt-8 rounded-[1rem] border border-[#6F8F5E]/35 bg-black/20 px-6 py-6 text-center md:px-10">
             <p className="font-[family-name:var(--font-bodoni)] text-[1.3rem] font-medium leading-[1.3] text-[#F5F5F3] md:text-[2.25rem] md:leading-tight">
   <span className="mr-3 text-[2rem] leading-none text-[#6F8F5E] md:text-[2.4rem]">
-    “
+    "
   </span>
   Nem todo padrão se apresenta como problema.{" "}
   <span className="text-[#6F8F5E]">

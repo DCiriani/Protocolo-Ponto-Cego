@@ -6,23 +6,23 @@ import Container from "@/components/ui/Container";
 const items = [
   {
     number: "01",
-    title: "Você reconhece repetições",
-    text: "Aquilo que parecia acontecer por acaso começa a ganhar forma. Situações, escolhas e reações passam a ser vistas como parte de um padrão.",
+    title: "Você identifica o padrão por trás dos episódios",
+    text: "Aquilo que parecia azar, excesso de sensibilidade ou um problema isolado começa a fazer sentido como parte de um ciclo.",
   },
   {
     number: "02",
-    title: "Você percebe onde se abandona",
-    text: "Alguns conflitos permanecem porque você aprende a silenciar necessidades, ultrapassar limites ou aceitar menos do que realmente sente.",
+    title: "Você entende o que dispara suas reações",
+    text: "Percebe como medos, interpretações e formas de proteção influenciam o que você faz depois.",
   },
   {
     number: "03",
-    title: "Você entende melhor suas interpretações",
-    text: "Nem sempre o sofrimento nasce do que aconteceu. Às vezes, nasce da forma como você interpreta o silêncio, a distância ou o comportamento do outro.",
+    title: "Você reconhece onde se abandona, ou onde afasta o outro",
+    text: "Fica mais claro quando você silencia necessidades, ultrapassa limites, controla, evita ou aceita menos do que realmente precisa.",
   },
   {
     number: "04",
-    title: "Você ganha um ponto de partida",
-    text: "Clareza sobre onde começar a olhar com mais honestidade. Um mapa do que estava invisível até agora.",
+    title: "Você sabe por onde começar",
+    text: "A leitura não termina em \"entendi o problema\". Ela fecha com direcionamentos práticos: os primeiros passos para interromper o automático e decidir de forma mais consciente.",
   },
 ];
 
