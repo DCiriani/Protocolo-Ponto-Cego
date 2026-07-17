@@ -273,13 +273,13 @@ export default function Why() {
               {/* coluna de texto */}
 <div className="relative z-10 min-h-[425px] px-5 -mt-3 pt-0 min-[390px]:min-h-[445px] md:mt-0 md:min-h-0 md:flex-1 md:pl-10 md:pr-8 md:pt-8 lg:pl-14 lg:pt-2">
   {/* identificação da seção */}
-  <div>
-    <p className="font-satoshi text-[0.8rem] font-bold uppercase tracking-[0.48em] text-[#879A58] md:text-[0.95rem]">
-      A origem
-    </p>
+<div>
+  <p className="font-satoshi text-[0.8rem] font-bold uppercase tracking-[0.48em] text-[#879A58] md:text-[0.95rem]">
+    A origem
+  </p>
 
-    <div className="mt-5 h-px w-20 bg-[#6F8F5E]/70 md:w-24" />
-  </div>
+  <div className="mt-8 h-px w-20 bg-[#6F8F5E]/70 md:mt-5 md:w-24" />
+</div>
 
   {/* título */}
 <h2 className="mt-7 font-[family-name:var(--font-bodoni)] font-medium uppercase leading-[0.95] tracking-[0.01em] md:mt-8">
