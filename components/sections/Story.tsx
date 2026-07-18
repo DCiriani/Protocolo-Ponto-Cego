@@ -9,7 +9,7 @@ const cormorant = Cormorant_Garamond({
   weight: ["500", "600", "700"],
 });
 
-const GOLD = "#72704E";
+const GOLD = "#6F8F5E";
 const CREAM = "#DBD1BD";
 const BG = "#0C0B0A";
 
