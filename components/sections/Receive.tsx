@@ -354,15 +354,25 @@ transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
 
           {/* metadados */}
           <div className="mx-auto mt-5 max-w-[760px] text-center text-[0.95rem] leading-7 text-zinc-400 md:text-[1.1rem]">
-  <span className="block">
-    Documento em PDF <span className="mx-2 text-[#6F8F5E]">•</span>
-    Escrito individualmente para você
+  {/* celular: cada item em sua própria linha */}
+  <span className="md:hidden">
+    <span className="block">Documento em PDF</span>
+    <span className="block">Escrito individualmente para você</span>
+    <span className="block">Entregue por e-mail em até 48h</span>
+    <span className="block">Lido apenas por mim, com total sigilo</span>
   </span>
-  <span className="block">
-    <span className="mx-2 text-[#6F8F5E]">•</span>
-    Entregue por e-mail em até 48h{" "}
-    <span className="mx-2 text-[#6F8F5E]">•</span>
-    Lido apenas por mim, com total sigilo
+
+  {/* iPad e computador: duas linhas com separadores */}
+  <span className="hidden md:block">
+    <span className="block">
+      Documento em PDF <span className="mx-2 text-[#6F8F5E]">•</span>
+      Escrito individualmente para você
+    </span>
+    <span className="block">
+      Entregue por e-mail em até 48h{" "}
+      <span className="mx-2 text-[#6F8F5E]">•</span>
+      Lido apenas por mim, com total sigilo
+    </span>
   </span>
 </div>
 
