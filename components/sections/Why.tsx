@@ -279,7 +279,7 @@ export default function Why() {
     alt="Diego Ciriani"
     fill
     sizes="310px"
-    className="scale-[0.92] object-contain object-bottom brightness-90"
+    className="scale-[0.92] object-contain object-bottom brightness-85"
     priority
   />
 </div>
@@ -391,7 +391,7 @@ export default function Why() {
     alt="Diego Ciriani"
     fill
     sizes="(max-width: 1023px) 400px, 480px"
-    className="object-contain object-bottom brightness-90"
+    className="object-contain object-bottom brightness-85"
     priority
   />
 </div>
