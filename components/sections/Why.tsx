@@ -181,26 +181,49 @@ function LockIcon() {
 const stories = [
   {
     icon: PeopleIcon,
-    title: "Algumas falavam sobre abandono.",
-    text: "Outras se afastavam antes que alguém pudesse abandoná-las.",
+    content: (
+      <>
+        <span className="font-semibold text-[#88B39A]">
+          Algumas falavam sobre abandono.
+        </span>{" "}
+        Outras se afastavam antes que alguém pudesse abandoná-las.
+      </>
+    ),
   },
   {
     icon: BrokenHeartIcon,
-    title: "Algumas relações pareciam saudáveis por fora.",
-    text: "Por dentro, havia silêncio, excesso de adaptação e medo de desagradar.",
+    content: (
+      <>
+        <span className="font-semibold text-[#88B39A]">
+          Algumas relações pareciam saudáveis por fora.
+        </span>{" "}
+        Por dentro, havia silêncio, excesso de adaptação e medo de desagradar.
+      </>
+    ),
   },
   {
     icon: MessageIcon,
-    title: "As histórias eram diferentes.",
-    text: "Mas o lugar ocupado dentro delas, nem sempre.",
+    content: (
+      <>
+        <span className="font-semibold text-[#88B39A]">
+          As histórias eram diferentes.
+        </span>{" "}
+        Mas o lugar ocupado dentro delas, nem sempre.
+      </>
+    ),
   },
   {
     icon: CycleIcon,
-    title: "Não faltava vontade de mudar.",
-    text: "Faltava perceber o que continuava sendo repetido sem consciência.",
+    content: (
+      <>
+        <span className="font-semibold text-[#88B39A]">
+          Não faltava vontade de mudar.
+        </span>{" "}
+        Faltava perceber o que continuava sendo repetido sem consciência.
+      </>
+    ),
   },
 ];
-
 export default function Why() {
   return (
     <section
@@ -384,55 +407,47 @@ export default function Why() {
 
           {/* histórias */}
 <div className="relative z-20 mt-0 overflow-hidden rounded-[1.45rem] border border-[#6F8F5E]/35 bg-black/25 px-5 md:mt-4 md:px-8">
-  {stories.map((story, index) => {
-    const Icon = story.icon;
+ {stories.map((story, index) => {
+  const Icon = story.icon;
 
-    return (
-      <div
-        key={story.title}
-        className={`py-6 md:flex md:gap-6 md:py-8 ${
-          index !== stories.length - 1
-            ? "border-b border-[#6F8F5E]/20"
-            : ""
-        }`}
-      >
-        {/* celular: ícone flutuando à esquerda, texto contornando e depois ocupando a largura toda */}
-<div className="md:hidden">
-  <div className="float-left mr-4 flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-[#6F8F5E]/10 bg-[#172116] text-[#88B39A] shadow-[0_0_28px_rgba(71,119,45,0.14)]">
-  <Icon />
-</div>
+  return (
+    <div
+      key={index}
+      className={`py-6 md:flex md:gap-6 md:py-8 ${
+        index !== stories.length - 1
+          ? "border-b border-[#6F8F5E]/20"
+          : ""
+      }`}
+    >
+      {/* celular: ícone flutuando à esquerda, texto contornando e depois ocupando a largura toda */}
+      <div className="md:hidden">
+        <div className="float-left mr-4 flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-[#6F8F5E]/10 bg-[#172116] text-[#88B39A] shadow-[0_0_28px_rgba(71,119,45,0.14)]">
+          <Icon />
+        </div>
 
-  <p className="leading-7">
-    <span className="font-satoshi text-[1rem] font-semibold tracking-[-0.015em] text-[#F4EBDD] min-[390px]:text-[1.05rem]">
-      {story.title}
-    </span>{" "}
-    <span className="font-[family-name:var(--font-manrope)] text-[0.92rem] font-normal text-zinc-400">
-      {story.text}
-    </span>
-  </p>
+        <p className="text-[0.95rem] leading-[1.6] text-zinc-300">
+          {story.content}
+        </p>
 
-  <div className="clear-both" />
-</div>
+        <div className="clear-both" />
+      </div>
 
-        {/* iPad e computador: layout original, ícone à esquerda */}
-        <div className="hidden md:flex md:gap-6">
-          <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full border border-[#6F8F5E]/10 bg-[#172116] text-[#88B39A] shadow-[0_0_28px_rgba(71,119,45,0.14)]">
-            <Icon />
-          </div>
+      {/* iPad e computador: mesma lógica, ícone à esquerda */}
+      <div className="hidden md:flex md:gap-6">
+        <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full border border-[#6F8F5E]/10 bg-[#172116] text-[#88B39A] shadow-[0_0_28px_rgba(71,119,45,0.14)]">
+          <Icon />
+        </div>
 
-          <div className="pt-1">
-            <p className="font-satoshi text-[1.08rem] font-semibold leading-7 tracking-[-0.015em] text-[#F4EBDD]">
-              {story.title}
-            </p>
-
-            <p className="mt-1 font-[family-name:var(--font-manrope)] text-[1rem] font-normal leading-7 text-zinc-400">
-              {story.text}
-            </p>
-          </div>
+        <div className="pt-1">
+          <p className="text-[1.08rem] leading-8 text-zinc-300">
+            {story.content}
+          </p>
         </div>
       </div>
-    );
-  })}
+    </div>
+  );
+})}
+
 </div>
           {/* conclusão */}
 <div className="relative z-20 mt-6 grid grid-cols-2 gap-4 rounded-[1.35rem] border border-[#6F8F5E]/20 bg-[linear-gradient(110deg,rgba(36,60,27,0.5),rgba(12,17,11,0.75))] px-4 py-5 md:mt-8 md:gap-12 md:px-9 md:py-8">
