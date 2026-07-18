@@ -329,7 +329,7 @@ transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
       key={item}
       className="flex items-center gap-4 border-b border-[#6F8F5E]/18 pb-3"
     >
-      <span className="h-2.5 w-2.5 shrink-0 rounded-full bg-[#6F8F5E]/85 shadow-[0_0_12px_rgba(111,143,94,0.35)]" />
+      <CheckIcon />
       <p className="text-[1rem] leading-6 text-zinc-300 md:text-[1.13rem]">
         {item}
       </p>
