@@ -3,6 +3,22 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Container from "@/components/ui/Container";
+// ADICIONA (depois dos imports, antes do array infos)
+function CheckIcon() {
+  return (
+    <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-[#6F8F5E]/50 text-[#6F8F5E]">
+      <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none">
+        <path
+          d="M6 12.5L10 16.5L18 7.5"
+          stroke="currentColor"
+          strokeWidth="1.8"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    </span>
+  );
+}
 
 const infos = [
   "Psicólogo Clínico · CRP 04/44668",
@@ -137,18 +153,18 @@ export default function About() {
             transition={{ duration: 0.9, delay: 0.16, ease: [0.22, 1, 0.36, 1] }}
             className="mt-10 border-t border-[#6F8F5E]/25 md:mx-4"
           >
-            {infos.map((item) => (
-              <div
-                key={item}
-                className="flex items-center gap-4 border-b border-[#6F8F5E]/20 py-3.5 md:py-4"
-              >
-                <span className="h-2.5 w-2.5 shrink-0 rounded-full bg-[#6F8F5E]/85 shadow-[0_0_12px_rgba(111,143,94,0.35)]" />
+{infos.map((item) => (
+  <div
+    key={item}
+    className="flex items-center gap-4 border-b border-[#6F8F5E]/20 py-3.5 md:py-4"
+  >
+    <CheckIcon />
 
-                <p className="text-[1rem] leading-6 text-zinc-300 md:text-[1.15rem]">
-                  {item}
-                </p>
-              </div>
-            ))}
+    <p className="text-[1rem] leading-6 text-zinc-300 md:text-[1.15rem]">
+      {item}
+    </p>
+  </div>
+))}            ))}
           </motion.div>
         </motion.div>
       </Container>
