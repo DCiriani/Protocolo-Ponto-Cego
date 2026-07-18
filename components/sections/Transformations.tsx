@@ -106,9 +106,9 @@ export default function Transformations() {
       {item.number}
     </p>
 
-    <h3 className="max-w-[420px] font-[family-name:var(--font-bodoni)] text-[1.7rem] font-medium leading-[1.05] text-[#F5F5F3]">
-      {item.title}
-    </h3>
+    <h3 className="max-w-[420px] font-[family-name:var(--font-bodoni)] text-[1.5rem] font-medium leading-[1.05] text-[#F5F5F3]">
+  {item.title}
+</h3>
   </div>
 
   {/* iPad e computador: número em coluna própria, como antes */}
