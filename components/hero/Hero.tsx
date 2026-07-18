@@ -180,8 +180,10 @@ export default function Hero() {
   Em até 48 horas, você recebe no seu e-mail uma leitura escrita e individual,
   com{" "}
   <span className="font-medium text-[#6F8F5E]">
-    direcionamentos práticos: por onde começar a mudar.
-  </span>
+  direcionamentos práticos: por onde
+  <br className="md:hidden" />
+  {" "}começar a mudar.
+</span>
 </p>
 
 <div id="comecar" className="mt-8">
