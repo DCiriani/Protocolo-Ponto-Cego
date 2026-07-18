@@ -169,19 +169,18 @@ export default function Hero() {
 </p>
 
             <p className="mt-6 max-w-[640px] text-[1rem] leading-7 text-zinc-300 md:text-[1.2rem] md:leading-9">
-  Você responde a um percurso guiado sobre situações reais da sua vida afetiva.
-</p>
-
-<p className="mt-5 max-w-[640px] text-[1rem] leading-7 text-zinc-300 md:text-[1.2rem] md:leading-9">
+  <span className="font-medium text-[#6F8F5E]">
+    Você responde a um percurso guiado sobre situações reais da sua vida afetiva.
+  </span>{" "}
   Eu analiso pessoalmente suas respostas para identificar padrões, possíveis
   pontos cegos e o que está mantendo você preso ao mesmo ciclo.
 </p>
 
 <p className="mt-5 max-w-[640px] text-[1rem] leading-7 text-zinc-300 md:text-[1.2rem] md:leading-9">
   Em até 48 horas, você recebe no seu e-mail uma leitura escrita e individual,
-  com direcionamentos práticos:{" "}
+  com{" "}
   <span className="font-medium text-[#6F8F5E]">
-    por onde começar a mudar.
+    direcionamentos práticos: por onde começar a mudar.
   </span>
 </p>
 
