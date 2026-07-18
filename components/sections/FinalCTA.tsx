@@ -97,12 +97,17 @@ export default function FinalCTA() {
               </span>
             </h2>
 
-            <p className="mt-8 max-w-[690px] text-[1.05rem] leading-8 text-zinc-300 md:text-[1.28rem] md:leading-9">
-              Você já pensou muito sobre o problema. Já conversou, tentou
-              mudar, se culpou, culpou o outro e chegou a várias conclusões.
-              Mesmo assim, continua voltando ao mesmo lugar. Isso acontece
-              porque ninguém enxerga com distância aquilo que vive por dentro.
-            </p>
+            <p className="mt-8 max-w-[690px] text-[1.05rem] leading-8 md:text-[1.28rem] md:leading-9">
+  <span className="text-[#6F8F5E]">
+    Você já pensou muito sobre o problema. Já conversou, tentou
+    mudar, se culpou, culpou o outro e chegou a várias conclusões.
+    Mesmo assim, continua voltando ao mesmo lugar.
+  </span>{" "}
+  <span className="text-zinc-300">
+    Isso acontece porque ninguém enxerga com distância aquilo que
+    vive por dentro.
+  </span>
+</p>
 
             <p className="mt-5 max-w-[690px] text-[1.05rem] leading-8 text-zinc-300 md:text-[1.28rem] md:leading-9">
               A Análise Ponto Cego oferece um olhar profissional, externo e

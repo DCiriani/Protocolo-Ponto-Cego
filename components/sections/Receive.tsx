@@ -314,11 +314,11 @@ transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
                 personalizada e construída a partir das suas respostas.
               </p>
 
-              <p>
-                Ela vem em duas partes. A primeira é o espelho: o que se
-                repete na sua forma de se relacionar. A segunda é o mapa:
-                por onde começar a mudar.
-              </p>
+              <p className="text-[#6F8F5E]">
+  Ela vem em duas partes. A primeira é o espelho: o que se
+  repete na sua forma de se relacionar. A segunda é o mapa:
+  por onde começar a mudar.
+</p>
             </div>
           </div>
 
@@ -354,13 +354,17 @@ transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
 
           {/* metadados */}
           <div className="mx-auto mt-5 max-w-[760px] text-center text-[0.95rem] leading-7 text-zinc-400 md:text-[1.1rem]">
-            Documento em PDF <span className="mx-2 text-[#6F8F5E]">•</span>
-            Escrito individualmente para você{" "}
-            <span className="mx-2 text-[#6F8F5E]">•</span>
-            Entregue por e-mail em até 48h{" "}
-            <span className="mx-2 text-[#6F8F5E]">•</span>
-            Lido apenas por mim, com total sigilo
-          </div>
+  <span className="block">
+    Documento em PDF <span className="mx-2 text-[#6F8F5E]">•</span>
+    Escrito individualmente para você
+  </span>
+  <span className="block">
+    <span className="mx-2 text-[#6F8F5E]">•</span>
+    Entregue por e-mail em até 48h{" "}
+    <span className="mx-2 text-[#6F8F5E]">•</span>
+    Lido apenas por mim, com total sigilo
+  </span>
+</div>
 
           {/* frase */}
           <div className="mt-8 rounded-[1rem] border border-[#6F8F5E]/35 bg-black/20 px-6 py-6 text-center md:px-10">
