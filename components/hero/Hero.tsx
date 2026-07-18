@@ -223,7 +223,7 @@ export default function Hero() {
   {item.title}
 </h3>
 
-        <p className="mt-4 text-[0.8rem] leading-[1.55] text-zinc-400 md:text-base md:leading-7">
+        <p className="mt-4 text-[0.72rem] leading-[1.55] text-zinc-400 md:text-base md:leading-7">
   {item.text}
 </p>
       </div>
