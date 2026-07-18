@@ -112,10 +112,10 @@ function CheckoutContent() {
           te custa e por onde começa a mudança.
         </p>
 
-        <p className="mt-4 max-w-2xl text-lg leading-8 text-zinc-400">
-          Não é teste automático. Não é conselho pronto. É uma leitura feita
-          por um psicólogo, sobre você, no seu e-mail em até 48 horas.
-        </p>
+        <p className="mt-4 max-w-2xl text-lg leading-8 text-[#6F8F5E]">
+  Não é teste automático. Não é conselho pronto. É uma leitura feita
+  por um psicólogo, sobre você, no seu e-mail em até 48 horas.
+</p>
 
         <div className="mt-12 rounded-[2rem] border border-white/10 bg-white/[0.03] p-8 md:p-10">
           <ul className="space-y-3 text-sm leading-6 text-zinc-400">
