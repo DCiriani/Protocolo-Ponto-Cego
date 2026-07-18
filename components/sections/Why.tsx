@@ -183,7 +183,7 @@ const stories = [
     icon: PeopleIcon,
     content: (
       <>
-        <span className="font-semibold text-[#88B39A]">
+        <span className="font-semibold text-[#6F8F5E]">
           Algumas falavam sobre abandono.
         </span>{" "}
         Outras se afastavam antes que alguém pudesse abandoná-las.
@@ -194,7 +194,7 @@ const stories = [
     icon: BrokenHeartIcon,
     content: (
       <>
-        <span className="font-semibold text-[#88B39A]">
+        <span className="font-semibold text-[#6F8F5E]">
           Algumas relações pareciam saudáveis por fora.
         </span>{" "}
         Por dentro, havia silêncio, excesso de adaptação e medo de desagradar.
@@ -205,7 +205,7 @@ const stories = [
     icon: MessageIcon,
     content: (
       <>
-        <span className="font-semibold text-[#88B39A]">
+        <span className="font-semibold text-[#6F8F5E]">
           As histórias eram diferentes.
         </span>{" "}
         Mas o lugar ocupado dentro delas, nem sempre.
@@ -216,7 +216,7 @@ const stories = [
     icon: CycleIcon,
     content: (
       <>
-        <span className="font-semibold text-[#88B39A]">
+        <span className="font-semibold text-[#6F8F5E]">
           Não faltava vontade de mudar.
         </span>{" "}
         Faltava perceber o que continuava sendo repetido sem consciência.
@@ -419,18 +419,16 @@ export default function Why() {
           : ""
       }`}
     >
-      {/* celular: ícone flutuando à esquerda, texto contornando e depois ocupando a largura toda */}
-      <div className="md:hidden">
-        <div className="float-left mr-4 flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-[#6F8F5E]/10 bg-[#172116] text-[#88B39A] shadow-[0_0_28px_rgba(71,119,45,0.14)]">
-          <Icon />
-        </div>
+      {/* celular: ícone e texto lado a lado, sem float */}
+<div className="flex gap-4 md:hidden">
+  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-[#6F8F5E]/10 bg-[#172116] text-[#88B39A] shadow-[0_0_28px_rgba(71,119,45,0.14)]">
+    <Icon />
+  </div>
 
-        <p className="text-[0.95rem] leading-[1.6] text-zinc-300">
-          {story.content}
-        </p>
-
-        <div className="clear-both" />
-      </div>
+  <p className="pt-1 text-[0.95rem] leading-[1.6] text-zinc-300">
+    {story.content}
+  </p>
+</div>
 
       {/* iPad e computador: mesma lógica, ícone à esquerda */}
       <div className="hidden md:flex md:gap-6">
