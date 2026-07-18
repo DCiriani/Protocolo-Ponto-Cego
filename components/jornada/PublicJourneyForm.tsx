@@ -579,7 +579,7 @@ function GrayChoiceGroup({
 }) {
   return (
     <div>
-      <p className="mb-3 text-sm leading-6 text-zinc-300">{label}</p>
+<p className="mb-3 text-sm leading-6 text-[#6F8F5E]">{label}</p>
 
       <div className="grid gap-2">
         {options.map((option) => {

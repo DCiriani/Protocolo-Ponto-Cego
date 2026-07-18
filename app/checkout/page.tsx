@@ -139,9 +139,9 @@ function CheckoutContent() {
               : "Desbloquear meu questionário →"}
           </button>
 
-          <p className="mt-4 text-xs text-zinc-600">
-            Pagamento único e seguro via Mercado Pago
-          </p>
+          <p className="mt-4 text-xs text-[#6F8F5E]">
+  Pagamento único e seguro via Mercado Pago
+</p>
 
           <p className="mt-6 text-xs leading-6 text-zinc-600">
             Seu pagamento será processado pelo Mercado Pago. Ao continuar,
