@@ -5,10 +5,19 @@ import Container from "@/components/ui/Container";
 
 const steps = [
   {
-    number: "01",
-    title: "Investigar",
-    text: "Você responde a um percurso guiado com situações e perguntas sobre sua forma de se relacionar. Não existem respostas certas. O que torna a leitura valiosa é a honestidade com que você descreve o que vive, pensa e faz.",
-  },
+  number: "01",
+  title: "Investigar",
+  text: (
+    <>
+      Você responde a um percurso guiado com situações e perguntas sobre sua
+      forma de se relacionar. Não existem respostas certas.{" "}
+      <span className="font-medium text-[#6F8F5E]">
+        O que torna a leitura valiosa é a honestidade com que você descreve o
+        que vive, pensa e faz.
+      </span>
+    </>
+  ),
+},
   {
     number: "02",
     title: "Compreender",
