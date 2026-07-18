@@ -163,8 +163,13 @@ export default function FinalCTA() {
     </span>
   </div>
 
+  {/* parcelamento */}
+  <p className="mt-4 text-[0.95rem] leading-6 text-zinc-400 md:text-[1.05rem]">
+    ou 12x de R$ 14,96 no cartão
+  </p>
+
   {/* condição */}
-  <p className="mt-6 font-satoshi text-[0.68rem] font-medium uppercase tracking-[0.18em] text-zinc-500 md:text-[0.82rem]">
+  <p className="mt-5 font-satoshi text-[0.68rem] font-medium uppercase tracking-[0.18em] text-zinc-500 md:text-[0.82rem]">
     Valor do lote atual de leituras
   </p>
 </div>
