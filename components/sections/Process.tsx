@@ -15,7 +15,7 @@ const steps = [
     text: (
       <>
         Eu leio cada resposta individualmente e analiso três camadas:{" "}
-        <span className="font-medium text-[#88B39A]">
+        <span className="font-medium text-[#6F8F5E]">
           o que você faz, como pode ser percebido e o que acredita sobre si.
         </span>{" "}
         É na distância entre essas camadas que um possível ponto cego costuma
@@ -26,7 +26,17 @@ const steps = [
   {
     number: "03",
     title: "Direcionar",
-    text: "Você recebe um documento personalizado em duas partes: o que se repete na sua história e por onde começar a mudar. Padrões identificados, possíveis pontos cegos, ciclos e direcionamentos práticos que você consegue aplicar sozinho, a partir do dia em que lê.",
+    text: (
+      <>
+        Você recebe um documento personalizado em duas partes: o que se
+        repete na sua história e por onde começar a mudar. Padrões
+        identificados, possíveis pontos cegos, ciclos e{" "}
+        <span className="font-medium text-[#6F8F5E]">
+          direcionamentos práticos que você consegue aplicar sozinho,
+        </span>{" "}
+        a partir do dia em que lê.
+      </>
+    ),
   },
 ];
 function EyeIcon() {
@@ -297,7 +307,10 @@ export default function Process() {
           <p className="mt-8 max-w-[640px] text-[1rem] leading-8 text-zinc-300 md:text-[1.18rem] md:leading-9">
   A Análise Ponto Cego não procura decidir quem está certo ou errado.
   Ela analisa o que você vive, o que conclui e como reage para identificar
-  o padrão por trás das situações. E te mostra por onde começar a sair dele.
+  o padrão por trás das situações.{" "}
+  <span className="whitespace-nowrap font-medium text-[#6F8F5E]">
+    E te mostra por onde começar a sair dele.
+  </span>
 </p>
         </motion.div>
 
