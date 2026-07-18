@@ -106,7 +106,7 @@ export default function Transformations() {
       {item.number}
     </p>
 
-    <h3 className="max-w-[420px] font-[family-name:var(--font-bodoni)] text-[1.5rem] font-medium leading-[1.05] text-[#F5F5F3]">
+    <h3 className="max-w-[420px] font-[family-name:var(--font-bodoni)] text-[1.4rem] font-medium leading-[1.05] text-[#F5F5F3]">
   {item.title}
 </h3>
   </div>
