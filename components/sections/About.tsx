@@ -164,7 +164,8 @@ export default function About() {
       {item}
     </p>
   </div>
-))}            ))}
+))}
+
           </motion.div>
         </motion.div>
       </Container>
