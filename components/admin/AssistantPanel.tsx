@@ -63,11 +63,13 @@ export default function AssistantPanel({
 }) {
   const [run, setRun] = useState<Run | null>(initialRun);
   const [isLoading, setIsLoading] = useState(false);
+  const [progress, setProgress] = useState(0);
   const [errorMessage, setErrorMessage] = useState("");
 
   async function generate(force: boolean) {
     setIsLoading(true);
     setErrorMessage("");
+    setProgress(0);
 
     try {
       const response = await fetch(
@@ -75,15 +77,57 @@ export default function AssistantPanel({
         { method: "POST" }
       );
 
-      const result = await response.json().catch(() => null);
-
-      if (!response.ok || !result?.ok) {
-        setErrorMessage(result?.message ?? "Não foi possível gerar a análise.");
+      if (!response.ok || !response.body) {
+        setErrorMessage("Não foi possível conectar ao assistente.");
         setIsLoading(false);
         return;
       }
 
-      setRun(result.run);
+      const reader = response.body.getReader();
+      const decoder = new TextDecoder();
+      let buffer = "";
+
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+
+        buffer += decoder.decode(value, { stream: true });
+        const blocks = buffer.split("\n\n");
+        buffer = blocks.pop() ?? "";
+
+        for (const block of blocks) {
+          const lines = block.split("\n");
+          let eventName = "";
+          let dataRaw = "";
+
+          for (const line of lines) {
+            if (line.startsWith("event: ")) eventName = line.slice(7).trim();
+            if (line.startsWith("data: ")) dataRaw = line.slice(6).trim();
+          }
+
+          if (!eventName || !dataRaw) continue;
+
+          try {
+            const data = JSON.parse(dataRaw);
+
+            if (eventName === "progress") {
+              setProgress(data.chars ?? 0);
+            }
+
+            if (eventName === "done") {
+              setRun(data.run);
+              setIsLoading(false);
+            }
+
+            if (eventName === "error") {
+              setErrorMessage(data.message ?? "Erro ao gerar análise.");
+              setIsLoading(false);
+            }
+          } catch {
+            // bloco incompleto, ignora
+          }
+        }
+      }
     } catch {
       setErrorMessage("Erro ao chamar o assistente.");
     } finally {
@@ -121,14 +165,20 @@ export default function AssistantPanel({
         <p className="mb-6 text-sm text-red-300">{errorMessage}</p>
       )}
 
-      {!run && (
+      {isLoading && (
+        <p className="mb-6 text-sm text-[#6F8F5E]">
+          Analisando o protocolo...{" "}
+          {progress > 0 && `${progress} caracteres escritos`}
+        </p>
+      )}
+
+      {!run && !isLoading && (
         <button
           type="button"
           onClick={() => generate(false)}
-          disabled={isLoading}
-          className="rounded-full bg-[#6F8F5E] px-7 py-4 text-sm font-semibold text-[#0A0A0A] transition hover:bg-[#7fa06c] disabled:cursor-not-allowed disabled:opacity-60"
+          className="rounded-full bg-[#6F8F5E] px-7 py-4 text-sm font-semibold text-[#0A0A0A] transition hover:bg-[#7fa06c]"
         >
-          {isLoading ? "Analisando..." : "Gerar análise assistida"}
+          Gerar análise assistida
         </button>
       )}
 
