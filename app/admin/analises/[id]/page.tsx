@@ -2,6 +2,7 @@ import DeleteAnalysisButton from "@/components/admin/DeleteAnalysisButton";
 import DeliveryLinkBox from "@/components/admin/DeliveryLinkBox";
 import AnalysisNotesForm from "@/components/admin/AnalysisNotesForm";
 import StatusActions from "@/components/admin/StatusActions";
+import AssistantPanel from "@/components/admin/AssistantPanel";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { supabaseAdmin } from "@/lib/supabase/admin";
@@ -73,6 +74,14 @@ export default async function AdminAnalysisPage({ params }: PageProps) {
   }
 
   const submission = data as Submission;
+
+  const { data: latestRun } = await supabaseAdmin
+    .from("analysis_assistant_runs")
+    .select("id, output, created_at, model")
+    .eq("submission_id", id)
+    .order("created_at", { ascending: false })
+    .limit(1)
+    .maybeSingle();
 
   const currentStatus = submission.analysis_status ?? "received";
 
@@ -184,7 +193,10 @@ export default async function AdminAnalysisPage({ params }: PageProps) {
           </div>
         </div>
 
+         <AssistantPanel id={submission.id} initialRun={latestRun ?? null} />
+         
         <AnalysisNotesForm
+        
           id={submission.id}
           initialNotes={submission.analysis_notes ?? ""}
         />
