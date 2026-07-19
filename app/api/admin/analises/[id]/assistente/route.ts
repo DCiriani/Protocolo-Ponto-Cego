@@ -61,7 +61,7 @@ export async function POST(request: Request, { params }: Params) {
       },
      body: JSON.stringify({
   model,
-  max_tokens: 3000,
+  max_tokens: 5000,
         system: buildAssistantPrompt(),
         messages: [
           {
