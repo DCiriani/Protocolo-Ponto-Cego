@@ -11,19 +11,29 @@ import {
   formatPaymentStatus,
 } from "@/lib/format-status";
 
+type RawPayload = {
+  sceneConflict?: string;
+  reactionSelections?: string[];
+  reactionPurpose?: string;
+  sceneProximity?: string;
+  mirrorCriticism?: string;
+  mirrorTruth?: string;
+  intentionImpact?: string;
+  patternHypothesis?: string;
+  desireFear?: string;
+  ageRange?: string;
+  relationshipDuration?: string;
+  discomfortDuration?: string;
+  therapyHistory?: string;
+};
+
 type Submission = {
   id: string;
   name: string;
   email: string;
   relationship_status: string;
   main_question: string;
-  scene_conflict: string;
-  scene_silence: string;
-  scene_limit: string;
-  scene_shrunk_life: string | null;
-  scene_repetition: string;
-  scene_choice: string;
-  expected_clarity: string;
+  raw_payload: RawPayload | null;
   consent: boolean;
   payment_status: string | null;
   analysis_status: string | null;
@@ -85,14 +95,27 @@ export default async function AdminAnalysisPage({ params }: PageProps) {
 
   const currentStatus = submission.analysis_status ?? "received";
 
+ const payload = submission.raw_payload ?? {};
+
   const items: Item[] = [
     {
       label: "Pergunta central",
       value: submission.main_question,
     },
     {
-      label: "Cena 01 — O conflito",
-      value: submission.scene_conflict,
+      label: "Contexto",
+      value: [
+        payload.ageRange,
+        payload.relationshipDuration && `Relação: ${payload.relationshipDuration}`,
+        payload.discomfortDuration && `Incômodo: ${payload.discomfortDuration}`,
+        payload.therapyHistory,
+      ]
+        .filter(Boolean)
+        .join(" · ") || null,
+    },
+    {
+      label: "Cena — O conflito",
+      value: payload.sceneConflict ?? null,
       lens: {
         grade: ["Regulação emocional", "Pensamentos automáticos", "Estilo de conflito"],
         cde: ["Expressão limite", "Busca de atenção"],
@@ -101,58 +124,86 @@ export default async function AdminAnalysisPage({ params }: PageProps) {
       },
     },
     {
-      label: "Cena 02 — O silêncio",
-      value: submission.scene_silence,
+      label: "O que fez na hora",
+      value: payload.reactionSelections?.length
+        ? payload.reactionSelections.join(" · ")
+        : null,
       lens: {
-        grade: ["Apego", "Medo de abandono", "Crença central de rejeição"],
-        cde: ["Ansiedade de separação (principal)", "Reasseguramento"],
+        grade: ["Estratégia de enfrentamento", "Assertividade", "Controle"],
+        cde: ["Expressão limite", "Reasseguramento"],
         observar:
-          "O que ela fez com a angústia: cobrou, testou, fingiu indiferença, se puniu? A estratégia diz mais que a emoção.",
+          "A estratégia diz mais que a emoção. Cobrar, testar, punir e fingir indiferença são coisas diferentes.",
       },
     },
     {
-      label: "Cena 03 — O limite",
-      value: submission.scene_limit,
+      label: "O que queria conseguir com isso",
+      value: payload.reactionPurpose ?? null,
       lens: {
-        grade: ["Assertividade", "Culpa", "Submissão", "Medo de perda como moeda"],
-        cde: ["Preço do 'não' (se dizer não custa a relação, tem dependência sustentando)"],
+        grade: ["Função do comportamento", "Comunicação indireta"],
+        cde: ["Busca de atenção", "Necessidade de validação externa"],
         observar:
-          "Reconhece o limite e não defende, OU nem reconhece que tinha um? São dois pontos cegos diferentes.",
+          "Se a intenção só se realiza pelo sofrimento visível, a pessoa não aprendeu a pedir diretamente.",
       },
     },
     {
-      label: "Cena 04 — A vida que encolheu",
-      value: submission.scene_shrunk_life,
+      label: "Há quanto tempo se repete",
+      value: payload.sceneProximity ?? null,
       lens: {
-        grade: ["Identidade", "Autonomia", "Fusão relacional"],
-        cde: ["Modificação de planos (principal)"],
-        observar:
-          "Renúncia pedida pelo outro + isolamento de amigos = cruzar com Domínio 13 (controle). Autoapagamento preventivo ('ninguém pediu, fui eu') também é dado clínico.",
-      },
-    },
-    {
-      label: "Cena 05 — O padrão",
-      value: submission.scene_repetition,
-      lens: {
-        grade: ["Nível de insight (calibra a leitura inteira)"],
+        grade: ["Cronicidade", "Nível de insight"],
         cde: [],
         observar:
-          "Padrão descrito culpando só os outros vs se incluindo na equação. A ausência da própria pessoa no padrão é o ponto cego mais frequente.",
+          "Reconhecer que é padrão e mesmo assim repetir indica que insight sozinho não está bastando.",
       },
     },
     {
-      label: "Cena 06 — A escolha revista",
-      value: submission.scene_choice,
+      label: "Espelho — O que critica no outro",
+      value: payload.mirrorCriticism ?? null,
       lens: {
-        grade: ["Idealização", "Permanência", "Crença sobre estar só"],
-        cde: ["Medo da solidão (embutido, sem virar item)"],
+        grade: ["Atribuição", "Projeção", "Crença sobre o outro"],
+        cde: ["Idealização e decepção"],
         observar:
-          "Se o que segurava for sobre o outro ('ele prometia mudar') = dependência da esperança. Se for sobre si ('não sabia ficar só') = dependência da presença.",
+          "Comparar com o campo seguinte. O que ela critica no outro costuma ter versão própria não reconhecida.",
       },
     },
     {
-      label: "Clareza esperada",
-      value: submission.expected_clarity,
+      label: "Espelho — O que admite sobre si",
+      value: payload.mirrorTruth ?? null,
+      lens: {
+        grade: ["Nível de insight (calibra a leitura inteira)", "Autocrítica"],
+        cde: [],
+        observar:
+          "Se ela já nomeia o próprio padrão aqui, o ponto cego não é o padrão — é o que impede de agir sobre ele.",
+      },
+    },
+    {
+      label: "Intenção versus impacto",
+      value: payload.intentionImpact ?? null,
+      lens: {
+        grade: ["Ciclo interpessoal", "Reforço negativo"],
+        cde: ["Ansiedade de separação"],
+        observar:
+          "Quando a estratégia produz exatamente o que ela teme, o ciclo se sustenta sozinho. É onde o padrão fica visível.",
+      },
+    },
+    {
+      label: "Hipótese dela sobre o próprio padrão",
+      value: payload.patternHypothesis ?? null,
+      lens: {
+        grade: ["Insight", "Formulação própria"],
+        cde: [],
+        observar:
+          "Se a hipótese dela já está correta, a devolutiva precisa ir além dela, não repeti-la.",
+      },
+    },
+    {
+      label: "Desejo e medo",
+      value: payload.desireFear ?? null,
+      lens: {
+        grade: ["Crença central", "Medo nuclear", "Esquema de abandono"],
+        cde: ["Medo da solidão", "Modificação de planos"],
+        observar:
+          "Desejo formulado como 'sem precisar pedir' indica crença de que pedir invalida o que se recebe.",
+      },
     },
   ];
 
@@ -194,7 +245,7 @@ export default async function AdminAnalysisPage({ params }: PageProps) {
         </div>
 
          <AssistantPanel id={submission.id} initialRun={latestRun ?? null} />
-         
+
         <AnalysisNotesForm
         
           id={submission.id}
