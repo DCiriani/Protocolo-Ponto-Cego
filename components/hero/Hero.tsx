@@ -176,14 +176,13 @@ export default function Hero() {
 </p>
 <p className="mt-8 max-w-[640px] border-l-2 border-[#6F8F5E]/40 pl-5 text-[0.95rem] leading-7 text-zinc-400 md:mt-10 md:text-[1.1rem] md:leading-8">
   A <strong className="font-medium text-[#F5F5F3]">Análise Ponto Cego</strong> é
-  uma análise clínica{" "}
-  <span className="font-medium text-[#6F8F5E]">escrita e individual</span>. Você
-  responde a um{" "}
-  <span className="font-medium text-[#6F8F5E]">questionário</span> sobre
-  situações reais da sua vida afetiva. Eu analiso pessoalmente e,{" "}
-  <span className="font-medium text-[#6F8F5E]">em até 48 horas</span>, você recebe
-  no seu e-mail o que está se repetindo, qual é a sua participação nesse ciclo e
-  por onde começar a mudar.
+  uma análise clínica escrita e individual. Você responde a um questionário
+  sobre situações reais da sua vida afetiva. Eu analiso pessoalmente e, em até
+  48 horas,{" "}
+  <span className="font-medium text-[#6F8F5E]">
+    você recebe no seu e-mail o que está se repetindo, qual é a sua participação
+    nesse ciclo e por onde começar a mudar.
+  </span>
 </p>
 
 <div id="comecar" className="mt-8">
