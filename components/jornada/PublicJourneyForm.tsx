@@ -432,7 +432,7 @@ function renderField(
         />
 
         <ContextChoiceGroup
-          label="Há quanto tempo esse incômodo aparece nas suas relações?"
+          label="Desde quando você sente que algo não vai bem na forma como você se relaciona?"
           options={discomfortDurationOptions}
           selected={answers.discomfortDuration}
           onSelect={(option) => setField("discomfortDuration", option)}
