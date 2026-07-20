@@ -73,10 +73,10 @@ function DocumentIcon() {
 
 const benefits = [
   {
-    icon: PersonIcon,
-    title: "Feita pessoalmente",
-    text: "Pelo psicólogo Diego Ciriani. Sem IA, sem resposta pronta.",
-  },
+  icon: PersonIcon,
+  title: "Feita pessoalmente",
+  text: "Eu leio cada resposta e escrevo cada leitura. Uma por vez.",
+},
   {
     icon: ClockIcon,
     title: "Até 48h",
@@ -149,9 +149,9 @@ export default function Hero() {
           <div className="max-w-[720px]">
             <div className="mb-9 flex max-w-[360px] items-start gap-3 text-[0.82rem] leading-6 text-zinc-300 sm:text-[0.95rem] sm:leading-7 md:max-w-none md:text-base">
               <span className="mt-2 h-2.5 w-2.5 shrink-0 rounded-full bg-[#88B39A] shadow-[0_0_18px_rgba(136,179,154,0.55)]" />
-              <span>
-  <span className="block">Leitura clínica escrita pelo psicólogo</span>
-  <span className="block">Diego Ciriani. CRP 04/44668</span>
+              <span className="uppercase tracking-[0.14em] text-[0.72rem] leading-5 text-[#88B39A] sm:text-[0.8rem] md:text-[0.85rem]">
+  <span className="block">Análise escrita e personalizada sobre</span>
+  <span className="block">seus padrões nos relacionamentos</span>
 </span>
             </div>
 
@@ -164,42 +164,55 @@ export default function Hero() {
   </span>
 </h1>
 
-            <p className="mt-7 w-fit max-w-[17.5rem] whitespace-nowrap font-serif text-[0.85rem] leading-tight tracking-[-0.01em] text-[#F5F5F3] min-[390px]:text-[0.98rem] sm:max-w-none sm:text-[1.35rem] md:mt-10 md:text-[2rem]">
-  O padrão mais difícil de enxergar é o seu.
+            <p className="mt-7 max-w-[30rem] font-serif text-[1.05rem] leading-snug tracking-[-0.01em] text-[#F5F5F3] min-[390px]:text-[1.15rem] sm:max-w-[38rem] sm:text-[1.5rem] md:mt-10 md:text-[2rem]">
+  Descubra por que os mesmos padrões se repetem nos seus relacionamentos.
 </p>
 
             <p className="mt-6 max-w-[640px] text-[1rem] leading-7 text-zinc-300 md:text-[1.2rem] md:leading-9">
-  <span className="font-medium text-[#6F8F5E]">
-    Você responde a um percurso guiado sobre situações reais da sua vida afetiva.
-  </span>{" "}
-  Eu analiso pessoalmente suas respostas para identificar padrões, possíveis
-  pontos cegos e o que está mantendo você preso ao mesmo ciclo.
-</p>
-
-<p className="mt-5 max-w-[640px] text-[1rem] leading-7 text-zinc-300 md:text-[1.2rem] md:leading-9">
-  Em até 48 horas, você recebe no seu e-mail uma leitura escrita e individual,
-  com{" "}
-  <span className="font-medium text-[#6F8F5E]">
-  direcionamentos práticos: por onde
-  <br className="md:hidden" />
-  {" "}começar a mudar.
+  Você pode mudar de pessoa, de relacionamento e de história. Mas, quando o
+padrão não muda,{" "}
+<span className="font-medium text-[#6F8F5E]">
+  o resultado costuma ser o mesmo.
 </span>
 </p>
 
+A <strong className="font-medium text-[#F5F5F3]">Análise Ponto Cego</strong> é
+uma análise clínica{" "}
+<span className="font-medium text-[#6F8F5E]">escrita e individual</span>. Você
+responde a um{" "}
+<span className="font-medium text-[#6F8F5E]">questionário online</span> sobre
+situações reais da sua vida afetiva. Eu analiso pessoalmente e,{" "}
+<span className="font-medium text-[#6F8F5E]">em até 48 horas</span>, você recebe
+no seu e-mail o que está se repetindo, qual é a sua participação nesse ciclo e
+por onde começar a mudar.
+
 <div id="comecar" className="mt-8">
   <Button
-  href="/jornada"
-  className="!inline-flex !w-auto whitespace-nowrap !px-4 !py-3 !text-[0.78rem] min-[390px]:!px-5 min-[390px]:!text-[0.84rem] md:!px-10 md:!py-5 md:!text-[1.5rem]"
->
-  Quero enxergar meus padrões
-</Button>
+    href="/jornada"
+    className="!inline-flex !w-auto whitespace-nowrap !px-4 !py-3 !text-[0.78rem] min-[390px]:!px-5 min-[390px]:!text-[0.84rem] md:!px-10 md:!py-5 md:!text-[1.5rem]"
+  >
+    Quero receber minha análise
+  </Button>
 </div>
 
-            <div className="mt-7 flex flex-wrap items-center gap-x-4 gap-y-2 text-[0.82rem] leading-5 text-zinc-400 sm:text-sm md:text-base">
-              <span>Entrega em até 48h</span>
-              <span className="text-[#88B39A]">•</span>
-              <span>Pagamento único</span>
-            </div>
+<div className="mt-7 flex flex-wrap items-center gap-x-3 gap-y-2 text-[0.85rem] leading-5 text-zinc-300 sm:text-[0.95rem] md:text-[1.05rem]">
+  <span>Você responde</span>
+  <span className="text-[#88B39A]">•</span>
+  <span>Eu analiso</span>
+  <span className="text-[#88B39A]">•</span>
+  <span>Você recebe em até 48h</span>
+</div>
+
+<div className="mt-4 space-y-1.5 text-[0.75rem] leading-5 text-zinc-500 sm:text-[0.82rem] md:text-[0.9rem]">
+  <p>Feita pessoalmente pelo psicólogo Diego Ciriani — CRP 04/44668</p>
+  <p className="flex flex-wrap items-center gap-x-2 gap-y-1">
+    <span className="text-[#88B39A]">Sem IA</span>
+    <span>•</span>
+    <span className="text-[#88B39A]">Sem respostas automáticas</span>
+    <span>•</span>
+    <span>Pagamento único</span>
+  </p>
+</div>
           </div>
 
           <div className="mt-10 grid grid-cols-2 gap-3 md:mt-16 md:max-w-[900px] md:gap-5">
