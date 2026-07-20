@@ -168,13 +168,12 @@ export default function Hero() {
   Descubra por que os mesmos padrões se repetem nos seus relacionamentos.
 </p>
 
-<p className="mt-6 max-w-[600px] text-[1.05rem] leading-7 text-zinc-200 md:text-[1.3rem] md:leading-9">  Você pode mudar de pessoa, de relacionamento e de história. Mas, quando o
-  padrão não muda,{" "}
+<p className="mt-6 max-w-[600px] text-[1.05rem] leading-7 text-zinc-200 md:text-[1.3rem] md:leading-9">
+  Você pode mudar de pessoa, de relacionamento e de história.{" "}
   <span className="font-medium text-[#6F8F5E]">
-    o resultado costuma ser o mesmo.
+    Mas, quando o padrão não muda, o resultado costuma ser o mesmo.
   </span>
 </p>
-
 <p className="mt-8 max-w-[640px] border-l-2 border-[#6F8F5E]/40 pl-5 text-[0.95rem] leading-7 text-zinc-400 md:mt-10 md:text-[1.1rem] md:leading-8">
   A <strong className="font-medium text-[#F5F5F3]">Análise Ponto Cego</strong> é
   uma análise clínica{" "}
