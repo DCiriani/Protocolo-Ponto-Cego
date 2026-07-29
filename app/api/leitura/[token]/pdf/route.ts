@@ -1,11 +1,13 @@
 import { NextResponse } from "next/server";
-import chromium from "@sparticuz/chromium";
+import chromium from "@sparticuz/chromium-min";
 import puppeteer from "puppeteer-core";
-
 
 export const dynamic = "force-dynamic";
 export const maxDuration = 60;
 export const runtime = "nodejs";
+
+const CHROMIUM_PACK =
+  "https://github.com/Sparticuz/chromium/releases/download/v123.0.1/chromium-v123.0.1-pack.tar";
 
 type RouteContext = {
   params: Promise<{ token: string }>;
@@ -39,7 +41,7 @@ export async function GET(request: Request, context: RouteContext) {
         : {
             args: [...chromium.args, "--no-sandbox", "--disable-setuid-sandbox"],
             defaultViewport: chromium.defaultViewport,
-            executablePath: await chromium.executablePath(),
+            executablePath: await chromium.executablePath(CHROMIUM_PACK),
             headless: true,
           },
     );
