@@ -2,8 +2,10 @@ import { NextResponse } from "next/server";
 import chromium from "@sparticuz/chromium";
 import puppeteer from "puppeteer-core";
 
+
 export const dynamic = "force-dynamic";
 export const maxDuration = 60;
+export const runtime = "nodejs";
 
 type RouteContext = {
   params: Promise<{ token: string }>;
