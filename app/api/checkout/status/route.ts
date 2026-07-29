@@ -30,6 +30,7 @@ export async function GET(request: Request) {
   return NextResponse.json({
     ok: true,
     allowed: order.gate_status === "approved",
+    paymentStatus: order.payment_status,
     price,
   });
 }

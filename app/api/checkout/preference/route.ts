@@ -1,22 +1,16 @@
 import { NextResponse } from "next/server";
 import { supabaseAdmin } from "@/lib/supabase/admin";
 
+const INFINITEPAY_HANDLE = "espacociriani";
+
 type PreferencePayload = {
   orderId?: string;
 };
 
 export async function POST(request: Request) {
   try {
-    const accessToken = process.env.MERCADO_PAGO_ACCESS_TOKEN;
     const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
     const price = Number(process.env.PRODUCT_PRICE ?? "147");
-
-    if (!accessToken) {
-      return NextResponse.json(
-        { ok: false, message: "MERCADO_PAGO_ACCESS_TOKEN não configurado." },
-        { status: 500 },
-      );
-    }
 
     if (!siteUrl) {
       return NextResponse.json(
@@ -62,68 +56,41 @@ export async function POST(request: Request) {
       );
     }
 
-    const preference = {
+    // Valor em centavos para a InfinityPay
+    const priceInCents = Math.round(price * 100);
+
+    const infinitePayBody = {
+      handle: INFINITEPAY_HANDLE,
+      redirect_url: `${siteUrl}/checkout/pendente?order=${order.id}`,
+      webhook_url: `${siteUrl}/api/infinitepay/webhook`,
+      order_nsu: order.id,
+      customer: {
+        name: order.name,
+      },
       items: [
         {
-          id: "analise-ponto-cego",
-          title: "Análise Ponto Cego",
-          description:
-            "Leitura clínica personalizada para identificar padrões nos relacionamentos.",
           quantity: 1,
-          currency_id: "BRL",
-          unit_price: price,
+          price: priceInCents,
+          description: "Análise Ponto Cego",
         },
       ],
-
-      payer: {
-        name: order.name,
-        email: order.email,
-      },
-
-      back_urls: {
-        success: `${siteUrl}/jornada/continuacao?order=${order.id}`,
-        failure: `${siteUrl}/checkout/erro`,
-        pending: `${siteUrl}/checkout/pendente?order=${order.id}`,
-      },
-
-      auto_return: "approved",
-
-      notification_url: `${siteUrl}/api/mercado-pago/webhook`,
-
-      payment_methods: {
-        excluded_payment_methods: [],
-        excluded_payment_types: [],
-        installments: 12,
-      },
-
-      statement_descriptor: "PONTO CEGO",
-
-      external_reference: order.id,
-
-      metadata: {
-        product: "analise_ponto_cego",
-        checkout_order_id: order.id,
-        customer_name: order.name,
-        customer_email: order.email,
-      },
     };
 
     const response = await fetch(
-      "https://api.mercadopago.com/checkout/preferences",
+      "https://api.checkout.infinitepay.io/links",
       {
         method: "POST",
         headers: {
-          Authorization: `Bearer ${accessToken}`,
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(preference),
+        body: JSON.stringify(infinitePayBody),
         cache: "no-store",
       },
     );
 
     if (!response.ok) {
       const errorText = await response.text();
-      console.error("Mercado Pago preference error:", errorText);
+      console.error("InfinityPay link error:", errorText);
 
       return NextResponse.json(
         { ok: false, message: "Não foi possível criar o checkout." },
@@ -136,13 +103,12 @@ export async function POST(request: Request) {
     await supabaseAdmin
       .from("checkout_orders")
       .update({
-        mercado_pago_preference_id: data.id ?? null,
         raw_payload: data,
         updated_at: new Date().toISOString(),
       })
       .eq("id", order.id);
 
-    const checkoutUrl = data.init_point || data.sandbox_init_point;
+    const checkoutUrl = data.url;
 
     if (!checkoutUrl) {
       return NextResponse.json(
