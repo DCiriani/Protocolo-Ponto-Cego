@@ -112,7 +112,7 @@ export default function PrivacyPolicyPage() {
             </h2>
 
             <p>
-              Os pagamentos são processados pelo Mercado Pago. Não armazenamos
+              Os pagamentos são processados pela InfinityPay. Não armazenamos
               dados completos de cartão de crédito. Recebemos apenas informações
               necessárias para confirmar o status do pagamento e liberar o
               acesso à Jornada.

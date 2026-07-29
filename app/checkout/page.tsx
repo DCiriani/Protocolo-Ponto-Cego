@@ -140,11 +140,11 @@ function CheckoutContent() {
           </button>
 
           <p className="mt-4 text-xs text-[#6F8F5E]">
-  Pagamento único e seguro via Mercado Pago
+  Pagamento único e seguro via InfinityPay
 </p>
 
           <p className="mt-6 text-xs leading-6 text-zinc-600">
-            Seu pagamento será processado pelo Mercado Pago. Ao continuar,
+            Seu pagamento será processado pela InfinityPay. Ao continuar,
             você declara estar ciente dos{" "}
             <a href="/termos" className="text-[#88B39A] hover:text-[#9fcaad]">
               Termos de Uso

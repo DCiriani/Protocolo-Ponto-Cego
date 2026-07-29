@@ -110,7 +110,7 @@ export default function TermsPage() {
             </h2>
 
             <p>
-              O pagamento é processado por meio do Mercado Pago. A liberação da
+              O pagamento é processado por meio da InfinityPay. A liberação da
               Jornada depende da confirmação do pagamento. Em alguns casos, a
               confirmação pode não ser imediata, especialmente em métodos como
               Pix ou análise de pagamento.

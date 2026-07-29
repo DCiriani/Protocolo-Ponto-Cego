@@ -213,7 +213,7 @@ export default function FinalCTA() {
 
               {/* rodapé da oferta */}
               <div className="mt-6 text-center text-[0.83rem] leading-6 text-zinc-400 md:text-[1rem]">
-  Pagamento seguro via Mercado Pago
+  Pagamento seguro via InfinityPay
 </div>
 
               {/* escassez */}
