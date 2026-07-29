@@ -35,7 +35,8 @@ export async function GET(request: Request, context: RouteContext) {
             headless: true,
           }
         : {
-            args: chromium.args,
+            args: [...chromium.args, "--no-sandbox", "--disable-setuid-sandbox"],
+            defaultViewport: chromium.defaultViewport,
             executablePath: await chromium.executablePath(),
             headless: true,
           },
