@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { supabaseAdmin } from "@/lib/supabase/admin";
 import PrintReadingButton from "@/components/leitura/PrintReadingButton";
+import ReadingContent from "@/components/leitura/ReadingContent";
 
 type Reading = {
   id: string;
@@ -93,9 +94,7 @@ export default async function ReadingPage({ params }: PageProps) {
         </div>
 
         <section className="rounded-[2rem] border border-white/10 bg-white/[0.03] p-8 md:p-12 print:border-0 print:bg-white print:p-0">
-          <p className="whitespace-pre-wrap text-lg leading-9 text-zinc-300 md:text-xl md:leading-10 print:text-base print:leading-8 print:text-black">
-            {reading.analysis_notes}
-          </p>
+          <ReadingContent text={reading.analysis_notes} />
         </section>
 
         <section className="mt-10 rounded-[2rem] border border-white/10 bg-black/30 p-6 text-sm leading-7 text-zinc-500 print:mt-10 print:rounded-2xl print:border print:border-zinc-300 print:bg-white print:p-6 print:text-xs print:text-zinc-700">
