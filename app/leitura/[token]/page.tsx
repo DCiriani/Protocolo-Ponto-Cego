@@ -17,12 +17,17 @@ type PageProps = {
   params: Promise<{
     token: string;
   }>;
+  searchParams: Promise<{
+    pdf?: string;
+  }>;
 };
 
 export const dynamic = "force-dynamic";
 
-export default async function ReadingPage({ params }: PageProps) {
+export default async function ReadingPage({ params, searchParams }: PageProps) {
   const { token } = await params;
+  const { pdf } = await searchParams;
+  const isPdf = pdf === "1";
 
   const { data, error } = await supabaseAdmin
     .from("jornada_submissions")
@@ -81,16 +86,18 @@ export default async function ReadingPage({ params }: PageProps) {
             Entregue em {deliveryDate}
           </p>
 
-          <div className="mt-8 flex flex-wrap gap-3 print:hidden">
-            <PrintReadingButton />
+          {!isPdf && (
+            <div className="mt-8 flex flex-wrap gap-3 print:hidden">
+              <PrintReadingButton token={token} />
 
-            <Link
-              href="/"
-              className="rounded-full border border-white/10 px-6 py-3 text-sm font-medium text-zinc-400 transition hover:border-[#88B39A]/40 hover:text-[#F5F5F3]"
-            >
-              Voltar para o Ponto Cego
-            </Link>
-          </div>
+              <Link
+                href="/"
+                className="rounded-full border border-white/10 px-6 py-3 text-sm font-medium text-zinc-400 transition hover:border-[#88B39A]/40 hover:text-[#F5F5F3]"
+              >
+                Voltar para o Ponto Cego
+              </Link>
+            </div>
+          )}
         </div>
 
         <section className="rounded-[2rem] border border-white/10 bg-white/[0.03] p-8 md:p-12 print:border-0 print:bg-white print:p-0">
