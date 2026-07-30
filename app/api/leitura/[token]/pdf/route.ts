@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
   },
   h2: {
     fontSize: 13,
-    color: COLORS.heading,
+    color: "#6F8F5E",
     fontFamily: "Helvetica-Bold",
     marginTop: 18,
     marginBottom: 8,
@@ -155,12 +155,12 @@ function ReadingDocument({
       React.createElement(
         Text,
         { style: styles.title },
-        `${name}, esta e a sua leitura.`,
+        `${name}, esta é a sua leitura.`,
       ),
       React.createElement(
         Text,
         { style: styles.intro },
-        "Esta devolutiva foi construida a partir das suas respostas na Jornada Ponto Cego.",
+        "Esta devolutiva foi construída a partir das suas respostas na Jornada Ponto Cego.",
       ),
       React.createElement(Text, { style: styles.date }, `Entregue em ${date}`),
 
@@ -193,7 +193,7 @@ function ReadingDocument({
           case "list":
             return React.createElement(
               View,
-              { key: i },
+              { key: i, wrap: false },
               ...block.items.map((item, j) =>
                 React.createElement(
                   View,
@@ -219,7 +219,7 @@ function ReadingDocument({
       React.createElement(
         Text,
         { style: styles.disclaimer },
-        "Esta leitura nao substitui psicoterapia, avaliacao psicologica, diagnostico ou acompanhamento clinico. Ela tem carater reflexivo e foi construida para ampliar clareza sobre padroes relacionais.",
+        "Esta leitura não substitui psicoterapia, avaliação psicológica, diagnóstico ou acompanhamento clínico. Ela tem caráter reflexivo e foi construída para ampliar clareza sobre padrões relacionais.",
       ),
       React.createElement(
         Text,
