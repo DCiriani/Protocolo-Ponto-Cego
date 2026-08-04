@@ -272,26 +272,47 @@ export default function PublicJourneyForm() {
   const isBusy = isStarting || isCheckingGate;
 
   return (
-    <main className="relative min-h-screen overflow-hidden bg-[#0A0A0A] text-[#F5F5F3]">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(136,179,154,0.1),transparent_34%)]" />
+    <main
+      className="relative min-h-screen overflow-hidden bg-[#0F2032] text-[#EDEAE3]"
+      style={{ fontFamily: "var(--font-inter), system-ui, sans-serif" }}
+    >
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(192,133,82,0.12),transparent_36%)]" />
 
-      <div className="fixed inset-x-0 top-0 z-40 border-b border-white/10 bg-[#0A0A0A]/80 backdrop-blur-md">
+      <div className="fixed inset-x-0 top-0 z-40 border-b border-white/10 bg-[#0F2032]/85 backdrop-blur-md">
         <div className="mx-auto flex h-20 max-w-6xl items-center justify-between px-5 md:px-8">
           <Link href="/" className="flex items-center gap-3">
-            <span className="h-4 w-4 rounded-full border border-[#88B39A]" />
-            <span className="text-xs font-semibold uppercase tracking-[0.28em]">
-              Ponto Cego
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#C08552"
+              strokeWidth="1.4"
+              aria-hidden="true"
+            >
+              <circle cx="12" cy="12" r="9.5" />
+              <circle cx="12" cy="12" r="3.4" />
+              <path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3" />
+            </svg>
+            <span
+              className="text-lg"
+              style={{
+                fontFamily: "var(--font-fraunces), Georgia, serif",
+                fontWeight: 500,
+              }}
+            >
+              Análise Ponto Cego
             </span>
           </Link>
 
-          <span className="text-xs uppercase tracking-[0.25em] text-zinc-600">
+          <span className="text-xs uppercase tracking-[0.25em] text-[#7E8A96]">
             {currentIndex + 1} / {totalSteps}
           </span>
         </div>
 
         <div className="h-px w-full bg-white/10">
           <div
-            className="h-px bg-[#88B39A] transition-all duration-500"
+            className="h-px bg-[#C08552] transition-all duration-500"
             style={{ width: `${progress}%` }}
           />
         </div>
@@ -302,14 +323,20 @@ export default function PublicJourneyForm() {
           {currentStep ? (
             <div className="grid gap-14 lg:grid-cols-[0.95fr_1.05fr] lg:gap-20">
               <div>
-                <span className="mb-8 block text-sm uppercase tracking-[0.35em] text-zinc-600">
+                <span className="mb-8 block text-sm uppercase tracking-[0.35em] text-[#7E8A96]">
                   {currentStep.eyebrow}
                 </span>
 
-                <h1 className="max-w-3xl font-satoshi text-[2.15rem] font-medium leading-[1.08] tracking-[-0.045em] text-[#6F8F5E] min-[390px]:text-[2.35rem] md:text-[clamp(2.8rem,5.8vw,6.2rem)] md:leading-[1.02]">
+                <h1
+                  className="max-w-3xl text-[2.15rem] leading-[1.1] tracking-[-0.02em] text-[#C08552] min-[390px]:text-[2.35rem] md:text-[clamp(2.8rem,5.8vw,5.4rem)] md:leading-[1.05]"
+                  style={{
+                    fontFamily: "var(--font-fraunces), Georgia, serif",
+                    fontWeight: 500,
+                  }}
+                >
                   {currentStep.title}
                 </h1>
-                <p className="mt-8 max-w-xl whitespace-pre-wrap text-[18px] leading-8 text-zinc-400 md:text-[20px] md:leading-10">
+                <p className="mt-8 max-w-xl whitespace-pre-wrap text-[18px] leading-8 text-[#AFBAC5] md:text-[20px] md:leading-10">
                   {currentStep.description}
                 </p>
               </div>
@@ -322,7 +349,7 @@ export default function PublicJourneyForm() {
                     {answers.mainQuestion.trim().length > 0 &&
                       answers.mainQuestion.trim().length <
                         MIN_MAIN_QUESTION_LENGTH && (
-                        <p className="mt-4 text-sm text-zinc-500">
+                        <p className="mt-4 text-sm text-[#8E9BA7]">
                           {LENGTH_HINT_MESSAGE}
                         </p>
                       )}
@@ -332,7 +359,7 @@ export default function PublicJourneyForm() {
                 )}
 
                 {(getErrorMessage() || errorMessage) && (
-                  <p className="mt-5 text-sm text-[#88B39A]">
+                  <p className="mt-5 text-sm text-[#C08552]">
                     {getErrorMessage() || errorMessage}
                   </p>
                 )}
@@ -342,7 +369,7 @@ export default function PublicJourneyForm() {
                     type="button"
                     onClick={goNext}
                     disabled={isBusy}
-                    className="group inline-flex items-center justify-center gap-4 rounded-full bg-[#88B39A] px-9 py-5 text-[15px] font-semibold text-[#0A0A0A] transition hover:bg-[#9FC2AD] disabled:cursor-not-allowed disabled:opacity-60"
+                    className="group inline-flex items-center justify-center gap-4 rounded-full bg-[#7C8F6A] px-9 py-5 text-[15px] font-semibold text-white transition hover:bg-[#67795A] disabled:cursor-not-allowed disabled:opacity-60"
                   >
                     {isBusy
                       ? "Enviando..."
@@ -359,7 +386,7 @@ export default function PublicJourneyForm() {
                       type="button"
                       onClick={goBack}
                       disabled={isBusy}
-                      className="inline-flex items-center justify-center rounded-full border border-white/10 px-9 py-5 text-[15px] font-semibold text-zinc-400 transition hover:border-[#88B39A]/50 hover:text-[#F5F5F3] disabled:cursor-not-allowed disabled:opacity-60"
+                      className="inline-flex items-center justify-center rounded-full border border-white/15 px-9 py-5 text-[15px] font-semibold text-[#AFBAC5] transition hover:border-[#C08552]/50 hover:text-white disabled:cursor-not-allowed disabled:opacity-60"
                     >
                       Voltar
                     </button>
@@ -393,7 +420,7 @@ function renderField(
           }
           placeholder={step.placeholder}
           rows={10}
-          className="w-full resize-none rounded-[2rem] border border-white/10 bg-white/[0.03] p-7 text-lg leading-8 text-[#F5F5F3] outline-none transition placeholder:text-zinc-700 focus:border-[#88B39A]/60"
+          className="w-full resize-none rounded-[2rem] border border-white/10 bg-white/[0.04] p-7 text-lg leading-8 text-[#EDEAE3] outline-none transition placeholder:text-[#5F6B77] focus:border-[#C08552]/60"
         />
       </div>
     );
@@ -408,7 +435,7 @@ function renderField(
         }
         placeholder={step.placeholder}
         type={step.type === "email" ? "email" : "text"}
-        className="w-full rounded-full border border-white/10 bg-white/[0.03] px-7 py-5 text-lg text-[#F5F5F3] outline-none transition placeholder:text-zinc-700 focus:border-[#88B39A]/60"
+        className="w-full rounded-full border border-white/10 bg-white/[0.04] px-7 py-5 text-lg text-[#EDEAE3] outline-none transition placeholder:text-[#5F6B77] focus:border-[#C08552]/60"
       />
     );
   }
@@ -460,7 +487,10 @@ function renderField(
 
 function FieldGuide({ children }: { children: string }) {
   return (
-    <p className="mb-4 text-[0.95rem] font-medium leading-7 text-[#6F8F5E] md:text-[1.3rem]">
+    <p
+      className="mb-4 text-[0.95rem] font-medium leading-7 text-[#C08552] md:text-[1.3rem]"
+      style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
+    >
       {children}
     </p>
   );
@@ -481,7 +511,7 @@ function ContextChoiceGroup({
 }) {
   return (
     <div>
-      <p className="mb-4 font-satoshi text-[0.82rem] font-medium uppercase tracking-[0.24em] text-[#6F8F5E] md:text-[0.9rem]">
+      <p className="mb-4 text-[0.82rem] font-semibold uppercase tracking-[0.24em] text-[#C08552] md:text-[0.9rem]">
         {label}
       </p>
 
@@ -502,8 +532,8 @@ function ContextChoiceGroup({
                   : "rounded-full px-5 py-3 text-sm leading-6"
               } ${
                 isSelected
-                  ? "border-[#88B39A] bg-[#88B39A]/10 text-[#F5F5F3]"
-                  : "border-white/10 bg-white/[0.03] text-zinc-400 hover:border-[#88B39A]/50 hover:text-[#F5F5F3]"
+                  ? "border-[#C08552] bg-[#C08552]/12 text-white"
+                  : "border-white/10 bg-white/[0.04] text-[#AFBAC5] hover:border-[#C08552]/50 hover:text-white"
               }`}
             >
               {option}
@@ -523,16 +553,22 @@ function ScreeningCard({
   setField: (key: keyof PublicAnswers, value: string) => void;
 }) {
   return (
-    <div className="mt-10 rounded-[1.75rem] border border-zinc-700/60 bg-zinc-900/40 p-6 md:p-8">
-      <p className="text-xs font-semibold uppercase tracking-[0.3em] text-zinc-500">
+    <div className="mt-10 rounded-[1.75rem] border border-white/10 bg-[#0A1725]/60 p-6 md:p-8">
+      <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#8E9BA7]">
         {screeningCopy.eyebrow}
       </p>
 
-      <h3 className="mt-4 text-xl font-medium leading-tight text-zinc-100 md:text-2xl">
+      <h3
+        className="mt-4 text-xl leading-tight text-white md:text-2xl"
+        style={{
+          fontFamily: "var(--font-fraunces), Georgia, serif",
+          fontWeight: 500,
+        }}
+      >
         {screeningCopy.title}
       </h3>
 
-      <p className="mt-4 whitespace-pre-wrap text-sm leading-7 text-zinc-400">
+      <p className="mt-4 whitespace-pre-wrap text-sm leading-7 text-[#AFBAC5]">
         {screeningCopy.description}
       </p>
 
@@ -559,7 +595,7 @@ function ScreeningCard({
         />
       </div>
 
-      <p className="mt-8 border-t border-zinc-800 pt-6 text-xs leading-6 text-zinc-500">
+      <p className="mt-8 border-t border-white/10 pt-6 text-xs leading-6 text-[#8E9BA7]">
         {screeningCopy.footer}
       </p>
     </div>
@@ -579,7 +615,7 @@ function GrayChoiceGroup({
 }) {
   return (
     <div>
-<p className="mb-3 text-sm leading-6 text-[#6F8F5E]">{label}</p>
+      <p className="mb-3 text-sm leading-6 text-[#C7B79A]">{label}</p>
 
       <div className="grid gap-2">
         {options.map((option) => {
@@ -592,8 +628,8 @@ function GrayChoiceGroup({
               onClick={() => onSelect(option.value)}
               className={`rounded-xl border px-4 py-3 text-left text-sm leading-6 transition ${
                 isSelected
-                  ? "border-zinc-400 bg-white/10 text-zinc-100"
-                  : "border-zinc-800 bg-transparent text-zinc-500 hover:border-zinc-600 hover:text-zinc-300"
+                  ? "border-[#C08552] bg-white/10 text-white"
+                  : "border-white/10 bg-transparent text-[#AFBAC5] hover:border-[#C08552]/50 hover:text-white"
               }`}
             >
               {option.label}

@@ -95,7 +95,7 @@ export default async function AdminAnalysisPage({ params }: PageProps) {
 
   const currentStatus = submission.analysis_status ?? "received";
 
- const payload = submission.raw_payload ?? {};
+  const payload = submission.raw_payload ?? {};
 
   const items: Item[] = [
     {
@@ -208,35 +208,44 @@ export default async function AdminAnalysisPage({ params }: PageProps) {
   ];
 
   return (
-    <main className="min-h-screen bg-[#0A0A0A] px-6 py-24 text-[#F5F5F3]">
+    <main
+      className="min-h-screen bg-[#0F2032] px-6 py-24 text-[#EDEAE3]"
+      style={{ fontFamily: "var(--font-inter), system-ui, sans-serif" }}
+    >
       <div className="mx-auto max-w-5xl">
         <div className="mb-14 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div>
             <Link
               href="/admin"
-              className="mb-8 inline-block text-sm font-medium text-zinc-500 transition hover:text-[#88B39A]"
+              className="mb-8 inline-block text-sm font-medium text-[#8E9BA7] transition hover:text-[#C08552]"
             >
               ← Voltar para análises
             </Link>
 
-            <span className="mb-6 block text-sm uppercase tracking-[0.35em] text-zinc-600">
+            <span className="mb-6 block text-sm uppercase tracking-[0.35em] text-[#C08552]">
               Análise recebida
             </span>
 
-            <h1 className="text-5xl font-semibold leading-none tracking-[-0.06em] md:text-8xl">
+            <h1
+              className="text-4xl leading-[1.05] tracking-[-0.01em] text-white md:text-6xl"
+              style={{
+                fontFamily: "var(--font-fraunces), Georgia, serif",
+                fontWeight: 500,
+              }}
+            >
               {submission.name}
             </h1>
 
-            <p className="mt-6 text-lg text-zinc-400">{submission.email}</p>
+            <p className="mt-6 text-lg text-[#AFBAC5]">{submission.email}</p>
           </div>
 
-          <div className="flex flex-col gap-3 text-sm text-zinc-500 md:text-right">
+          <div className="flex flex-col gap-3 text-sm text-[#8E9BA7] md:text-right">
             <span>
               Enviada em{" "}
               {new Date(submission.created_at).toLocaleDateString("pt-BR")}
             </span>
 
-            <span className="rounded-full border border-[#88B39A]/30 bg-[#88B39A]/10 px-4 py-2 text-center text-xs text-[#88B39A]">
+            <span className="rounded-full border border-[#C08552]/35 bg-[#C08552]/10 px-4 py-2 text-center text-xs text-[#E0B877]">
               {formatAnalysisStatus(currentStatus)}
             </span>
 
@@ -244,10 +253,9 @@ export default async function AdminAnalysisPage({ params }: PageProps) {
           </div>
         </div>
 
-         <AssistantPanel id={submission.id} initialRun={latestRun ?? null} />
+        <AssistantPanel id={submission.id} initialRun={latestRun ?? null} />
 
         <AnalysisNotesForm
-        
           id={submission.id}
           initialNotes={submission.analysis_notes ?? ""}
         />
@@ -261,7 +269,7 @@ export default async function AdminAnalysisPage({ params }: PageProps) {
           deliveryEmailError={submission.delivery_email_error}
         />
 
-        <section className="mb-12 rounded-[2rem] border border-white/10 bg-white/[0.03] p-8">
+        <section className="mb-12 rounded-[2rem] border border-white/10 bg-white/[0.04] p-8">
           <div className="grid gap-8 md:grid-cols-3">
             <InfoCard
               label="Momento relacional"
@@ -283,11 +291,11 @@ export default async function AdminAnalysisPage({ params }: PageProps) {
         <section className="divide-y divide-white/10 rounded-[2rem] border border-white/10">
           {items.map((item) => (
             <div key={item.label} className="p-8 md:p-10">
-              <span className="mb-5 block text-xs uppercase tracking-[0.3em] text-zinc-600">
+              <span className="mb-5 block text-xs uppercase tracking-[0.3em] text-[#8E9BA7]">
                 {item.label}
               </span>
 
-              <p className="whitespace-pre-wrap text-lg leading-9 text-zinc-300 md:text-xl md:leading-10">
+              <p className="whitespace-pre-wrap text-lg leading-9 text-[#DCE2E8] md:text-xl md:leading-10">
                 {item.value || "Sem resposta"}
               </p>
 
@@ -305,45 +313,45 @@ export default async function AdminAnalysisPage({ params }: PageProps) {
 function InfoCard({ label, value }: { label: string; value: string }) {
   return (
     <div>
-      <span className="mb-3 block text-xs uppercase tracking-[0.25em] text-zinc-600">
+      <span className="mb-3 block text-xs uppercase tracking-[0.25em] text-[#8E9BA7]">
         {label}
       </span>
 
-      <p className="text-lg text-[#F5F5F3]">{value}</p>
+      <p className="text-lg text-[#EDEAE3]">{value}</p>
     </div>
   );
 }
 
 function LensPanel({ lens }: { lens: Lens }) {
   return (
-    <div className="mt-8 rounded-2xl border border-[#88B39A]/20 bg-[#88B39A]/[0.04] p-6">
-      <span className="mb-4 block text-[10px] font-semibold uppercase tracking-[0.35em] text-[#88B39A]">
+    <div className="mt-8 rounded-2xl border border-[#C08552]/25 bg-[#C08552]/[0.05] p-6">
+      <span className="mb-4 block text-[10px] font-semibold uppercase tracking-[0.35em] text-[#E0B877]">
         Lente clínica
       </span>
 
-      <div className="grid gap-4 text-sm text-zinc-400 md:grid-cols-2">
+      <div className="grid gap-4 text-sm text-[#AFBAC5] md:grid-cols-2">
         <div>
-          <span className="mb-1 block text-[11px] uppercase tracking-[0.25em] text-zinc-600">
+          <span className="mb-1 block text-[11px] uppercase tracking-[0.25em] text-[#8E9BA7]">
             Grade
           </span>
-          <p className="leading-6 text-zinc-300">{lens.grade.join(" · ")}</p>
+          <p className="leading-6 text-[#DCE2E8]">{lens.grade.join(" · ")}</p>
         </div>
 
         {lens.cde.length > 0 && (
           <div>
-            <span className="mb-1 block text-[11px] uppercase tracking-[0.25em] text-zinc-600">
+            <span className="mb-1 block text-[11px] uppercase tracking-[0.25em] text-[#8E9BA7]">
               CDE
             </span>
-            <p className="leading-6 text-zinc-300">{lens.cde.join(" · ")}</p>
+            <p className="leading-6 text-[#DCE2E8]">{lens.cde.join(" · ")}</p>
           </div>
         )}
       </div>
 
-      <div className="mt-5 border-t border-[#88B39A]/15 pt-5">
-        <span className="mb-2 block text-[11px] uppercase tracking-[0.25em] text-zinc-600">
+      <div className="mt-5 border-t border-[#C08552]/20 pt-5">
+        <span className="mb-2 block text-[11px] uppercase tracking-[0.25em] text-[#8E9BA7]">
           Observar
         </span>
-        <p className="text-sm leading-6 text-zinc-300">{lens.observar}</p>
+        <p className="text-sm leading-6 text-[#DCE2E8]">{lens.observar}</p>
       </div>
     </div>
   );

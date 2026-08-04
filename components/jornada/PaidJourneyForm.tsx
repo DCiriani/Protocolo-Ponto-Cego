@@ -252,26 +252,47 @@ export default function PaidJourneyForm({
   }
 
   return (
-    <main className="relative min-h-screen overflow-hidden bg-[#0A0A0A] text-[#F5F5F3]">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(136,179,154,0.1),transparent_34%)]" />
+    <main
+      className="relative min-h-screen overflow-hidden bg-[#0F2032] text-[#EDEAE3]"
+      style={{ fontFamily: "var(--font-inter), system-ui, sans-serif" }}
+    >
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(192,133,82,0.12),transparent_36%)]" />
 
-      <div className="fixed inset-x-0 top-0 z-40 border-b border-white/10 bg-[#0A0A0A]/80 backdrop-blur-md">
+      <div className="fixed inset-x-0 top-0 z-40 border-b border-white/10 bg-[#0F2032]/85 backdrop-blur-md">
         <div className="mx-auto flex h-20 max-w-6xl items-center justify-between px-5 md:px-8">
           <Link href="/" className="flex items-center gap-3">
-            <span className="h-4 w-4 rounded-full border border-[#88B39A]" />
-            <span className="text-xs font-semibold uppercase tracking-[0.28em]">
-              Ponto Cego
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#C08552"
+              strokeWidth="1.4"
+              aria-hidden="true"
+            >
+              <circle cx="12" cy="12" r="9.5" />
+              <circle cx="12" cy="12" r="3.4" />
+              <path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3" />
+            </svg>
+            <span
+              className="text-lg"
+              style={{
+                fontFamily: "var(--font-fraunces), Georgia, serif",
+                fontWeight: 500,
+              }}
+            >
+              Análise Ponto Cego
             </span>
           </Link>
 
-          <span className="text-xs uppercase tracking-[0.25em] text-zinc-600">
+          <span className="text-xs uppercase tracking-[0.25em] text-[#7E8A96]">
             {currentIndex + 1} / {totalSteps}
           </span>
         </div>
 
         <div className="h-px w-full bg-white/10">
           <div
-            className="h-px bg-[#88B39A] transition-all duration-500"
+            className="h-px bg-[#C08552] transition-all duration-500"
             style={{ width: `${progress}%` }}
           />
         </div>
@@ -282,14 +303,20 @@ export default function PaidJourneyForm({
           {!isReview && currentStep ? (
             <div className="grid gap-14 lg:grid-cols-[0.95fr_1.05fr] lg:gap-20">
               <div>
-                <span className="mb-8 block text-sm uppercase tracking-[0.35em] text-zinc-600">
+                <span className="mb-8 block text-sm uppercase tracking-[0.35em] text-[#7E8A96]">
                   {currentStep.eyebrow}
                 </span>
 
-                <h1 className="max-w-3xl font-satoshi text-[2.15rem] font-medium leading-[1.08] tracking-[-0.045em] text-[#6F8F5E] min-[390px]:text-[2.35rem] md:text-[clamp(2.8rem,5.8vw,6.2rem)] md:leading-[1.02]">
+                <h1
+                  className="max-w-3xl text-[2.15rem] leading-[1.1] tracking-[-0.02em] text-[#C08552] min-[390px]:text-[2.35rem] md:text-[clamp(2.8rem,5.8vw,5.4rem)] md:leading-[1.05]"
+                  style={{
+                    fontFamily: "var(--font-fraunces), Georgia, serif",
+                    fontWeight: 500,
+                  }}
+                >
                   {currentStep.title}
                 </h1>
-                <p className="mt-8 max-w-xl whitespace-pre-wrap text-[18px] leading-8 text-zinc-400 md:text-[20px] md:leading-10">
+                <p className="mt-8 max-w-xl whitespace-pre-wrap text-[18px] leading-8 text-[#AFBAC5] md:text-[20px] md:leading-10">
                   {currentStep.description}
                 </p>
               </div>
@@ -298,7 +325,7 @@ export default function PaidJourneyForm({
                 {renderField(currentStep, answers, setField, reactionOptions)}
 
                 {getErrorMessage() && (
-                  <p className="mt-5 text-sm text-[#88B39A]">
+                  <p className="mt-5 text-sm text-[#C08552]">
                     {getErrorMessage()}
                   </p>
                 )}
@@ -307,7 +334,7 @@ export default function PaidJourneyForm({
                   <button
                     type="button"
                     onClick={goNext}
-                    className="group inline-flex items-center justify-center gap-4 rounded-full bg-[#88B39A] px-9 py-5 text-[15px] font-semibold text-[#0A0A0A] transition hover:bg-[#9FC2AD]"
+                    className="group inline-flex items-center justify-center gap-4 rounded-full bg-[#7C8F6A] px-9 py-5 text-[15px] font-semibold text-white transition hover:bg-[#67795A]"
                   >
                     Continuar
                     <span className="transition group-hover:translate-x-1">
@@ -319,7 +346,7 @@ export default function PaidJourneyForm({
                     <button
                       type="button"
                       onClick={goBack}
-                      className="inline-flex items-center justify-center rounded-full border border-white/10 px-9 py-5 text-[15px] font-semibold text-zinc-400 transition hover:border-[#88B39A]/50 hover:text-[#F5F5F3]"
+                      className="inline-flex items-center justify-center rounded-full border border-white/15 px-9 py-5 text-[15px] font-semibold text-[#AFBAC5] transition hover:border-[#C08552]/50 hover:text-white"
                     >
                       Voltar
                     </button>
@@ -365,7 +392,7 @@ function renderField(
           }
           placeholder={step.placeholder}
           rows={10}
-          className="w-full resize-none rounded-[2rem] border border-white/10 bg-white/[0.03] p-7 text-lg leading-8 text-[#F5F5F3] outline-none transition placeholder:text-zinc-700 focus:border-[#88B39A]/60"
+          className="w-full resize-none rounded-[2rem] border border-white/10 bg-white/[0.04] p-7 text-lg leading-8 text-[#EDEAE3] outline-none transition placeholder:text-[#5F6B77] focus:border-[#C08552]/60"
         />
 
         <LengthHint value={String(value ?? "")} />
@@ -394,7 +421,7 @@ function renderField(
     return (
       <div className="space-y-9">
         <div>
-          <p className="mb-4 font-satoshi text-[0.82rem] font-medium uppercase tracking-[0.24em] text-[#6F8F5E] md:text-[0.9rem]">
+          <p className="mb-4 text-[0.82rem] font-semibold uppercase tracking-[0.24em] text-[#C08552] md:text-[0.9rem]">
             Escolha até duas opções
           </p>
           <div className="grid gap-3 sm:grid-cols-2">
@@ -410,10 +437,10 @@ function renderField(
                   disabled={disabled}
                   className={`rounded-2xl border px-5 py-4 text-left text-sm leading-6 transition ${
                     selected
-                      ? "border-[#88B39A] bg-[#88B39A]/10 text-[#F5F5F3]"
+                      ? "border-[#C08552] bg-[#C08552]/12 text-white"
                       : disabled
-                        ? "cursor-not-allowed border-white/5 bg-white/[0.02] text-zinc-700"
-                        : "border-white/10 bg-white/[0.03] text-zinc-400 hover:border-[#88B39A]/50 hover:text-[#F5F5F3]"
+                        ? "cursor-not-allowed border-white/5 bg-white/[0.02] text-[#5F6B77]"
+                        : "border-white/10 bg-white/[0.04] text-[#AFBAC5] hover:border-[#C08552]/50 hover:text-white"
                   }`}
                 >
                   {option}
@@ -424,7 +451,7 @@ function renderField(
         </div>
 
         <div>
-          <p className="mb-4 font-satoshi text-[0.82rem] font-medium uppercase tracking-[0.24em] text-[#6F8F5E] md:text-[0.9rem]">
+          <p className="mb-4 text-[0.82rem] font-semibold uppercase tracking-[0.24em] text-[#C08552] md:text-[0.9rem]">
             {step.secondaryTitle}
           </p>
 
@@ -435,7 +462,7 @@ function renderField(
             }
             placeholder={step.secondaryPlaceholder}
             rows={5}
-            className="w-full resize-none rounded-[2rem] border border-white/10 bg-white/[0.03] p-7 text-lg leading-8 text-[#F5F5F3] outline-none transition placeholder:text-zinc-700 focus:border-[#88B39A]/60"
+            className="w-full resize-none rounded-[2rem] border border-white/10 bg-white/[0.04] p-7 text-lg leading-8 text-[#EDEAE3] outline-none transition placeholder:text-[#5F6B77] focus:border-[#C08552]/60"
           />
 
           <LengthHint value={answers.reactionPurpose} />
@@ -448,7 +475,7 @@ function renderField(
     return (
       <div className="space-y-8">
         <div>
-          <label className="mb-4 block font-satoshi text-[0.88rem] font-medium uppercase tracking-[0.24em] text-[#6F8F5E] md:text-[0.95rem]">
+          <label className="mb-4 block text-[0.88rem] font-semibold uppercase tracking-[0.24em] text-[#C08552] md:text-[0.95rem]">
             {step.fieldLabel}
           </label>
           <input
@@ -458,12 +485,12 @@ function renderField(
             }
             placeholder={step.placeholder}
             type="text"
-            className="w-full rounded-full border border-white/10 bg-white/[0.03] px-7 py-5 text-lg text-[#F5F5F3] outline-none transition placeholder:text-zinc-700 focus:border-[#88B39A]/60"
+            className="w-full rounded-full border border-white/10 bg-white/[0.04] px-7 py-5 text-lg text-[#EDEAE3] outline-none transition placeholder:text-[#5F6B77] focus:border-[#C08552]/60"
           />
         </div>
 
         <div>
-          <label className="mb-4 block font-satoshi text-[0.88rem] font-medium uppercase tracking-[0.24em] text-[#6F8F5E] md:text-[0.95rem]">
+          <label className="mb-4 block text-[0.88rem] font-semibold uppercase tracking-[0.24em] text-[#C08552] md:text-[0.95rem]">
             {step.secondaryTitle}
           </label>
 
@@ -472,7 +499,7 @@ function renderField(
             onChange={(event) => setField("mirrorTruth", event.target.value)}
             placeholder={step.secondaryPlaceholder}
             rows={6}
-            className="w-full resize-none rounded-[2rem] border border-white/10 bg-white/[0.03] p-7 text-lg leading-8 text-[#F5F5F3] outline-none transition placeholder:text-zinc-700 focus:border-[#88B39A]/60"
+            className="w-full resize-none rounded-[2rem] border border-white/10 bg-white/[0.04] p-7 text-lg leading-8 text-[#EDEAE3] outline-none transition placeholder:text-[#5F6B77] focus:border-[#C08552]/60"
           />
 
           <LengthHint value={answers.mirrorTruth} />
@@ -490,21 +517,21 @@ function renderField(
         onClick={() => setField(step.key as keyof PrivateAnswers, !checked)}
         className={`flex gap-5 rounded-[2rem] border p-7 text-left transition ${
           checked
-            ? "border-[#88B39A] bg-[#88B39A]/10"
-            : "border-white/10 bg-white/[0.03] hover:border-[#88B39A]/50"
+            ? "border-[#C08552] bg-[#C08552]/12"
+            : "border-white/10 bg-white/[0.04] hover:border-[#C08552]/50"
         }`}
       >
         <span
           className={`mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border ${
             checked
-              ? "border-[#88B39A] bg-[#88B39A] text-[#0A0A0A]"
+              ? "border-[#C08552] bg-[#C08552] text-white"
               : "border-white/20"
           }`}
         >
           {checked ? "✓" : ""}
         </span>
 
-        <span className="text-lg leading-8 text-zinc-300">{step.helper}</span>
+        <span className="text-lg leading-8 text-[#DCE2E8]">{step.helper}</span>
       </button>
     );
   }
@@ -514,7 +541,10 @@ function renderField(
 
 function FieldGuide({ children }: { children: string }) {
   return (
-    <p className="mb-4 text-[0.95rem] font-medium leading-7 text-[#6F8F5E] md:text-[1.3rem]">
+    <p
+      className="mb-4 text-[0.95rem] font-medium leading-7 text-[#C08552] md:text-[1.3rem]"
+      style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
+    >
       {children}
     </p>
   );
@@ -523,7 +553,7 @@ function FieldGuide({ children }: { children: string }) {
 function LengthHint({ value }: { value: string }) {
   if (!isSceneFieldTooShort(value)) return null;
 
-  return <p className="mt-3 text-sm text-zinc-500">{LENGTH_HINT_MESSAGE}</p>;
+  return <p className="mt-3 text-sm text-[#8E9BA7]">{LENGTH_HINT_MESSAGE}</p>;
 }
 
 function ReviewStep({
@@ -541,15 +571,21 @@ function ReviewStep({
 }) {
   return (
     <div className="mx-auto max-w-5xl">
-      <span className="mb-8 block text-sm uppercase tracking-[0.35em] text-zinc-600">
+      <span className="mb-8 block text-sm uppercase tracking-[0.35em] text-[#7E8A96]">
         Envio
       </span>
 
-      <h1 className="max-w-4xl font-satoshi text-[2.15rem] font-medium leading-[1.08] tracking-[-0.045em] text-[#6F8F5E] min-[390px]:text-[2.35rem] md:text-[clamp(2.8rem,5.8vw,6.2rem)] md:leading-[1.02]">
+      <h1
+        className="max-w-4xl text-[2.15rem] leading-[1.1] tracking-[-0.02em] text-[#C08552] min-[390px]:text-[2.35rem] md:text-[clamp(2.8rem,5.8vw,5.4rem)] md:leading-[1.05]"
+        style={{
+          fontFamily: "var(--font-fraunces), Georgia, serif",
+          fontWeight: 500,
+        }}
+      >
         Suas respostas estão prontas.
       </h1>
 
-      <p className="mt-8 max-w-3xl text-[18px] leading-8 text-zinc-400 md:text-[20px] md:leading-10">
+      <p className="mt-8 max-w-3xl text-[18px] leading-8 text-[#AFBAC5] md:text-[20px] md:leading-10">
         Antes de enviar, confere uma coisa só: se o que você escreveu representa
         o que você viveu de verdade. Não precisa estar bonito. Quanto mais
         honesto o relato, mais individual a leitura.
@@ -575,7 +611,7 @@ function ReviewStep({
           type="button"
           onClick={onSubmit}
           disabled={isSubmitting}
-          className="group inline-flex items-center justify-center gap-4 rounded-full bg-[#88B39A] px-9 py-5 text-[15px] font-semibold text-[#0A0A0A] transition hover:bg-[#9FC2AD] disabled:cursor-not-allowed disabled:opacity-60"
+          className="group inline-flex items-center justify-center gap-4 rounded-full bg-[#7C8F6A] px-9 py-5 text-[15px] font-semibold text-white transition hover:bg-[#67795A] disabled:cursor-not-allowed disabled:opacity-60"
         >
           {isSubmitting ? "Enviando..." : "Enviar para análise"}
           <span className="transition group-hover:translate-x-1">→</span>
@@ -584,13 +620,13 @@ function ReviewStep({
         <button
           type="button"
           onClick={onBack}
-          className="inline-flex items-center justify-center rounded-full border border-white/10 px-9 py-5 text-[15px] font-semibold text-zinc-400 transition hover:border-[#88B39A]/50 hover:text-[#F5F5F3]"
+          className="inline-flex items-center justify-center rounded-full border border-white/15 px-9 py-5 text-[15px] font-semibold text-[#AFBAC5] transition hover:border-[#C08552]/50 hover:text-white"
         >
           Voltar e revisar
         </button>
       </div>
 
-      <p className="mt-6 text-sm leading-6 text-zinc-600">
+      <p className="mt-6 text-sm leading-6 text-[#7E8A96]">
         Ao enviar, suas respostas serão registradas para a elaboração da sua
         Análise Ponto Cego.
       </p>
@@ -600,11 +636,11 @@ function ReviewStep({
 
 function SummaryCard({ label, value }: { label: string; value: string }) {
   return (
-    <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
-      <span className="block text-[11px] uppercase tracking-[0.24em] text-zinc-600">
+    <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-5">
+      <span className="block text-[11px] uppercase tracking-[0.24em] text-[#8E9BA7]">
         {label}
       </span>
-      <p className="mt-3 break-words text-sm leading-6 text-zinc-300">
+      <p className="mt-3 break-words text-sm leading-6 text-[#DCE2E8]">
         {value}
       </p>
     </div>

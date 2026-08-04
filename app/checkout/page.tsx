@@ -74,13 +74,22 @@ function CheckoutContent() {
 
   if (status === "checking") {
     return (
-      <main className="min-h-screen bg-[#0A0A0A] px-6 py-24 text-[#F5F5F3]">
+      <main
+        className="min-h-screen bg-[#0F2032] px-6 py-24 text-[#EDEAE3]"
+        style={{ fontFamily: "var(--font-inter), system-ui, sans-serif" }}
+      >
         <div className="mx-auto max-w-3xl">
-          <span className="mb-6 block text-sm uppercase tracking-[0.35em] text-zinc-600">
+          <span className="mb-6 block text-sm uppercase tracking-[0.35em] text-[#8E9BA7]">
             Checkout
           </span>
 
-          <h1 className="text-4xl font-semibold leading-tight tracking-[-0.03em]">
+          <h1
+            className="text-4xl leading-tight tracking-[-0.02em] text-white"
+            style={{
+              fontFamily: "var(--font-fraunces), Georgia, serif",
+              fontWeight: 500,
+            }}
+          >
             Verificando sua jornada...
           </h1>
         </div>
@@ -89,21 +98,30 @@ function CheckoutContent() {
   }
 
   return (
-    <main className="min-h-screen bg-[#0A0A0A] px-6 py-24 text-[#F5F5F3]">
+    <main
+      className="min-h-screen bg-[#0F2032] px-6 py-24 text-[#EDEAE3]"
+      style={{ fontFamily: "var(--font-inter), system-ui, sans-serif" }}
+    >
       <div className="mx-auto max-w-3xl">
-        <span className="mb-6 block text-sm uppercase tracking-[0.35em] text-zinc-600">
+        <span className="mb-6 block text-sm uppercase tracking-[0.35em] text-[#8E9BA7]">
           Checkout
         </span>
 
-        <span className="mb-4 block text-xs font-semibold uppercase tracking-[0.25em] text-[#88B39A]">
+        <span className="mb-4 block text-xs font-semibold uppercase tracking-[0.25em] text-[#C08552]">
           1º passo concluído ✔
         </span>
 
-        <h1 className="font-satoshi text-[2rem] font-medium leading-[1.08] tracking-[-0.04em] text-[#6F8F5E] min-[390px]:text-[2.2rem] md:text-[3.8rem] md:leading-[1.02] lg:text-[4.4rem]">
+        <h1
+          className="text-[2rem] leading-[1.12] tracking-[-0.01em] text-[#C08552] min-[390px]:text-[2.2rem] md:text-[3.4rem] md:leading-[1.08] lg:text-[3.8rem]"
+          style={{
+            fontFamily: "var(--font-fraunces), Georgia, serif",
+            fontWeight: 500,
+          }}
+        >
           Você deu o primeiro passo. Agora vem o que revela o padrão.
         </h1>
 
-        <p className="mt-8 max-w-2xl text-lg leading-8 text-zinc-400">
+        <p className="mt-8 max-w-2xl text-lg leading-8 text-[#AFBAC5]">
           Você contou o que te trouxe aqui. Agora você desbloqueia o
           questionário completo: cenas reais das suas relações, que revelam o
           que os testes comuns não alcançam. Depois que você responder, o
@@ -112,13 +130,13 @@ function CheckoutContent() {
           te custa e por onde começa a mudança.
         </p>
 
-        <p className="mt-4 max-w-2xl text-lg leading-8 text-[#6F8F5E]">
-  Não é teste automático. Não é conselho pronto. É uma leitura feita
-  por um psicólogo, sobre você, no seu e-mail em até 48 horas.
-</p>
+        <p className="mt-4 max-w-2xl text-lg leading-8 text-[#E0B877]">
+          Não é teste automático. Não é conselho pronto. É uma leitura feita
+          por um psicólogo, sobre você, no seu e-mail em até 48 horas.
+        </p>
 
-        <div className="mt-12 rounded-[2rem] border border-white/10 bg-white/[0.03] p-8 md:p-10">
-          <ul className="space-y-3 text-sm leading-6 text-zinc-400">
+        <div className="mt-12 rounded-[2rem] border border-white/10 bg-white/[0.04] p-8 md:p-10">
+          <ul className="space-y-3 text-sm leading-6 text-[#AFBAC5]">
             <li>Leitura escrita e individual, feita por um psicólogo</li>
             <li>Entrega em até 48 horas no seu e-mail</li>
             <li>Pagamento único, sem assinatura</li>
@@ -132,27 +150,27 @@ function CheckoutContent() {
             type="button"
             onClick={handleConfirm}
             disabled={isSubmitting}
-            className="mt-8 rounded-full bg-[#88B39A] px-7 py-4 text-sm font-semibold text-[#0A0A0A] transition hover:bg-[#9fcaad] disabled:cursor-not-allowed disabled:opacity-60"
+            className="mt-8 rounded-full bg-[#7C8F6A] px-7 py-4 text-sm font-semibold text-white transition hover:bg-[#67795A] disabled:cursor-not-allowed disabled:opacity-60"
           >
             {isSubmitting
               ? "Iniciando pagamento..."
               : "Desbloquear meu questionário →"}
           </button>
 
-          <p className="mt-4 text-xs text-[#6F8F5E]">
-  Pagamento único e seguro via InfinityPay
-</p>
+          <p className="mt-4 text-xs text-[#E0B877]">
+            Pagamento único e seguro via InfinityPay
+          </p>
 
-          <p className="mt-6 text-xs leading-6 text-zinc-600">
+          <p className="mt-6 text-xs leading-6 text-[#7E8A96]">
             Seu pagamento será processado pela InfinityPay. Ao continuar,
             você declara estar ciente dos{" "}
-            <a href="/termos" className="text-[#88B39A] hover:text-[#9fcaad]">
+            <a href="/termos" className="text-[#C08552] hover:text-[#E0B877]">
               Termos de Uso
             </a>{" "}
             e da{" "}
             <a
               href="/politica-de-privacidade"
-              className="text-[#88B39A] hover:text-[#9fcaad]"
+              className="text-[#C08552] hover:text-[#E0B877]"
             >
               Política de Privacidade
             </a>
