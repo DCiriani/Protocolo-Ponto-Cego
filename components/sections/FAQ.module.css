@@ -1,0 +1,82 @@
+/* ===== FAQ / Fechamento - Última coisa (adaptado do v21) ===== */
+
+.section {
+  --navy-deep: #0A1725;
+  --copper: #C08552;
+
+  background: var(--navy-deep);
+  color: #EDEAE3;
+  text-align: center;
+  padding: 110px 0;
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+
+.wrap {
+  width: min(1140px, 90vw);
+  margin: 0 auto;
+}
+
+.eyebrow {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--copper);
+}
+
+.title {
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-weight: 500;
+  font-size: clamp(1.9rem, 4.4vw, 3.2rem);
+  line-height: 1.14;
+  max-width: 22ch;
+  margin: 20px auto 22px;
+  color: #fff;
+}
+.title .copper {
+  color: var(--copper);
+}
+
+.lead {
+  margin: 0 auto 34px;
+  max-width: 50ch;
+  color: #A6B2BE;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: var(--copper);
+  color: #fff;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 13.5px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 16px 30px;
+  border: 0;
+  border-radius: 6px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.btn:hover {
+  background: #a96f41;
+  transform: translateY(-1px);
+}
+
+.micro {
+  font-size: 12.5px;
+  color: #7E8A96;
+  margin-top: 14px;
+}
+
+@media (max-width: 900px) {
+  .section {
+    padding: 80px 0;
+  }
+}

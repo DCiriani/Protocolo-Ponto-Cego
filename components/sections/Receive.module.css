@@ -1,0 +1,376 @@
+/* ===== Receive / Oferta (adaptado do v21) ===== */
+
+.section {
+  --navy: #0F2032;
+  --cream: #F8F5EF;
+  --ink: #1B2430;
+  --muted: #5F6B77;
+  --copper: #C08552;
+  --sage: #7C8F6A;
+  --sage-dark: #67795A;
+  --gold: #C89253;
+  --gold-soft: #E0B877;
+
+  background: var(--navy);
+  color: #EDEAE3;
+  padding: 96px 0;
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+
+.wrap {
+  width: min(1140px, 90vw);
+  margin: 0 auto;
+}
+.center {
+  text-align: center;
+}
+
+.eyebrow {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--copper);
+}
+.title {
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-weight: 500;
+  font-size: clamp(2rem, 4.6vw, 3.4rem);
+  line-height: 1.14;
+  margin-top: 16px;
+  color: #fff;
+}
+.tick {
+  height: 2px;
+  width: 52px;
+  background: var(--copper);
+  border: 0;
+  margin: 20px auto 30px;
+}
+
+/* base button */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: var(--sage);
+  color: #fff;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 13.5px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 16px 30px;
+  border: 0;
+  border-radius: 6px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.btn:hover {
+  background: var(--sage-dark);
+  transform: translateY(-1px);
+}
+
+.micro {
+  font-size: 12.5px;
+  color: var(--muted);
+  margin-top: 14px;
+}
+
+/* prices layout */
+.prices {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 22px;
+  margin-top: 44px;
+  align-items: start;
+  max-width: 820px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* feat card (R$147) */
+.pcard {
+  background: var(--cream);
+  border-radius: 11px;
+  padding: 38px 34px;
+  color: var(--ink);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: center;
+  position: relative;
+}
+.pcard h3 {
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-size: 1.42rem;
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: var(--ink);
+}
+.ptag {
+  position: absolute;
+  top: -11px;
+  left: 34px;
+  background: var(--copper);
+  color: #fff;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 20px;
+}
+.feat {
+  box-shadow: 0 0 0 2px var(--copper), 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+.price {
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-size: 4.1rem;
+  color: var(--copper);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.price sup {
+  font-size: 1.5rem;
+  vertical-align: super;
+  margin-right: 4px;
+}
+.pnote {
+  font-size: 12.5px;
+  color: var(--muted);
+  margin-top: 8px;
+}
+.plist {
+  list-style: none;
+}
+.plist li {
+  display: flex;
+  gap: 11px;
+  align-items: flex-start;
+  padding: 8px 0;
+  font-size: 14px;
+}
+.plist li svg {
+  flex: none;
+  margin-top: 4px;
+  stroke: var(--sage-dark);
+}
+
+/* alt card (R$497) — navy premium gold */
+.alt {
+  display: block;
+  padding: 48px 40px 38px;
+  color: #E8ECEF;
+  background: radial-gradient(120% 90% at 50% 0%, #14283F 0%, #0D1E31 55%, #0A1828 100%);
+  border: 1.5px solid rgba(200, 146, 83, 0.55);
+  border-radius: 14px;
+  position: relative;
+  box-shadow: 0 0 0 6px rgba(10, 23, 37, 0.6), 0 18px 50px rgba(0, 0, 0, 0.45),
+    0 0 40px rgba(200, 146, 83, 0.12);
+}
+.glow {
+  position: absolute;
+  inset: 0;
+  border-radius: 14px;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+.glow::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 0 1px 0 rgba(224, 184, 119, 0.25),
+    inset 0 0 60px rgba(200, 146, 83, 0.06);
+}
+.alt > * {
+  position: relative;
+  z-index: 1;
+}
+.tagwrap {
+  position: absolute;
+  top: -15px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  z-index: 2;
+}
+.alt .ptag2 {
+  position: static;
+  background: linear-gradient(90deg, #B27F44, #D0A867);
+  color: #1A1005;
+  transform: none;
+  padding: 9px 26px;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  border-radius: 20px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+}
+.alt h3 {
+  color: #fff;
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-weight: 400;
+  font-size: 2rem;
+  margin-bottom: 14px;
+  letter-spacing: -0.01em;
+}
+.alt h3 .soft {
+  color: #C9D2DA;
+}
+.altPrice {
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-size: 4.6rem;
+  color: var(--gold);
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  font-weight: 500;
+}
+.altPrice sup {
+  font-size: 1.7rem;
+  vertical-align: baseline;
+  position: relative;
+  top: -1.7rem;
+  margin-right: 2px;
+  font-weight: 500;
+}
+.altPnote {
+  color: #8895A1;
+  margin: 6px 0 26px;
+  font-size: 13.5px;
+}
+.pbody {
+  font-size: 15px;
+  line-height: 1.66;
+  color: #B7C1CB;
+  margin: 0 0 16px;
+  max-width: 58ch;
+}
+.pbody.intro {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #AEB9C4;
+  margin: 0 0 26px;
+  max-width: 52ch;
+}
+.pincl {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 30px 0 6px;
+}
+.pincl::after {
+  content: "✦";
+  flex: 1;
+  border-top: 1px solid rgba(200, 146, 83, 0.35);
+  color: var(--gold);
+  font-size: 12px;
+  text-align: right;
+  line-height: 0;
+}
+.altList {
+  list-style: none;
+  margin-bottom: 30px;
+}
+.altList li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: #DCE2E8;
+  font-size: 14.5px;
+  padding: 13px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+.altList li:last-child {
+  border-bottom: 0;
+}
+.altList li svg {
+  width: 22px;
+  height: 22px;
+  flex: none;
+}
+.altBtn {
+  width: 100%;
+  background: linear-gradient(180deg, #7C8F6A, #6A7C58);
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 19px 20px;
+  gap: 12px;
+  white-space: nowrap;
+  box-shadow: 0 8px 22px rgba(124, 143, 106, 0.35);
+}
+.altBtn:hover {
+  filter: brightness(1.06);
+  transform: translateY(-1px);
+}
+.altBtn .star {
+  color: var(--gold-soft);
+}
+.altMicro {
+  color: #8895A1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 16px;
+  font-size: 12.5px;
+}
+.altMicro svg {
+  flex: none;
+  stroke: var(--gold);
+}
+
+/* garantia */
+.guar {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  margin-top: 30px;
+  border: 1px dashed rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  padding: 22px 26px;
+  max-width: 820px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.guar svg {
+  flex: none;
+  margin-top: 3px;
+  stroke: var(--copper);
+}
+.guar p {
+  font-size: 14.5px;
+  color: #C0CAD4;
+}
+.guar p b {
+  color: #fff;
+}
+
+@media (max-width: 900px) {
+  .section {
+    padding: 68px 0;
+  }
+  .pcard {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+  .alt h3 {
+    font-size: 1.7rem;
+    white-space: nowrap;
+  }
+  .altBtn {
+    font-size: 12.5px;
+    letter-spacing: 0.03em;
+    padding: 17px 12px;
+    gap: 8px;
+  }
+}

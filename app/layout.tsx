@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Manrope, Bodoni_Moda } from "next/font/google";
+import { Manrope, Bodoni_Moda, Fraunces, Inter } from "next/font/google";
 import "./globals.css";
 
 const manrope = Manrope({
@@ -11,6 +11,18 @@ const bodoni = Bodoni_Moda({
   subsets: ["latin"],
   variable: "--font-bodoni",
   weight: ["400", "500", "600", "700"],
+});
+
+const fraunces = Fraunces({
+  subsets: ["latin"],
+  variable: "--font-fraunces",
+  weight: ["400", "500", "600"],
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  weight: ["300", "400", "500", "600"],
 });
 
 export const metadata: Metadata = {
@@ -38,7 +50,9 @@ export default function RootLayout({
         />
       </head>
 
-      <body className={`${manrope.variable} ${bodoni.variable}`}>
+      <body
+        className={`${manrope.variable} ${bodoni.variable} ${fraunces.variable} ${inter.variable}`}
+      >
         {children}
       </body>
     </html>

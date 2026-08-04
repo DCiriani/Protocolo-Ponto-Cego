@@ -1,0 +1,59 @@
+/* ===== FinalCTA / Rodapé (adaptado do v21) ===== */
+
+.footer {
+  --navy-deep: #0A1725;
+  --copper: #C08552;
+
+  background: var(--navy-deep);
+  border-top: 1px solid rgba(255, 255, 255, 0.09);
+  padding: 34px 0 46px;
+  font-size: 12.5px;
+  color: #7E8A96;
+  line-height: 2;
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+
+.wrap {
+  width: min(1140px, 90vw);
+  margin: 0 auto;
+}
+
+.footer a {
+  color: #9AA6B2;
+  text-decoration: none;
+}
+.footer a:hover {
+  color: #fff;
+}
+
+.fbar {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 18px;
+  align-items: center;
+}
+
+.mark {
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-size: 16px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+.seal {
+  width: 20px;
+  height: 20px;
+  flex: none;
+}
+
+.safety {
+  border-top: 1px solid rgba(255, 255, 255, 0.09);
+  margin-top: 24px;
+  padding-top: 20px;
+  max-width: 78ch;
+  font-size: 12px;
+  color: #6E7A86;
+  line-height: 1.9;
+}

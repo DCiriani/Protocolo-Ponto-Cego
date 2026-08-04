@@ -1,0 +1,86 @@
+/* ===== About / Indicado - Não é pra quem (adaptado do v21) ===== */
+
+.section {
+  --cream-2: #F1ECE2;
+  --line: #E4DCCF;
+  --copper: #C08552;
+  --sage-dark: #67795A;
+
+  background: var(--cream-2);
+  color: #1B2430;
+  padding: 96px 0;
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+
+.wrap {
+  width: min(1140px, 90vw);
+  margin: 0 auto;
+}
+
+.fitgrid {
+  display: grid;
+  grid-template-columns: 1fr 1px 1fr;
+  gap: 52px;
+  align-items: start;
+}
+
+.vline {
+  background: var(--line);
+  height: 100%;
+  min-height: 220px;
+}
+
+.colTitle {
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-weight: 500;
+  font-size: clamp(1.6rem, 2.8vw, 2.1rem);
+  line-height: 1.14;
+}
+.yesTitle {
+  color: var(--sage-dark);
+}
+.noTitle {
+  color: var(--copper);
+}
+
+.noBox {
+  background: #ECE4D6;
+  border-radius: 12px;
+  padding: 28px 26px;
+}
+
+.flist {
+  list-style: none;
+  margin-top: 24px;
+}
+.flist li {
+  display: flex;
+  gap: 13px;
+  padding: 11px 0;
+  font-size: 14.5px;
+  line-height: 1.6;
+  align-items: flex-start;
+}
+.flist li svg {
+  flex: none;
+  margin-top: 4px;
+}
+.yes svg {
+  stroke: var(--sage-dark);
+}
+.no svg {
+  stroke: var(--copper);
+}
+
+@media (max-width: 900px) {
+  .section {
+    padding: 68px 0;
+  }
+  .fitgrid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .vline {
+    display: none;
+  }
+}
