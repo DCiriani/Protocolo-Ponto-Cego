@@ -16,9 +16,9 @@ export default function FAQ() {
           Doze minutos respondendo. Sua análise em até 48h. E um direcionamento
           para você colocar em prática e reler quantas vezes quiser.
         </p>
-        <a href="/jornada" className={styles.btn}>
-          Quero enxergar meu padrão
-        </a>
+        <a href="#oferta" className={styles.btn}>
+  Quero enxergar meu padrão
+</a>
         <p className={styles.micro}>
           R$147, pagamento único. Você só paga na cena 3.
         </p>

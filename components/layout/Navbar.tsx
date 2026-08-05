@@ -15,7 +15,7 @@ export default function Navbar() {
           </span>
         </a>
 
-        <a href="/jornada" className="hidden rounded-[0.5rem] bg-[#7C8F6A] px-6 py-3 text-sm font-semibold uppercase tracking-[0.06em] text-white transition hover:bg-[#67795A] md:inline-flex" style={{ fontFamily: "var(--font-inter), system-ui, sans-serif" }}>
+        <a href="#oferta" className="hidden rounded-[0.5rem] bg-[#7C8F6A] px-6 py-3 text-sm font-semibold uppercase tracking-[0.06em] text-white transition hover:bg-[#67795A] md:inline-flex" style={{ fontFamily: "var(--font-inter), system-ui, sans-serif" }}>
           Quero minha análise
         </a>
 
