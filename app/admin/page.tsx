@@ -98,12 +98,21 @@ export default async function AdminPage() {
             </h1>
           </div>
 
-          <Link
-            href="/"
-            className="text-sm font-medium text-[#8E9BA7] transition hover:text-[#C08552]"
-          >
-            Voltar para o site →
-          </Link>
+          <div className="flex items-center gap-6">
+            <Link
+              href="/admin/duvidas"
+              className="text-sm font-medium text-[#8E9BA7] transition hover:text-[#C08552]"
+            >
+              Dúvidas
+            </Link>
+
+            <Link
+              href="/"
+              className="text-sm font-medium text-[#8E9BA7] transition hover:text-[#C08552]"
+            >
+              Voltar para o site →
+            </Link>
+          </div>
         </div>
 
         {error ? (

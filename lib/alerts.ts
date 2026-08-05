@@ -35,6 +35,81 @@ const SCREENING_IDEATION_LABELS: Record<string, string> = {
   tenho_pensado_em_como: "Sim, e tenho pensado em como",
 };
 
+type SendClarificationAlertParams = {
+  name: string;
+  email: string;
+  question: string;
+  clarificationId: string;
+  submissionId: string;
+};
+
+export async function sendClarificationAlert(
+  params: SendClarificationAlertParams
+) {
+  const smtpHost = process.env.SMTP_HOST;
+  const smtpPort = Number(process.env.SMTP_PORT ?? "465");
+  const smtpUser = process.env.SMTP_USER;
+  const smtpPassword = process.env.SMTP_PASSWORD;
+  const emailFrom = process.env.EMAIL_FROM;
+  const alertTo = process.env.ALERT_EMAIL_TO;
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
+
+  if (!smtpHost || !smtpUser || !smtpPassword || !emailFrom || !alertTo) {
+    console.error(
+      "sendClarificationAlert: SMTP_HOST, SMTP_USER, SMTP_PASSWORD, EMAIL_FROM ou ALERT_EMAIL_TO ausente. Alerta não enviado.",
+      { submissionId: params.submissionId, clarificationId: params.clarificationId },
+    );
+    return false;
+  }
+
+  try {
+    const transporter = nodemailer.createTransport({
+      host: smtpHost,
+      port: smtpPort,
+      secure: smtpPort === 465,
+      auth: {
+        user: smtpUser,
+        pass: smtpPassword,
+      },
+    });
+
+    const subject = `[PONTO CEGO] Nova dúvida — ${params.name}`;
+
+    const timestamp = new Date().toLocaleString("pt-BR", {
+      timeZone: "America/Sao_Paulo",
+    });
+
+    const panelLink = siteUrl
+      ? `${siteUrl}/admin/duvidas#${params.clarificationId}`
+      : `/admin/duvidas#${params.clarificationId}`;
+
+    const text = `Nome: ${params.name}
+E-mail: ${params.email}
+Enviado em: ${timestamp}
+
+Pergunta:
+"${params.question}"
+
+Responder no painel: ${panelLink}`;
+
+    await transporter.sendMail({
+      from: emailFrom,
+      to: alertTo,
+      subject,
+      text,
+    });
+
+    return true;
+  } catch (error) {
+    console.error("sendClarificationAlert: falha ao enviar alerta.", error, {
+      submissionId: params.submissionId,
+      clarificationId: params.clarificationId,
+    });
+
+    return false;
+  }
+}
+
 export async function sendRiskAlert(params: SendRiskAlertParams) {
   const smtpHost = process.env.SMTP_HOST;
   const smtpPort = Number(process.env.SMTP_PORT ?? "465");

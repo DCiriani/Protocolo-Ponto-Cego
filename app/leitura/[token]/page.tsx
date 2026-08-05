@@ -3,6 +3,8 @@ import { notFound } from "next/navigation";
 import { supabaseAdmin } from "@/lib/supabase/admin";
 import PrintReadingButton from "@/components/leitura/PrintReadingButton";
 import ReadingContent from "@/components/leitura/ReadingContent";
+import ClarificationBlock from "@/components/leitura/ClarificationBlock";
+import { getClarificationWindow } from "@/lib/clarification/deadline";
 
 type Reading = {
   id: string;
@@ -65,6 +67,20 @@ export default async function ReadingPage({ params, searchParams }: PageProps) {
     ? new Date(reading.delivery_created_at).toLocaleDateString("pt-BR")
     : new Date().toLocaleDateString("pt-BR");
 
+  const { data: clarificationData } = await supabaseAdmin
+    .from("clarification_requests")
+    .select("question, answer, status")
+    .eq("submission_id", reading.id)
+    .maybeSingle();
+
+  const clarification = clarificationData as {
+    question: string;
+    answer: string | null;
+    status: "pending" | "answered";
+  } | null;
+
+  const { withinWindow } = getClarificationWindow(reading.delivery_created_at);
+
   return (
     <main className="min-h-screen bg-[#0A0A0A] px-6 py-20 text-[#F5F5F3] print:bg-white print:px-12 print:py-10 print:text-black">
       <div className="mx-auto max-w-3xl print:mx-auto print:max-w-[720px]">
@@ -111,6 +127,14 @@ export default async function ReadingPage({ params, searchParams }: PageProps) {
             foi construída para ampliar clareza sobre padrões relacionais.
           </p>
         </section>
+
+        {!isPdf && (
+          <ClarificationBlock
+            token={token}
+            withinWindow={withinWindow}
+            existing={clarification}
+          />
+        )}
 
         <footer className="mt-12 text-center text-sm text-zinc-600 print:mt-10 print:text-left print:text-xs">
           <p>Ponto Cego — Diego Ciriani</p>
