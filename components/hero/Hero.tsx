@@ -1,94 +1,90 @@
-"use client";
-
-import Image from "next/image";
-import { motion } from "framer-motion";
-import Container from "@/components/ui/Container";
-import Button from "@/components/ui/Button";
+import styles from "./Hero.module.css";
 
 export default function Hero() {
   return (
-    <section
-      id="inicio"
-      className="relative min-h-screen overflow-hidden bg-[#0A0A0A]"
-    >
-      {/* Fundo com profundidade */}
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_82%_58%,rgba(136,179,154,0.12),transparent_34%)]" />
-      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,rgba(10,10,10,0.1),#0A0A0A_96%)]" />
+    <section className={styles.phero}>
+      <div
+        className={styles.photo}
+        style={{ ["--hero-img" as string]: "url(/hero-espelho.jpg)" }}
+      />
 
-      <Container className="relative z-10 flex min-h-screen items-center pt-16">
-        <div className="relative w-full">
-          {/* Conteúdo */}
-          <motion.div
-            initial={{ opacity: 0, y: 26 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-            className="relative z-20 max-w-[700px]"
-          >
-            <div className="mb-7 inline-flex items-center gap-3 text-sm text-zinc-400">
-              <span className="h-2 w-2 rounded-full bg-[#88B39A]" />
-              <span>Leitura clínica feita por um psicólogo.</span>
-            </div>
+      <div className={styles.inner}>
+        <div className={styles.copy}>
+          <span className={styles.eyebrow}>
+            Leitura clínica escrita e personalizada
+          </span>
 
-            <h1 className="text-[clamp(3.6rem,5.1vw,5.25rem)] font-semibold leading-[0.94] tracking-[-0.06em] text-[#F5F5F3]">
-              <span className="block">Todo mundo tem</span>
-              <span className="block">um ponto cego.</span>
-            </h1>
+          <h1 className={styles.title}>
+            Você pode até não perceber. Mas o padrão que sabota seus
+            relacionamentos já está se repetindo.
+          </h1>
 
-            <p className="mt-7 max-w-xl text-[clamp(1.9rem,2.7vw,2.85rem)] font-medium leading-[1.02] tracking-[-0.04em] text-[#F5F5F3]">
-              O padrão mais difícil
-              <br />
-              de enxergar é{" "}
-              <span className="font-heading text-[#88B39A]">o seu.</span>
-            </p>
+          <ul className={styles.lines}>
+            <li>Você se apaixona rápido.</li>
+            <li>Sempre termina do mesmo jeito.</li>
+            <li>Fala que não vai se envolver e se envolve.</li>
+            <li>Você escolhe quem não escolhe você.</li>
+            <li>Sabe disso há anos e continua fazendo.</li>
+          </ul>
 
-            <p className="mt-7 max-w-xl text-[16px] leading-8 text-zinc-400 md:text-[17px]">
-              Talvez exista um padrão que continua influenciando suas escolhas,
-              seus relacionamentos e seus conflitos sem que você perceba.
-              A Análise Ponto Cego foi criada para tornar esse padrão visível.
-            </p>
+          <p className={styles.lede}>
+            <span className={styles.brand}>A Análise Ponto Cego</span> transforma
+            respostas reais em uma leitura profunda, escrita por um psicólogo,
+            pra te mostrar o que você ainda não conseguiu enxergar sobre a forma
+            como ama, reage e se envolve.
+          </p>
 
-            <div id="comecar" className="mt-8">
-              <Button>Quero enxergar meus padrões</Button>
-            </div>
+          <div className={styles.buttons}>
+            <a href="#oferta" className={`${styles.btn} ${styles.primary}`}>
+              Quero minha análise
+            </a>
+            <a href="#como" className={`${styles.btn} ${styles.play}`}>
+              <svg
+                width="15"
+                height="15"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.6"
+              >
+                <circle cx="12" cy="12" r="9.5" />
+                <path d="M10 8.5l5 3.5-5 3.5z" fill="currentColor" stroke="none" />
+              </svg>
+              Como funciona
+            </a>
+          </div>
 
-            <div className="mt-6 flex flex-col gap-2 text-sm text-zinc-500 md:flex-row md:gap-5">
-              <span>Feita pessoalmente</span>
-              <span className="hidden md:inline">•</span>
-              <span>Entrega em até 48h</span>
-              <span className="hidden md:inline">•</span>
-              <span>Sem IA</span>
-            </div>
-          </motion.div>
-
-          {/* Foto */}
-          <motion.div
-            initial={{ opacity: 0, x: 50, scale: 0.98 }}
-            animate={{ opacity: 1, x: 0, scale: 1 }}
-            transition={{
-              duration: 1,
-              delay: 0.15,
-              ease: [0.22, 1, 0.36, 1],
-            }}
-            className="pointer-events-none absolute bottom-[-5vh] right-[-9vw] z-10 hidden h-[78vh] w-[55vw] lg:block"
-          >
-            <div className="absolute inset-0 rounded-full bg-[#88B39A]/10 blur-[130px]" />
-
-            <Image
-              src="/images/diego-ciriani.png"
-              alt="Diego Ciriani"
-              fill
-              priority
-              className="object-contain object-bottom opacity-95"
-            />
-
-            {/* Máscaras para dissolver o retângulo da foto */}
-            <div className="absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-[#0A0A0A] via-[#0A0A0A]/70 to-transparent" />
-            <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-[#0A0A0A] to-transparent" />
-            <div className="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-[#0A0A0A] via-[#0A0A0A]/70 to-transparent" />
-            <div className="absolute inset-x-0 bottom-0 h-56 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/80 to-transparent" />
-          </motion.div>
+          <div className={styles.badges}>
+            <span className={styles.badge}>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" strokeWidth="1.5">
+                <path d="M12 3v18M5 8l14 8M19 8L5 16" />
+              </svg>
+              100% individual
+            </span>
+            <span className={styles.badge}>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" strokeWidth="1.5">
+                <circle cx="12" cy="8" r="3.5" />
+                <path d="M5 20c0-3.9 3.1-6 7-6s7 2.1 7 6" />
+              </svg>
+              Escrita por humano
+            </span>
+            <span className={styles.badge}>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" strokeWidth="1.5">
+                <circle cx="12" cy="12" r="9" />
+                <path d="M12 7v5l3.5 2" />
+              </svg>
+              Entrega em até 48h
+            </span>
+            <span className={styles.badge}>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" strokeWidth="1.5">
+                <path d="M12 21s-7-4.5-7-10a7 7 0 0114 0c0 5.5-7 10-7 10z" />
+                <circle cx="12" cy="11" r="2.4" />
+              </svg>
+              Foco em relacionamentos
+            </span>
+          </div>
         </div>
-      </Container>
+      </div>
     </section>
   );
 }

@@ -1,47 +1,49 @@
-"use client";
+import styles from "./Story.module.css";
 
-import { motion } from "framer-motion";
-import Container from "@/components/ui/Container";
-
-const phrases = [
-  "Existem histórias que se repetem.",
-  "Mudam os rostos.",
-  "Muda o cenário.",
-  "O roteiro permanece.",
+const pills = [
+  { text: "Como você se move dentro do vínculo", icon: (<><path d="M4 20c0-3.3 2.7-5 6-5s6 1.7 6 5" /><circle cx="10" cy="8" r="3" /><path d="M17 15c2 .6 3 2.2 3 5" /></>) },
+  { text: "O que você não enxerga sobre a sua parte", icon: (<><path d="M2 12s3.6-6 10-6 10 6 10 6-3.6 6-10 6-10-6-10-6z" /><circle cx="12" cy="12" r="2.6" /></>) },
+  { text: "O papel que você sempre acaba ocupando", icon: (<><path d="M12 21s-7-4.5-7-10a7 7 0 0114 0c0 5.5-7 10-7 10z" /><circle cx="12" cy="11" r="2.4" /></>) },
+  { text: "Qual padrão está se repetindo", icon: (<><path d="M4 8h11a4 4 0 110 8H8" /><path d="M7 5L4 8l3 3M11 13l-3 3 3 3" /></>) },
+  { text: "Que direção prática faz sentido agora", icon: (<><circle cx="12" cy="12" r="9" /><path d="M15 9l-2.2 5.8L9 15l2.2-5.8z" /></>) },
 ];
 
 export default function Story() {
   return (
-    <section className="relative bg-[#0A0A0A]">
-      {phrases.map((phrase, index) => (
-        <div
-          key={phrase}
-          className="relative flex min-h-screen items-center overflow-hidden border-t border-white/[0.04]"
-        >
-          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(136,179,154,0.08),transparent_38%)]" />
-
-          <Container className="relative z-10">
-            <motion.div
-              initial={{ opacity: 0, y: 40, filter: "blur(8px)" }}
-              whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-              viewport={{ once: true, amount: 0.55 }}
-              transition={{
-                duration: 1,
-                ease: [0.22, 1, 0.36, 1],
-              }}
-              className="max-w-5xl"
-            >
-              <span className="mb-8 block text-sm uppercase tracking-[0.35em] text-zinc-600">
-                0{index + 1}
-              </span>
-
-              <h2 className="text-[clamp(4rem,8vw,9rem)] font-semibold leading-[0.92] tracking-[-0.07em] text-[#F5F5F3]">
-                {phrase}
-              </h2>
-            </motion.div>
-          </Container>
+    <section className={styles.story}>
+      <div className={`${styles.wrap} ${styles.split}`}>
+        <div>
+          <span className={styles.eyebrow}>O produto, sem rodeio</span>
+          <h2 className={styles.title}>
+            A Análise Ponto Cego é um texto clínico escrito sobre você.
+          </h2>
+          <div className={styles.nots}>
+            <div>Não é teste automático.</div>
+            <div>Não é texto gerado por robô.</div>
+            <div>Não é psicoterapia.</div>
+          </div>
+          <p className={styles.lead}>
+            Você responde a seis cenas de relacionamento. Não são perguntas sobre
+            como você se define, são situações, e você diz o que faria. Eu leio
+            tudo pessoalmente e escrevo de volta, do zero, o padrão que se repete
+            nas suas escolhas, o papel que você ocupa dentro dele, o que ele te
+            custa e por onde dá pra começar a mudar.
+          </p>
         </div>
-      ))}
+
+        <div>
+          {pills.map((pill) => (
+            <div key={pill.text} className={styles.pill}>
+              <span className={styles.ic}>
+                <svg width="19" height="19" viewBox="0 0 24 24" fill="none" strokeWidth="1.5">
+                  {pill.icon}
+                </svg>
+              </span>
+              {pill.text}
+            </div>
+          ))}
+        </div>
+      </div>
     </section>
   );
 }

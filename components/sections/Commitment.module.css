@@ -1,0 +1,93 @@
+/* ===== Commitment / FAQ (adaptado do v21) ===== */
+
+.section {
+  --cream: #F8F5EF;
+  --card: #FFFFFF;
+  --ink: #1B2430;
+  --muted: #5F6B77;
+  --copper: #C08552;
+  --line: #E4DCCF;
+
+  background: var(--cream);
+  color: var(--ink);
+  padding: 96px 0;
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+
+.narrow {
+  width: min(760px, 90vw);
+  margin: 0 auto;
+}
+.center {
+  text-align: center;
+}
+
+.eyebrow {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--copper);
+}
+.title {
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-weight: 500;
+  font-size: clamp(2rem, 3.9vw, 2.9rem);
+  line-height: 1.14;
+  margin-top: 16px;
+  color: var(--ink);
+}
+.tick {
+  height: 2px;
+  width: 52px;
+  background: var(--copper);
+  border: 0;
+  margin: 20px auto 30px;
+}
+
+.item {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+.item summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 18px 52px 18px 22px;
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-size: 1.2rem;
+  position: relative;
+}
+.item summary::-webkit-details-marker {
+  display: none;
+}
+.item summary::after {
+  content: "";
+  position: absolute;
+  right: 24px;
+  top: 26px;
+  width: 8px;
+  height: 8px;
+  border-right: 1.5px solid var(--muted);
+  border-bottom: 1.5px solid var(--muted);
+  transform: rotate(45deg);
+  transition: 0.2s;
+}
+.item[open] summary::after {
+  transform: rotate(-135deg);
+  top: 29px;
+}
+.item p {
+  padding: 0 22px 20px;
+  font-size: 14.5px;
+  color: var(--muted);
+  line-height: 1.6;
+  max-width: 70ch;
+}
+
+@media (max-width: 900px) {
+  .section {
+    padding: 68px 0;
+  }
+}

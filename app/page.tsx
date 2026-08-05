@@ -8,10 +8,11 @@ import About from "@/components/sections/About";
 import Receive from "@/components/sections/Receive";
 import FAQ from "@/components/sections/FAQ";
 import FinalCTA from "@/components/sections/FinalCTA";
+import Commitment from "@/components/sections/Commitment";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#0A0A0A] text-[#F5F5F3]">
+    <main className="min-h-screen bg-[#050705] text-[#F5F5F3]">
       <Navbar />
       <Hero />
       <Story />
@@ -19,9 +20,10 @@ export default function Home() {
       <Process />
       <Transformations />
       <About />
-      <Receive />
-      <FAQ />
-      <FinalCTA />
+<Receive />
+<Commitment />
+<FAQ />
+<FinalCTA />
     </main>
   );
 }

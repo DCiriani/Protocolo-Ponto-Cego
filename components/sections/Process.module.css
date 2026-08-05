@@ -1,0 +1,192 @@
+/* ===== Process / O que vem escrito (adaptado do v21) ===== */
+
+.section {
+  --cream: #F8F5EF;
+  --card: #FFFFFF;
+  --ink: #1B2430;
+  --muted: #5F6B77;
+  --copper: #C08552;
+  --line: #E4DCCF;
+  --sage-pale: #E4E8DD;
+  --sage-dark: #67795A;
+
+  background: var(--cream);
+  color: var(--ink);
+  padding: 96px 0;
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+
+.wrap {
+  width: min(1140px, 90vw);
+  margin: 0 auto;
+}
+
+.center {
+  text-align: center;
+}
+
+.eyebrow {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--copper);
+}
+
+@media (max-width: 900px) {
+  .linha1,
+  .linha2 {
+    display: block;
+  }
+}
+
+.title {
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-weight: 500;
+  font-size: clamp(2rem, 3.9vw, 2.9rem);
+  line-height: 1.14;
+  margin-top: 16px;
+  color: var(--ink);
+}
+
+.tick {
+  height: 2px;
+  width: 52px;
+  background: var(--copper);
+  border: 0;
+  margin: 20px auto 30px;
+}
+
+.lead {
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.75;
+  max-width: 60ch;
+  margin: 0 auto 8px;
+}
+
+.getgrid {
+  display: grid;
+  grid-template-columns: 1.02fr 0.98fr;
+  gap: 48px;
+  align-items: start;
+  margin-top: 20px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.cd {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 22px 20px;
+  box-shadow: 0 1px 2px rgba(27, 36, 48, 0.04);
+}
+.cd .ic {
+  width: 38px;
+  height: 38px;
+  flex: none;
+  border-radius: 50%;
+  background: var(--sage-pale);
+  display: grid;
+  place-items: center;
+  margin-bottom: 14px;
+}
+.cd .ic svg {
+  stroke: var(--sage-dark);
+}
+.cd h3 {
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-size: 1.06rem;
+  font-weight: 600;
+  margin-bottom: 7px;
+  color: var(--ink);
+}
+.cd p {
+  font-size: 13.5px;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.doc {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 34px 32px;
+  box-shadow: 0 2px 14px rgba(27, 36, 48, 0.05);
+}
+.doc h4 {
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-weight: 500;
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 6px;
+  color: var(--ink);
+}
+.part {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--copper);
+  text-align: center;
+  display: block;
+  margin-bottom: 24px;
+}
+.doc p {
+  font-size: 14.5px;
+  margin-bottom: 15px;
+  color: #2E3844;
+  line-height: 1.6;
+}
+.mk {
+  background: rgba(239, 210, 75, 0.42);
+  padding: 1px 3px;
+}
+.mk.g {
+  background: rgba(124, 143, 106, 0.28);
+}
+.quote {
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--muted);
+  border-left: 2px solid var(--line);
+  padding-left: 16px;
+}
+.sign {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 28px;
+  border-top: 1px solid var(--line);
+  padding-top: 18px;
+}
+.sign span {
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: 0.05em;
+}
+
+.micro {
+  font-size: 12.5px;
+  color: var(--muted);
+  margin-top: 20px;
+}
+
+@media (max-width: 900px) {
+  .section {
+    padding: 68px 0;
+  }
+  .getgrid {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}

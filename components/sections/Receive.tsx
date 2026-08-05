@@ -1,142 +1,141 @@
-"use client";
+import styles from "./Receive.module.css";
 
-import { motion } from "framer-motion";
-import Container from "@/components/ui/Container";
-
-const items = [
-  "Padrões identificados",
-  "Possíveis pontos cegos",
-  "Ciclos que se repetem",
-  "Fatores que podem manter o problema",
-  "Direcionamentos práticos",
+const featItems = [
+  "Questionário completo de 6 cenas",
+  "Leitura escrita de 1.400 a 2.000 palavras",
+  "As 6 partes, com os 3 movimentos práticos",
+  "Entrega em até 48h, e-mail e link privado",
+  "Uma rodada de pergunta por escrito depois de ler",
 ];
 
-export default function Receive() {
+const altItems = [
+  "Tudo o que está na leitura",
+  "Sessão individual de 60 minutos comigo, por vídeo",
+  "Aprofundamento dos pontos centrais da análise",
+  "Espaço para dúvidas, reflexões e direcionamento",
+  "Agenda em até 10 dias após a entrega",
+  "Vagas limitadas por semana",
+];
+
+function CheckSmall() {
   return (
-    <section className="relative overflow-hidden bg-[#0A0A0A] py-32 md:py-44">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_70%_45%,rgba(136,179,154,0.09),transparent_36%)]" />
-
-      <Container className="relative z-10">
-        <div className="grid items-center gap-20 lg:grid-cols-[0.95fr_1.05fr] lg:gap-28">
-          {/* Texto */}
-          <motion.div
-            initial={{ opacity: 0, y: 34 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.35 }}
-            transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-          >
-            <span className="mb-8 block text-sm uppercase tracking-[0.35em] text-zinc-600">
-              A entrega
-            </span>
-
-            <h2 className="max-w-2xl text-[clamp(3.5rem,6vw,7rem)] font-semibold leading-[0.92] tracking-[-0.07em] text-[#F5F5F3]">
-              Sua{" "}
-              <span className="font-heading text-[#88B39A]">
-                Leitura Ponto Cego
-              </span>
-              .
-            </h2>
-
-            <p className="mt-10 max-w-xl text-[18px] leading-9 text-zinc-400 md:text-[20px] md:leading-10">
-              Ao final da análise, você recebe uma leitura escrita,
-              personalizada e construída a partir das suas respostas.
-            </p>
-
-            <p className="mt-7 max-w-xl text-[18px] leading-9 text-zinc-400 md:text-[20px] md:leading-10">
-              Ela não procura resumir quem você é. Ela organiza padrões,
-              hipóteses e direcionamentos para que você consiga enxergar com
-              mais clareza a forma como tem se relacionado.
-            </p>
-
-            <div className="mt-12 space-y-5">
-              {items.map((item) => (
-                <div
-                  key={item}
-                  className="flex items-center gap-4 border-t border-white/10 pt-5 text-zinc-400"
-                >
-                  <span className="h-2 w-2 rounded-full bg-[#88B39A]" />
-                  <span>{item}</span>
-                </div>
-              ))}
-            </div>
-          </motion.div>
-
-          {/* Preview da leitura */}
-          <motion.div
-            initial={{ opacity: 0, y: 34, scale: 0.98 }}
-            whileInView={{ opacity: 1, y: 0, scale: 1 }}
-            viewport={{ once: true, amount: 0.35 }}
-            transition={{
-              duration: 0.9,
-              delay: 0.12,
-              ease: [0.22, 1, 0.36, 1],
-            }}
-            className="relative"
-          >
-            <div className="pointer-events-none absolute inset-0 rounded-full bg-[#88B39A]/10 blur-[130px]" />
-
-            <div className="relative mx-auto max-w-[520px] border border-white/10 bg-[#101010]/80 p-8 shadow-2xl backdrop-blur-md md:p-10">
-              <div className="border border-white/10 bg-[#0A0A0A] p-8 md:p-10">
-                <div className="mb-20 flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <span className="h-3 w-3 rounded-full border border-[#88B39A]" />
-                    <span className="text-xs uppercase tracking-[0.28em] text-zinc-500">
-                      Ponto Cego
-                    </span>
-                  </div>
-
-                  <span className="text-xs text-zinc-600">48h</span>
-                </div>
-
-                <div>
-                  <p className="text-sm uppercase tracking-[0.35em] text-zinc-600">
-                    Leitura
-                  </p>
-
-                  <h3 className="mt-5 text-5xl font-semibold leading-none tracking-[-0.06em] text-[#F5F5F3] md:text-7xl">
-                    Ponto
-                    <br />
-                    Cego
-                  </h3>
-
-                  <p className="mt-8 font-heading text-3xl leading-tight text-[#88B39A] md:text-4xl">
-                    preparada a partir da sua história.
-                  </p>
-                </div>
-
-                <div className="mt-20 space-y-8">
-                  <PreviewLine title="Padrão observado" />
-                  <PreviewLine title="Ponto cego possível" />
-                  <PreviewLine title="Ciclo de repetição" />
-                  <PreviewLine title="Direcionamento inicial" />
-                </div>
-
-                <div className="mt-20 border-t border-white/10 pt-8">
-                  <p className="font-heading text-2xl leading-tight text-[#F5F5F3] md:text-3xl">
-                    “Nem todo padrão se apresenta como problema. Alguns se
-                    apresentam como familiaridade.”
-                  </p>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </Container>
-    </section>
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" strokeWidth="1.6">
+      <path d="M4 12.5l5 5L20 6.5" />
+    </svg>
   );
 }
 
-function PreviewLine({ title }: { title: string }) {
+function CheckCircle() {
   return (
-    <div>
-      <p className="mb-3 text-xs uppercase tracking-[0.25em] text-zinc-600">
-        {title}
-      </p>
+    <svg viewBox="0 0 24 24" fill="none">
+      <circle cx="12" cy="12" r="11" fill="#5C6E4A" />
+      <path
+        d="M7 12.3l3.2 3.2L17 8.7"
+        stroke="#fff"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
 
-      <div className="space-y-2">
-        <div className="h-2 w-full rounded-full bg-white/10" />
-        <div className="h-2 w-2/3 rounded-full bg-white/10" />
+export default function Receive() {
+  return (
+    <section id="oferta" className={styles.section}>
+      <div className={styles.wrap}>
+        <div className={styles.center}>
+          <span className={styles.eyebrow}>Oferta</span>
+          <h2 className={styles.title}>
+            Uma sessão de terapia custa entre R$180 e R$250.
+          </h2>
+          <hr className={styles.tick} />
+        </div>
+
+        <div className={styles.prices}>
+          {/* Card R$147 */}
+          <div className={`${styles.pcard} ${styles.feat}`}>
+            <span className={styles.ptag}>Mais escolhido</span>
+            <div>
+              <h3>Leitura Ponto Cego</h3>
+              <div className={styles.price}>
+                <sup>R$</sup>147
+              </div>
+              <p className={styles.pnote}>
+                pagamento único · sem assinatura, sem renovação, sem upsell depois
+              </p>
+              <a href="/jornada?plano=leitura" className={styles.btn} style={{ marginTop: "22px" }}>
+  Começar a responder
+</a>
+              <p className={styles.micro}>
+                Você só paga na cena 3. Antes disso é aberto.
+              </p>
+            </div>
+            <ul className={styles.plist}>
+              {featItems.map((item) => (
+                <li key={item}>
+                  <CheckSmall />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Card R$497 */}
+          <div className={styles.alt}>
+            <span className={styles.glow} />
+            <div className={styles.tagwrap}>
+              <span className={styles.ptag2}>Com sessão individual</span>
+            </div>
+            <h3>
+              Leitura <span className={styles.soft}>+ devolutiva</span>
+            </h3>
+            <p className={`${styles.pbody} ${styles.intro}`}>
+              Para quem não quer apenas receber a análise, mas conversar sobre o
+              que ela revelou.
+            </p>
+            <div className={styles.altPrice}>
+              <sup>R$</sup>497
+            </div>
+            <p className={styles.altPnote}>pagamento único</p>
+            <p className={styles.pbody}>
+              Você recebe a sua Leitura Ponto Cego completa e, depois, participa de
+              uma sessão individual de 60 minutos comigo, por videochamada.
+            </p>
+            <p className={styles.pincl}>Esta opção inclui</p>
+            <ul className={styles.altList}>
+              {altItems.map((item) => (
+                <li key={item}>
+                  <CheckCircle />
+                  {item}
+                </li>
+              ))}
+            </ul>
+           <a href="/jornada?plano=leitura_devolutiva" className={`${styles.btn} ${styles.altBtn}`}>
+  <span className={styles.star}>✦</span> Análise + sessão individual
+</a>
+            <p className={styles.altMicro}>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" strokeWidth="1.6">
+                <rect x="5" y="11" width="14" height="9" rx="1.5" />
+                <path d="M8 11V8a4 4 0 018 0v3" />
+              </svg>
+              Disponibilidade reduzida: poucas vagas por semana.
+            </p>
+          </div>
+        </div>
+
+        <div className={styles.guar}>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" strokeWidth="1.5">
+            <path d="M12 21s7.5-4.4 7.5-10V5.6L12 3 4.5 5.6V11c0 5.6 7.5 10 7.5 10z" />
+            <path d="M9 12l2.2 2.2L15.5 10" />
+          </svg>
+          <p>
+            <b>Garantia.</b> Se a leitura não fizer sentido pra você, me responde o
+            e-mail em até 7 dias dizendo o que não bateu. Eu reescrevo pessoalmente
+            ou devolvo o valor. Você escolhe qual das duas.
+          </p>
+        </div>
       </div>
-    </div>
+    </section>
   );
 }

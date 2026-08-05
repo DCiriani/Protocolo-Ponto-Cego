@@ -1,83 +1,73 @@
-"use client";
-
-import { motion } from "framer-motion";
-import Container from "@/components/ui/Container";
-
-const items = [
-  {
-    number: "01",
-    title: "Você reconhece repetições.",
-    text: "Aquilo que parecia acontecer por acaso começa a ganhar forma. Situações, escolhas e reações passam a ser vistas como parte de um padrão.",
-  },
-  {
-    number: "02",
-    title: "Você percebe onde se abandona.",
-    text: "Alguns conflitos permanecem porque você aprende a silenciar necessidades, ultrapassar limites ou aceitar menos do que realmente sente.",
-  },
-  {
-    number: "03",
-    title: "Você entende melhor suas interpretações.",
-    text: "Nem sempre o sofrimento nasce do que aconteceu. Às vezes, nasce da forma como você interpreta o silêncio, a distância ou o comportamento do outro.",
-  },
-  {
-    number: "04",
-    title: "Você ganha um ponto de partida.",
-    text: "A leitura não promete resolver toda a sua história. Ela oferece clareza para saber onde começar a olhar com mais honestidade.",
-  },
-];
+import styles from "./Transformations.module.css";
 
 export default function Transformations() {
   return (
-    <section className="relative overflow-hidden bg-[#0A0A0A] py-32 md:py-44">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_20%,rgba(136,179,154,0.07),transparent_35%)]" />
+    <section className={styles.section}>
+      <div className={styles.wrap}>
+        <span className={`${styles.eyebrow} ${styles.whoeyebrow}`}>
+          Quem escreve
+        </span>
+      </div>
 
-      <Container className="relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 28 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.35 }}
-          transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-          className="max-w-4xl"
-        >
-          <span className="mb-8 block text-sm uppercase tracking-[0.35em] text-zinc-600">
-            Clareza
-          </span>
+      <div className={`${styles.wrap} ${styles.whotop}`}>
+        <div
+          className={styles.photo}
+          style={{ ["--diego-img" as string]: "url(/diego-ciriani.jpg)" }}
+        />
 
-          <h2 className="text-[clamp(3.8rem,7vw,8rem)] font-semibold leading-[0.92] tracking-[-0.07em] text-[#F5F5F3]">
-            O que começa a mudar quando você{" "}
-            <span className="font-heading text-[#88B39A]">enxerga.</span>
-          </h2>
-        </motion.div>
-
-        <div className="mt-24 grid border-t border-white/10 lg:grid-cols-2">
-          {items.map((item, index) => (
-            <motion.div
-              key={item.title}
-              initial={{ opacity: 0, y: 34 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.35 }}
-              transition={{
-                duration: 0.8,
-                delay: index * 0.08,
-                ease: [0.22, 1, 0.36, 1],
-              }}
-              className="group border-b border-white/10 py-14 lg:px-10 lg:even:border-l"
-            >
-              <span className="mb-8 block text-sm uppercase tracking-[0.35em] text-zinc-600 transition group-hover:text-[#88B39A]">
-                {item.number}
-              </span>
-
-              <h3 className="max-w-xl text-4xl font-semibold leading-tight tracking-[-0.04em] text-[#F5F5F3] md:text-5xl">
-                {item.title}
-              </h3>
-
-              <p className="mt-7 max-w-xl text-[18px] leading-9 text-zinc-400 md:text-[20px] md:leading-10">
-                {item.text}
-              </p>
-            </motion.div>
-          ))}
+        <div className={styles.bio}>
+          <h2 style={{ margin: "0 0 24px" }}>Diego Ciriani</h2>
+          <p>
+            Sou psicólogo clínico e, há mais de uma década, acompanho pessoas que
+            querem entender por que alguns padrões continuam se repetindo em seus
+            relacionamentos.
+          </p>
+          <p>
+            Com o tempo, percebi que muitos conflitos não acontecem apenas por
+            causa do que o outro fez. Eles também passam pela forma como você
+            interpreta o que aconteceu, pelo lugar que costuma ocupar na relação e
+            pelas maneiras que aprendeu a se proteger ao longo da vida.
+          </p>
+          <p>
+            Por isso, na Análise Ponto Cego, você não recebe um resultado
+            automático nem uma resposta feita a partir de palavras-chave.
+          </p>
+          <p>
+            Sou eu quem lê cada resposta, analisa o seu caso e escreve a sua
+            devolutiva. Considero a sua história, o momento que você está vivendo,
+            a forma como se relaciona e até as contradições que aparecem nas suas
+            respostas.
+          </p>
+          <p className={styles.bioClose}>
+            Porque você não cabe em um perfil pronto. E a sua história precisa ser
+            compreendida como algo único.
+          </p>
+          <p className={styles.bioCrp}>
+            Psicólogo · CRP 04/44668 · Atende em consultório e online, em Uberaba.
+          </p>
         </div>
-      </Container>
+      </div>
+
+      <div className={styles.wrap}>
+        <div className={styles.whonot}>
+          <span className={styles.eyebrow}>O que não é</span>
+          <ul className={styles.nlist}>
+            <li>
+              <b>Não é psicoterapia.</b> Terapia é processo. Isso aqui é uma
+              fotografia.
+            </li>
+            <li>
+              <b>Não é diagnóstico</b> e não vira laudo.
+            </li>
+            <li>
+              <b>Não é gerado por inteligência artificial.</b>
+            </li>
+            <li>
+              <b>Não é leitura sobre a outra pessoa.</b> É sobre você.
+            </li>
+          </ul>
+        </div>
+      </div>
     </section>
   );
 }

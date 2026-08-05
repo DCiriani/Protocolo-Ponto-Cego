@@ -141,3 +141,22 @@ body{
 .font-heading{
   font-family:var(--font-cormorant);
 }
+.font-satoshi {
+  font-family: "Satoshi", var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+}
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Satoshi", var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  letter-spacing: -0.018em !important;
+  word-spacing: 0.08em;
+}
+
+/* Garante que palavras destacadas dentro de títulos também usem Satoshi */
+h1 .font-heading,
+h2 .font-heading,
+h3 .font-heading,
+h4 .font-heading {
+  font-family: "Satoshi", var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+}
