@@ -10,7 +10,8 @@ type PreferencePayload = {
 export async function POST(request: Request) {
   try {
     const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
-    const price = Number(process.env.PRODUCT_PRICE ?? "147");
+    const basePrice = Number(process.env.PRODUCT_PRICE ?? "147");
+    const premiumPrice = Number(process.env.PRODUCT_PRICE_PREMIUM ?? "497");
 
     if (!siteUrl) {
       return NextResponse.json(
@@ -19,9 +20,16 @@ export async function POST(request: Request) {
       );
     }
 
-    if (!Number.isFinite(price) || price <= 0) {
+    if (!Number.isFinite(basePrice) || basePrice <= 0) {
       return NextResponse.json(
         { ok: false, message: "PRODUCT_PRICE inválido." },
+        { status: 500 },
+      );
+    }
+
+    if (!Number.isFinite(premiumPrice) || premiumPrice <= 0) {
+      return NextResponse.json(
+        { ok: false, message: "PRODUCT_PRICE_PREMIUM inválido." },
         { status: 500 },
       );
     }
@@ -38,7 +46,7 @@ export async function POST(request: Request) {
 
     const { data: order, error: orderError } = await supabaseAdmin
       .from("checkout_orders")
-      .select("id, name, email, gate_status")
+      .select("id, name, email, gate_status, plan")
       .eq("id", orderId)
       .maybeSingle();
 
@@ -56,6 +64,12 @@ export async function POST(request: Request) {
       );
     }
 
+    const isPremium = order.plan === "leitura_devolutiva";
+    const price = isPremium ? premiumPrice : basePrice;
+    const description = isPremium
+      ? "Análise Ponto Cego — Leitura + devolutiva individual"
+      : "Análise Ponto Cego — Leitura";
+
     // Valor em centavos para a InfinityPay
     const priceInCents = Math.round(price * 100);
 
@@ -71,7 +85,7 @@ export async function POST(request: Request) {
         {
           quantity: 1,
           price: priceInCents,
-          description: "Análise Ponto Cego",
+          description,
         },
       ],
     };

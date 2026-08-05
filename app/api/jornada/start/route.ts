@@ -4,6 +4,7 @@ import { supabaseAdmin } from "@/lib/supabase/admin";
 type StartPayload = {
   name?: string;
   email?: string;
+  plano?: string;
 };
 
 function isValidEmail(email: string) {
@@ -16,6 +17,8 @@ export async function POST(request: Request) {
 
     const name = payload.name?.trim();
     const email = payload.email?.trim().toLowerCase();
+    const plan =
+      payload.plano === "leitura_devolutiva" ? "leitura_devolutiva" : "leitura";
 
     if (!name) {
       return NextResponse.json(
@@ -36,6 +39,7 @@ export async function POST(request: Request) {
       .insert({
         name,
         email,
+        plan,
         payment_status: "pending",
         gate_status: "pending",
       })

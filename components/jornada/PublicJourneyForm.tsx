@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import {
   publicSteps,
@@ -45,6 +45,10 @@ type StoredState = {
 
 export default function PublicJourneyForm() {
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const plano = searchParams.get("plano") === "leitura_devolutiva"
+    ? "leitura_devolutiva"
+    : "leitura";
 
   const [answers, setAnswers] = useState<PublicAnswers>(initialAnswers);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -165,7 +169,11 @@ export default function PublicJourneyForm() {
       const response = await fetch("/api/jornada/start", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name: answers.name, email: answers.email }),
+        body: JSON.stringify({
+          name: answers.name,
+          email: answers.email,
+          plano,
+        }),
       });
 
       const result = await response.json().catch(() => null);

@@ -64,9 +64,9 @@ export default function Receive() {
               <p className={styles.pnote}>
                 pagamento único · sem assinatura, sem renovação, sem upsell depois
               </p>
-              <a href="/jornada" className={styles.btn} style={{ marginTop: "22px" }}>
-                Começar a responder
-              </a>
+              <a href="/jornada?plano=leitura" className={styles.btn} style={{ marginTop: "22px" }}>
+  Começar a responder
+</a>
               <p className={styles.micro}>
                 Você só paga na cena 3. Antes disso é aberto.
               </p>
@@ -111,9 +111,9 @@ export default function Receive() {
                 </li>
               ))}
             </ul>
-            <a href="/jornada" className={`${styles.btn} ${styles.altBtn}`}>
-              <span className={styles.star}>✦</span> Análise + sessão individual
-            </a>
+           <a href="/jornada?plano=leitura_devolutiva" className={`${styles.btn} ${styles.altBtn}`}>
+  <span className={styles.star}>✦</span> Análise + sessão individual
+</a>
             <p className={styles.altMicro}>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" strokeWidth="1.6">
                 <rect x="5" y="11" width="14" height="9" rx="1.5" />
