@@ -53,6 +53,13 @@
   gap: 12px;
 }
 
+.taglinePremium {
+  background: linear-gradient(90deg, #B27F44, #D0A867);
+  border-color: transparent;
+  color: #1A1005;
+  font-weight: 600;
+}
+
 .tagline {
   display: inline-flex;
   align-items: center;

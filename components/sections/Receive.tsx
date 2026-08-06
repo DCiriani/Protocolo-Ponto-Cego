@@ -47,7 +47,10 @@ export default function Receive() {
         <div className={styles.center}>
           <span className={styles.eyebrow}>Oferta</span>
           <h2 className={styles.title}>
-            Uma sessão de terapia custa entre R$180 e R$250.
+            Uma sessão de terapia{" "}
+            <span style={{ color: "var(--copper)" }}>
+              custa entre R$180 e R$250.
+            </span>
           </h2>
           <hr className={styles.tick} />
         </div>

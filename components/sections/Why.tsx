@@ -34,13 +34,13 @@ export default function Why() {
             Sem chamada ao vivo na opção básica
           </span>
 
-          <span className={styles.tagline}>
+          <span className={`${styles.tagline} ${styles.taglinePremium}`}>
             <svg
               width="14"
               height="14"
               viewBox="0 0 24 24"
               fill="none"
-              stroke="#C08552"
+              stroke="#1A1005"
               strokeWidth="1.5"
             >
               <path d="M12 3a3 3 0 013 3v6a3 3 0 01-6 0V6a3 3 0 013-3z" />
