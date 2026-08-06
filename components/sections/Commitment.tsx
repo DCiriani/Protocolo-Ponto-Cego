@@ -7,7 +7,7 @@ const faqs = [
   },
   {
     q: "E se eu não me identificar com o que você escrever?",
-    a: "Se a leitura não fizer sentido pra você, me responde o e-mail em até 7 dias dizendo o que não bateu. Eu reescrevo pessoalmente ou devolvo o valor. Você escolhe qual das duas.",
+    a: "Se algum ponto da leitura não fez sentido pra você, me conta em até 7 dias a partir do recebimento desta análise. Eu releio o que você escreveu e faço um ajuste pontual de clareza sobre o que já foi entregue, sem custo.",
   },
   {
     q: "Isso substitui terapia?",
