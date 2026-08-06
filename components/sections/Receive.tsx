@@ -130,9 +130,12 @@ export default function Receive() {
             <path d="M9 12l2.2 2.2L15.5 10" />
           </svg>
           <p>
-            <b>Garantia.</b> Se a leitura não fizer sentido pra você, me responde o
-            e-mail em até 7 dias dizendo o que não bateu. Eu reescrevo pessoalmente
-            ou devolvo o valor. Você escolhe qual das duas.
+            <b>Garantia.</b> Se algum ponto da leitura não fez sentido pra você, me
+            conta em até 7 dias a partir do recebimento desta análise.{" "}
+            <span style={{ color: "#6F8F5E" }}>
+              Eu releio o que você escreveu e faço um ajuste pontual de
+              clareza sobre o que já foi entregue, sem custo.
+            </span>
           </p>
         </div>
       </div>
