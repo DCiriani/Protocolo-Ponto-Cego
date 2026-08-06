@@ -18,13 +18,37 @@ export default function Why() {
         </h2>
         <hr className={styles.tick} />
 
-        <span className={styles.tagline}>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C08552" strokeWidth="1.5">
-            <path d="M3 3l18 18" />
-            <path d="M12 4v10M8 10v4M16 8v6" />
-          </svg>
-          Sem chamada ao vivo no plano básico
-        </span>
+        <div className={styles.taglineRow}>
+          <span className={styles.tagline}>
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#C08552"
+              strokeWidth="1.5"
+            >
+              <path d="M3 3l18 18" />
+              <path d="M12 4v10M8 10v4M16 8v6" />
+            </svg>
+            Sem chamada ao vivo na opção básica
+          </span>
+
+          <span className={styles.tagline}>
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#C08552"
+              strokeWidth="1.5"
+            >
+              <path d="M12 3a3 3 0 013 3v6a3 3 0 01-6 0V6a3 3 0 013-3z" />
+              <path d="M5 11a7 7 0 0014 0M12 18v3" />
+            </svg>
+            Com chamada ao vivo na opção premium
+          </span>
+        </div>
 
         <div className={styles.steps}>
           {steps.map((step) => (
