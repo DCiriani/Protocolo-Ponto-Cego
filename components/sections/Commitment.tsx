@@ -7,7 +7,7 @@ const faqs = [
   },
   {
     q: "E se eu não me identificar com o que você escrever?",
-    a: "Você me responde dizendo o que não bateu. Eu reescrevo ou devolvo o dinheiro, sua escolha. Sem formulário e sem discussão.",
+    a: "Se a leitura não fizer sentido pra você, me responde o e-mail em até 7 dias dizendo o que não bateu. Eu reescrevo pessoalmente ou devolvo o valor. Você escolhe qual das duas.",
   },
   {
     q: "Isso substitui terapia?",
