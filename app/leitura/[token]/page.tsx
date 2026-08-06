@@ -4,6 +4,7 @@ import { supabaseAdmin } from "@/lib/supabase/admin";
 import PrintReadingButton from "@/components/leitura/PrintReadingButton";
 import ReadingContent from "@/components/leitura/ReadingContent";
 import ClarificationBlock from "@/components/leitura/ClarificationBlock";
+import AskClarificationButton from "@/components/leitura/AskClarificationButton";
 import { getClarificationWindow } from "@/lib/clarification/deadline";
 
 type Reading = {
@@ -81,6 +82,10 @@ export default async function ReadingPage({ params, searchParams }: PageProps) {
 
   const { withinWindow } = getClarificationWindow(reading.delivery_created_at);
 
+  // Mesma regra do ClarificationBlock (Caso A): só faz sentido levar a
+  // pessoa até o bloco de dúvida se o formulário for o que ela vai ver lá.
+  const canAskClarification = withinWindow && !clarification;
+
   return (
     <main className="min-h-screen bg-[#0A0A0A] px-6 py-20 text-[#F5F5F3] print:bg-white print:px-12 print:py-10 print:text-black">
       <div className="mx-auto max-w-3xl print:mx-auto print:max-w-[720px]">
@@ -106,6 +111,8 @@ export default async function ReadingPage({ params, searchParams }: PageProps) {
             <div className="mt-8 flex flex-wrap gap-3 print:hidden">
               <PrintReadingButton token={token} />
 
+              {canAskClarification && <AskClarificationButton />}
+
               <Link
                 href="/"
                 className="rounded-full border border-white/10 px-6 py-3 text-sm font-medium text-zinc-400 transition hover:border-[#88B39A]/40 hover:text-[#F5F5F3]"
@@ -129,11 +136,13 @@ export default async function ReadingPage({ params, searchParams }: PageProps) {
         </section>
 
         {!isPdf && (
-          <ClarificationBlock
-            token={token}
-            withinWindow={withinWindow}
-            existing={clarification}
-          />
+          <div id="duvida">
+            <ClarificationBlock
+              token={token}
+              withinWindow={withinWindow}
+              existing={clarification}
+            />
+          </div>
         )}
 
         <footer className="mt-12 text-center text-sm text-zinc-600 print:mt-10 print:text-left print:text-xs">
