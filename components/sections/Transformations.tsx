@@ -53,13 +53,6 @@ export default function Transformations() {
           <span className={styles.eyebrow}>O que não é</span>
           <ul className={styles.nlist}>
             <li>
-              <b>Não é psicoterapia.</b> Terapia é processo. Isso aqui é uma
-              fotografia.
-            </li>
-            <li>
-              <b>Não é diagnóstico</b> e não vira laudo.
-            </li>
-            <li>
               <b>Não é gerado por inteligência artificial.</b>
             </li>
             <li>
