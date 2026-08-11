@@ -23,7 +23,7 @@ export default function Story() {
             <div>Não é psicoterapia.</div>
           </div>
           <p className={styles.lead}>
-            Você responde a seis cenas de relacionamento. Não são perguntas sobre
+            Você responde a sete etapas sobre suas relações. Não são perguntas sobre
             como você se define, são situações, e você diz o que faria. Eu leio
             tudo pessoalmente e escrevo de volta, do zero, o padrão que se repete
             nas suas escolhas, o papel que você ocupa dentro dele, o que ele te

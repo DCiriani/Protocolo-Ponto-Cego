@@ -1,7 +1,7 @@
 import styles from "./Receive.module.css";
 
 const featItems = [
-  "Questionário completo de 6 cenas",
+  "Questionário completo de 7 etapas",
   "Leitura escrita de 1.400 a 2.000 palavras",
   "As 6 partes, com os 3 movimentos práticos",
   "Entrega em até 48h, e-mail e link privado",

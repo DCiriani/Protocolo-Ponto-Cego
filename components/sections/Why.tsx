@@ -2,7 +2,7 @@ import styles from "./Why.module.css";
 
 const steps = [
   { n: "1", title: "Você começa a responder", text: "As primeiras cenas são abertas. Você entende o tipo de pergunta antes de decidir se quer continuar." },
-  { n: "2", title: "Você libera o questionário", text: "Pagamento único e as seis cenas completas destravam. Cerca de 12 minutos pra responder com calma." },
+  { n: "2", title: "Você libera o questionário", text: "Pagamento único e as sete etapas completas destravam. Cerca de 12 minutos pra responder com calma.", },
   { n: "3", title: "Eu escrevo a sua leitura", text: "Em até 48 horas chega no seu e-mail e num link privado. Escrita à mão, sobre o seu caso, sem modelo pronto." },
 ];
 
