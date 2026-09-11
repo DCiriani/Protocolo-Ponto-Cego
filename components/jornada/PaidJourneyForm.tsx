@@ -8,6 +8,7 @@ import type { PrivateAnswers, Step } from "@/lib/jornada/types";
 const storageKey = "ponto-cego-jornada-private-v1";
 
 const MIN_SCENE_LENGTH = 250;
+const MIN_MAIN_QUESTION_LENGTH = 10;
 const LENGTH_HINT_MESSAGE =
   "Conta um pouco mais. Quanto mais detalhe você trouxer, mais precisa fica a sua leitura.";
 
@@ -26,6 +27,12 @@ function isSceneFieldTooShort(value: string) {
 }
 
 const initialAnswers: PrivateAnswers = {
+  relationshipStatus: "",
+  ageRange: "",
+  relationshipDuration: "",
+  discomfortDuration: "",
+  therapyHistory: "",
+  mainQuestion: "",
   sceneConflict: "",
   reactionSelections: [],
   reactionPurpose: "",
@@ -35,19 +42,52 @@ const initialAnswers: PrivateAnswers = {
   intentionImpact: "",
   patternHypothesis: "",
   desireFear: "",
+  screeningMood: "",
+  screeningFunctioning: "",
+  screeningIdeation: "",
   consent: false,
+};
+
+type ScreeningOption = { label: string; value: string };
+
+type ScreeningCopy = {
+  eyebrow: string;
+  title: string;
+  description: string;
+  moodLabel: string;
+  functioningLabel: string;
+  ideationLabel: string;
+  footer: string;
 };
 
 type Props = {
   orderId: string;
   steps: Step[];
   reactionOptions: string[];
+  relationshipStatusOptions: string[];
+  ageRangeOptions: string[];
+  relationshipDurationOptions: string[];
+  discomfortDurationOptions: string[];
+  therapyHistoryOptions: string[];
+  screeningMoodOptions: ScreeningOption[];
+  screeningFunctioningOptions: ScreeningOption[];
+  screeningIdeationOptions: ScreeningOption[];
+  screeningCopy: ScreeningCopy;
 };
 
 export default function PaidJourneyForm({
   orderId,
   steps,
   reactionOptions,
+  relationshipStatusOptions,
+  ageRangeOptions,
+  relationshipDurationOptions,
+  discomfortDurationOptions,
+  therapyHistoryOptions,
+  screeningMoodOptions,
+  screeningFunctioningOptions,
+  screeningIdeationOptions,
+  screeningCopy,
 }: Props) {
   const router = useRouter();
 
@@ -115,6 +155,16 @@ export default function PaidJourneyForm({
   function isStepValid(step?: Step) {
     if (!step) return true;
 
+    if (step.type === "context") {
+      return [
+        answers.relationshipStatus,
+        answers.ageRange,
+        answers.relationshipDuration,
+        answers.discomfortDuration,
+        answers.therapyHistory,
+      ].every((value) => value.trim().length > 0);
+    }
+
     if (step.type === "reaction") {
       return (
         answers.reactionSelections.length > 0 &&
@@ -130,11 +180,23 @@ export default function PaidJourneyForm({
       );
     }
 
-    const value = answers[step.key as keyof PrivateAnswers];
+    if (step.type === "screening") {
+      return (
+        answers.screeningMood.trim().length > 0 &&
+        answers.screeningFunctioning.trim().length > 0 &&
+        answers.screeningIdeation.trim().length > 0
+      );
+    }
 
     if (step.type === "consent") {
-      return value === true;
+      return answers.consent === true;
     }
+
+    if (step.key === "mainQuestion") {
+      return answers.mainQuestion.trim().length >= MIN_MAIN_QUESTION_LENGTH;
+    }
+
+    const value = answers[step.key as keyof PrivateAnswers];
 
     if (
       typeof value === "string" &&
@@ -148,6 +210,10 @@ export default function PaidJourneyForm({
 
   function getErrorMessage() {
     if (!touched || isReview || isStepValid(currentStep)) return "";
+
+    if (currentStep?.type === "context") {
+      return "Responda todos os blocos de contexto antes de continuar.";
+    }
 
     if (currentStep?.type === "reaction") {
       if (answers.reactionSelections.length === 0) {
@@ -172,8 +238,20 @@ export default function PaidJourneyForm({
       return LENGTH_HINT_MESSAGE;
     }
 
+    if (currentStep?.type === "screening") {
+      return "Responda as 3 perguntas antes de continuar.";
+    }
+
     if (currentStep?.type === "consent") {
       return "Confirme que você compreende o objetivo da análise.";
+    }
+
+    if (currentStep?.key === "mainQuestion") {
+      if (answers.mainQuestion.trim().length === 0) {
+        return "Responda esta etapa antes de continuar.";
+      }
+
+      return "Conta um pouco mais. Quanto mais detalhe você trouxer, mais precisa fica a sua leitura.";
     }
 
     if (currentStep && sceneFieldsWithMinLength.includes(currentStep.key)) {
@@ -322,7 +400,21 @@ export default function PaidJourneyForm({
               </div>
 
               <div className="flex flex-col justify-center">
-                {renderField(currentStep, answers, setField, reactionOptions)}
+                {renderField(
+                  currentStep,
+                  answers,
+                  setField,
+                  reactionOptions,
+                  relationshipStatusOptions,
+                  ageRangeOptions,
+                  relationshipDurationOptions,
+                  discomfortDurationOptions,
+                  therapyHistoryOptions,
+                  screeningMoodOptions,
+                  screeningFunctioningOptions,
+                  screeningIdeationOptions,
+                  screeningCopy,
+                )}
 
                 {getErrorMessage() && (
                   <p className="mt-5 text-sm text-[#C08552]">
@@ -377,8 +469,92 @@ function renderField(
     value: PrivateAnswers[keyof PrivateAnswers],
   ) => void,
   reactionOptions: string[],
+  relationshipStatusOptions: string[],
+  ageRangeOptions: string[],
+  relationshipDurationOptions: string[],
+  discomfortDurationOptions: string[],
+  therapyHistoryOptions: string[],
+  screeningMoodOptions: ScreeningOption[],
+  screeningFunctioningOptions: ScreeningOption[],
+  screeningIdeationOptions: ScreeningOption[],
+  screeningCopy: ScreeningCopy,
 ) {
   const value = answers[step.key as keyof PrivateAnswers];
+
+  if (step.type === "context") {
+    return (
+      <div className="space-y-8">
+        <ContextChoiceGroup
+          label="Qual é o seu momento relacional hoje?"
+          options={relationshipStatusOptions}
+          selected={answers.relationshipStatus}
+          onSelect={(option) => setField("relationshipStatus", option)}
+          variant="list"
+        />
+
+        <ContextChoiceGroup
+          label="Pensando na relação atual ou na última que mais te marcou, quanto tempo ela dura ou durou?"
+          options={relationshipDurationOptions}
+          selected={answers.relationshipDuration}
+          onSelect={(option) => setField("relationshipDuration", option)}
+        />
+
+        <ContextChoiceGroup
+          label="Desde quando você sente que algo não vai bem na forma como você se relaciona?"
+          options={discomfortDurationOptions}
+          selected={answers.discomfortDuration}
+          onSelect={(option) => setField("discomfortDuration", option)}
+        />
+
+        <ContextChoiceGroup
+          label="Qual é a sua faixa etária?"
+          options={ageRangeOptions}
+          selected={answers.ageRange}
+          onSelect={(option) => setField("ageRange", option)}
+        />
+
+        <ContextChoiceGroup
+          label="Você já fez ou faz terapia?"
+          options={therapyHistoryOptions}
+          selected={answers.therapyHistory}
+          onSelect={(option) => setField("therapyHistory", option)}
+        />
+      </div>
+    );
+  }
+
+  if (step.type === "screening") {
+    return (
+      <div className="rounded-[1.75rem] border border-white/10 bg-[#0A1725]/60 p-6 md:p-8">
+        <div className="space-y-7">
+          <GrayChoiceGroup
+            label={screeningCopy.moodLabel}
+            options={screeningMoodOptions}
+            selected={answers.screeningMood}
+            onSelect={(v) => setField("screeningMood", v)}
+          />
+
+          <GrayChoiceGroup
+            label={screeningCopy.functioningLabel}
+            options={screeningFunctioningOptions}
+            selected={answers.screeningFunctioning}
+            onSelect={(v) => setField("screeningFunctioning", v)}
+          />
+
+          <GrayChoiceGroup
+            label={screeningCopy.ideationLabel}
+            options={screeningIdeationOptions}
+            selected={answers.screeningIdeation}
+            onSelect={(v) => setField("screeningIdeation", v)}
+          />
+        </div>
+
+        <p className="mt-8 border-t border-white/10 pt-6 text-xs leading-6 text-[#8E9BA7]">
+          {screeningCopy.footer}
+        </p>
+      </div>
+    );
+  }
 
   if (step.type === "textarea") {
     return (
@@ -395,7 +571,11 @@ function renderField(
           className="w-full resize-none rounded-[2rem] border border-white/10 bg-white/[0.04] p-7 text-lg leading-8 text-[#EDEAE3] outline-none transition placeholder:text-[#5F6B77] focus:border-[#C08552]/60"
         />
 
-        <LengthHint value={String(value ?? "")} />
+        {step.key === "mainQuestion" ? (
+          <MainQuestionHint value={String(value ?? "")} />
+        ) : (
+          <LengthHint value={String(value ?? "")} />
+        )}
       </div>
     );
   }
@@ -554,6 +734,107 @@ function LengthHint({ value }: { value: string }) {
   if (!isSceneFieldTooShort(value)) return null;
 
   return <p className="mt-3 text-sm text-[#8E9BA7]">{LENGTH_HINT_MESSAGE}</p>;
+}
+
+function MainQuestionHint({ value }: { value: string }) {
+  const length = value.trim().length;
+
+  if (length === 0 || length >= MIN_MAIN_QUESTION_LENGTH) return null;
+
+  return (
+    <p className="mt-3 text-sm text-[#8E9BA7]">
+      Conta um pouco mais. Quanto mais detalhe você trouxer, mais precisa fica
+      a sua leitura.
+    </p>
+  );
+}
+
+function ContextChoiceGroup({
+  label,
+  options,
+  selected,
+  onSelect,
+  variant = "pills",
+}: {
+  label: string;
+  options: string[];
+  selected: string;
+  onSelect: (option: string) => void;
+  variant?: "list" | "pills";
+}) {
+  return (
+    <div>
+      <p className="mb-4 text-[0.82rem] font-semibold uppercase tracking-[0.24em] text-[#C08552] md:text-[0.9rem]">
+        {label}
+      </p>
+
+      <div
+        className={variant === "list" ? "grid gap-3" : "flex flex-wrap gap-3"}
+      >
+        {options.map((option) => {
+          const isSelected = selected === option;
+
+          return (
+            <button
+              key={option}
+              type="button"
+              onClick={() => onSelect(option)}
+              className={`border text-left transition ${
+                variant === "list"
+                  ? "rounded-2xl px-6 py-4 text-base leading-7"
+                  : "rounded-full px-5 py-3 text-sm leading-6"
+              } ${
+                isSelected
+                  ? "border-[#C08552] bg-[#C08552]/12 text-white"
+                  : "border-white/10 bg-white/[0.04] text-[#AFBAC5] hover:border-[#C08552]/50 hover:text-white"
+              }`}
+            >
+              {option}
+            </button>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+function GrayChoiceGroup({
+  label,
+  options,
+  selected,
+  onSelect,
+}: {
+  label: string;
+  options: ScreeningOption[];
+  selected: string;
+  onSelect: (value: string) => void;
+}) {
+  return (
+    <div>
+      <p className="mb-3 text-sm leading-6 text-[#C7B79A]">{label}</p>
+
+      <div className="grid gap-2">
+        {options.map((option) => {
+          const isSelected = selected === option.value;
+
+          return (
+            <button
+              key={option.value}
+              type="button"
+              onClick={() => onSelect(option.value)}
+              className={`rounded-xl border px-4 py-3 text-left text-sm leading-6 transition ${
+                isSelected
+                  ? "border-[#C08552] bg-white/10 text-white"
+                  : "border-white/10 bg-transparent text-[#AFBAC5] hover:border-[#C08552]/50 hover:text-white"
+              }`}
+            >
+              {option.label}
+            </button>
+          );
+        })}
+      </div>
+    </div>
+  );
 }
 
 function ReviewStep({

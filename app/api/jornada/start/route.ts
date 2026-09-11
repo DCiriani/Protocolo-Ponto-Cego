@@ -41,7 +41,7 @@ export async function POST(request: Request) {
         email,
         plan,
         payment_status: "pending",
-        gate_status: "pending",
+        gate_status: "approved",
       })
       .select("id")
       .single();

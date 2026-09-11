@@ -1,18 +1,15 @@
 export type PublicAnswers = {
   name: string;
   email: string;
+};
+
+export type PrivateAnswers = {
   relationshipStatus: string;
   ageRange: string;
   relationshipDuration: string;
   discomfortDuration: string;
   therapyHistory: string;
   mainQuestion: string;
-  screeningMood: string;
-  screeningFunctioning: string;
-  screeningIdeation: string;
-};
-
-export type PrivateAnswers = {
   sceneConflict: string;
   reactionSelections: string[];
   reactionPurpose: string;
@@ -22,6 +19,9 @@ export type PrivateAnswers = {
   intentionImpact: string;
   patternHypothesis: string;
   desireFear: string;
+  screeningMood: string;
+  screeningFunctioning: string;
+  screeningIdeation: string;
   consent: boolean;
 };
 
@@ -43,6 +43,7 @@ export type Step = {
     | "context"
     | "reaction"
     | "mirror"
+    | "screening"
     | "consent";
   placeholder?: string;
   helper?: string;

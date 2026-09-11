@@ -1,11 +1,17 @@
 import { NextResponse } from "next/server";
 import { supabaseAdmin } from "@/lib/supabase/admin";
-import { runGate2 } from "@/lib/risk";
+import { runFinalGate, type Screening } from "@/lib/risk";
 import { sendRiskAlert } from "@/lib/alerts";
 
 type JornadaPayload = {
   orderId?: string;
   answers?: {
+    relationshipStatus?: string;
+    ageRange?: string;
+    relationshipDuration?: string;
+    discomfortDuration?: string;
+    therapyHistory?: string;
+    mainQuestion?: string;
     sceneConflict?: string;
     reactionSelections?: string[];
     reactionPurpose?: string;
@@ -15,11 +21,20 @@ type JornadaPayload = {
     intentionImpact?: string;
     patternHypothesis?: string;
     desireFear?: string;
+    screeningMood?: string;
+    screeningFunctioning?: string;
+    screeningIdeation?: string;
     consent?: boolean;
   };
 };
 
 const requiredStringFields = [
+  "relationshipStatus",
+  "ageRange",
+  "relationshipDuration",
+  "discomfortDuration",
+  "therapyHistory",
+  "mainQuestion",
   "sceneConflict",
   "reactionPurpose",
   "sceneProximity",
@@ -28,6 +43,9 @@ const requiredStringFields = [
   "intentionImpact",
   "patternHypothesis",
   "desireFear",
+  "screeningMood",
+  "screeningFunctioning",
+  "screeningIdeation",
 ] as const;
 
 export async function POST(request: Request) {
@@ -103,7 +121,7 @@ export async function POST(request: Request) {
 
     const { data: submission, error: submissionFetchError } = await supabaseAdmin
       .from("jornada_submissions")
-      .select("id, main_question, raw_payload, risk_gate")
+      .select("id, raw_payload")
       .eq("id", order.jornada_submission_id)
       .maybeSingle();
 
@@ -124,6 +142,8 @@ export async function POST(request: Request) {
     const { error: updateError } = await supabaseAdmin
       .from("jornada_submissions")
       .update({
+        relationship_status: answers.relationshipStatus,
+        main_question: answers.mainQuestion,
         scene_conflict: answers.sceneConflict?.trim(),
         consent: true,
         payment_status: "approved",
@@ -141,8 +161,16 @@ export async function POST(request: Request) {
       );
     }
 
-    const assessment = await runGate2({
-      mainQuestion: submission.main_question ?? "",
+    const screening: Screening = {
+      mood: answers.screeningMood as Screening["mood"],
+      functioning: answers.screeningFunctioning as Screening["functioning"],
+      ideation: answers.screeningIdeation as Screening["ideation"],
+    };
+
+    const assessment = await runFinalGate({
+      email: order.email,
+      mainQuestion: answers.mainQuestion ?? "",
+      screening,
       sceneConflict: answers.sceneConflict,
       reactionPurpose: answers.reactionPurpose,
       sceneProximity: answers.sceneProximity,
@@ -154,8 +182,6 @@ export async function POST(request: Request) {
     });
 
     if (assessment.level !== "verde") {
-      const riskGate = submission.risk_gate === "gate_1" ? "ambos" : "gate_2";
-
       await supabaseAdmin
         .from("jornada_submissions")
         .update({
@@ -163,7 +189,7 @@ export async function POST(request: Request) {
           risk_category: assessment.category,
           risk_excerpts: assessment.excerpts,
           risk_reason: assessment.reason,
-          risk_gate: riskGate,
+          risk_gate: "gate_2",
           risk_flagged_at: new Date().toISOString(),
         })
         .eq("id", submission.id);
@@ -176,6 +202,7 @@ export async function POST(request: Request) {
         category: assessment.category,
         excerpts: assessment.excerpts,
         reason: assessment.reason,
+        screening,
         submissionId: submission.id,
       });
 

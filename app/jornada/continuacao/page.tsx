@@ -1,6 +1,18 @@
 import { redirect } from "next/navigation";
 import { supabaseAdmin } from "@/lib/supabase/admin";
-import { privateSteps, reactionOptions } from "@/lib/jornada/privateSteps.server";
+import {
+  privateSteps,
+  reactionOptions,
+  relationshipStatusOptions,
+  ageRangeOptions,
+  relationshipDurationOptions,
+  discomfortDurationOptions,
+  therapyHistoryOptions,
+  screeningMoodOptions,
+  screeningFunctioningOptions,
+  screeningIdeationOptions,
+  screeningCopy,
+} from "@/lib/jornada/privateSteps.server";
 import PaidJourneyForm from "@/components/jornada/PaidJourneyForm";
 
 type PageProps = {
@@ -38,6 +50,15 @@ export default async function JornadaContinuacaoPage({
       orderId={order.id}
       steps={privateSteps}
       reactionOptions={reactionOptions}
+      relationshipStatusOptions={relationshipStatusOptions}
+      ageRangeOptions={ageRangeOptions}
+      relationshipDurationOptions={relationshipDurationOptions}
+      discomfortDurationOptions={discomfortDurationOptions}
+      therapyHistoryOptions={therapyHistoryOptions}
+      screeningMoodOptions={screeningMoodOptions}
+      screeningFunctioningOptions={screeningFunctioningOptions}
+      screeningIdeationOptions={screeningIdeationOptions}
+      screeningCopy={screeningCopy}
     />
   );
 }

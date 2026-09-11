@@ -317,3 +317,60 @@ export async function runGate2(fullAnswers: {
 
   return classifyText(content);
 }
+
+export async function runFinalGate({
+  email,
+  mainQuestion,
+  screening,
+  sceneConflict,
+  reactionPurpose,
+  sceneProximity,
+  mirrorCriticism,
+  mirrorTruth,
+  intentionImpact,
+  patternHypothesis,
+  desireFear,
+}: {
+  email: string;
+  mainQuestion: string;
+  screening: Screening;
+  sceneConflict?: string;
+  reactionPurpose?: string;
+  sceneProximity?: string;
+  mirrorCriticism?: string;
+  mirrorTruth?: string;
+  intentionImpact?: string;
+  patternHypothesis?: string;
+  desireFear?: string;
+}): Promise<RiskAssessment> {
+  const screeningLevel = classifyScreening(screening);
+  const textAssessment = await runGate2({
+    mainQuestion,
+    sceneConflict,
+    reactionPurpose,
+    sceneProximity,
+    mirrorCriticism,
+    mirrorTruth,
+    intentionImpact,
+    patternHypothesis,
+    desireFear,
+  });
+
+  let level = maxLevel(screeningLevel, textAssessment.level);
+  let category = textAssessment.category;
+
+  if (await hasPreviousRedFlag(email)) {
+    level = maxLevel(level, "amarelo");
+  }
+
+  if (!category && screeningLevel === "vermelho") {
+    category = "autoexterminio";
+  }
+
+  return {
+    level,
+    category,
+    excerpts: textAssessment.excerpts,
+    reason: textAssessment.reason,
+  };
+}
