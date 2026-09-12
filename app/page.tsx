@@ -1,29 +1,39 @@
-import Navbar from "@/components/layout/Navbar";
-import Hero from "@/components/hero/Hero";
-import Story from "@/components/sections/Story";
-import Why from "@/components/sections/Why";
-import Process from "@/components/sections/Process";
-import Transformations from "@/components/sections/Transformations";
-import About from "@/components/sections/About";
-import Receive from "@/components/sections/Receive";
-import FAQ from "@/components/sections/FAQ";
-import FinalCTA from "@/components/sections/FinalCTA";
-import Commitment from "@/components/sections/Commitment";
+import SiteHeader from "@/components/landing/SiteHeader";
+import Hero from "@/components/landing/Hero";
+import Mirror from "@/components/landing/Mirror";
+import Stats from "@/components/landing/Stats";
+import Author from "@/components/landing/Author";
+import Method from "@/components/landing/Method";
+import Parts from "@/components/landing/Parts";
+import Example from "@/components/landing/Example";
+import Steps from "@/components/landing/Steps";
+import Testimonials from "@/components/landing/Testimonials";
+import Quiz from "@/components/landing/Quiz";
+import Pricing from "@/components/landing/Pricing";
+import ForWhom from "@/components/landing/ForWhom";
+import Faq from "@/components/landing/Faq";
+import FinalCta from "@/components/landing/FinalCta";
+import Reveal from "@/components/landing/Reveal";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#050705] text-[#F5F5F3]">
-      <Navbar />
+    <main>
+      <SiteHeader />
       <Hero />
-      <Story />
-      <Why />
-      <Process />
-      <Transformations />
-      <About />
-<Receive />
-<Commitment />
-<FAQ />
-<FinalCTA />
+      <Mirror />
+      <Stats />
+      <Author />
+      <Method />
+      <Parts />
+      <Example />
+      <Steps />
+      <Testimonials />
+      <Quiz />
+      <Pricing />
+      <ForWhom />
+      <Faq />
+      <FinalCta />
+      <Reveal />
     </main>
   );
 }

@@ -1,0 +1,32 @@
+/* ===== Tokens compartilhados — Landing Ponto Cego ===== */
+
+.wrap {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+.narrow {
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+@media (max-width: 640px) {
+  .wrap,
+  .narrow {
+    padding: 0 20px;
+  }
+}
+
+.eyebrow {
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #8a6a2e;
+  margin-bottom: 16px;
+}

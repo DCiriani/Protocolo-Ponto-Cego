@@ -1,0 +1,85 @@
+.section {
+  padding: 72px 0;
+  background: #e5ede7;
+  border-top: 1px solid #c9d3d6;
+  border-bottom: 1px solid #c9d3d6;
+}
+
+.title {
+  font-size: clamp(26px, 4.5vw, 38px);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 36px;
+}
+@media (max-width: 720px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.whom {
+  border-radius: 10px;
+  padding: 30px 28px;
+}
+.yes {
+  background: #dee7db;
+  border: 1px solid #bfd2c4;
+}
+.no {
+  background: #f3e7e7;
+  border: 1px solid #e0c9c9;
+}
+.whom h3 {
+  font-size: 17px;
+  margin-bottom: 18px;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-weight: 700;
+}
+.yes h3 {
+  color: #3a5642;
+}
+.no h3 {
+  color: #8c3a3a;
+}
+.whom ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.whom li {
+  padding: 8px 0 8px 26px;
+  position: relative;
+  font-size: 15px;
+  line-height: 1.45;
+}
+.whom li b {
+  font-weight: 600;
+}
+.yes li b {
+  color: #3a5642;
+}
+.no li b {
+  color: #8c3a3a;
+}
+.yes li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  color: #4f7358;
+  font-weight: 800;
+}
+.no li::before {
+  content: "×";
+  position: absolute;
+  left: 2px;
+  top: 8px;
+  color: #8c3a3a;
+  font-weight: 800;
+  font-size: 18px;
+}
+

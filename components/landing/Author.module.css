@@ -1,0 +1,86 @@
+.section {
+  padding: 72px 0;
+  background: #e5ede7;
+  border-top: 1px solid #c9d3d6;
+  border-bottom: 1px solid #c9d3d6;
+  color: #1e2b29;
+}
+
+.name {
+  font-size: clamp(28px, 5vw, 42px);
+  margin: 0 0 32px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 40px;
+  align-items: start;
+}
+@media (max-width: 720px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+
+.photoWrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 4px solid #fff;
+  box-shadow: 0 24px 50px -25px rgba(30, 43, 41, 0.4);
+  position: sticky;
+  top: 90px;
+}
+@media (max-width: 720px) {
+  .photoWrap {
+    position: relative;
+    top: 0;
+    max-width: 320px;
+  }
+}
+.photo {
+  object-fit: cover;
+  object-position: center top;
+}
+
+.copy {
+  min-width: 0;
+}
+.copy p {
+  font-size: 16px;
+  line-height: 1.65;
+  color: #52625d;
+  margin: 0 0 18px;
+}
+.copy p:last-child {
+  margin-bottom: 0;
+}
+.emphasis {
+  color: #1e2b29 !important;
+  font-weight: 600;
+  font-size: 17px !important;
+}
+
+.credentials {
+  margin-top: 34px;
+  padding-top: 24px;
+  border-top: 1px solid #c9d3d6;
+}
+.creds {
+  font-size: 13.5px;
+  color: #52625d;
+  margin: 0 0 8px;
+}
+.social {
+  font-size: 13.5px;
+  color: #52625d;
+  margin: 0;
+}
+.social a {
+  color: #2e6688;
+  font-weight: 600;
+}
