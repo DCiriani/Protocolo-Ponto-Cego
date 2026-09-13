@@ -14,7 +14,7 @@ export default function JornadaConcluidaPage() {
         </span>
 
         <h1
-          className="max-w-4xl text-[2rem] leading-[1.12] tracking-[-0.01em] text-[#2E6688] min-[390px]:text-[2.2rem] md:text-[clamp(2.6rem,5.2vw,4.6rem)] md:leading-[1.06]"
+          className="max-w-4xl text-[1.65rem] leading-[1.2] tracking-[-0.01em] text-[#2E6688] min-[390px]:text-[1.8rem] md:text-[clamp(1.9rem,3vw,2.4rem)] md:leading-[1.2]"
           style={{
             fontFamily: "var(--font-manrope), system-ui, sans-serif",
             fontWeight: 700,

@@ -14,7 +14,7 @@ export default function JornadaInicioPage() {
         </span>
 
         <h1
-          className="text-[2.4rem] leading-[1.08] tracking-[-0.01em] text-[#2E6688] md:text-[clamp(3rem,6vw,5.6rem)] md:leading-[1.02]"
+          className="text-[1.85rem] leading-[1.15] tracking-[-0.01em] text-[#2E6688] md:text-[clamp(2.1rem,3.6vw,2.9rem)] md:leading-[1.15]"
           style={{
             fontFamily: "var(--font-manrope), system-ui, sans-serif",
             fontWeight: 700,

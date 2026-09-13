@@ -239,7 +239,7 @@ export default function PublicJourneyForm() {
                 </span>
 
                 <h1
-                  className="max-w-3xl text-[2.15rem] leading-[1.1] tracking-[-0.02em] text-[#2E6688] min-[390px]:text-[2.35rem] md:text-[clamp(2.8rem,5.8vw,5.4rem)] md:leading-[1.05]"
+                  className="max-w-3xl text-[1.75rem] leading-[1.15] tracking-[-0.015em] text-[#2E6688] min-[390px]:text-[1.9rem] md:text-[clamp(2rem,3.4vw,2.75rem)] md:leading-[1.15]"
                   style={{
                     fontFamily: "var(--font-manrope), system-ui, sans-serif",
                     fontWeight: 700,
