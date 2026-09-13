@@ -49,9 +49,9 @@ function PendingContent() {
   }, [router, searchParams]);
 
   return (
-    <main className="flex min-h-screen items-center bg-[#0A0A0A] px-6 text-[#F5F5F3]">
+    <main className="flex min-h-screen items-center bg-[#F1F4F1] px-6 text-[#1E2B29]">
       <div className="mx-auto max-w-2xl">
-        <span className="mb-8 block text-sm uppercase tracking-[0.35em] text-zinc-600">
+        <span className="mb-8 block text-sm uppercase tracking-[0.35em] text-[#8A6A2E]">
           Confirmando pagamento
         </span>
 
@@ -60,14 +60,14 @@ function PendingContent() {
         </h1>
 
         {!tooLong ? (
-          <p className="mt-8 text-lg leading-8 text-zinc-400">
+          <p className="mt-8 text-lg leading-8 text-[#52625D]">
             Isso costuma levar alguns segundos. Assim que o pagamento for
             confirmado, você será levado automaticamente para a continuação da
             sua jornada. Não feche esta página.
           </p>
         ) : (
           <>
-            <p className="mt-8 text-lg leading-8 text-zinc-400">
+            <p className="mt-8 text-lg leading-8 text-[#52625D]">
               A confirmação está demorando mais que o normal. Se você já pagou,
               não se preocupe: assim que o pagamento for aprovado, você receberá
               um e-mail com o acesso para continuar. Você pode fechar esta

@@ -184,12 +184,12 @@ export default function PublicJourneyForm() {
 
   return (
     <main
-      className="relative min-h-screen overflow-hidden bg-[#0F2032] text-[#EDEAE3]"
+      className="relative min-h-screen overflow-hidden bg-[#F1F4F1] text-[#1E2B29]"
       style={{ fontFamily: "var(--font-inter), system-ui, sans-serif" }}
     >
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(192,133,82,0.12),transparent_36%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(46,102,136,0.10),transparent_36%)]" />
 
-      <div className="fixed inset-x-0 top-0 z-40 border-b border-white/10 bg-[#0F2032]/85 backdrop-blur-md">
+      <div className="fixed inset-x-0 top-0 z-40 border-b border-[#C9D3D6] bg-[#F1F4F1]/90 backdrop-blur-md">
         <div className="mx-auto flex h-20 max-w-6xl items-center justify-between px-5 md:px-8">
           <Link href="/" className="flex items-center gap-3">
             <svg
@@ -197,7 +197,7 @@ export default function PublicJourneyForm() {
               height="22"
               viewBox="0 0 24 24"
               fill="none"
-              stroke="#C08552"
+              stroke="#2E6688"
               strokeWidth="1.4"
               aria-hidden="true"
             >
@@ -208,22 +208,22 @@ export default function PublicJourneyForm() {
             <span
               className="text-lg"
               style={{
-                fontFamily: "var(--font-fraunces), Georgia, serif",
-                fontWeight: 500,
+                fontFamily: "var(--font-manrope), system-ui, sans-serif",
+                fontWeight: 700,
               }}
             >
               Análise Ponto Cego
             </span>
           </Link>
 
-          <span className="text-xs uppercase tracking-[0.25em] text-[#7E8A96]">
+          <span className="text-xs uppercase tracking-[0.25em] text-[#8A9992]">
             {currentIndex + 1} / {totalSteps}
           </span>
         </div>
 
-        <div className="h-px w-full bg-white/10">
+        <div className="h-px w-full bg-[#C9D3D6]">
           <div
-            className="h-px bg-[#C08552] transition-all duration-500"
+            className="h-px bg-[#2E6688] transition-all duration-500"
             style={{ width: `${progress}%` }}
           />
         </div>
@@ -234,20 +234,20 @@ export default function PublicJourneyForm() {
           {currentStep ? (
             <div className="grid gap-14 lg:grid-cols-[0.95fr_1.05fr] lg:gap-20">
               <div>
-                <span className="mb-8 block text-sm uppercase tracking-[0.35em] text-[#7E8A96]">
+                <span className="mb-8 block text-sm uppercase tracking-[0.35em] text-[#8A9992]">
                   {currentStep.eyebrow}
                 </span>
 
                 <h1
-                  className="max-w-3xl text-[2.15rem] leading-[1.1] tracking-[-0.02em] text-[#C08552] min-[390px]:text-[2.35rem] md:text-[clamp(2.8rem,5.8vw,5.4rem)] md:leading-[1.05]"
+                  className="max-w-3xl text-[2.15rem] leading-[1.1] tracking-[-0.02em] text-[#2E6688] min-[390px]:text-[2.35rem] md:text-[clamp(2.8rem,5.8vw,5.4rem)] md:leading-[1.05]"
                   style={{
-                    fontFamily: "var(--font-fraunces), Georgia, serif",
-                    fontWeight: 500,
+                    fontFamily: "var(--font-manrope), system-ui, sans-serif",
+                    fontWeight: 700,
                   }}
                 >
                   {currentStep.title}
                 </h1>
-                <p className="mt-8 max-w-xl whitespace-pre-wrap text-[18px] leading-8 text-[#AFBAC5] md:text-[20px] md:leading-10">
+                <p className="mt-8 max-w-xl whitespace-pre-wrap text-[18px] leading-8 text-[#52625D] md:text-[20px] md:leading-10">
                   {currentStep.description}
                 </p>
               </div>
@@ -260,11 +260,11 @@ export default function PublicJourneyForm() {
                   }
                   placeholder={currentStep.placeholder}
                   type={currentStep.type === "email" ? "email" : "text"}
-                  className="w-full rounded-full border border-white/10 bg-white/[0.04] px-7 py-5 text-lg text-[#EDEAE3] outline-none transition placeholder:text-[#5F6B77] focus:border-[#C08552]/60"
+                  className="w-full rounded-full border border-[#C9D3D6] bg-white px-7 py-5 text-lg text-[#1E2B29] outline-none transition placeholder:text-[#8A9992] focus:border-[#2E6688]/60"
                 />
 
                 {(getErrorMessage() || errorMessage) && (
-                  <p className="mt-5 text-sm text-[#C08552]">
+                  <p className="mt-5 text-sm text-[#8C3A3A]">
                     {getErrorMessage() || errorMessage}
                   </p>
                 )}
@@ -274,7 +274,7 @@ export default function PublicJourneyForm() {
                     type="button"
                     onClick={goNext}
                     disabled={isProcessing}
-                    className="group inline-flex items-center justify-center gap-4 rounded-full bg-[#7C8F6A] px-9 py-5 text-[15px] font-semibold text-white transition hover:bg-[#67795A] disabled:cursor-not-allowed disabled:opacity-60"
+                    className="group inline-flex items-center justify-center gap-4 rounded-full bg-[#2E6688] px-9 py-5 text-[15px] font-semibold text-white transition hover:bg-[#234E68] disabled:cursor-not-allowed disabled:opacity-60"
                   >
                     {isProcessing
                       ? isLastStep
@@ -293,7 +293,7 @@ export default function PublicJourneyForm() {
                       type="button"
                       onClick={goBack}
                       disabled={isProcessing}
-                      className="inline-flex items-center justify-center rounded-full border border-white/15 px-9 py-5 text-[15px] font-semibold text-[#AFBAC5] transition hover:border-[#C08552]/50 hover:text-white disabled:cursor-not-allowed disabled:opacity-60"
+                      className="inline-flex items-center justify-center rounded-full border border-[#C9D3D6] px-9 py-5 text-[15px] font-semibold text-[#52625D] transition hover:border-[#2E6688]/50 hover:text-[#1E2B29] disabled:cursor-not-allowed disabled:opacity-60"
                     >
                       Voltar
                     </button>

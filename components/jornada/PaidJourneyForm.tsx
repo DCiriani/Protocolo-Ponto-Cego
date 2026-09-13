@@ -331,12 +331,12 @@ export default function PaidJourneyForm({
 
   return (
     <main
-      className="relative min-h-screen overflow-hidden bg-[#0F2032] text-[#EDEAE3]"
+      className="relative min-h-screen overflow-hidden bg-[#F1F4F1] text-[#1E2B29]"
       style={{ fontFamily: "var(--font-inter), system-ui, sans-serif" }}
     >
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(192,133,82,0.12),transparent_36%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(46,102,136,0.10),transparent_36%)]" />
 
-      <div className="fixed inset-x-0 top-0 z-40 border-b border-white/10 bg-[#0F2032]/85 backdrop-blur-md">
+      <div className="fixed inset-x-0 top-0 z-40 border-b border-[#C9D3D6] bg-[#F1F4F1]/90 backdrop-blur-md">
         <div className="mx-auto flex h-20 max-w-6xl items-center justify-between px-5 md:px-8">
           <Link href="/" className="flex items-center gap-3">
             <svg
@@ -344,7 +344,7 @@ export default function PaidJourneyForm({
               height="22"
               viewBox="0 0 24 24"
               fill="none"
-              stroke="#C08552"
+              stroke="#2E6688"
               strokeWidth="1.4"
               aria-hidden="true"
             >
@@ -355,22 +355,22 @@ export default function PaidJourneyForm({
             <span
               className="text-lg"
               style={{
-                fontFamily: "var(--font-fraunces), Georgia, serif",
-                fontWeight: 500,
+                fontFamily: "var(--font-manrope), system-ui, sans-serif",
+                fontWeight: 700,
               }}
             >
               Análise Ponto Cego
             </span>
           </Link>
 
-          <span className="text-xs uppercase tracking-[0.25em] text-[#7E8A96]">
+          <span className="text-xs uppercase tracking-[0.25em] text-[#8A9992]">
             {currentIndex + 1} / {totalSteps}
           </span>
         </div>
 
-        <div className="h-px w-full bg-white/10">
+        <div className="h-px w-full bg-[#C9D3D6]">
           <div
-            className="h-px bg-[#C08552] transition-all duration-500"
+            className="h-px bg-[#2E6688] transition-all duration-500"
             style={{ width: `${progress}%` }}
           />
         </div>
@@ -381,20 +381,20 @@ export default function PaidJourneyForm({
           {!isReview && currentStep ? (
             <div className="grid gap-14 lg:grid-cols-[0.95fr_1.05fr] lg:gap-20">
               <div>
-                <span className="mb-8 block text-sm uppercase tracking-[0.35em] text-[#7E8A96]">
+                <span className="mb-8 block text-sm uppercase tracking-[0.35em] text-[#8A9992]">
                   {currentStep.eyebrow}
                 </span>
 
                 <h1
-                  className="max-w-3xl text-[2.15rem] leading-[1.1] tracking-[-0.02em] text-[#C08552] min-[390px]:text-[2.35rem] md:text-[clamp(2.8rem,5.8vw,5.4rem)] md:leading-[1.05]"
+                  className="max-w-3xl text-[2.15rem] leading-[1.1] tracking-[-0.02em] text-[#2E6688] min-[390px]:text-[2.35rem] md:text-[clamp(2.8rem,5.8vw,5.4rem)] md:leading-[1.05]"
                   style={{
-                    fontFamily: "var(--font-fraunces), Georgia, serif",
-                    fontWeight: 500,
+                    fontFamily: "var(--font-manrope), system-ui, sans-serif",
+                    fontWeight: 700,
                   }}
                 >
                   {currentStep.title}
                 </h1>
-                <p className="mt-8 max-w-xl whitespace-pre-wrap text-[18px] leading-8 text-[#AFBAC5] md:text-[20px] md:leading-10">
+                <p className="mt-8 max-w-xl whitespace-pre-wrap text-[18px] leading-8 text-[#52625D] md:text-[20px] md:leading-10">
                   {currentStep.description}
                 </p>
               </div>
@@ -417,7 +417,7 @@ export default function PaidJourneyForm({
                 )}
 
                 {getErrorMessage() && (
-                  <p className="mt-5 text-sm text-[#C08552]">
+                  <p className="mt-5 text-sm text-[#8C3A3A]">
                     {getErrorMessage()}
                   </p>
                 )}
@@ -426,7 +426,7 @@ export default function PaidJourneyForm({
                   <button
                     type="button"
                     onClick={goNext}
-                    className="group inline-flex items-center justify-center gap-4 rounded-full bg-[#7C8F6A] px-9 py-5 text-[15px] font-semibold text-white transition hover:bg-[#67795A]"
+                    className="group inline-flex items-center justify-center gap-4 rounded-full bg-[#2E6688] px-9 py-5 text-[15px] font-semibold text-white transition hover:bg-[#234E68]"
                   >
                     Continuar
                     <span className="transition group-hover:translate-x-1">
@@ -438,7 +438,7 @@ export default function PaidJourneyForm({
                     <button
                       type="button"
                       onClick={goBack}
-                      className="inline-flex items-center justify-center rounded-full border border-white/15 px-9 py-5 text-[15px] font-semibold text-[#AFBAC5] transition hover:border-[#C08552]/50 hover:text-white"
+                      className="inline-flex items-center justify-center rounded-full border border-[#C9D3D6] px-9 py-5 text-[15px] font-semibold text-[#52625D] transition hover:border-[#2E6688]/50 hover:text-[#1E2B29]"
                     >
                       Voltar
                     </button>
@@ -525,7 +525,7 @@ function renderField(
 
   if (step.type === "screening") {
     return (
-      <div className="rounded-[1.75rem] border border-white/10 bg-[#0A1725]/60 p-6 md:p-8">
+      <div className="rounded-[1.75rem] border border-[#C9D3D6] bg-white p-6 md:p-8">
         <div className="space-y-7">
           <GrayChoiceGroup
             label={screeningCopy.moodLabel}
@@ -549,7 +549,7 @@ function renderField(
           />
         </div>
 
-        <p className="mt-8 border-t border-white/10 pt-6 text-xs leading-6 text-[#8E9BA7]">
+        <p className="mt-8 border-t border-[#E5EDE7] pt-6 text-xs leading-6 text-[#8A9992]">
           {screeningCopy.footer}
         </p>
       </div>
@@ -568,7 +568,7 @@ function renderField(
           }
           placeholder={step.placeholder}
           rows={10}
-          className="w-full resize-none rounded-[2rem] border border-white/10 bg-white/[0.04] p-7 text-lg leading-8 text-[#EDEAE3] outline-none transition placeholder:text-[#5F6B77] focus:border-[#C08552]/60"
+          className="w-full resize-none rounded-[2rem] border border-[#C9D3D6] bg-white p-7 text-lg leading-8 text-[#1E2B29] outline-none transition placeholder:text-[#8A9992] focus:border-[#2E6688]/60"
         />
 
         {step.key === "mainQuestion" ? (
@@ -601,7 +601,7 @@ function renderField(
     return (
       <div className="space-y-9">
         <div>
-          <p className="mb-4 text-[0.82rem] font-semibold uppercase tracking-[0.24em] text-[#C08552] md:text-[0.9rem]">
+          <p className="mb-4 text-[0.82rem] font-semibold uppercase tracking-[0.24em] text-[#2E6688] md:text-[0.9rem]">
             Escolha até duas opções
           </p>
           <div className="grid gap-3 sm:grid-cols-2">
@@ -617,10 +617,10 @@ function renderField(
                   disabled={disabled}
                   className={`rounded-2xl border px-5 py-4 text-left text-sm leading-6 transition ${
                     selected
-                      ? "border-[#C08552] bg-[#C08552]/12 text-white"
+                      ? "border-[#2E6688] bg-[#2E6688]/10 text-[#1E2B29]"
                       : disabled
-                        ? "cursor-not-allowed border-white/5 bg-white/[0.02] text-[#5F6B77]"
-                        : "border-white/10 bg-white/[0.04] text-[#AFBAC5] hover:border-[#C08552]/50 hover:text-white"
+                        ? "cursor-not-allowed border-[#E5EDE7] bg-[#E5EDE7] text-[#8A9992]"
+                        : "border-[#C9D3D6] bg-white text-[#52625D] hover:border-[#2E6688]/50 hover:text-[#1E2B29]"
                   }`}
                 >
                   {option}
@@ -631,7 +631,7 @@ function renderField(
         </div>
 
         <div>
-          <p className="mb-4 text-[0.82rem] font-semibold uppercase tracking-[0.24em] text-[#C08552] md:text-[0.9rem]">
+          <p className="mb-4 text-[0.82rem] font-semibold uppercase tracking-[0.24em] text-[#2E6688] md:text-[0.9rem]">
             {step.secondaryTitle}
           </p>
 
@@ -642,7 +642,7 @@ function renderField(
             }
             placeholder={step.secondaryPlaceholder}
             rows={5}
-            className="w-full resize-none rounded-[2rem] border border-white/10 bg-white/[0.04] p-7 text-lg leading-8 text-[#EDEAE3] outline-none transition placeholder:text-[#5F6B77] focus:border-[#C08552]/60"
+            className="w-full resize-none rounded-[2rem] border border-[#C9D3D6] bg-white p-7 text-lg leading-8 text-[#1E2B29] outline-none transition placeholder:text-[#8A9992] focus:border-[#2E6688]/60"
           />
 
           <LengthHint value={answers.reactionPurpose} />
@@ -655,7 +655,7 @@ function renderField(
     return (
       <div className="space-y-8">
         <div>
-          <label className="mb-4 block text-[0.88rem] font-semibold uppercase tracking-[0.24em] text-[#C08552] md:text-[0.95rem]">
+          <label className="mb-4 block text-[0.88rem] font-semibold uppercase tracking-[0.24em] text-[#2E6688] md:text-[0.95rem]">
             {step.fieldLabel}
           </label>
           <input
@@ -665,12 +665,12 @@ function renderField(
             }
             placeholder={step.placeholder}
             type="text"
-            className="w-full rounded-full border border-white/10 bg-white/[0.04] px-7 py-5 text-lg text-[#EDEAE3] outline-none transition placeholder:text-[#5F6B77] focus:border-[#C08552]/60"
+            className="w-full rounded-full border border-[#C9D3D6] bg-white px-7 py-5 text-lg text-[#1E2B29] outline-none transition placeholder:text-[#8A9992] focus:border-[#2E6688]/60"
           />
         </div>
 
         <div>
-          <label className="mb-4 block text-[0.88rem] font-semibold uppercase tracking-[0.24em] text-[#C08552] md:text-[0.95rem]">
+          <label className="mb-4 block text-[0.88rem] font-semibold uppercase tracking-[0.24em] text-[#2E6688] md:text-[0.95rem]">
             {step.secondaryTitle}
           </label>
 
@@ -679,7 +679,7 @@ function renderField(
             onChange={(event) => setField("mirrorTruth", event.target.value)}
             placeholder={step.secondaryPlaceholder}
             rows={6}
-            className="w-full resize-none rounded-[2rem] border border-white/10 bg-white/[0.04] p-7 text-lg leading-8 text-[#EDEAE3] outline-none transition placeholder:text-[#5F6B77] focus:border-[#C08552]/60"
+            className="w-full resize-none rounded-[2rem] border border-[#C9D3D6] bg-white p-7 text-lg leading-8 text-[#1E2B29] outline-none transition placeholder:text-[#8A9992] focus:border-[#2E6688]/60"
           />
 
           <LengthHint value={answers.mirrorTruth} />
@@ -697,21 +697,21 @@ function renderField(
         onClick={() => setField(step.key as keyof PrivateAnswers, !checked)}
         className={`flex gap-5 rounded-[2rem] border p-7 text-left transition ${
           checked
-            ? "border-[#C08552] bg-[#C08552]/12"
-            : "border-white/10 bg-white/[0.04] hover:border-[#C08552]/50"
+            ? "border-[#2E6688] bg-[#2E6688]/10"
+            : "border-[#C9D3D6] bg-white hover:border-[#2E6688]/50"
         }`}
       >
         <span
           className={`mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border ${
             checked
-              ? "border-[#C08552] bg-[#C08552] text-white"
-              : "border-white/20"
+              ? "border-[#2E6688] bg-[#2E6688] text-white"
+              : "border-[#C9D3D6]"
           }`}
         >
           {checked ? "✓" : ""}
         </span>
 
-        <span className="text-lg leading-8 text-[#DCE2E8]">{step.helper}</span>
+        <span className="text-lg leading-8 text-[#1E2B29]">{step.helper}</span>
       </button>
     );
   }
@@ -722,8 +722,8 @@ function renderField(
 function FieldGuide({ children }: { children: string }) {
   return (
     <p
-      className="mb-4 text-[0.95rem] font-medium leading-7 text-[#C08552] md:text-[1.3rem]"
-      style={{ fontFamily: "var(--font-fraunces), Georgia, serif" }}
+      className="mb-4 text-[0.95rem] font-medium leading-7 text-[#2E6688] md:text-[1.3rem]"
+      style={{ fontFamily: "var(--font-manrope), system-ui, sans-serif" }}
     >
       {children}
     </p>
@@ -733,7 +733,7 @@ function FieldGuide({ children }: { children: string }) {
 function LengthHint({ value }: { value: string }) {
   if (!isSceneFieldTooShort(value)) return null;
 
-  return <p className="mt-3 text-sm text-[#8E9BA7]">{LENGTH_HINT_MESSAGE}</p>;
+  return <p className="mt-3 text-sm text-[#8A9992]">{LENGTH_HINT_MESSAGE}</p>;
 }
 
 function MainQuestionHint({ value }: { value: string }) {
@@ -742,7 +742,7 @@ function MainQuestionHint({ value }: { value: string }) {
   if (length === 0 || length >= MIN_MAIN_QUESTION_LENGTH) return null;
 
   return (
-    <p className="mt-3 text-sm text-[#8E9BA7]">
+    <p className="mt-3 text-sm text-[#8A9992]">
       Conta um pouco mais. Quanto mais detalhe você trouxer, mais precisa fica
       a sua leitura.
     </p>
@@ -764,7 +764,7 @@ function ContextChoiceGroup({
 }) {
   return (
     <div>
-      <p className="mb-4 text-[0.82rem] font-semibold uppercase tracking-[0.24em] text-[#C08552] md:text-[0.9rem]">
+      <p className="mb-4 text-[0.82rem] font-semibold uppercase tracking-[0.24em] text-[#2E6688] md:text-[0.9rem]">
         {label}
       </p>
 
@@ -785,8 +785,8 @@ function ContextChoiceGroup({
                   : "rounded-full px-5 py-3 text-sm leading-6"
               } ${
                 isSelected
-                  ? "border-[#C08552] bg-[#C08552]/12 text-white"
-                  : "border-white/10 bg-white/[0.04] text-[#AFBAC5] hover:border-[#C08552]/50 hover:text-white"
+                  ? "border-[#2E6688] bg-[#2E6688]/10 text-[#1E2B29]"
+                  : "border-[#C9D3D6] bg-white text-[#52625D] hover:border-[#2E6688]/50 hover:text-[#1E2B29]"
               }`}
             >
               {option}
@@ -811,7 +811,7 @@ function GrayChoiceGroup({
 }) {
   return (
     <div>
-      <p className="mb-3 text-sm leading-6 text-[#C7B79A]">{label}</p>
+      <p className="mb-3 text-sm leading-6 text-[#8A6A2E]">{label}</p>
 
       <div className="grid gap-2">
         {options.map((option) => {
@@ -824,8 +824,8 @@ function GrayChoiceGroup({
               onClick={() => onSelect(option.value)}
               className={`rounded-xl border px-4 py-3 text-left text-sm leading-6 transition ${
                 isSelected
-                  ? "border-[#C08552] bg-white/10 text-white"
-                  : "border-white/10 bg-transparent text-[#AFBAC5] hover:border-[#C08552]/50 hover:text-white"
+                  ? "border-[#2E6688] bg-[#2E6688]/10 text-[#1E2B29]"
+                  : "border-[#C9D3D6] bg-transparent text-[#52625D] hover:border-[#2E6688]/50 hover:text-[#1E2B29]"
               }`}
             >
               {option.label}
@@ -852,21 +852,21 @@ function ReviewStep({
 }) {
   return (
     <div className="mx-auto max-w-5xl">
-      <span className="mb-8 block text-sm uppercase tracking-[0.35em] text-[#7E8A96]">
+      <span className="mb-8 block text-sm uppercase tracking-[0.35em] text-[#8A9992]">
         Envio
       </span>
 
       <h1
-        className="max-w-4xl text-[2.15rem] leading-[1.1] tracking-[-0.02em] text-[#C08552] min-[390px]:text-[2.35rem] md:text-[clamp(2.8rem,5.8vw,5.4rem)] md:leading-[1.05]"
+        className="max-w-4xl text-[2.15rem] leading-[1.1] tracking-[-0.02em] text-[#2E6688] min-[390px]:text-[2.35rem] md:text-[clamp(2.8rem,5.8vw,5.4rem)] md:leading-[1.05]"
         style={{
-          fontFamily: "var(--font-fraunces), Georgia, serif",
-          fontWeight: 500,
+          fontFamily: "var(--font-manrope), system-ui, sans-serif",
+          fontWeight: 700,
         }}
       >
         Suas respostas estão prontas.
       </h1>
 
-      <p className="mt-8 max-w-3xl text-[18px] leading-8 text-[#AFBAC5] md:text-[20px] md:leading-10">
+      <p className="mt-8 max-w-3xl text-[18px] leading-8 text-[#52625D] md:text-[20px] md:leading-10">
         Antes de enviar, confere uma coisa só: se o que você escreveu representa
         o que você viveu de verdade. Não precisa estar bonito. Quanto mais
         honesto o relato, mais individual a leitura.
@@ -884,7 +884,7 @@ function ReviewStep({
       </div>
 
       {errorMessage && (
-        <p className="mt-8 text-sm text-red-300">{errorMessage}</p>
+        <p className="mt-8 text-sm text-[#8C3A3A]">{errorMessage}</p>
       )}
 
       <div className="mt-10 flex flex-col gap-4 sm:flex-row">
@@ -892,7 +892,7 @@ function ReviewStep({
           type="button"
           onClick={onSubmit}
           disabled={isSubmitting}
-          className="group inline-flex items-center justify-center gap-4 rounded-full bg-[#7C8F6A] px-9 py-5 text-[15px] font-semibold text-white transition hover:bg-[#67795A] disabled:cursor-not-allowed disabled:opacity-60"
+          className="group inline-flex items-center justify-center gap-4 rounded-full bg-[#2E6688] px-9 py-5 text-[15px] font-semibold text-white transition hover:bg-[#234E68] disabled:cursor-not-allowed disabled:opacity-60"
         >
           {isSubmitting ? "Enviando..." : "Enviar para análise"}
           <span className="transition group-hover:translate-x-1">→</span>
@@ -901,13 +901,13 @@ function ReviewStep({
         <button
           type="button"
           onClick={onBack}
-          className="inline-flex items-center justify-center rounded-full border border-white/15 px-9 py-5 text-[15px] font-semibold text-[#AFBAC5] transition hover:border-[#C08552]/50 hover:text-white"
+          className="inline-flex items-center justify-center rounded-full border border-[#C9D3D6] px-9 py-5 text-[15px] font-semibold text-[#52625D] transition hover:border-[#2E6688]/50 hover:text-[#1E2B29]"
         >
           Voltar e revisar
         </button>
       </div>
 
-      <p className="mt-6 text-sm leading-6 text-[#7E8A96]">
+      <p className="mt-6 text-sm leading-6 text-[#8A9992]">
         Ao enviar, suas respostas serão registradas para a elaboração da sua
         Análise Ponto Cego.
       </p>
@@ -917,11 +917,11 @@ function ReviewStep({
 
 function SummaryCard({ label, value }: { label: string; value: string }) {
   return (
-    <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-5">
-      <span className="block text-[11px] uppercase tracking-[0.24em] text-[#8E9BA7]">
+    <div className="rounded-2xl border border-[#C9D3D6] bg-white p-5">
+      <span className="block text-[11px] uppercase tracking-[0.24em] text-[#8A9992]">
         {label}
       </span>
-      <p className="mt-3 break-words text-sm leading-6 text-[#DCE2E8]">
+      <p className="mt-3 break-words text-sm leading-6 text-[#1E2B29]">
         {value}
       </p>
     </div>

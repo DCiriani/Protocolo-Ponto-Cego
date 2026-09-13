@@ -16,7 +16,7 @@ export default function Heading({
         text-5xl
         leading-[1]
         tracking-[-0.03em]
-        text-[#F5F5F3]
+        text-[#1E2B29]
         md:text-7xl
         ${className}
       `}

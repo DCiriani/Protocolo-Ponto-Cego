@@ -7,9 +7,9 @@ export default function JornadaPage() {
   return (
     <Suspense
       fallback={
-        <main className="min-h-screen bg-[#0A0A0A] px-6 py-24 text-[#F5F5F3]">
+        <main className="min-h-screen bg-[#F1F4F1] px-6 py-24 text-[#1E2B29]">
           <div className="mx-auto max-w-3xl">
-            <span className="mb-6 block text-sm uppercase tracking-[0.35em] text-zinc-600">
+            <span className="mb-6 block text-sm uppercase tracking-[0.35em] text-[#8A9992]">
               Jornada Ponto Cego
             </span>
 
