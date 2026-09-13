@@ -19,12 +19,8 @@ export default function Stats() {
             <span>para a sua leitura chegar, escrita por mim</span>
           </div>
           <div className={styles.stat}>
-            <b>
-              CRP
-              <br />
-              04/44668
-            </b>
-            <span>registro ativo · referência em Uberaba</span>
+            <b>+100</b>
+            <span>análises Ponto Cego já entregues</span>
           </div>
         </div>
       </div>
