@@ -95,7 +95,11 @@ const questions: Question[] = [
   },
 ];
 
-export default function Quiz() {
+export default function Quiz({
+  pricingHref = "#planos",
+}: {
+  pricingHref?: string;
+}) {
   const [current, setCurrent] = useState(0);
   const [answers, setAnswers] = useState<Record<string, Letter>>({});
   const [finished, setFinished] = useState(false);
@@ -217,7 +221,7 @@ export default function Quiz() {
                   começar a mudar. Escrita por mim, não gerada a partir de uma
                   combinação de respostas.
                 </p>
-                <a href="#planos" className={styles.resultBtn}>
+                <a href={pricingHref} className={styles.resultBtn}>
                   Quero a leitura completa sobre o meu caso · R$147
                 </a>
               </div>
