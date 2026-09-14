@@ -84,3 +84,26 @@
   color: #2e6688;
   font-weight: 600;
 }
+
+.ctaWrap {
+  margin-top: 32px;
+}
+.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #2e6688;
+  color: #fff;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 16px 32px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: 0.15s;
+  box-shadow: 0 2px 0 rgba(35, 78, 104, 0.35);
+}
+.cta:hover {
+  background: #234e68;
+  transform: translateY(-1px);
+}

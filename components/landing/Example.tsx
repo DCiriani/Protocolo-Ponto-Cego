@@ -76,6 +76,12 @@ export default function Example() {
             escrita.
           </div>
         </div>
+
+        <div className={styles.ctaWrap} data-reveal>
+          <a href="#planos" className={styles.cta}>
+            Quero minha análise
+          </a>
+        </div>
       </div>
     </section>
   );
