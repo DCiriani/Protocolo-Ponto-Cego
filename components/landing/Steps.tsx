@@ -5,7 +5,7 @@ const steps = [
   {
     n: "1",
     title: "Você escolhe o plano",
-    text: "Leitura Ponto Cego, ou Leitura + sessão individual comigo. Pagamento único, sem assinatura.",
+    text: "Leitura Ponto Cego, ou Leitura + Encontro individual comigo. Pagamento único, sem assinatura.",
   },
   {
     n: "2",

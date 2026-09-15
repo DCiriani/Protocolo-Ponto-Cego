@@ -96,7 +96,7 @@ export default function Pricing() {
 
           <div className={`${styles.plan} ${styles.featured}`} data-reveal>
             <div className={styles.badge}>Experiência completa</div>
-            <h3>Leitura + devolutiva</h3>
+            <h3>Leitura + Encontro individual</h3>
             <div className={styles.tagline}>
               Você recebe a leitura por escrito e senta comigo, ao vivo, para
               aprofundar o seu caso.
