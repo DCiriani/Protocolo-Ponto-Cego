@@ -1,10 +1,12 @@
 import { NextResponse } from "next/server";
 import { supabaseAdmin } from "@/lib/supabase/admin";
+import { resolveOrderPlan } from "@/lib/promotions";
 
 type StartPayload = {
   name?: string;
   email?: string;
   plano?: string;
+  cupom?: string;
 };
 
 function isValidEmail(email: string) {
@@ -17,8 +19,7 @@ export async function POST(request: Request) {
 
     const name = payload.name?.trim();
     const email = payload.email?.trim().toLowerCase();
-    const plan =
-      payload.plano === "leitura_devolutiva" ? "leitura_devolutiva" : "leitura";
+    const plan = resolveOrderPlan(payload.plano, payload.cupom);
 
     if (!name) {
       return NextResponse.json(
