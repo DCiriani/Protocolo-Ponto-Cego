@@ -20,6 +20,8 @@ import { isPonto20Coupon } from "@/lib/promotions";
 type HomeProps = {
   searchParams: Promise<{
     cupom?: string | string[];
+    origem?: string | string[];
+    utm_source?: string | string[];
   }>;
 };
 
@@ -29,6 +31,13 @@ export default async function Home({ searchParams }: HomeProps) {
     ? params.cupom[0]
     : params.cupom;
   const promoActive = isPonto20Coupon(couponValue);
+  const origemValue = Array.isArray(params.origem)
+    ? params.origem[0]
+    : params.origem;
+  const utmSourceValue = Array.isArray(params.utm_source)
+    ? params.utm_source[0]
+    : params.utm_source;
+  const quizSource = origemValue || utmSourceValue || "direto";
 
   return (
     <main>
@@ -43,7 +52,7 @@ export default async function Home({ searchParams }: HomeProps) {
       <Example />
       <Steps />
       <Testimonials />
-      <Quiz />
+      <Quiz source={quizSource} />
       <Pricing promoActive={promoActive} />
       <ForWhom />
       <Faq />
