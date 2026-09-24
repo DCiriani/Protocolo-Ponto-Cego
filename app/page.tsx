@@ -14,12 +14,25 @@ import ForWhom from "@/components/landing/ForWhom";
 import Faq from "@/components/landing/Faq";
 import FinalCta from "@/components/landing/FinalCta";
 import Reveal from "@/components/landing/Reveal";
+import { isPonto20Coupon } from "@/lib/promotions";
 
-export default function Home() {
+type HomeProps = {
+  searchParams: Promise<{
+    cupom?: string | string[];
+  }>;
+};
+
+export default async function Home({ searchParams }: HomeProps) {
+  const params = await searchParams;
+  const couponValue = Array.isArray(params.cupom)
+    ? params.cupom[0]
+    : params.cupom;
+  const promoActive = isPonto20Coupon(couponValue);
+
   return (
     <main>
       <SiteHeader />
-      <Hero />
+      <Hero promoActive={promoActive} />
       <Mirror />
       <Stats />
       <Author />
@@ -29,10 +42,10 @@ export default function Home() {
       <Steps />
       <Testimonials />
       <Quiz />
-      <Pricing />
+      <Pricing promoActive={promoActive} />
       <ForWhom />
       <Faq />
-      <FinalCta />
+      <FinalCta promoActive={promoActive} />
       <Reveal />
     </main>
   );
