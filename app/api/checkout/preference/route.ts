@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { supabaseAdmin } from "@/lib/supabase/admin";
+import { getPlanPrice, isPonto20Plan } from "@/lib/promotions";
 
 const INFINITEPAY_HANDLE = "espacociriani";
 
@@ -65,10 +66,13 @@ export async function POST(request: Request) {
     }
 
     const isPremium = order.plan === "leitura_devolutiva";
-    const price = isPremium ? premiumPrice : basePrice;
+    const isPonto20 = isPonto20Plan(order.plan);
+    const price = getPlanPrice(order.plan, basePrice, premiumPrice);
     const description = isPremium
       ? "Análise Ponto Cego — Leitura + devolutiva individual"
-      : "Análise Ponto Cego — Leitura";
+      : isPonto20
+        ? "Análise Ponto Cego — Leitura (20% de desconto)"
+        : "Análise Ponto Cego — Leitura";
 
     // Valor em centavos para a InfinityPay
     const priceInCents = Math.round(price * 100);
