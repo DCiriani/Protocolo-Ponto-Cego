@@ -95,10 +95,24 @@ const questions: Question[] = [
   },
 ];
 
+const anonymousIdKey = "ponto-cego-quiz-anonymous-id-v1";
+
+function getAnonymousId() {
+  const saved = window.localStorage.getItem(anonymousIdKey);
+
+  if (saved) return saved;
+
+  const id = crypto.randomUUID();
+  window.localStorage.setItem(anonymousIdKey, id);
+  return id;
+}
+
 export default function Quiz({
   pricingHref = "#planos",
+  source = "direto",
 }: {
   pricingHref?: string;
+  source?: string;
 }) {
   const [current, setCurrent] = useState(0);
   const [answers, setAnswers] = useState<Record<string, Letter>>({});
@@ -113,11 +127,27 @@ export default function Quiz({
     setAnswers((prev) => ({ ...prev, [q.name]: value }));
   }
 
+  async function registerCompletion() {
+    try {
+      const anonymousId = getAnonymousId();
+
+      await fetch("/api/quiz/complete", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ anonymousId, source }),
+        keepalive: true,
+      });
+    } catch (error) {
+      console.error("Não foi possível registrar a conclusão do quiz.", error);
+    }
+  }
+
   function next() {
     if (!isLast) {
       setCurrent((c) => c + 1);
     } else {
       setFinished(true);
+      void registerCompletion();
     }
   }
 
