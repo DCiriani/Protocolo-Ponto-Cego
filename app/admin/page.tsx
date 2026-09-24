@@ -18,6 +18,73 @@ type Submission = {
 
 export const dynamic = "force-dynamic";
 
+function pad(value: number) {
+  return String(value).padStart(2, "0");
+}
+
+function getSaoPauloRanges() {
+  const formatter = new Intl.DateTimeFormat("en-US", {
+    timeZone: "America/Sao_Paulo",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  });
+
+  const parts = Object.fromEntries(
+    formatter
+      .formatToParts(new Date())
+      .filter((part) => part.type !== "literal")
+      .map((part) => [part.type, part.value]),
+  );
+
+  const year = Number(parts.year);
+  const month = Number(parts.month);
+  const day = Number(parts.day);
+
+  const todayStart = new Date(
+    `${year}-${pad(month)}-${pad(day)}T00:00:00-03:00`,
+  );
+  const tomorrowStart = new Date(todayStart.getTime() + 24 * 60 * 60 * 1000);
+  const yesterdayStart = new Date(todayStart.getTime() - 24 * 60 * 60 * 1000);
+  const sevenDaysStart = new Date(
+    todayStart.getTime() - 6 * 24 * 60 * 60 * 1000,
+  );
+  const monthStart = new Date(
+    `${year}-${pad(month)}-01T00:00:00-03:00`,
+  );
+
+  return {
+    todayStart,
+    tomorrowStart,
+    yesterdayStart,
+    sevenDaysStart,
+    monthStart,
+  };
+}
+
+async function countQuizCompletions(start?: Date, end?: Date) {
+  let query = supabaseAdmin
+    .from("quiz_completions")
+    .select("id", { count: "exact", head: true });
+
+  if (start) {
+    query = query.gte("created_at", start.toISOString());
+  }
+
+  if (end) {
+    query = query.lt("created_at", end.toISOString());
+  }
+
+  const { count, error } = await query;
+
+  if (error) {
+    console.error("Quiz analytics count error:", error);
+    return 0;
+  }
+
+  return count ?? 0;
+}
+
 function getDeliveryLabel(submission: Submission) {
   if (submission.delivery_viewed_at) {
     return {
@@ -50,30 +117,61 @@ function getDeliveryLabel(submission: Submission) {
 }
 
 export default async function AdminPage() {
-  const { data, error } = await supabaseAdmin
-    .from("jornada_submissions")
-    .select(
-      `
-      id,
-      name,
-      email,
-      relationship_status,
-      analysis_status,
-      payment_status,
-      analysis_notes,
-      delivery_token,
-      delivery_enabled,
-      delivery_viewed_at,
-      created_at
-    `
-    )
-    .order("created_at", { ascending: false });
+  const {
+    todayStart,
+    tomorrowStart,
+    yesterdayStart,
+    sevenDaysStart,
+    monthStart,
+  } = getSaoPauloRanges();
+
+  const [
+    submissionsResult,
+    todayCount,
+    yesterdayCount,
+    sevenDaysCount,
+    monthCount,
+    totalCount,
+  ] = await Promise.all([
+    supabaseAdmin
+      .from("jornada_submissions")
+      .select(
+        `
+        id,
+        name,
+        email,
+        relationship_status,
+        analysis_status,
+        payment_status,
+        analysis_notes,
+        delivery_token,
+        delivery_enabled,
+        delivery_viewed_at,
+        created_at
+      `,
+      )
+      .order("created_at", { ascending: false }),
+    countQuizCompletions(todayStart, tomorrowStart),
+    countQuizCompletions(yesterdayStart, todayStart),
+    countQuizCompletions(sevenDaysStart, tomorrowStart),
+    countQuizCompletions(monthStart, tomorrowStart),
+    countQuizCompletions(),
+  ]);
+
+  const { data, error } = submissionsResult;
 
   if (error) {
     console.error("Admin submissions error:", error);
   }
 
   const submissions = (data ?? []) as Submission[];
+  const quizMetrics = [
+    { label: "Hoje", value: todayCount },
+    { label: "Ontem", value: yesterdayCount },
+    { label: "Últimos 7 dias", value: sevenDaysCount },
+    { label: "Este mês", value: monthCount },
+    { label: "Total", value: totalCount },
+  ];
 
   return (
     <main
@@ -114,6 +212,45 @@ export default async function AdminPage() {
             </Link>
           </div>
         </div>
+
+        <section className="mb-12">
+          <div className="mb-6">
+            <span className="mb-3 block text-xs uppercase tracking-[0.3em] text-[#C08552]">
+              Avaliação gratuita
+            </span>
+            <h2
+              className="text-2xl text-white md:text-3xl"
+              style={{
+                fontFamily: "var(--font-fraunces), Georgia, serif",
+                fontWeight: 500,
+              }}
+            >
+              Conclusões anônimas
+            </h2>
+          </div>
+
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+            {quizMetrics.map((metric) => (
+              <div
+                key={metric.label}
+                className="rounded-2xl border border-white/10 bg-white/[0.04] p-5"
+              >
+                <span className="block text-xs uppercase tracking-[0.2em] text-[#8E9BA7]">
+                  {metric.label}
+                </span>
+                <strong className="mt-3 block text-3xl font-semibold text-[#EDEAE3]">
+                  {metric.value}
+                </strong>
+              </div>
+            ))}
+          </div>
+
+          <p className="mt-4 text-xs leading-5 text-[#7E8A96]">
+            A contagem é anônima e considera um identificador aleatório por
+            navegador. Nenhum nome, e-mail ou resposta do questionário é salvo
+            aqui.
+          </p>
+        </section>
 
         {error ? (
           <div className="rounded-3xl border border-red-500/20 bg-red-500/5 p-8 text-red-200">
