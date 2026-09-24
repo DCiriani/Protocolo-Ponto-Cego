@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { supabaseAdmin } from "@/lib/supabase/admin";
+import { getCouponFromRawPayload, getPlanPrice } from "@/lib/promotions";
 
 export async function GET(request: Request) {
   const url = new URL(request.url);
@@ -14,7 +15,7 @@ export async function GET(request: Request) {
 
   const { data: order, error } = await supabaseAdmin
     .from("checkout_orders")
-    .select("id, gate_status, payment_status")
+    .select("id, gate_status, payment_status, plan, raw_payload")
     .eq("id", orderId)
     .maybeSingle();
 
@@ -25,7 +26,10 @@ export async function GET(request: Request) {
     );
   }
 
-  const price = Number(process.env.PRODUCT_PRICE ?? "147");
+  const basePrice = Number(process.env.PRODUCT_PRICE ?? "147");
+  const premiumPrice = Number(process.env.PRODUCT_PRICE_PREMIUM ?? "497");
+  const coupon = getCouponFromRawPayload(order.raw_payload);
+  const price = getPlanPrice(order.plan, coupon, basePrice, premiumPrice);
 
   return NextResponse.json({
     ok: true,

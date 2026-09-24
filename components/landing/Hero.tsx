@@ -1,7 +1,11 @@
 import tokens from "./tokens.module.css";
 import styles from "./Hero.module.css";
 
-export default function Hero() {
+type HeroProps = {
+  promoActive?: boolean;
+};
+
+export default function Hero({ promoActive = false }: HeroProps) {
   return (
     <section className={styles.hero} id="inicio">
       <div className={tokens.wrap}>
@@ -31,7 +35,15 @@ export default function Hero() {
           </svg>
         </a>
         <div className={styles.price} data-reveal>
-          A partir de <b>R$147</b> · pagamento único · entrega em até 48h
+          {promoActive ? (
+            <>
+              Benefício liberado: <b>20% de desconto na Leitura Ponto Cego</b>
+            </>
+          ) : (
+            <>
+              A partir de <b>R$147</b> · pagamento único · entrega em até 48h
+            </>
+          )}
         </div>
         <div className={styles.tags} data-reveal>
           <span>

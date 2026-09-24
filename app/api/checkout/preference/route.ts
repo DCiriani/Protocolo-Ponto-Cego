@@ -1,5 +1,10 @@
 import { NextResponse } from "next/server";
 import { supabaseAdmin } from "@/lib/supabase/admin";
+import {
+  getCouponFromRawPayload,
+  getPlanPrice,
+  isPonto20Coupon,
+} from "@/lib/promotions";
 
 const INFINITEPAY_HANDLE = "espacociriani";
 
@@ -46,7 +51,7 @@ export async function POST(request: Request) {
 
     const { data: order, error: orderError } = await supabaseAdmin
       .from("checkout_orders")
-      .select("id, name, email, gate_status, plan")
+      .select("id, name, email, gate_status, plan, raw_payload")
       .eq("id", orderId)
       .maybeSingle();
 
@@ -65,10 +70,14 @@ export async function POST(request: Request) {
     }
 
     const isPremium = order.plan === "leitura_devolutiva";
-    const price = isPremium ? premiumPrice : basePrice;
+    const coupon = getCouponFromRawPayload(order.raw_payload);
+    const isPonto20 = order.plan === "leitura" && isPonto20Coupon(coupon);
+    const price = getPlanPrice(order.plan, coupon, basePrice, premiumPrice);
     const description = isPremium
       ? "Análise Ponto Cego — Leitura + devolutiva individual"
-      : "Análise Ponto Cego — Leitura";
+      : isPonto20
+        ? "Análise Ponto Cego — Leitura (20% de desconto)"
+        : "Análise Ponto Cego — Leitura";
 
     // Valor em centavos para a InfinityPay
     const priceInCents = Math.round(price * 100);
@@ -117,7 +126,10 @@ export async function POST(request: Request) {
     await supabaseAdmin
       .from("checkout_orders")
       .update({
-        raw_payload: data,
+        raw_payload: {
+          coupon: isPonto20 ? coupon : null,
+          checkout: data,
+        },
         updated_at: new Date().toISOString(),
       })
       .eq("id", order.id);
