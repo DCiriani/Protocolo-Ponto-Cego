@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { supabaseAdmin } from "@/lib/supabase/admin";
-import { resolveOrderPlan } from "@/lib/promotions";
+import { isPonto20Coupon, PONTO20_CODE } from "@/lib/promotions";
 
 type StartPayload = {
   name?: string;
@@ -19,7 +19,12 @@ export async function POST(request: Request) {
 
     const name = payload.name?.trim();
     const email = payload.email?.trim().toLowerCase();
-    const plan = resolveOrderPlan(payload.plano, payload.cupom);
+    const plan =
+      payload.plano === "leitura_devolutiva" ? "leitura_devolutiva" : "leitura";
+    const coupon =
+      plan === "leitura" && isPonto20Coupon(payload.cupom)
+        ? PONTO20_CODE
+        : null;
 
     if (!name) {
       return NextResponse.json(
@@ -43,6 +48,7 @@ export async function POST(request: Request) {
         plan,
         payment_status: "pending",
         gate_status: "approved",
+        raw_payload: coupon ? { coupon } : null,
       })
       .select("id")
       .single();
