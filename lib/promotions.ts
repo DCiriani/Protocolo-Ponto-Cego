@@ -1,6 +1,5 @@
 export const PONTO20_CODE = "PONTO20";
 export const PONTO20_DISCOUNT_PERCENT = 20;
-export const PONTO20_PLAN = "leitura_ponto20";
 
 export function normalizeCoupon(value?: string | null) {
   return (value ?? "").trim().toUpperCase();
@@ -10,24 +9,26 @@ export function isPonto20Coupon(value?: string | null) {
   return normalizeCoupon(value) === PONTO20_CODE;
 }
 
-export function resolveOrderPlan(plan?: string, coupon?: string | null) {
-  if (plan === "leitura_devolutiva") {
-    return "leitura_devolutiva";
-  }
-
-  return isPonto20Coupon(coupon) ? PONTO20_PLAN : "leitura";
-}
-
-export function isPonto20Plan(plan?: string | null) {
-  return plan === PONTO20_PLAN;
-}
-
 export function applyPonto20Discount(price: number) {
   return Math.round(price * (1 - PONTO20_DISCOUNT_PERCENT / 100) * 100) / 100;
 }
 
+export function getCouponFromRawPayload(rawPayload: unknown) {
+  if (
+    typeof rawPayload === "object" &&
+    rawPayload !== null &&
+    "coupon" in rawPayload &&
+    typeof (rawPayload as { coupon?: unknown }).coupon === "string"
+  ) {
+    return normalizeCoupon((rawPayload as { coupon: string }).coupon);
+  }
+
+  return null;
+}
+
 export function getPlanPrice(
   plan: string | null | undefined,
+  coupon: string | null | undefined,
   basePrice: number,
   premiumPrice: number,
 ) {
@@ -35,7 +36,7 @@ export function getPlanPrice(
     return premiumPrice;
   }
 
-  if (isPonto20Plan(plan)) {
+  if (plan === "leitura" && isPonto20Coupon(coupon)) {
     return applyPonto20Discount(basePrice);
   }
 
