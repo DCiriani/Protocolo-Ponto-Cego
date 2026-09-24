@@ -1,5 +1,6 @@
 import tokens from "./tokens.module.css";
 import styles from "./Pricing.module.css";
+import { PONTO20_CODE } from "@/lib/promotions";
 
 const included = [
   {
@@ -43,7 +44,15 @@ const devolutivaItems = [
   "Atendimento comigo, sem repasse a terceiros",
 ];
 
-export default function Pricing() {
+type PricingProps = {
+  promoActive?: boolean;
+};
+
+export default function Pricing({ promoActive = false }: PricingProps) {
+  const leituraHref = promoActive
+    ? `/jornada?plano=leitura&cupom=${PONTO20_CODE}`
+    : "/jornada?plano=leitura";
+
   return (
     <section className={styles.pricing} id="planos">
       <div className={tokens.wrap}>
@@ -53,6 +62,16 @@ export default function Pricing() {
         <h2 className={styles.heading} data-reveal>
           O que está incluído em uma Leitura Ponto Cego
         </h2>
+
+        {promoActive && (
+          <div className={styles.promoNotice} data-reveal>
+            <strong>Seu benefício foi liberado.</strong>
+            <span>
+              Você recebeu 20% de desconto na Leitura Ponto Cego. O valor já
+              será aplicado automaticamente.
+            </span>
+          </div>
+        )}
 
         <div className={styles.included} data-reveal>
           <p className={styles.includedLabel}>O que você recebe:</p>
@@ -73,23 +92,31 @@ export default function Pricing() {
 
         <div className={styles.plans}>
           <div className={styles.plan} data-reveal>
+            {promoActive && <div className={styles.promoBadge}>20% aplicado</div>}
             <h3>Leitura Ponto Cego</h3>
             <div className={styles.tagline}>
               Para quem quer enxergar o próprio padrão com clareza e decidir os
               próximos passos.
             </div>
             <div className={styles.price}>
-              <span className={styles.old}>R$299</span>
-              <span className={styles.now}>R$147</span>
+              <span className={styles.old}>{promoActive ? "R$147" : "R$299"}</span>
+              <span className={styles.now}>{promoActive ? "R$117,60" : "R$147"}</span>
             </div>
-            <div className={styles.installment}>ou 12x de R$12,25</div>
+            <div className={styles.installment}>
+              {promoActive ? "ou 12x de R$9,80" : "ou 12x de R$12,25"}
+            </div>
             <div className={styles.oneoff}>pagamento único · sem assinatura</div>
+            {promoActive && (
+              <div className={styles.discountLine}>
+                Seu desconto de 20% já está aplicado
+              </div>
+            )}
             <ul>
               {leituraItems.map((item) => (
                 <li key={item}>{item}</li>
               ))}
             </ul>
-            <a href="/jornada?plano=leitura" className={styles.btn}>
+            <a href={leituraHref} className={styles.btn}>
               Começar a responder
             </a>
           </div>
