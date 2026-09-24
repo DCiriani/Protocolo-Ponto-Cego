@@ -24,6 +24,7 @@ export default function PublicJourneyForm() {
     searchParams.get("plano") === "leitura_devolutiva"
       ? "leitura_devolutiva"
       : "leitura";
+  const cupom = searchParams.get("cupom");
 
   const [answers, setAnswers] = useState<PublicAnswers>(initialAnswers);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -109,6 +110,7 @@ export default function PublicJourneyForm() {
         name: answers.name,
         email: answers.email,
         plano,
+        cupom,
       }),
     });
 
