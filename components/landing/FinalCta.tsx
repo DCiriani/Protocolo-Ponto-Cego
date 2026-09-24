@@ -1,7 +1,11 @@
 import tokens from "./tokens.module.css";
 import styles from "./FinalCta.module.css";
 
-export default function FinalCta() {
+type FinalCtaProps = {
+  promoActive?: boolean;
+};
+
+export default function FinalCta({ promoActive = false }: FinalCtaProps) {
   return (
     <>
       <section className={styles.final}>
@@ -15,7 +19,9 @@ export default function FinalCta() {
             Quero enxergar meu padrão
           </a>
           <div className={styles.micro}>
-            R$147 · pagamento único · sem assinatura
+            {promoActive
+              ? "R$117,60 na Leitura Ponto Cego · 20% já aplicado"
+              : "R$147 · pagamento único · sem assinatura"}
           </div>
         </div>
       </section>
@@ -38,7 +44,9 @@ export default function FinalCta() {
 
       <div className={styles.sticky}>
         <a href="#planos" className={styles.stickyBtn}>
-          Descobrir meu padrão · R$147
+          {promoActive
+            ? "Leitura com 20% de desconto · R$117,60"
+            : "Descobrir meu padrão · R$147"}
         </a>
       </div>
     </>
