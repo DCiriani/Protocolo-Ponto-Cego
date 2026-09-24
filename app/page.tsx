@@ -14,6 +14,7 @@ import ForWhom from "@/components/landing/ForWhom";
 import Faq from "@/components/landing/Faq";
 import FinalCta from "@/components/landing/FinalCta";
 import Reveal from "@/components/landing/Reveal";
+import PromoScrollToPlans from "@/components/landing/PromoScrollToPlans";
 import { isPonto20Coupon } from "@/lib/promotions";
 
 type HomeProps = {
@@ -31,6 +32,7 @@ export default async function Home({ searchParams }: HomeProps) {
 
   return (
     <main>
+      {promoActive && <PromoScrollToPlans />}
       <SiteHeader />
       <Hero promoActive={promoActive} />
       <Mirror />
