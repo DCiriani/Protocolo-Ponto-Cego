@@ -13,26 +13,37 @@ const profileIntros: Record<Letter, string> = {
   D: "Você está solteiro(a) e as relações não avançam ou se repetem do mesmo jeito. Este padrão aparece com frequência nesse cenário.",
 };
 
-const results: Record<Letter, { tag: string; title: string; text: string }> = {
+const results: Record<
+  Letter,
+  { tag: string; title: string; text: string; question: string }
+> = {
   A: {
     tag: "Predominância A",
     title: "Padrão de sustentação excessiva",
-    text: "Nas relações que chegam perto do limite, você costuma ser quem segura a estrutura: insiste na conversa, corre atrás, tenta consertar sozinho. Em relações que não avançam, o mesmo padrão aparece como excesso de esforço para manter algo que a outra parte não está sustentando na mesma medida. Isso não é excesso de amor, é uma forma de evitar confirmar que, se você parar de segurar, a relação pode não se manter.",
+    text: "Você parece assumir muito rápido a responsabilidade de manter a relação funcionando. Quando percebe distância, conflito ou risco de perder o vínculo, tende a conversar mais, insistir mais, correr atrás e tentar consertar o que está acontecendo. O ponto cego pode estar menos no quanto você ama e mais no que teme descobrir se parar de sustentar tudo sozinho.",
+    question:
+      "O que você acredita que aconteceria se, pela primeira vez, você não corresse atrás?",
   },
   B: {
     tag: "Predominância B",
     title: "Padrão de saída antecipada",
-    text: "Você tende a se envolver rápido e recuar rápido: seja cortando contato em uma briga, seja encerrando uma relação (ou uma possibilidade) antes que ela avance de verdade. Não costuma ser impulsividade. É uma forma de nunca ser pego de surpresa por um término: sair primeiro dói menos do que ser deixado.",
+    text: "Você parece se proteger tentando sair antes que a situação saia do seu controle. Quando o vínculo fica incerto, se afastar, cortar contato ou pensar em terminar pode devolver uma sensação de controle. Às vezes isso parece clareza ou independência, mas também pode ser uma forma de evitar a possibilidade de ser deixado primeiro.",
+    question:
+      "Você está indo embora porque realmente quer sair ou porque precisa sair antes que possam te deixar?",
   },
   C: {
     tag: "Predominância C",
     title: "Padrão de espera e concessão",
-    text: "Você tende a ceder rápido para encerrar o desconforto de uma briga, e a esperar sinais claros antes de se permitir agir em uma relação nova. Isso costuma parecer cautela ou capacidade de adaptação, mas com frequência significa que sua vontade só entra em jogo depois de confirmada por fora, o que também explica relações em que você sente que deu mais espaço do que recebeu.",
+    text: "Você tende a esperar sinais do outro antes de se posicionar e a ceder para diminuir o desconforto de uma discussão. Isso pode parecer cautela, paciência ou capacidade de adaptação. Mas, aos poucos, sua vontade pode começar a entrar na relação só depois que você sente que existe espaço ou segurança para ela.",
+    question:
+      "Quanto das suas escolhas só acontece depois que você sente que tem permissão, segurança ou confirmação do outro?",
   },
   D: {
     tag: "Predominância D",
     title: "Padrão de antecipação da dor",
-    text: "Você tende a guardar o que sente e revisar internamente o que fez de errado antes mesmo de considerar a outra parte: seja em uma briga, seja ao avaliar por que uma relação não foi adiante. É uma forma de se antecipar à dor de um término ou de uma rejeição, mesmo que o custo disso seja nunca se envolver por completo.",
+    text: "Você parece tentar se preparar para a rejeição antes mesmo de saber se ela realmente vai acontecer. Guarda o que sente, revisa o que pode ter feito de errado e começa a imaginar o pior antes de considerar outras possibilidades. Isso pode parecer uma tentativa de se proteger, mas também faz você viver parte da relação já se defendendo de uma dor que ainda nem chegou.",
+    question:
+      "Quantas vezes você já começou a se culpar ou se afastar por uma rejeição que ainda nem tinha acontecido?",
   },
 };
 
@@ -243,13 +254,22 @@ export default function Quiz({
               <p className={styles.resultTag}>{results[winner].tag}</p>
               <h3 className={styles.resultTitle}>{results[winner].title}</h3>
               <p className={styles.resultText}>{results[winner].text}</p>
+              <div className={styles.resultQuestion}>
+                <span>Uma pergunta importante:</span>
+                <strong>{results[winner].question}</strong>
+              </div>
               <div className={styles.resultCta}>
                 <p>
-                  Isso é uma orientação inicial, não um diagnóstico. A Análise
-                  Ponto Cego aprofunda esse padrão a partir do seu caso
-                  específico: o gatilho exato, o que ele te custa e por onde
-                  começar a mudar. Escrita por mim, não gerada a partir de uma
-                  combinação de respostas.
+                  Essa avaliação consegue apontar uma direção, mas não consegue
+                  entender por que isso acontece justamente com você. A leitura
+                  completa aprofunda os gatilhos, o que você pode estar fazendo
+                  sem perceber para manter esse padrão, o impacto disso nas suas
+                  relações e por onde começar a agir diferente.
+                </p>
+                <p>
+                  A leitura completa tenta entender por que esse padrão continua
+                  se repetindo justamente na sua história e como começar a mudar
+                  isso.
                 </p>
                 <a href={pricingHref} className={styles.resultBtn}>
                   Quero a leitura completa sobre o meu caso · R$147
